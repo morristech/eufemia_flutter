@@ -95,7 +95,7 @@ class _SearchBarState extends State<SearchBar> {
                     child: TextButton(
                       size: ButtonSize.large,
                       label: 'Cancel',
-                      onTap: _clearTextField,
+                      onPressed: _clearTextField,
                     ),
                   )
                 : SizedBox(),

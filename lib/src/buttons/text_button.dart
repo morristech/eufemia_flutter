@@ -17,7 +17,7 @@ class TextButton extends StatefulWidget {
   final ButtonSize size;
   final bool emphasized;
   final bool enabled;
-  final VoidCallback onTap;
+  final VoidCallback onPressed;
   final Color color;
   final Color tappedColor;
 
@@ -27,7 +27,7 @@ class TextButton extends StatefulWidget {
   /// * [size]: The size of the button, given as a [ButtonSize] enum
   /// * [emphasized]: If [true], the label font is set to bold
   /// * [enabled]: Whether the button is enabled or not
-  /// * [onTap]: The onTap callback for button presses
+  /// * [onPressed]: The onPressed callback for button presses
   /// * [color]: The color of the button
   /// * [tappedColor]: The color of the button when tapped
   const TextButton({
@@ -35,7 +35,7 @@ class TextButton extends StatefulWidget {
     @required this.label,
     this.size = ButtonSize.small,
     this.enabled = true,
-    this.onTap,
+    this.onPressed,
     this.emphasized = false,
     this.color,
     this.tappedColor,
@@ -123,7 +123,7 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
     );
   }
 
-  bool get enabled => widget.onTap != null && widget.enabled;
+  bool get enabled => widget.onPressed != null && widget.enabled;
 
   void _handleTapDown(TapDownDetails details) {
     colorAnimationController.forward();
@@ -131,8 +131,8 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
 
   void _handleTapUp(TapUpDetails details) {
     colorAnimationController.reverse(from: 1.0);
-    if (widget.onTap != null) {
-      widget.onTap();
+    if (widget.onPressed != null) {
+      widget.onPressed();
     }
   }
 

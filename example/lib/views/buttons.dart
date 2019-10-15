@@ -14,7 +14,7 @@ class ButtonsView extends StatelessWidget {
           PrimaryButton(
             label: 'Large',
             size: ButtonSize.large,
-            onTap: () => {},
+            onPressed: () => {},
           ),
           PrimaryButton(
             label: 'Large disabled',
@@ -23,7 +23,7 @@ class ButtonsView extends StatelessWidget {
           PrimaryButton(
             label: 'Small',
             size: ButtonSize.small,
-            onTap: () => {},
+            onPressed: () => {},
           ),
           PrimaryButton(
             label: 'Small disabled',
@@ -32,7 +32,7 @@ class ButtonsView extends StatelessWidget {
           SecondaryButton(
             label: 'Large',
             size: ButtonSize.large,
-            onTap: () => {},
+            onPressed: () => {},
           ),
           SecondaryButton(
             label: 'Large disabled',
@@ -41,7 +41,7 @@ class ButtonsView extends StatelessWidget {
           SecondaryButton(
             label: 'Small',
             size: ButtonSize.small,
-            onTap: () => {},
+            onPressed: () => {},
           ),
           SecondaryButton(
             label: 'Small disabled',
@@ -50,7 +50,7 @@ class ButtonsView extends StatelessWidget {
           VividButton(
             label: 'Large',
             size: ButtonSize.large,
-            onTap: () => {},
+            onPressed: () => {},
           ),
           VividButton(
             label: 'Large disabled',
@@ -59,7 +59,7 @@ class ButtonsView extends StatelessWidget {
           VividButton(
             label: 'Small',
             size: ButtonSize.small,
-            onTap: () => {},
+            onPressed: () => {},
           ),
           VividButton(
             label: 'Small disabled',
@@ -68,7 +68,7 @@ class ButtonsView extends StatelessWidget {
           TextButton(
             label: 'Large emphasized',
             size: ButtonSize.large,
-            onTap: () => {},
+            onPressed: () => {},
             emphasized: true,
           ),
           TextButton(
@@ -79,7 +79,7 @@ class ButtonsView extends StatelessWidget {
           TextButton(
             label: 'Large',
             size: ButtonSize.large,
-            onTap: () => {},
+            onPressed: () => {},
           ),
           TextButton(
             label: 'Large disabled',
@@ -88,7 +88,7 @@ class ButtonsView extends StatelessWidget {
           TextButton(
             label: 'Small emphasized',
             size: ButtonSize.small,
-            onTap: () => {},
+            onPressed: () => {},
             emphasized: true,
           ),
           TextButton(
@@ -99,7 +99,7 @@ class ButtonsView extends StatelessWidget {
           TextButton(
             label: 'Small',
             size: ButtonSize.small,
-            onTap: () => {},
+            onPressed: () => {},
           ),
           TextButton(
             label: 'Small disabled',
@@ -108,13 +108,13 @@ class ButtonsView extends StatelessWidget {
           Center(
             child: FAB(
               child: Icon(Icons.add),
-              onTap: () => {},
+              onPressed: () => {},
             ),
           ),
           Center(
             child: FAB(
               child: Icon(Icons.add),
-              onTap: () => {},
+              onPressed: () => {},
               enabled: false,
             ),
           ),

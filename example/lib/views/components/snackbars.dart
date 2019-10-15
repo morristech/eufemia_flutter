@@ -16,14 +16,14 @@ class SnackbarsView extends StatelessWidget {
                 TextButton(
                   label: 'Empty snackbar',
                   size: ButtonSize.small,
-                  onTap: () => Scaffold.of(context).showSnackBar(
+                  onPressed: () => Scaffold.of(context).showSnackBar(
                     Snacks.buildSnackBar(),
                   ),
                 ),
                 TextButton(
                   label: 'With message',
                   size: ButtonSize.small,
-                  onTap: () => Scaffold.of(context).showSnackBar(
+                  onPressed: () => Scaffold.of(context).showSnackBar(
                     Snacks.buildSnackBar(
                       label: 'Message that persists until nav',
                       actionLabel: 'Hide',
@@ -34,14 +34,14 @@ class SnackbarsView extends StatelessWidget {
                 TextButton(
                   label: 'Empty snackbar',
                   size: ButtonSize.small,
-                  onTap: () => Scaffold.of(context).showSnackBar(
+                  onPressed: () => Scaffold.of(context).showSnackBar(
                     Snacks.buildSnackBar(onActionPressed: () {}),
                   ),
                 ),
                 TextButton(
                   label: 'Empty snackbar',
                   size: ButtonSize.small,
-                  onTap: () => Scaffold.of(context).showSnackBar(
+                  onPressed: () => Scaffold.of(context).showSnackBar(
                     Snacks.buildSnackBar(onActionPressed: () {}),
                   ),
                 )

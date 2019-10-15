@@ -87,7 +87,7 @@ class _ControlsViewState extends State<ControlsView> {
                     ),
                     eufemia.TextButton(
                       label: 'Vis felter',
-                      onTap: () {},
+                      onPressed: () {},
                       size: eufemia.ButtonSize.small,
                     ),
                   ],

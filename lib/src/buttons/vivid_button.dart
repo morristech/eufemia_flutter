@@ -18,19 +18,19 @@ final Color _kButtonDisabledTextColor = EufemiaColors.oceanGreen.withOpacity(0.5
 class VividButton extends StatefulWidget {
   final String label;
   final ButtonSize size;
-  final VoidCallback onTap;
+  final VoidCallback onPressed;
   final bool enabled;
 
   /// A vivid button from the Eufemia Design System
   /// * [label]: The label of this button
   /// * [size]: The size of this button, given as a [ButtonSize] enum
-  /// * [onTap]: The onTap callback for button presses
+  /// * [onPressed]: The onPressed callback for button presses
   /// * [enabled]: Whether the button is enabled or not
 
   const VividButton({
     Key key,
     @required this.label,
-    @required this.onTap,
+    @required this.onPressed,
     this.size = ButtonSize.small,
     this.enabled = true,
   }) : super(key: key);
@@ -116,7 +116,7 @@ class _VividButtonState extends State<VividButton> with TickerProviderStateMixin
     );
   }
 
-  bool get enabled => widget.onTap != null && widget.enabled;
+  bool get enabled => widget.onPressed != null && widget.enabled;
 
   void _handleTapDown(TapDownDetails details) {
     colorAnimationController.forward();
@@ -124,7 +124,7 @@ class _VividButtonState extends State<VividButton> with TickerProviderStateMixin
 
   void _handleTapUp(TapUpDetails details) {
     colorAnimationController.reverse(from: 1.0);
-    widget.onTap();
+    widget.onPressed();
   }
 
   void _handleTapCancel() {

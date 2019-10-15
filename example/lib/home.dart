@@ -23,7 +23,7 @@ class HomeView extends StatelessWidget {
       ),
       floatingActionButton: FAB(
         child: Icon(Icons.add),
-        onTap: () {},
+        onPressed: () {},
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );

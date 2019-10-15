@@ -17,7 +17,7 @@ final Offset _kButtonShadowOffset = Offset(0.0, 8.0);
 /// A floating action button
 class FAB extends StatefulWidget {
   final Widget child;
-  final VoidCallback onTap;
+  final VoidCallback onPressed;
   final String semanticLabel;
   final dynamic semanticValue;
   final bool enabled;
@@ -25,14 +25,14 @@ class FAB extends StatefulWidget {
   /// A floating action button
   ///
   /// * [child]: The icon of the button
-  /// * [onTap]: The onTap callback for button presses
+  /// * [onPressed]: The onPressed callback for button presses
   /// * [semanticLabel]: Accessibility label for this button
   /// * [semanticValue]: Accessbility value, if any value is associated with this button
   /// * [enabled]: Whether the button is enabled or not
   FAB({
     Key key,
     @required this.child,
-    @required this.onTap,
+    @required this.onPressed,
     this.semanticLabel,
     this.semanticValue,
     this.enabled = true,
@@ -138,7 +138,7 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
     );
   }
 
-  bool get enabled => widget.onTap != null && widget.enabled;
+  bool get enabled => widget.onPressed != null && widget.enabled;
 
   void _handleTapDown(TapDownDetails details) {
     colorAnimationController.forward();
@@ -146,7 +146,7 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
 
   void _handleTapUp(TapUpDetails details) {
     colorAnimationController.reverse(from: 1.0);
-    widget.onTap();
+    widget.onPressed();
   }
 
   void _handleTapCancel() {

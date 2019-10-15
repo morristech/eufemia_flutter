@@ -37,7 +37,7 @@ class Tab extends StatelessWidget {
           size: ButtonSize.small,
           emphasized: active,
           enabled: true,
-          onTap: onSelected,
+          onPressed: onSelected,
         ),
       ),
     );

@@ -21,20 +21,20 @@ final Color _kButtonDisabledBorderColor = EufemiaColors.seaGreenAlt.withOpacity(
 class SecondaryButton extends StatefulWidget {
   final String label;
   final ButtonSize size;
-  final VoidCallback onTap;
+  final VoidCallback onPressed;
   final bool enabled;
 
   /// A Secondary button from the Eufemia Design System
   ///
   /// * [label]: The label of the button
   /// * [size]: The size of the button, given as a [ButtonSize] enum
-  /// * [onTap]: The onTap callback for button presses
+  /// * [onPressed]: The onPressed callback for button presses
   /// * [enabled]: Whether the button is enabled or not
 
   const SecondaryButton({
     Key key,
     @required this.label,
-    @required this.onTap,
+    @required this.onPressed,
     this.size = ButtonSize.small,
     this.enabled = true,
   }) : super(key: key);
@@ -124,7 +124,7 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
     );
   }
 
-  bool get enabled => widget.onTap != null && widget.enabled;
+  bool get enabled => widget.onPressed != null && widget.enabled;
 
   void _handleTapDown(TapDownDetails details) {
     colorAnimationController.forward();
@@ -132,7 +132,7 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
 
   void _handleTapUp(TapUpDetails details) {
     colorAnimationController.reverse(from: 1.0);
-    widget.onTap();
+    widget.onPressed();
   }
 
   void _handleTapCancel() {

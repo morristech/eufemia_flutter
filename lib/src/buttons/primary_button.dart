@@ -19,7 +19,7 @@ final Color _kButtonDisabledTextColor = Colors.white.withOpacity(0.5);
 class PrimaryButton extends StatefulWidget {
   final String label;
   final ButtonSize size;
-  final VoidCallback onTap;
+  final VoidCallback onPressed;
   final bool enabled;
 
   /// A Primary button from the Eufemia Design System
@@ -27,13 +27,13 @@ class PrimaryButton extends StatefulWidget {
   ///
   /// * [label]: The label of the button
   /// * [size]: The size of the button, given as a [ButtonSize] enum
-  /// * [onTap]: The onTap callback for button presses
+  /// * [onPressed]: The onPressed callback for button presses
   /// * [enabled]: Whether the button is enabled or not
 
   const PrimaryButton({
     Key key,
     @required this.label,
-    @required this.onTap,
+    @required this.onPressed,
     this.size = ButtonSize.small,
     this.enabled = true,
   }) : super(key: key);
@@ -120,7 +120,7 @@ class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateM
     );
   }
 
-  bool get enabled => widget.onTap != null && widget.enabled;
+  bool get enabled => widget.onPressed != null && widget.enabled;
 
   void _handleTapDown(TapDownDetails details) {
     colorAnimationController.forward();
@@ -128,7 +128,7 @@ class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateM
 
   void _handleTapUp(TapUpDetails details) {
     colorAnimationController.reverse(from: 1.0);
-    widget.onTap();
+    widget.onPressed();
   }
 
   void _handleTapCancel() {
