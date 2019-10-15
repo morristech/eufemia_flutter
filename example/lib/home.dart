@@ -1,48 +1,24 @@
 import 'package:eufemia_example/routes.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:eufemia/eufemia.dart';
 
 class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Theme(
-      data: Eufemia.darkTheme,
-      child: Scaffold(
-        appBar: EufemiaAppBars.standard(
-          
-          icon: Icon(
-            EufemiaIcons.eufemia,
-            size: 32,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Eufemia'),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('Buttons'),
+            onTap: () => Navigator.pushNamed(context, Routes.buttons),
           ),
-          title: 'Eufemia',
-          automaticallyImplyLeading: false,
-        ),
-        body: EufemiaGrid(
-          children: [
-            EufemiaGridTile(
-              color: EufemiaColors.mintGreen,
-              title: Text(
-                'Components',
-              ),
-              onTap: () => Navigator.pushNamed(context, Routes.components),
-            ),
-            EufemiaGridTile(
-              color: EufemiaColors.mintGreen,
-              title: Text(
-                'Patterns',
-              ),
-              onTap: () => Navigator.pushNamed(context, Routes.components),
-            ),
-            EufemiaGridTile(
-              color: EufemiaColors.mintGreen,
-              title: Text(
-                'Typography',
-              ),
-              onTap: () => Navigator.pushNamed(context, Routes.components),
-            ),
-          ],
-        ),
+          ListTile(
+            title: Text('Components'),
+            onTap: () => Navigator.pushNamed(context, Routes.components),
+          ),
+        ],
       ),
     );
   }

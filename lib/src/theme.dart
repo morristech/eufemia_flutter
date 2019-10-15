@@ -1,103 +1,81 @@
+import 'dart:io';
+
 import 'package:eufemia/eufemia.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+final Color _kStatusbarDarkColor = EufemiaColors.emeraldGreen;
+final Color _kStatusbarLightColor = EufemiaColors.mintGreen;
 
 class Eufemia {
-  static get lightTheme {
+  static ThemeData _lightThemeShared() {
     return ThemeData(
-      fontFamily: 'FedraSansStd',
-      primaryColor: EufemiaColors.white,
-      appBarTheme: AppBarTheme(
-        textTheme: TextTheme(
-          title: TextStyle(
-            fontFamily: 'FedraSansStd',
-            color: EufemiaColors.black,
-            fontSize: 18,
-          ),
-        ),
-        iconTheme: IconThemeData(
-          color: EufemiaColors.black,
-        ),
-      ),
+      primaryColor: EufemiaColors.emeraldGreen,
+      accentColor: EufemiaColors.mintGreen,
       textTheme: TextTheme(
         title: TextStyle(
-          color: EufemiaColors.black,
+          fontSize: 32,
+          fontFamily: 'FedraSansStd',
         ),
-        subtitle: TextStyle(),
-        caption: TextStyle(),
-        display1: TextStyle(),
-        display2: TextStyle(),
-        display3: TextStyle(
-          color: EufemiaColors.emeraldGreen,
-        ),
-        display4: TextStyle(
-          color: EufemiaColors.emeraldGreen,
-        ),
-        subhead: TextStyle(
-          color: EufemiaColors.emeraldGreen,
-          fontWeight: FontWeight.w500,
-        ),
-        body1: TextStyle(),
-        body2: TextStyle(
-          color: EufemiaColors.emeraldGreen,
-        ),
-      ),
-      snackBarTheme: SnackBarThemeData(
-        backgroundColor: EufemiaColors.seaGreen,
       ),
     );
   }
 
-  static get darkTheme {
-    return ThemeData(
-      fontFamily: 'FedraSansStd',
-      primaryColor: EufemiaColors.emeraldGreen,
-      accentColor: EufemiaColors.mintGreen,
-      canvasColor: EufemiaColors.emeraldGreen,
-      appBarTheme: AppBarTheme(
-        textTheme: TextTheme(
-          title: TextStyle(
-            fontFamily: 'FedraSansStd',
-            color: EufemiaColors.mintGreen,
-            fontSize: 18,
+  static ThemeData lightTheme() {
+    setLightStatusbar();
+    if (Platform.isIOS) {
+      return iOSLightTheme();
+    } else {
+      return androidLightTheme();
+    }
+  }
+
+  static ThemeData darkTheme() {
+    setDarkStatusbar();
+    return ThemeData();
+  }
+
+  static ThemeData iOSLightTheme() {
+    return _lightThemeShared().copyWith(
+      textTheme: _lightThemeShared().textTheme.copyWith(
+            display1: TextStyle(
+              fontFamily: 'FedraSansStd',
+            ),
           ),
-        ),
-        iconTheme: IconThemeData(
-          color: EufemiaColors.mintGreen,
-        ),
-      ),
-      textTheme: TextTheme(
-        title: TextStyle(
-          color: EufemiaColors.mintGreen,
-        ),
-        subtitle: TextStyle(
-          color: EufemiaColors.mintGreen,
-        ),
-        caption: TextStyle(
-          color: EufemiaColors.mintGreen,
-        ),
-        display1: TextStyle(
-          color: EufemiaColors.mintGreen,
-        ),
-        display2: TextStyle(
-          color: EufemiaColors.mintGreen,
-        ),
-        display3: TextStyle(
-          color: EufemiaColors.mintGreen,
-        ),
-        display4: TextStyle(
-          color: EufemiaColors.mintGreen,
-        ),
-        subhead: TextStyle(
-          color: EufemiaColors.mintGreen,
-        ),
-        body1: TextStyle(
-          color: EufemiaColors.mintGreen,
-        ),
-        body2: TextStyle(
-          color: EufemiaColors.mintGreen,
-        ),
-      ),
     );
+  }
+
+  static ThemeData androidLightTheme() {
+    return _lightThemeShared().copyWith(
+      textTheme: _lightThemeShared().textTheme.apply(
+            fontFamily: 'FedraSansStd',
+          ),
+    );
+  }
+
+  static void setLightStatusbar() {
+    SystemChrome.setSystemUIOverlayStyle(getOverlayStyle(Brightness.light));
+  }
+
+  static void setDarkStatusbar() {
+    SystemChrome.setSystemUIOverlayStyle(getOverlayStyle(Brightness.dark));
+  }
+
+  static SystemUiOverlayStyle getOverlayStyle(Brightness brightness) {
+    if (brightness == Brightness.dark) {
+      return SystemUiOverlayStyle(
+        // Only affects Android
+        statusBarColor: _kStatusbarDarkColor,
+        statusBarBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.dark,
+      );
+    } else {
+      return SystemUiOverlayStyle(
+        // Only affects Android
+        statusBarColor: _kStatusbarLightColor,
+        statusBarBrightness: Brightness.light,
+        statusBarIconBrightness: Brightness.light,
+      );
+    }
   }
 }

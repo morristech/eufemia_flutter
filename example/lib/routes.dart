@@ -1,8 +1,10 @@
 class Routes {
   static const home = '/';
   static const components = '/components';
-  static const button = '/components/button';
-  static const checkbox = '/components/checkbox';
-  static const radio = '/components/radio';
-  static const section = '/components/section';
+  static const search_bars = '/components/search_bars';
+  static const cards = '/components/cards';
+  static const controls = '/components/controls';
+  static const snackbars = '/components/snackbars';
+  static const buttons = '/buttons';
+  static const typography = '/typography';
 }

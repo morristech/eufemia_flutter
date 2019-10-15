@@ -1,51 +1,54 @@
 import 'package:flutter/material.dart';
 
 class EufemiaColors {
-  // UX colors
-  static const seagreenAlt = Color(0xff008484);
-  static const mintGreen50 = Color(0xffd2f0e9);
-  static const mintGreen25 = Color(0xffe9f8f4);
-  static const mintGreen12 = Color(0xfff4fbf9);
-  static const seaGreenAlt30 = Color(0xffb3dada);
-  static const signalYellow30 = Color(0xffffffd7);
-  static const cherryRed = Color(0xffe10076);
-  static const cherryRed8 = Color(0xfffdebf4);
-  static const black = Color(0xFF000000);
-  static const black80 = Color(0xff333333);
-  static const black30 = Color(0xffb3b3b3);
-  static const white = Color(0xffffffff);
+  // Primary colors
+  static const seaGreen = Color.fromARGB(255, 0, 114, 114);
+  static const seaGreenAlt = Color.fromARGB(255, 0, 132, 132);
+  static const oceanGreen = Color.fromARGB(255, 0, 52, 62);
+  static const emeraldGreen = Color.fromARGB(255, 20, 85, 90);
+  static const summerGreen = Color.fromARGB(255, 40, 180, 130);
+  static const mintGreen = Color.fromARGB(255, 165, 225, 210);
+  static const mintGreenAlt = Color.fromARGB(255, 235, 255, 250);
 
-  // Undefined
-  static const blackBorder = Color(0xffcdcdcd);
-  static const blackBackground = Color(0xfffafafa);
+  // Signal colors
+  static const signalOrange = Color.fromARGB(255, 255, 84, 0);
+  static const signalYellow = Color.fromARGB(255, 255, 255, 122);
 
-  // Profile colors
-  static const seaGreen = Color(0xff007272);
-  static const mintGreen = Color(0xffa5e1d2);
-  static const summerGreen = Color(0xff28b482);
-  static const emeraldGreen = Color(0xff14555a);
-  static const oceanGreen = Color(0xff00343e);
-  static const signalOrange = Color(0xffff5400);
-  static const signalYellow = Color(0xffffff7a);
-  static const indigo = Color(0xff23195a);
-  static const violet = Color(0xff6e2382);
-  static const skyBlue = Color(0xff4bbed2);
+  // Color blends
+  static const signalYellowDark = Color.fromARGB(255, 192, 192, 92);
+  static const seaGreenAltDark = Color.fromARGB(255, 3, 107, 111);
+  static const seaGreenAltLight = Color.fromARGB(255, 128, 192, 193);
+  static const seaGreenAltShadow = Color.fromRGBO(0, 132, 132, 0.3);
 
-  // Unused Profile colors
-  static const mintGreenAlt = Color(0xffebfffa);
-  static const indigoMedium = Color(0xff6e6491);
-  static const indigoLight = Color(0xffb9afc8);
-  static const violetMedium = Color(0xffa06eaf);
-  static const violetLight = Color(0xffcfb9d7);
-  static const skyBlueMedium = Color(0xff87d2e1);
-  static const skyBlueLight = Color(0xffc3ebf0);
+  // Grayscale
+  static const coal = Color.fromARGB(255, 51, 51, 51);
+  static const darkGray = Color.fromARGB(255, 117, 117, 117);
+  static const softGray = Color.fromARGB(255, 204, 204, 204);
+  static const outlineGray = Color.fromARGB(255, 235, 235, 235);
+  static const lightShadow = Color.fromRGBO(51, 51, 51, 0.08);
 
-  // Colors exclusive to mobile
-  static const lightGrey = Color(0xfffafafa);
-  static const subtleGrey = Color(0xfff8f8f8);
-  static const softGrey = Color(0xffcccccc);
-  static const charcoalGrey = Color(0xff333333);
-  static const shadowGrey = Color(0xff757575);
+  // Tertiary
+  static const indigo = Color.fromARGB(255, 35, 25, 90);
+  static const violet = Color.fromARGB(255, 110, 35, 130);
+  static const skyBlue = Color.fromARGB(255, 75, 190, 210);
 
-  static const transparent = Color(0x00);
+  static Color getForegroundColor(Color backgroundColor) {
+    final value = backgroundColor.value;
+
+    if (value == seaGreenAlt.value) {
+      return Colors.white;
+    } else if (value == oceanGreen.value) {
+      return mintGreen;
+    } else if (value == emeraldGreen.value) {
+      return mintGreen;
+    } else if (value == summerGreen.value) {
+      return oceanGreen;
+    } else if (value == mintGreen.value) {
+      return emeraldGreen;
+    } else if (value == signalYellow.value) {
+      return oceanGreen;
+    } else {
+      return Colors.white;
+    }
+  }
 }

@@ -1,0 +1,21 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1" fill="white">
+<path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"/>
+</mask>
+<path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="white" stroke="#F8F8F8" mask="url(#path-1-inside-1)"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+<mask id="path-2-inside-2" mask-type="luminance" fill="white">
+<path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"/>
+</mask>
+<path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="white" stroke="white" mask="url(#path-2-inside-2)"/>
+</mask>
+<g mask="url(#mask0)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 17.0667H11V32H13.1429V17.0667H32V14.9333H13.1429V0H11V14.9333H0V17.0667Z" fill="#002868"/>
+</g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.320069 19.2C1.31091 24.0812 4.5239 28.1556 8.85715 30.321V19.2H0.320069ZM15.2857 31.9843C15.5225 31.9947 15.7607 32 16 32C23.7407 32 30.1975 26.5032 31.68 19.2H15.2857V31.9843ZM31.68 12.8C30.1975 5.49683 23.7407 0 16 0C15.7607 0 15.5225 0.005256 15.2857 0.0156589V12.8H31.68ZM8.85715 1.67897V12.8H0.320068C1.31091 7.91876 4.5239 3.84445 8.85715 1.67897Z" fill="#EF2B2D"/>
+<mask id="mask1" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.320069 19.2C1.31091 24.0812 4.5239 28.1556 8.85715 30.321V19.2H0.320069ZM15.2857 31.9843C15.5225 31.9947 15.7607 32 16 32C23.7407 32 30.1975 26.5032 31.68 19.2H15.2857V31.9843ZM31.68 12.8C30.1975 5.49683 23.7407 0 16 0C15.7607 0 15.5225 0.005256 15.2857 0.0156589V12.8H31.68ZM8.85715 1.67897V12.8H0.320068C1.31091 7.91876 4.5239 3.84445 8.85715 1.67897Z" fill="white"/>
+</mask>
+<g mask="url(#mask1)">
+</g>
+</svg>
