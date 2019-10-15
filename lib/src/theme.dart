@@ -3,64 +3,75 @@ import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-final Color _kStatusbarDarkColor = EufemiaColors.emeraldGreen;
-final Color _kStatusbarLightColor = EufemiaColors.mintGreen;
+final Color _kStatusbarDarkColor = Colors.transparent;
+final Color _kStatusbarLightColor = Colors.transparent;
+final Color _kAppBarLightColor = EufemiaColors.mintGreen;
+final Color _kAppBarDarkColor = EufemiaColors.emeraldGreen;
 
 class Eufemia {
   static ThemeData _lightThemeShared() {
     return ThemeData(
+      brightness: Brightness.light,
+      primaryColor: EufemiaColors.mintGreen,
+      accentColor: EufemiaColors.emeraldGreen,
+      appBarTheme: AppBarTheme(
+        brightness: Brightness.light,
+        color: _kAppBarLightColor,
+      ),
+      fontFamily: Platform.isIOS ? null : 'FedraSansStd',
+      textTheme: Platform.isIOS
+          ? TextTheme(
+              display4: TextStyle(
+                fontFamily: 'FedraSansStd',
+                package: 'eufemia',
+                fontSize: 34.0,
+              ),
+            )
+          : null,
+    );
+  }
+
+  static ThemeData _darkThemeShared() {
+    return ThemeData(
+      brightness: Brightness.dark,
       primaryColor: EufemiaColors.emeraldGreen,
       accentColor: EufemiaColors.mintGreen,
-      textTheme: TextTheme(
-        title: TextStyle(
-          fontSize: 32,
-          fontFamily: 'FedraSansStd',
-        ),
+      appBarTheme: AppBarTheme(
+        brightness: Brightness.dark,
+        color: _kAppBarDarkColor,
       ),
+      fontFamily: Platform.isIOS ? null : 'FedraSansStd',
+      textTheme: Platform.isIOS
+          ? TextTheme(
+              display4: TextStyle(
+                fontFamily: 'FedraSansStd',
+                package: 'eufemia',
+                fontSize: 34.0,
+              ),
+            )
+          : null,
     );
   }
 
   /// Returns the default Eufemia light theme, and sets the status bar brightness.
   ///
-  /// [statusBarColor]: Sets the status bar color. Defaults to [EufemiaColors.mintGreen]
+  /// [statusBarColor]: Sets the status bar color. Defaults to [Colors.transparent]
   static ThemeData lightTheme({Color statusBarColor}) {
     setLightStatusBar(statusBarColor: statusBarColor);
-    if (Platform.isIOS) {
-      return _iOSLightTheme();
-    } else {
-      return _androidLightTheme();
-    }
+    return _lightThemeShared();
   }
 
   /// Returns the default Eufemia dark theme, and sets the status bar brightness.
   ///
-  /// [statusBarColor]: Sets the status bar color. Defaults to [EufemiaColors.emeraldGreen]
+  /// [statusBarColor]: Sets the status bar color. Defaults to [Colors.transparent]
   static ThemeData darkTheme({Color statusBarColor}) {
     setDarkStatusBar(statusBarColor: statusBarColor);
-    return ThemeData();
-  }
-
-  static ThemeData _iOSLightTheme() {
-    return _lightThemeShared().copyWith(
-      textTheme: _lightThemeShared().textTheme.copyWith(
-            display1: TextStyle(
-              fontFamily: 'FedraSansStd',
-            ),
-          ),
-    );
-  }
-
-  static ThemeData _androidLightTheme() {
-    return _lightThemeShared().copyWith(
-      textTheme: _lightThemeShared().textTheme.apply(
-            fontFamily: 'FedraSansStd',
-          ),
-    );
+    return _darkThemeShared();
   }
 
   /// Sets the status bar brightness.
   ///
-  /// [statusBarColor]: Sets the status bar color. Defaults to [EufemiaColors.mintGreen]
+  /// [statusBarColor]: Sets the status bar color. Defaults to [Colors.transparent]
   static void setLightStatusBar({Color statusBarColor}) {
     statusBarColor ??= _kStatusbarLightColor;
     SystemChrome.setSystemUIOverlayStyle(getOverlayStyle(Brightness.light, statusBarColor));
@@ -68,7 +79,7 @@ class Eufemia {
 
   /// Sets the status bar brightness.
   ///
-  /// [statusBarColor]: Sets the status bar color. Defaults to [EufemiaColors.emeraldGreen]
+  /// [statusBarColor]: Sets the status bar color. Defaults to [Colors.transparent]
   static void setDarkStatusBar({Color statusBarColor}) {
     statusBarColor ??= _kStatusbarDarkColor;
     SystemChrome.setSystemUIOverlayStyle(getOverlayStyle(Brightness.dark, statusBarColor));
@@ -87,6 +98,7 @@ class Eufemia {
         statusBarColor: statusBarColor,
         statusBarBrightness: Brightness.dark,
         statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarIconBrightness: Brightness.dark,
       );
     } else {
       return SystemUiOverlayStyle(
@@ -94,6 +106,7 @@ class Eufemia {
         statusBarColor: statusBarColor,
         statusBarBrightness: Brightness.light,
         statusBarIconBrightness: Brightness.light,
+        systemNavigationBarIconBrightness: Brightness.light,
       );
     }
   }
