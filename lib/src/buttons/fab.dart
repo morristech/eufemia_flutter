@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 const double _kButtonShadowSpreadRadius = 1.0;
 const double _kButtonShadowBlurRadius = 16.0;
-const double _kIconSize = 32.0;
+const double _kIconSize = 24.0;
 const int _kColorAnimationDuration = 100;
 final Color _kButtonColor = EufemiaColors.seaGreenAlt;
 final Color _kButtonDisabledColor = EufemiaColors.seaGreenAltLight;
@@ -99,11 +99,11 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
         onTapDown: enabled ? _handleTapDown : null,
         onTapUp: enabled ? _handleTapUp : null,
         onTapCancel: enabled ? _handleTapCancel : null,
-        child: Center(
-          child: AnimatedBuilder(
-            animation: colorAnimationController,
-            builder: (context, _) {
-              return Container(
+        child: AnimatedBuilder(
+          animation: colorAnimationController,
+          builder: (context, _) {
+            return FittedBox(
+              child: Container(
                 decoration: BoxDecoration(
                   color: buttonColorAnimation.value,
                   shape: BoxShape.circle,
@@ -118,7 +118,7 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
                 ),
                 child: Center(
                   child: Padding(
-                    padding: const EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(16.0),
                     child: Theme(
                       data: Theme.of(context).copyWith(
                         iconTheme: IconThemeData(
@@ -130,9 +130,9 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-              );
-            },
-          ),
+              ),
+            );
+          },
         ),
       ),
     );

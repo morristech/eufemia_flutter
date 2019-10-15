@@ -105,14 +105,18 @@ class ButtonsView extends StatelessWidget {
             label: 'Small disabled',
             size: ButtonSize.small,
           ),
-          FAB(
-            child: Icon(Icons.add),
-            onTap: () => {},
+          Center(
+            child: FAB(
+              child: Icon(Icons.add),
+              onTap: () => {},
+            ),
           ),
-          FAB(
-            child: Icon(Icons.add),
-            onTap: () => {},
-            enabled: false,
+          Center(
+            child: FAB(
+              child: Icon(Icons.add),
+              onTap: () => {},
+              enabled: false,
+            ),
           ),
         ]
             .map(

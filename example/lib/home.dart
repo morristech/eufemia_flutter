@@ -1,3 +1,4 @@
+import 'package:eufemia/eufemia.dart';
 import 'package:eufemia_example/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,11 @@ class HomeView extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButton: FAB(
+        child: Icon(Icons.add),
+        onTap: () {},
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
