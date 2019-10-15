@@ -11,11 +11,17 @@ final Color _kBorderColor = EufemiaColors.emeraldGreen;
 final Color _kSelectedFontColor = EufemiaColors.mintGreen;
 final Color _kUnselectedFontColor = EufemiaColors.emeraldGreen;
 
+/// Toggle label from the Eufemia Design System
 class ToggleLabel extends StatelessWidget {
   final bool selected;
   final String label;
   final Function(bool) onChange;
 
+  /// Toggle label from the Eufemia Design System
+  ///
+  /// * [selected]: If the label is toggled or not
+  /// * [label]: The label
+  /// * [onChange]: Callback for when the the label is pressed
   const ToggleLabel({
     Key key,
     this.selected,

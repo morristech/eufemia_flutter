@@ -12,17 +12,21 @@ final Color _kButtonTappedColor = EufemiaColors.signalYellowDark;
 final Color _kButtonTextColor = EufemiaColors.oceanGreen;
 final Color _kButtonTappedTextColor = EufemiaColors.oceanGreen.withOpacity(0.8);
 final Color _kButtonDisabledColor = EufemiaColors.signalYellow.withOpacity(0.5);
-final Color _kButtonDisabledTextColor =
-    EufemiaColors.oceanGreen.withOpacity(0.5);
+final Color _kButtonDisabledTextColor = EufemiaColors.oceanGreen.withOpacity(0.5);
 
+/// A vivid button from the Eufemia Design System
 class VividButton extends StatefulWidget {
-  final String text;
+  final String label;
   final ButtonSize size;
   final VoidCallback onTap;
 
+  /// A vivid button from the Eufemia Design System
+  /// * [label]: The label of this button
+  /// * [size]: The size of this button, given as a [ButtonSize] enum
+  /// * [onTap]: The onTap callback for button presses
   const VividButton({
     Key key,
-    @required this.text,
+    @required this.label,
     @required this.size,
     @required this.onTap,
   }) : super(key: key);
@@ -31,8 +35,7 @@ class VividButton extends StatefulWidget {
   _VividButtonState createState() => _VividButtonState();
 }
 
-class _VividButtonState extends State<VividButton>
-    with TickerProviderStateMixin {
+class _VividButtonState extends State<VividButton> with TickerProviderStateMixin {
   Animation<Color> buttonColorAnimation;
   Animation<Color> textColorAnimation;
   AnimationController colorAnimationController;
@@ -65,10 +68,10 @@ class _VividButtonState extends State<VividButton>
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: widget.text,
+      label: widget.label,
       enabled: enabled,
       button: true,
-      value: widget.text,
+      value: widget.label,
       child: GestureDetector(
         onTapDown: enabled ? _handleTapDown : null,
         onTapUp: enabled ? _handleTapUp : null,
@@ -85,7 +88,7 @@ class _VividButtonState extends State<VividButton>
               child: Padding(
                 padding: _getContentPadding(),
                 child: Text(
-                  widget.text,
+                  widget.label,
                   style: TextStyle(
                     color: textColorAnimation.value,
                     fontSize: _getFontSize(),

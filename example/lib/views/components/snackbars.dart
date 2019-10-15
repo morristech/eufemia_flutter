@@ -11,18 +11,17 @@ class SnackbarsView extends StatelessWidget {
         body: Builder(
           builder: (context) {
             return ListView(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
               children: [
                 TextButton(
-                  text: 'Empty snackbar',
+                  label: 'Empty snackbar',
                   size: ButtonSize.small,
                   onTap: () => Scaffold.of(context).showSnackBar(
                     Snacks.buildSnackBar(),
                   ),
                 ),
                 TextButton(
-                  text: 'With message',
+                  label: 'With message',
                   size: ButtonSize.small,
                   onTap: () => Scaffold.of(context).showSnackBar(
                     Snacks.buildSnackBar(
@@ -33,14 +32,14 @@ class SnackbarsView extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  text: 'Empty snackbar',
+                  label: 'Empty snackbar',
                   size: ButtonSize.small,
                   onTap: () => Scaffold.of(context).showSnackBar(
                     Snacks.buildSnackBar(onActionPressed: () {}),
                   ),
                 ),
                 TextButton(
-                  text: 'Empty snackbar',
+                  label: 'Empty snackbar',
                   size: ButtonSize.small,
                   onTap: () => Scaffold.of(context).showSnackBar(
                     Snacks.buildSnackBar(onActionPressed: () {}),

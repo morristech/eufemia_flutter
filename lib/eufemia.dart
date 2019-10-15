@@ -1,12 +1,11 @@
 library eufemia;
 
+// Theme and styles
 export 'src/theme.dart';
 export 'src/style/colors.dart';
 export 'src/utils/icon_position.dart';
-export 'src/utils/icon_size.dart';
 export 'src/utils/button_size.dart';
 export 'src/utils/status.dart';
-export 'src/icons/icons.dart';
 
 // Buttons
 export 'src/buttons/primary_button.dart';

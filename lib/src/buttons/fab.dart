@@ -14,18 +14,25 @@ final Color _kButtonTappedIconColor = Colors.white.withOpacity(0.8);
 final Color _kButtonDisabledIconColor = Colors.white.withOpacity(0.5);
 final Offset _kButtonShadowOffset = Offset(0.0, 8.0);
 
+/// A floating action button
 class FAB extends StatefulWidget {
   final Widget child;
   final VoidCallback onTap;
   final String semanticLabel;
   final dynamic semanticValue;
 
+  /// A floating action button
+  ///
+  /// * [child]: The icon of the button
+  /// * [onTap]: The onTap callback for button presses
+  /// * [semanticLabel]: Accessibility label for this button
+  /// * [semanticValue]: Accessbility value, if any value is associated with this button
   const FAB({
     Key key,
     @required this.child,
     @required this.onTap,
-    @required this.semanticLabel,
-    @required this.semanticValue,
+    this.semanticLabel,
+    this.semanticValue,
   }) : super(key: key);
 
   @override

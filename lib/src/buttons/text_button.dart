@@ -7,13 +7,13 @@ const int _kColorAnimationDuration = 100;
 final Color _kButtonColor = Colors.transparent;
 final Color _kButtonTappedColor = EufemiaColors.oceanGreen.withOpacity(0.1);
 final Color _kButtonTextColor = EufemiaColors.seaGreenAlt;
-final Color _kButtonTappedTextColor =
-    EufemiaColors.seaGreenAlt.withOpacity(0.8);
+final Color _kButtonTappedTextColor = EufemiaColors.seaGreenAlt.withOpacity(0.8);
 final Color _kButtonDisabledColor = Colors.transparent;
 final Color _kButtonDisabledTextColor = EufemiaColors.seaGreenAltLight;
 
+/// A text button from the Eufemia Design System
 class TextButton extends StatefulWidget {
-  final String text;
+  final String label;
   final ButtonSize size;
   final bool emphasized;
   final bool enabled;
@@ -21,16 +21,25 @@ class TextButton extends StatefulWidget {
   final Color color;
   final Color tappedColor;
 
-  const TextButton(
-      {Key key,
-      @required this.text,
-      @required this.size,
-      this.enabled = true,
-      this.onTap,
-      this.emphasized = false,
-      this.color,
-      this.tappedColor})
-      : super(key: key);
+  /// A text button from the Eufemia Design System
+  ///
+  /// * [label]: The label of the button
+  /// * [size]: The size of the button, given as a [ButtonSize] enum
+  /// * [emphasized]: If [true], the label font is set to bold
+  /// * [enabled]: Sets the enabled state of the button, defaults to true
+  /// * [onTap]: The onTap callback for button presses
+  /// * [color]: The color of the button
+  /// * [tappedColor]: The color of the button when tapped
+  const TextButton({
+    Key key,
+    @required this.label,
+    @required this.size,
+    this.enabled = true,
+    this.onTap,
+    this.emphasized = false,
+    this.color,
+    this.tappedColor,
+  }) : super(key: key);
 
   @override
   _TextButtonState createState() => _TextButtonState();
@@ -55,12 +64,8 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
     ).animate(colorAnimationController);
 
     textColorAnimation = ColorTween(
-      begin: enabled
-          ? widget.color ?? _kButtonTextColor
-          : _kButtonDisabledTextColor,
-      end: enabled
-          ? widget.tappedColor ?? _kButtonTappedTextColor
-          : _kButtonDisabledTextColor,
+      begin: enabled ? widget.color ?? _kButtonTextColor : _kButtonDisabledTextColor,
+      end: enabled ? widget.tappedColor ?? _kButtonTappedTextColor : _kButtonDisabledTextColor,
     ).animate(colorAnimationController);
   }
 
@@ -73,10 +78,10 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: widget.text,
+      label: widget.label,
       enabled: enabled,
       button: true,
-      value: widget.text,
+      value: widget.label,
       child: GestureDetector(
         onTapDown: enabled ? _handleTapDown : null,
         onTapUp: enabled ? _handleTapUp : null,
@@ -93,7 +98,7 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
               child: Padding(
                 padding: const EdgeInsets.all(_kButtonPadding),
                 child: Text(
-                  widget.text,
+                  widget.label,
                   style: TextStyle(
                     color: textColorAnimation.value,
                     fontSize: _getFontSize(),

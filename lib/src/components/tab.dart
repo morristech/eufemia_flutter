@@ -26,15 +26,14 @@ class Tab extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color:
-                active ? _kTabHighlighterColor : _kTabHighlighterDisabledColor,
+            color: active ? _kTabHighlighterColor : _kTabHighlighterDisabledColor,
             width: _kTabHighllighterWidth,
           ),
         ),
       ),
       child: Center(
         child: TextButton(
-          text: label,
+          label: label,
           size: ButtonSize.small,
           emphasized: active,
           enabled: true,

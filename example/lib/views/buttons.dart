@@ -12,97 +12,97 @@ class ButtonsView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 16.0),
         children: [
           PrimaryButton(
-            text: 'Large',
+            label: 'Large',
             size: ButtonSize.large,
             onTap: () => {},
           ),
           PrimaryButton(
-            text: 'Large disabled',
+            label: 'Large disabled',
             size: ButtonSize.large,
           ),
           PrimaryButton(
-            text: 'Small',
+            label: 'Small',
             size: ButtonSize.small,
             onTap: () => {},
           ),
           PrimaryButton(
-            text: 'Small disabled',
+            label: 'Small disabled',
             size: ButtonSize.small,
           ),
           SecondaryButton(
-            text: 'Large',
+            label: 'Large',
             size: ButtonSize.large,
             onTap: () => {},
           ),
           SecondaryButton(
-            text: 'Large disabled',
+            label: 'Large disabled',
             size: ButtonSize.large,
           ),
           SecondaryButton(
-            text: 'Small',
+            label: 'Small',
             size: ButtonSize.small,
             onTap: () => {},
           ),
           SecondaryButton(
-            text: 'Small disabled',
+            label: 'Small disabled',
             size: ButtonSize.small,
           ),
           VividButton(
-            text: 'Large',
+            label: 'Large',
             size: ButtonSize.large,
             onTap: () => {},
           ),
           VividButton(
-            text: 'Large disabled',
+            label: 'Large disabled',
             size: ButtonSize.large,
           ),
           VividButton(
-            text: 'Small',
+            label: 'Small',
             size: ButtonSize.small,
             onTap: () => {},
           ),
           VividButton(
-            text: 'Small disabled',
+            label: 'Small disabled',
             size: ButtonSize.small,
           ),
           TextButton(
-            text: 'Large emphasized',
+            label: 'Large emphasized',
             size: ButtonSize.large,
             onTap: () => {},
             emphasized: true,
           ),
           TextButton(
-            text: 'Large emphasized disabled',
+            label: 'Large emphasized disabled',
             size: ButtonSize.large,
             emphasized: true,
           ),
           TextButton(
-            text: 'Large',
+            label: 'Large',
             size: ButtonSize.large,
             onTap: () => {},
           ),
           TextButton(
-            text: 'Large disabled',
+            label: 'Large disabled',
             size: ButtonSize.large,
           ),
           TextButton(
-            text: 'Small emphasized',
+            label: 'Small emphasized',
             size: ButtonSize.small,
             onTap: () => {},
             emphasized: true,
           ),
           TextButton(
-            text: 'Small emphasized disabled',
+            label: 'Small emphasized disabled',
             size: ButtonSize.small,
             emphasized: true,
           ),
           TextButton(
-            text: 'Small',
+            label: 'Small',
             size: ButtonSize.small,
             onTap: () => {},
           ),
           TextButton(
-            text: 'Small disabled',
+            label: 'Small disabled',
             size: ButtonSize.small,
           ),
           FAB(

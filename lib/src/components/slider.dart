@@ -5,12 +5,19 @@ import 'package:flutter/material.dart' as material;
 final Color _kActiveColor = EufemiaColors.seaGreenAlt;
 final Color _kInactiveColor = EufemiaColors.softGray;
 
+/// Slider from the Eufemia Design System
 class Slider extends StatelessWidget {
   final double value;
   final Function(double) onChanged;
   final Function(double) onChangeStart;
   final Function(double) onChangeEnd;
 
+  /// Slider from the Eufemia Design System
+  ///
+  /// * [value]: The current value of the slider
+  /// * [onChanged]: Callback for when the value changes
+  /// * [onChangeStart]: Callback for when a change starts
+  /// * [onChangeEnd]: Callback for when a change ends
   const Slider({
     Key key,
     @required this.value,

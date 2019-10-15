@@ -14,15 +14,16 @@ final Color _kSearchBarFocusColor = EufemiaColors.coal.withOpacity(0.09);
 final Color _kSearchBarPrefixColor = EufemiaColors.seaGreenAlt;
 final Color _kSearchBarSuffixColor = EufemiaColors.darkGray;
 
+/// Search bar from the Eufemia Design System
 class SearchBar extends StatefulWidget {
   final TextEditingController controller;
   final Function(String) onChanged;
 
-  const SearchBar({
-    Key key,
-    @required this.controller,
-    this.onChanged,
-  }) : super(key: key);
+  /// Search bar from the Eufemia Design System
+  ///
+  /// * [controller]: The [TextEditingController] to use
+  /// * [onChanged]: Callback for when the given [controller] changes
+  const SearchBar({Key key, @required this.controller, this.onChanged}) : super(key: key);
   @override
   _SearchBarState createState() => _SearchBarState();
 }
@@ -54,9 +55,7 @@ class _SearchBarState extends State<SearchBar> {
             duration: Duration(milliseconds: _kSearchBarAnimationDuration),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(
-                Platform.isIOS
-                    ? _kSearchBarIOSBorderRadius
-                    : _kSearchBarAndroidBorderRadius,
+                Platform.isIOS ? _kSearchBarIOSBorderRadius : _kSearchBarAndroidBorderRadius,
               ),
               child: TextField(
                 style: TextStyle(
@@ -79,9 +78,7 @@ class _SearchBarState extends State<SearchBar> {
                     fontSize: _kSearchTextSize,
                   ),
                   filled: true,
-                  fillColor: _focusNode.hasFocus
-                      ? _kSearchBarFocusColor
-                      : _kSearchBarColor,
+                  fillColor: _focusNode.hasFocus ? _kSearchBarFocusColor : _kSearchBarColor,
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
@@ -97,7 +94,7 @@ class _SearchBarState extends State<SearchBar> {
                     padding: const EdgeInsets.only(left: _kCancelButtonPadding),
                     child: TextButton(
                       size: ButtonSize.large,
-                      text: 'Cancel',
+                      label: 'Cancel',
                       onTap: _clearTextField,
                     ),
                   )

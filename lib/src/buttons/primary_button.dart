@@ -14,14 +14,22 @@ final Color _kButtonTappedTextColor = Colors.white.withOpacity(0.8);
 final Color _kButtonDisabledColor = EufemiaColors.seaGreenAltLight;
 final Color _kButtonDisabledTextColor = Colors.white.withOpacity(0.5);
 
+/// A Primary button from the Eufemia Design System.
+/// There should only be one on every screen.
 class PrimaryButton extends StatefulWidget {
-  final String text;
+  final String label;
   final ButtonSize size;
   final VoidCallback onTap;
 
+  /// A Primary button from the Eufemia Design System
+  /// There should only be one on every screen
+  ///
+  /// * [label]: The label of the button
+  /// * [size]: The size of the button, given as a [ButtonSize] enum
+  /// * [onTap]: The onTap callback for button presses
   const PrimaryButton({
     Key key,
-    @required this.text,
+    @required this.label,
     @required this.size,
     @required this.onTap,
   }) : super(key: key);
@@ -30,8 +38,7 @@ class PrimaryButton extends StatefulWidget {
   _PrimaryButtonState createState() => _PrimaryButtonState();
 }
 
-class _PrimaryButtonState extends State<PrimaryButton>
-    with TickerProviderStateMixin {
+class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateMixin {
   Animation<Color> buttonColorAnimation;
   Animation<Color> textColorAnimation;
   AnimationController colorAnimationController;
@@ -64,10 +71,10 @@ class _PrimaryButtonState extends State<PrimaryButton>
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: widget.text,
+      label: widget.label,
       enabled: enabled,
       button: true,
-      value: widget.text,
+      value: widget.label,
       child: GestureDetector(
         // onTap: enabled ? _handleTap : null,
         onTapUp: enabled ? _handleTapUp : null,
@@ -85,7 +92,7 @@ class _PrimaryButtonState extends State<PrimaryButton>
               child: Padding(
                 padding: _getContentPadding(),
                 child: Text(
-                  widget.text,
+                  widget.label,
                   style: TextStyle(
                     color: textColorAnimation.value,
                     fontSize: _getFontSize(),

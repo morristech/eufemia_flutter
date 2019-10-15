@@ -5,6 +5,7 @@ import 'package:flutter/material.dart' as material;
 final Color _kActiveColor = EufemiaColors.seaGreenAlt;
 final Color _kInactiveColor = EufemiaColors.softGray;
 
+/// Range slider from the Eufemia Design System
 class RangeSlider extends StatelessWidget {
   final RangeValues values;
   final Function(RangeValues) onChanged;
@@ -12,6 +13,13 @@ class RangeSlider extends StatelessWidget {
   final Function(RangeValues) onChangeEnd;
   final Widget Function(BuildContext, RangeValues) labelBuilder;
 
+  /// Range slider from the Eufemia Design System
+  ///
+  /// * [values]: The given [RangeValues] values
+  /// * [onChanged]: Callback for when the values change
+  /// * [onChangeStart]: Callback for when change starts
+  /// * [onChangeEnd]: Callback for when change ends
+  /// * [labelBuilder]: Optional builder for labels to display above the slider
   const RangeSlider({
     Key key,
     @required this.values,

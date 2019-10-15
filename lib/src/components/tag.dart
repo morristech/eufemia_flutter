@@ -10,11 +10,16 @@ final Color _kIconColor = EufemiaColors.darkGray;
 final Color _kColor = EufemiaColors.outlineGray;
 final Color _kFontColor = EufemiaColors.coal;
 
+/// Tag from the Eufemia Design System
 class Tag extends StatelessWidget {
-  final String text;
+  final String label;
   final VoidCallback onDelete;
 
-  const Tag({Key key, this.text, this.onDelete}) : super(key: key);
+  /// Tag from the Eufemia Design System
+  ///
+  /// * [label]: The label of the tag
+  /// * [onDelete]: Callback for when the delete button is pressed
+  const Tag({Key key, this.label, this.onDelete}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +48,7 @@ class Tag extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: _kLabelPadding),
                   child: Text(
-                    text,
+                    label,
                     style: TextStyle(
                       fontSize: _kFontSize,
                       color: _kFontColor,

@@ -10,44 +10,54 @@ final Color _kCardBorderColor = EufemiaColors.outlineGray;
 final Color _kCardShadowColor = EufemiaColors.lightShadow;
 final Offset _kCardShadowOffset = Offset(0.0, 0.5);
 
+/// A card from the Eufemia Design System
 class Card extends StatelessWidget {
   final Widget child;
   final Widget label;
+  final String semanticLabel;
 
-  const Card({Key key, this.label, this.child}) : super(key: key);
+  /// A card from the Eufemia Design System
+  ///
+  /// * [child]: The main content of the card
+  /// * [label]: Optional label to appear below the content
+  /// * [semanticLabel]: Accessibility label
+  const Card({Key key, this.label, this.child, this.semanticLabel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: _kCardShadowColor,
-            spreadRadius: _kCardShadowSpreadRadius,
-            blurRadius: _kCardShadowBlurRadius,
-            offset: _kCardShadowOffset,
-          ),
-        ],
-        color: _kCardColor,
-        borderRadius: BorderRadius.circular(_kCardBorderRadius),
-        border: Border.all(
-          width: _kCardBorderWidth,
-          color: _kCardBorderColor,
-        ),
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          child,
-          if (label != null) ...{
-            Container(
-              height: _kCardBorderWidth,
-              color: _kCardBorderColor,
+    return Semantics(
+      label: semanticLabel,
+      child: Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: _kCardShadowColor,
+              spreadRadius: _kCardShadowSpreadRadius,
+              blurRadius: _kCardShadowBlurRadius,
+              offset: _kCardShadowOffset,
             ),
-            label,
-          },
-        ],
+          ],
+          color: _kCardColor,
+          borderRadius: BorderRadius.circular(_kCardBorderRadius),
+          border: Border.all(
+            width: _kCardBorderWidth,
+            color: _kCardBorderColor,
+          ),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            child,
+            if (label != null) ...{
+              Container(
+                height: _kCardBorderWidth,
+                color: _kCardBorderColor,
+              ),
+              label,
+            },
+          ],
+        ),
       ),
     );
   }

@@ -12,21 +12,25 @@ final Color _kButtonColor = Colors.white;
 final Color _kButtonBorderColor = EufemiaColors.seaGreenAlt;
 final Color _kButtonTappedColor = EufemiaColors.softGray;
 final Color _kButtonTextColor = EufemiaColors.seaGreenAlt;
-final Color _kButtonTappedTextColor =
-    EufemiaColors.seaGreenAlt.withOpacity(0.8);
+final Color _kButtonTappedTextColor = EufemiaColors.seaGreenAlt.withOpacity(0.8);
 final Color _kButtonDisabledColor = Colors.transparent;
 final Color _kButtonDisabledTextColor = EufemiaColors.seaGreenAltLight;
-final Color _kButtonDisabledBorderColor =
-    EufemiaColors.seaGreenAlt.withOpacity(0.5);
+final Color _kButtonDisabledBorderColor = EufemiaColors.seaGreenAlt.withOpacity(0.5);
 
+/// A Secondary button from the Eufemia Design System
 class SecondaryButton extends StatefulWidget {
-  final String text;
+  final String label;
   final ButtonSize size;
   final VoidCallback onTap;
 
+  /// A Secondary button from the Eufemia Design System
+  ///
+  /// * [label]: The label of the button
+  /// * [size]: The size of the button, given as a [ButtonSize] enum
+  /// * [onTap]: The onTap callback for button presses
   const SecondaryButton({
     Key key,
-    @required this.text,
+    @required this.label,
     @required this.size,
     @required this.onTap,
   }) : super(key: key);
@@ -35,8 +39,7 @@ class SecondaryButton extends StatefulWidget {
   _SecondaryButtonState createState() => _SecondaryButtonState();
 }
 
-class _SecondaryButtonState extends State<SecondaryButton>
-    with TickerProviderStateMixin {
+class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderStateMixin {
   Animation<Color> buttonColorAnimation;
   Animation<Color> textColorAnimation;
   AnimationController colorAnimationController;
@@ -69,10 +72,10 @@ class _SecondaryButtonState extends State<SecondaryButton>
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: widget.text,
+      label: widget.label,
       enabled: enabled,
       button: true,
-      value: widget.text,
+      value: widget.label,
       child: GestureDetector(
         onTapDown: enabled ? _handleTapDown : null,
         onTapUp: enabled ? _handleTapUp : null,
@@ -86,16 +89,14 @@ class _SecondaryButtonState extends State<SecondaryButton>
                 color: buttonColorAnimation.value,
                 borderRadius: BorderRadius.circular(_kButtonBorderRadius),
                 border: Border.all(
-                  color: enabled
-                      ? _kButtonBorderColor
-                      : _kButtonDisabledBorderColor,
+                  color: enabled ? _kButtonBorderColor : _kButtonDisabledBorderColor,
                   width: _kButtonBorderWidth,
                 ),
               ),
               child: Padding(
                 padding: _getContentPadding(),
                 child: Text(
-                  widget.text,
+                  widget.label,
                   style: TextStyle(
                     color: textColorAnimation.value,
                     fontSize: _getFontSize(),

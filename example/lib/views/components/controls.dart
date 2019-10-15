@@ -65,8 +65,7 @@ class _ControlsViewState extends State<ControlsView> {
               ),
               eufemia.Switch(
                 value: _secondSwitchValue,
-                onChanged: (value) =>
-                    setState(() => _secondSwitchValue = value),
+                onChanged: (value) => setState(() => _secondSwitchValue = value),
               ),
             ],
           ),
@@ -87,7 +86,7 @@ class _ControlsViewState extends State<ControlsView> {
                       '${(values.start * 999).toStringAsPrecision(3)} kr til ${(values.end * 999).toStringAsPrecision(3)} kr',
                     ),
                     eufemia.TextButton(
-                      text: 'Vis felter',
+                      label: 'Vis felter',
                       onTap: () {},
                       size: eufemia.ButtonSize.small,
                     ),
@@ -99,7 +98,7 @@ class _ControlsViewState extends State<ControlsView> {
           Padding(
             padding: const EdgeInsets.only(bottom: 8.0),
             child: Tag(
-              text: '#tagname',
+              label: '#tagname',
               onDelete: () {},
             ),
           ),
