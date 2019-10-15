@@ -26,7 +26,7 @@ class TextButton extends StatefulWidget {
   /// * [label]: The label of the button
   /// * [size]: The size of the button, given as a [ButtonSize] enum
   /// * [emphasized]: If [true], the label font is set to bold
-  /// * [enabled]: Sets the enabled state of the button, defaults to true
+  /// * [enabled]: Whether the button is enabled or not
   /// * [onTap]: The onTap callback for button presses
   /// * [color]: The color of the button
   /// * [tappedColor]: The color of the button when tapped
@@ -53,6 +53,22 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+    initAnimations();
+  }
+
+  @override
+  void dispose() {
+    colorAnimationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(TextButton oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    initAnimations();
+  }
+
+  void initAnimations() {
     colorAnimationController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: _kColorAnimationDuration),
@@ -67,12 +83,6 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
       begin: enabled ? widget.color ?? _kButtonTextColor : _kButtonDisabledTextColor,
       end: enabled ? widget.tappedColor ?? _kButtonTappedTextColor : _kButtonDisabledTextColor,
     ).animate(colorAnimationController);
-  }
-
-  @override
-  void dispose() {
-    colorAnimationController.dispose();
-    super.dispose();
   }
 
   @override
@@ -113,7 +123,7 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
     );
   }
 
-  bool get enabled => widget.onTap != null || widget.enabled;
+  bool get enabled => widget.onTap != null && widget.enabled;
 
   void _handleTapDown(TapDownDetails details) {
     colorAnimationController.forward();

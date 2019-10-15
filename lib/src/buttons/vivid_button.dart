@@ -19,16 +19,20 @@ class VividButton extends StatefulWidget {
   final String label;
   final ButtonSize size;
   final VoidCallback onTap;
+  final bool enabled;
 
   /// A vivid button from the Eufemia Design System
   /// * [label]: The label of this button
   /// * [size]: The size of this button, given as a [ButtonSize] enum
   /// * [onTap]: The onTap callback for button presses
+  /// * [enabled]: Whether the button is enabled or not
+
   const VividButton({
     Key key,
     @required this.label,
     @required this.size,
     @required this.onTap,
+    this.enabled = true,
   }) : super(key: key);
 
   @override
@@ -43,6 +47,22 @@ class _VividButtonState extends State<VividButton> with TickerProviderStateMixin
   @override
   void initState() {
     super.initState();
+    initAnimations();
+  }
+
+  @override
+  void dispose() {
+    colorAnimationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(VividButton oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    initAnimations();
+  }
+
+  void initAnimations() {
     colorAnimationController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: _kColorAnimationDuration),
@@ -57,12 +77,6 @@ class _VividButtonState extends State<VividButton> with TickerProviderStateMixin
       begin: enabled ? _kButtonTextColor : _kButtonDisabledTextColor,
       end: enabled ? _kButtonTappedTextColor : _kButtonDisabledTextColor,
     ).animate(colorAnimationController);
-  }
-
-  @override
-  void dispose() {
-    colorAnimationController.dispose();
-    super.dispose();
   }
 
   @override
@@ -102,7 +116,7 @@ class _VividButtonState extends State<VividButton> with TickerProviderStateMixin
     );
   }
 
-  bool get enabled => widget.onTap != null;
+  bool get enabled => widget.onTap != null && widget.enabled;
 
   void _handleTapDown(TapDownDetails details) {
     colorAnimationController.forward();

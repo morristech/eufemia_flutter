@@ -6,6 +6,7 @@ const double _kCardShadowBlurRadius = 16.0;
 const double _kCardBorderRadius = 4.0;
 const double _kCardBorderWidth = 1.0;
 final Color _kCardColor = Colors.white;
+final Color _kCardLabelColor = EufemiaColors.subtleGray;
 final Color _kCardBorderColor = EufemiaColors.outlineGray;
 final Color _kCardShadowColor = EufemiaColors.lightShadow;
 final Offset _kCardShadowOffset = Offset(0.0, 0.5);
@@ -54,7 +55,10 @@ class Card extends StatelessWidget {
                 height: _kCardBorderWidth,
                 color: _kCardBorderColor,
               ),
-              label,
+              Container(
+                color: _kCardLabelColor,
+                child: label,
+              ),
             },
           ],
         ),

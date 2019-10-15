@@ -22,17 +22,21 @@ class SecondaryButton extends StatefulWidget {
   final String label;
   final ButtonSize size;
   final VoidCallback onTap;
+  final bool enabled;
 
   /// A Secondary button from the Eufemia Design System
   ///
   /// * [label]: The label of the button
   /// * [size]: The size of the button, given as a [ButtonSize] enum
   /// * [onTap]: The onTap callback for button presses
+  /// * [enabled]: Whether the button is enabled or not
+
   const SecondaryButton({
     Key key,
     @required this.label,
     @required this.size,
     @required this.onTap,
+    this.enabled = true,
   }) : super(key: key);
 
   @override
@@ -47,6 +51,22 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
   @override
   void initState() {
     super.initState();
+    initAnimations();
+  }
+
+  @override
+  void dispose() {
+    colorAnimationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(SecondaryButton oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    initAnimations();
+  }
+
+  void initAnimations() {
     colorAnimationController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: _kColorAnimationDuration),
@@ -61,12 +81,6 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
       begin: enabled ? _kButtonTextColor : _kButtonDisabledTextColor,
       end: enabled ? _kButtonTappedTextColor : _kButtonDisabledTextColor,
     ).animate(colorAnimationController);
-  }
-
-  @override
-  void dispose() {
-    colorAnimationController.dispose();
-    super.dispose();
   }
 
   @override
@@ -98,7 +112,7 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
                 child: Text(
                   widget.label,
                   style: TextStyle(
-                    color: textColorAnimation.value,
+                    color: enabled ? textColorAnimation.value : _kButtonDisabledTextColor,
                     fontSize: _getFontSize(),
                   ),
                 ),
@@ -110,7 +124,7 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
     );
   }
 
-  bool get enabled => widget.onTap != null;
+  bool get enabled => widget.onTap != null && widget.enabled;
 
   void _handleTapDown(TapDownDetails details) {
     colorAnimationController.forward();

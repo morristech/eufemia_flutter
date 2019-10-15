@@ -26,6 +26,7 @@ class EufemiaColors {
   static const softGray = Color.fromARGB(255, 204, 204, 204);
   static const outlineGray = Color.fromARGB(255, 235, 235, 235);
   static const lightShadow = Color.fromRGBO(51, 51, 51, 0.08);
+  static const subtleGray = Color(0xFFF8F8F8);
 
   // Tertiary
   static const indigo = Color.fromARGB(255, 35, 25, 90);

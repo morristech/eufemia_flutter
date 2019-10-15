@@ -20,6 +20,7 @@ class PrimaryButton extends StatefulWidget {
   final String label;
   final ButtonSize size;
   final VoidCallback onTap;
+  final bool enabled;
 
   /// A Primary button from the Eufemia Design System
   /// There should only be one on every screen
@@ -27,11 +28,14 @@ class PrimaryButton extends StatefulWidget {
   /// * [label]: The label of the button
   /// * [size]: The size of the button, given as a [ButtonSize] enum
   /// * [onTap]: The onTap callback for button presses
+  /// * [enabled]: Whether the button is enabled or not
+
   const PrimaryButton({
     Key key,
     @required this.label,
     @required this.size,
     @required this.onTap,
+    this.enabled = true,
   }) : super(key: key);
 
   @override
@@ -46,6 +50,22 @@ class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateM
   @override
   void initState() {
     super.initState();
+    initAnimations();
+  }
+
+  @override
+  void dispose() {
+    colorAnimationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(PrimaryButton oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    initAnimations();
+  }
+
+  void initAnimations() {
     colorAnimationController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: _kColorAnimationDuration),
@@ -60,12 +80,6 @@ class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateM
       begin: enabled ? _kButtonTextColor : _kButtonDisabledTextColor,
       end: enabled ? _kButtonTappedTextColor : _kButtonDisabledTextColor,
     ).animate(colorAnimationController);
-  }
-
-  @override
-  void dispose() {
-    colorAnimationController.dispose();
-    super.dispose();
   }
 
   @override
@@ -106,7 +120,7 @@ class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateM
     );
   }
 
-  bool get enabled => widget.onTap != null;
+  bool get enabled => widget.onTap != null && widget.enabled;
 
   void _handleTapDown(TapDownDetails details) {
     colorAnimationController.forward();

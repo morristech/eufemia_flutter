@@ -111,6 +111,8 @@ class ButtonsView extends StatelessWidget {
           ),
           FAB(
             child: Icon(Icons.add),
+            onTap: () => {},
+            enabled: false,
           ),
         ]
             .map(

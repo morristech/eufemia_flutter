@@ -20,6 +20,7 @@ class FAB extends StatefulWidget {
   final VoidCallback onTap;
   final String semanticLabel;
   final dynamic semanticValue;
+  final bool enabled;
 
   /// A floating action button
   ///
@@ -27,12 +28,14 @@ class FAB extends StatefulWidget {
   /// * [onTap]: The onTap callback for button presses
   /// * [semanticLabel]: Accessibility label for this button
   /// * [semanticValue]: Accessbility value, if any value is associated with this button
-  const FAB({
+  /// * [enabled]: Whether the button is enabled or not
+  FAB({
     Key key,
     @required this.child,
     @required this.onTap,
     this.semanticLabel,
     this.semanticValue,
+    this.enabled = true,
   }) : super(key: key);
 
   @override
@@ -47,6 +50,28 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+    initAnimations();
+  }
+
+  @override
+  void dispose() {
+    colorAnimationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    colorAnimationController.forward();
+  }
+
+  @override
+  void didUpdateWidget(FAB oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    initAnimations();
+  }
+
+  void initAnimations() {
     colorAnimationController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: _kColorAnimationDuration),
@@ -61,12 +86,6 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
       begin: enabled ? _kButtonIconColor : _kButtonDisabledIconColor,
       end: enabled ? _kButtonTappedIconColor : _kButtonDisabledIconColor,
     ).animate(colorAnimationController);
-  }
-
-  @override
-  void dispose() {
-    colorAnimationController.dispose();
-    super.dispose();
   }
 
   @override
@@ -119,7 +138,7 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
     );
   }
 
-  bool get enabled => widget.onTap != null;
+  bool get enabled => widget.onTap != null && widget.enabled;
 
   void _handleTapDown(TapDownDetails details) {
     colorAnimationController.forward();
@@ -131,6 +150,6 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
   }
 
   void _handleTapCancel() {
-    colorAnimationController.reset();
+    colorAnimationController.reverse();
   }
 }
