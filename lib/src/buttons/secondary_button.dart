@@ -34,8 +34,8 @@ class SecondaryButton extends StatefulWidget {
   const SecondaryButton({
     Key key,
     @required this.label,
-    @required this.size,
     @required this.onTap,
+    this.size = ButtonSize.small,
     this.enabled = true,
   }) : super(key: key);
 
