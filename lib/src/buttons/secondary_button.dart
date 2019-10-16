@@ -85,42 +85,45 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      label: widget.label,
-      enabled: enabled,
-      button: true,
-      value: widget.label,
-      child: GestureDetector(
-        onTapDown: enabled ? _handleTapDown : null,
-        onTapUp: enabled ? _handleTapUp : null,
-        onTapCancel: enabled ? _handleTapCancel : null,
-        child: Center(
+    return Wrap(
+      children: <Widget>[
+        Semantics(
+          label: widget.label,
+          enabled: enabled,
+          button: true,
+          value: widget.label,
+          child: GestureDetector(
+            onTapDown: enabled ? _handleTapDown : null,
+            onTapUp: enabled ? _handleTapUp : null,
+            onTapCancel: enabled ? _handleTapCancel : null,
             child: AnimatedBuilder(
-          animation: colorAnimationController,
-          builder: (context, _) {
-            return Container(
-              decoration: BoxDecoration(
-                color: buttonColorAnimation.value,
-                borderRadius: BorderRadius.circular(_kButtonBorderRadius),
-                border: Border.all(
-                  color: enabled ? _kButtonBorderColor : _kButtonDisabledBorderColor,
-                  width: _kButtonBorderWidth,
-                ),
-              ),
-              child: Padding(
-                padding: _getContentPadding(),
-                child: Text(
-                  widget.label,
-                  style: TextStyle(
-                    color: enabled ? textColorAnimation.value : _kButtonDisabledTextColor,
-                    fontSize: _getFontSize(),
+              animation: colorAnimationController,
+              builder: (context, _) {
+                return Container(
+                  decoration: BoxDecoration(
+                    color: buttonColorAnimation.value,
+                    borderRadius: BorderRadius.circular(_kButtonBorderRadius),
+                    border: Border.all(
+                      color: enabled ? _kButtonBorderColor : _kButtonDisabledBorderColor,
+                      width: _kButtonBorderWidth,
+                    ),
                   ),
-                ),
-              ),
-            );
-          },
-        )),
-      ),
+                  child: Padding(
+                    padding: _getContentPadding(),
+                    child: Text(
+                      widget.label,
+                      style: TextStyle(
+                        color: enabled ? textColorAnimation.value : _kButtonDisabledTextColor,
+                        fontSize: _getFontSize(),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ),
+      ],
     );
   }
 

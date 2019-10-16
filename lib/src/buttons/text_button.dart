@@ -96,8 +96,7 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
         onTapDown: enabled ? _handleTapDown : null,
         onTapUp: enabled ? _handleTapUp : null,
         onTapCancel: enabled ? _handleTapCancel : null,
-        child: Center(
-            child: AnimatedBuilder(
+        child: AnimatedBuilder(
           animation: colorAnimationController,
           builder: (context, _) {
             return Container(
@@ -118,7 +117,7 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
               ),
             );
           },
-        )),
+        ),
       ),
     );
   }

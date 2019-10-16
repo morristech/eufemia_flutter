@@ -4,9 +4,14 @@ import 'package:eufemia_example/routes.dart';
 import 'package:eufemia_example/views/buttons.dart';
 import 'package:eufemia_example/views/components.dart';
 import 'package:eufemia_example/views/components/cards.dart';
+import 'package:eufemia_example/views/components/cells.dart';
 import 'package:eufemia_example/views/components/search_bar.dart';
 import 'package:eufemia_example/views/components/controls.dart';
 import 'package:eufemia_example/views/components/snackbars.dart';
+import 'package:eufemia_example/views/graphics/flags.dart';
+import 'package:eufemia_example/views/graphics/graphics.dart';
+import 'package:eufemia_example/views/graphics/graphics_cards.dart';
+import 'package:eufemia_example/views/graphics/logos.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -27,6 +32,11 @@ class MyApp extends StatelessWidget {
         Routes.cards: (context) => CardsView(),
         Routes.controls: (context) => ControlsView(),
         Routes.snackbars: (context) => SnackbarsView(),
+        Routes.cells: (context) => CellsView(),
+        Routes.graphics: (context) => GraphicsView(),
+        Routes.logos: (context) => LogosView(),
+        Routes.flags: (context) => FlagsView(),
+        Routes.graphics_cards: (context) => GraphicsCardsView()
       },
     );
   }

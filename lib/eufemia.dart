@@ -26,3 +26,9 @@ export 'src/components/tag.dart';
 export 'src/components/toggle_label.dart';
 export 'src/components/page_indicator.dart';
 export 'src/components/snack_bar.dart';
+export 'src/components/cell.dart';
+export 'src/components/scrollable_list.dart';
+
+// Graphics
+export 'src/graphics/logo.dart';
+export 'src/graphics/flag.dart';

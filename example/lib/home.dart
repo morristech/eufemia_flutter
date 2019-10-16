@@ -19,13 +19,12 @@ class HomeView extends StatelessWidget {
             title: Text('Components'),
             onTap: () => Navigator.pushNamed(context, Routes.components),
           ),
+          ListTile(
+            title: Text('Graphics'),
+            onTap: () => Navigator.pushNamed(context, Routes.graphics),
+          ),
         ],
       ),
-      floatingActionButton: FAB(
-        child: Icon(Icons.add),
-        onPressed: () {},
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

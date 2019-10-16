@@ -1,6 +1,6 @@
 name: eufemia
 description: A new Flutter package project.
-version: 0.0.4
+version: 0.0.5
 author:
 homepage:
 
@@ -10,12 +10,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_svg: ^0.14.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
+  assets:
+    - lib/assets/graphics/logos/
+    - lib/assets/graphics/flags/
+    - lib/assets/graphics/cards/
+
   fonts:
     - family: Menlo-Regular
       fonts:

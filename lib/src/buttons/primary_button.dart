@@ -84,39 +84,42 @@ class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateM
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      label: widget.label,
-      enabled: enabled,
-      button: true,
-      value: widget.label,
-      child: GestureDetector(
-        // onTap: enabled ? _handleTap : null,
-        onTapUp: enabled ? _handleTapUp : null,
-        onTapDown: enabled ? _handleTapDown : null,
-        onTapCancel: enabled ? _handleTapCancel : null,
-        child: Center(
-            child: AnimatedBuilder(
-          animation: colorAnimationController,
-          builder: (context, _) {
-            return Container(
-              decoration: BoxDecoration(
-                color: buttonColorAnimation.value,
-                borderRadius: BorderRadius.circular(_kButtonBorderRadius),
+    return Wrap(
+      children: <Widget>[
+        Material(
+          child: Semantics(
+            label: widget.label,
+            enabled: enabled,
+            button: true,
+            value: widget.label,
+            child: GestureDetector(
+              // onTap: enabled ? _handleTap : null,
+              onTapUp: enabled ? _handleTapUp : null,
+              onTapDown: enabled ? _handleTapDown : null,
+              onTapCancel: enabled ? _handleTapCancel : null,
+              child: AnimatedBuilder(
+                animation: colorAnimationController,
+                builder: (context, _) {
+                  return Material(
+                    color: buttonColorAnimation.value,
+                    borderRadius: BorderRadius.circular(_kButtonBorderRadius),
+                    child: Padding(
+                      padding: _getContentPadding(),
+                      child: Text(
+                        widget.label,
+                        style: TextStyle(
+                          color: textColorAnimation.value,
+                          fontSize: _getFontSize(),
+                        ),
+                      ),
+                    ),
+                  );
+                },
               ),
-              child: Padding(
-                padding: _getContentPadding(),
-                child: Text(
-                  widget.label,
-                  style: TextStyle(
-                    color: textColorAnimation.value,
-                    fontSize: _getFontSize(),
-                  ),
-                ),
-              ),
-            );
-          },
-        )),
-      ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 

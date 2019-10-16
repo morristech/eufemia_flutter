@@ -3,10 +3,15 @@ import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const double _kDisplay4Size = 32.0;
+const double _kSubtitleSize = 15.0;
+const double _kSubheadSize = 17.0;
 final Color _kStatusbarDarkColor = Colors.transparent;
 final Color _kStatusbarLightColor = Colors.transparent;
 final Color _kAppBarLightColor = EufemiaColors.mintGreen;
 final Color _kAppBarDarkColor = EufemiaColors.emeraldGreen;
+final Color _kSubtitleColor = EufemiaColors.darkGray;
+final Color _kSubheadColor = EufemiaColors.coal;
 
 class Eufemia {
   static ThemeData _lightThemeShared() {
@@ -24,10 +29,20 @@ class Eufemia {
               display4: TextStyle(
                 fontFamily: 'FedraSansStd',
                 package: 'eufemia',
-                fontSize: 34.0,
+                fontSize: _kDisplay4Size,
+              ),
+              subtitle: TextStyle(
+                fontSize: _kSubtitleSize,
+                color: _kSubtitleColor,
+                fontFamily: 'SF Pro Text',
+              ),
+              subhead: TextStyle(
+                color: _kSubheadColor,
+                fontSize: _kSubheadSize,
+                fontFamily: 'SF Pro Text',
               ),
             )
-          : null,
+          : TextTheme(),
     );
   }
 

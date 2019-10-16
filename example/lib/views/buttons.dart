@@ -105,24 +105,22 @@ class ButtonsView extends StatelessWidget {
             label: 'Small disabled',
             size: ButtonSize.small,
           ),
-          Center(
-            child: FAB(
-              child: Icon(Icons.add),
-              onPressed: () => {},
-            ),
+          FAB(
+            child: Icon(Icons.add),
+            onPressed: () => {},
           ),
-          Center(
-            child: FAB(
-              child: Icon(Icons.add),
-              onPressed: () => {},
-              enabled: false,
-            ),
+          FAB(
+            child: Icon(Icons.add),
+            onPressed: () => {},
+            enabled: false,
           ),
         ]
             .map(
-              (widget) => Padding(
-                child: widget,
-                padding: const EdgeInsets.all(8.0),
+              (widget) => Center(
+                child: Padding(
+                  child: widget,
+                  padding: const EdgeInsets.all(8.0),
+                ),
               ),
             )
             .toList(),

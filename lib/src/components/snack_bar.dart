@@ -12,8 +12,10 @@ class Snacks {
     String actionLabel,
     VoidCallback onActionPressed,
     bool showProgressIndicator = false,
+    bool persist = false,
   }) {
     return SnackBar(
+      duration: persist ? Duration(days: 365) : Duration(seconds: 4),
       backgroundColor: _kBackgroundColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(_kBorderRadius),
@@ -21,7 +23,10 @@ class Snacks {
       content: Row(
         children: [
           if (showProgressIndicator) ...{
-            CircularProgressIndicator(),
+            Padding(
+              padding: const EdgeInsets.only(right: 16.0),
+              child: CircularProgressIndicator(),
+            ),
           },
           if (label != null) ...{
             Text(

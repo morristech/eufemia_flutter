@@ -81,38 +81,39 @@ class _VividButtonState extends State<VividButton> with TickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      label: widget.label,
-      enabled: enabled,
-      button: true,
-      value: widget.label,
-      child: GestureDetector(
-        onTapDown: enabled ? _handleTapDown : null,
-        onTapUp: enabled ? _handleTapUp : null,
-        onTapCancel: enabled ? _handleTapCancel : null,
-        child: Center(
+    return Wrap(
+      children: <Widget>[
+        Semantics(
+          label: widget.label,
+          enabled: enabled,
+          button: true,
+          value: widget.label,
+          child: GestureDetector(
+            onTapDown: enabled ? _handleTapDown : null,
+            onTapUp: enabled ? _handleTapUp : null,
+            onTapCancel: enabled ? _handleTapCancel : null,
             child: AnimatedBuilder(
-          animation: colorAnimationController,
-          builder: (context, _) {
-            return Container(
-              decoration: BoxDecoration(
-                color: buttonColorAnimation.value,
-                borderRadius: BorderRadius.circular(_kButtonBorderRadius),
-              ),
-              child: Padding(
-                padding: _getContentPadding(),
-                child: Text(
-                  widget.label,
-                  style: TextStyle(
-                    color: textColorAnimation.value,
-                    fontSize: _getFontSize(),
+              animation: colorAnimationController,
+              builder: (context, _) {
+                return Material(
+                  color: buttonColorAnimation.value,
+                  borderRadius: BorderRadius.circular(_kButtonBorderRadius),
+                  child: Padding(
+                    padding: _getContentPadding(),
+                    child: Text(
+                      widget.label,
+                      style: TextStyle(
+                        color: textColorAnimation.value,
+                        fontSize: _getFontSize(),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            );
-          },
-        )),
-      ),
+                );
+              },
+            ),
+          ),
+        ),
+      ],
     );
   }
 

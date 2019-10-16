@@ -26,6 +26,10 @@ class ComponentView extends StatelessWidget {
             title: Text('Toasts & Snackbars'),
             onTap: () => Navigator.pushNamed(context, Routes.snackbars),
           ),
+          ListTile(
+            title: Text('Cells'),
+            onTap: () => Navigator.pushNamed(context, Routes.cells),
+          ),
         ],
       ),
     );

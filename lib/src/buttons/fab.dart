@@ -119,12 +119,10 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
                 child: Center(
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: Theme(
-                      data: Theme.of(context).copyWith(
-                        iconTheme: IconThemeData(
-                          color: iconColorAnimation.value,
-                          size: _kIconSize,
-                        ),
+                    child: IconTheme(
+                      data: IconThemeData(
+                        color: iconColorAnimation.value,
+                        size: _kIconSize,
                       ),
                       child: widget.child,
                     ),
