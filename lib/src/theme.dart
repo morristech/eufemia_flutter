@@ -6,10 +6,15 @@ import 'package:flutter/services.dart';
 const double _kDisplay4Size = 32.0;
 const double _kSubtitleSize = 15.0;
 const double _kSubheadSize = 17.0;
+const double _kAppBarTitleFontSize = 17.0;
 final Color _kStatusbarDarkColor = Colors.transparent;
 final Color _kStatusbarLightColor = Colors.transparent;
 final Color _kAppBarLightColor = Colors.white;
 final Color _kAppBarDarkColor = EufemiaColors.oceanGreen;
+final Color _kAppBarLightTitleColor = EufemiaColors.coal;
+final Color _kAppBarDarkTitleColor = EufemiaColors.mintGreen;
+final Color _kAppBarLightIconColor = EufemiaColors.seaGreenAlt;
+final Color _kAppBarDarkIconColor = EufemiaColors.mintGreenAlt;
 final Color _kSubtitleColor = EufemiaColors.darkGray;
 final Color _kSubheadColor = EufemiaColors.coal;
 
@@ -22,6 +27,13 @@ class Eufemia {
       appBarTheme: AppBarTheme(
         brightness: Brightness.light,
         color: _kAppBarLightColor,
+        textTheme: TextTheme(
+          title: TextStyle(
+            color: _kAppBarLightTitleColor,
+            fontSize: _kAppBarTitleFontSize,
+          ),
+        ),
+        iconTheme: IconThemeData(color: _kAppBarLightIconColor),
       ),
       fontFamily: Platform.isIOS ? null : 'FedraSansStd',
       textTheme: Platform.isIOS
@@ -54,6 +66,13 @@ class Eufemia {
       appBarTheme: AppBarTheme(
         brightness: Brightness.dark,
         color: _kAppBarDarkColor,
+        textTheme: TextTheme(
+          title: TextStyle(
+            color: _kAppBarDarkTitleColor,
+            fontSize: _kAppBarTitleFontSize,
+          ),
+        ),
+        iconTheme: IconThemeData(color: _kAppBarDarkIconColor),
       ),
       fontFamily: Platform.isIOS ? null : 'FedraSansStd',
       textTheme: Platform.isIOS
