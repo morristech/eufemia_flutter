@@ -33,7 +33,7 @@ class TextButton extends StatefulWidget {
   const TextButton({
     Key key,
     @required this.label,
-    this.size = ButtonSize.small,
+    this.size = ButtonSize.large,
     this.enabled = true,
     this.onPressed,
     this.emphasized = false,

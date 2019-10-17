@@ -8,8 +8,7 @@ class ButtonsView extends StatelessWidget {
       appBar: AppBar(
         title: Text('Buttons'),
       ),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 16.0),
+      body: ScrollableList(
         children: [
           PrimaryButton(
             label: 'Large',

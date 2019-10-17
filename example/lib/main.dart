@@ -3,6 +3,7 @@ import 'package:eufemia_example/home.dart';
 import 'package:eufemia_example/routes.dart';
 import 'package:eufemia_example/views/buttons.dart';
 import 'package:eufemia_example/views/components.dart';
+import 'package:eufemia_example/views/components/bars.dart';
 import 'package:eufemia_example/views/components/cards.dart';
 import 'package:eufemia_example/views/components/cells.dart';
 import 'package:eufemia_example/views/components/search_bar.dart';
@@ -36,7 +37,8 @@ class MyApp extends StatelessWidget {
         Routes.graphics: (context) => GraphicsView(),
         Routes.logos: (context) => LogosView(),
         Routes.flags: (context) => FlagsView(),
-        Routes.graphics_cards: (context) => GraphicsCardsView()
+        Routes.graphics_cards: (context) => GraphicsCardsView(),
+        Routes.bars: (context) => BarsView(),
       },
     );
   }

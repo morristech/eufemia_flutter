@@ -6,6 +6,7 @@ class Routes {
   static const controls = '/components/controls';
   static const snackbars = '/components/snackbars';
   static const cells = '/components/cells';
+  static const bars = '/components/bars';
   static const buttons = '/buttons';
   static const typography = '/typography';
   static const graphics = '/graphics';

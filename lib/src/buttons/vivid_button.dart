@@ -31,7 +31,7 @@ class VividButton extends StatefulWidget {
     Key key,
     @required this.label,
     @required this.onPressed,
-    this.size = ButtonSize.small,
+    this.size = ButtonSize.large,
     this.enabled = true,
   }) : super(key: key);
 

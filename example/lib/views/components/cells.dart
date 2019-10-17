@@ -1,7 +1,21 @@
 import 'package:eufemia/eufemia.dart';
+import 'package:eufemia/eufemia.dart' as eufemia;
 import 'package:flutter/material.dart';
 
-class CellsView extends StatelessWidget {
+class CellsView extends StatefulWidget {
+  @override
+  _CellsViewState createState() => _CellsViewState();
+}
+
+class _CellsViewState extends State<CellsView> {
+  bool value;
+
+  @override
+  void initState() {
+    super.initState();
+    value = true;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +59,13 @@ class CellsView extends StatelessWidget {
           Cell(
             title: Text('Label with detail'),
             subtitle: Text('Detail goes here'),
+          ),
+          Cell(
+            title: Text('Label with switch'),
+            trailing: eufemia.Switch(
+              value: true,
+              onChanged: (value) => setState(() => this.value = value),
+            ),
           ),
         ],
       ),

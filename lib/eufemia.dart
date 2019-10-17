@@ -28,6 +28,8 @@ export 'src/components/page_indicator.dart';
 export 'src/components/snack_bar.dart';
 export 'src/components/cell.dart';
 export 'src/components/scrollable_list.dart';
+export 'src/components/toolbar.dart';
+export 'src/components/bottom_navigation_bar.dart';
 
 // Graphics
 export 'src/graphics/logo.dart';

@@ -1,3 +1,4 @@
+import 'package:eufemia/eufemia.dart';
 import 'package:eufemia_example/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -8,27 +9,37 @@ class ComponentView extends StatelessWidget {
       appBar: AppBar(
         title: Text('Components'),
       ),
-      body: ListView(
+      body: ScrollableList(
         children: [
-          ListTile(
+          Cell(
             title: Text('Search bar'),
             onTap: () => Navigator.pushNamed(context, Routes.search_bars),
+            implyNavigation: true,
           ),
-          ListTile(
+          Cell(
             title: Text('Cards'),
             onTap: () => Navigator.pushNamed(context, Routes.cards),
+            implyNavigation: true,
           ),
-          ListTile(
+          Cell(
             title: Text('Controls'),
             onTap: () => Navigator.pushNamed(context, Routes.controls),
+            implyNavigation: true,
           ),
-          ListTile(
+          Cell(
             title: Text('Toasts & Snackbars'),
             onTap: () => Navigator.pushNamed(context, Routes.snackbars),
+            implyNavigation: true,
           ),
-          ListTile(
+          Cell(
             title: Text('Cells'),
             onTap: () => Navigator.pushNamed(context, Routes.cells),
+            implyNavigation: true,
+          ),
+          Cell(
+            title: Text('Bars'),
+            onTap: () => Navigator.pushNamed(context, Routes.bars),
+            implyNavigation: true,
           ),
         ],
       ),

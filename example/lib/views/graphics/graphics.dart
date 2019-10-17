@@ -1,3 +1,4 @@
+import 'package:eufemia/eufemia.dart';
 import 'package:eufemia_example/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -8,20 +9,22 @@ class GraphicsView extends StatelessWidget {
       appBar: AppBar(
         title: Text('Graphics'),
       ),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 16.0),
+      body: ScrollableList(
         children: [
-          ListTile(
+          Cell(
             title: Text('Logos'),
             onTap: () => Navigator.pushNamed(context, Routes.logos),
+            implyNavigation: true,
           ),
-          ListTile(
+          Cell(
             title: Text('Flags'),
             onTap: () => Navigator.pushNamed(context, Routes.flags),
+            implyNavigation: true,
           ),
-          ListTile(
+          Cell(
             title: Text('Cards'),
             onTap: () => Navigator.pushNamed(context, Routes.graphics_cards),
+            implyNavigation: true,
           ),
         ],
       ),

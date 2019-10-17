@@ -9,19 +9,22 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         title: Text('Eufemia'),
       ),
-      body: ListView(
+      body: ScrollableList(
         children: [
-          ListTile(
+          Cell(
             title: Text('Buttons'),
             onTap: () => Navigator.pushNamed(context, Routes.buttons),
+            implyNavigation: true,
           ),
-          ListTile(
+          Cell(
             title: Text('Components'),
             onTap: () => Navigator.pushNamed(context, Routes.components),
+            implyNavigation: true,
           ),
-          ListTile(
+          Cell(
             title: Text('Graphics'),
             onTap: () => Navigator.pushNamed(context, Routes.graphics),
+            implyNavigation: true,
           ),
         ],
       ),
