@@ -36,6 +36,7 @@ class Eufemia {
             color: _kAppBarLightTitleColor,
             fontSize: _kAppBarTitleFontSize,
             fontFamily: Platform.isIOS ? sfText : fedraSans,
+            fontWeight: FontWeight.bold,
             package: 'eufemia',
           ),
         ),
@@ -80,6 +81,8 @@ class Eufemia {
           title: TextStyle(
             color: _kAppBarDarkTitleColor,
             fontSize: _kAppBarTitleFontSize,
+            fontWeight: FontWeight.bold,
+            fontFamily: Platform.isIOS ? sfText : fedraSans,
           ),
         ),
         iconTheme: IconThemeData(color: _kAppBarDarkIconColor),
