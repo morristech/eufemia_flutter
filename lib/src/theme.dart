@@ -8,8 +8,8 @@ const double _kSubtitleSize = 15.0;
 const double _kSubheadSize = 17.0;
 final Color _kStatusbarDarkColor = Colors.transparent;
 final Color _kStatusbarLightColor = Colors.transparent;
-final Color _kAppBarLightColor = EufemiaColors.mintGreen;
-final Color _kAppBarDarkColor = EufemiaColors.emeraldGreen;
+final Color _kAppBarLightColor = Colors.white;
+final Color _kAppBarDarkColor = EufemiaColors.oceanGreen;
 final Color _kSubtitleColor = EufemiaColors.darkGray;
 final Color _kSubheadColor = EufemiaColors.coal;
 
