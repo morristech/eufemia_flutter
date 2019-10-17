@@ -3,9 +3,13 @@ import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-const double _kDisplay4Size = 32.0;
-const double _kSubtitleSize = 15.0;
-const double _kSubheadSize = 17.0;
+const double _kDisplay4FontSize = 32.0;
+const double _kSubtitleFontSize = 15.0;
+const double _kSubheadFontSize = 17.0;
+const double _kTitleFontSize = 20.0;
+const String sfText = 'SF Pro Text';
+const String sfDisplay = 'SF Pro Display';
+const String fedraSans = 'FedraSansStd';
 const double _kAppBarTitleFontSize = 17.0;
 final Color _kStatusbarDarkColor = Colors.transparent;
 final Color _kStatusbarLightColor = Colors.transparent;
@@ -15,8 +19,8 @@ final Color _kAppBarLightTitleColor = EufemiaColors.coal;
 final Color _kAppBarDarkTitleColor = EufemiaColors.mintGreen;
 final Color _kAppBarLightIconColor = EufemiaColors.seaGreenAlt;
 final Color _kAppBarDarkIconColor = EufemiaColors.mintGreenAlt;
-final Color _kSubtitleColor = EufemiaColors.darkGray;
-final Color _kSubheadColor = EufemiaColors.coal;
+final Color _kSubtitleLightColor = EufemiaColors.darkGray;
+final Color _kSubheadLightColor = EufemiaColors.coal;
 
 class Eufemia {
   static ThemeData _lightThemeShared() {
@@ -31,30 +35,36 @@ class Eufemia {
           title: TextStyle(
             color: _kAppBarLightTitleColor,
             fontSize: _kAppBarTitleFontSize,
+            fontFamily: Platform.isIOS ? sfText : fedraSans,
+            package: 'eufemia',
           ),
         ),
         iconTheme: IconThemeData(color: _kAppBarLightIconColor),
       ),
-      fontFamily: Platform.isIOS ? null : 'FedraSansStd',
+      fontFamily: Platform.isIOS ? null : fedraSans,
       textTheme: Platform.isIOS
           ? TextTheme(
               display4: TextStyle(
-                fontFamily: 'FedraSansStd',
+                fontFamily: fedraSans,
                 package: 'eufemia',
-                fontSize: _kDisplay4Size,
+                fontSize: _kDisplay4FontSize,
               ),
+              title:
+                  TextStyle(fontFamily: sfDisplay, package: 'eufemia', fontSize: _kTitleFontSize),
               subtitle: TextStyle(
-                fontSize: _kSubtitleSize,
-                color: _kSubtitleColor,
-                fontFamily: 'SF Pro Text',
+                fontSize: _kSubtitleFontSize,
+                color: _kSubtitleLightColor,
+                fontFamily: sfText,
+                package: 'eufemia',
               ),
               subhead: TextStyle(
-                color: _kSubheadColor,
-                fontSize: _kSubheadSize,
-                fontFamily: 'SF Pro Text',
+                color: _kSubheadLightColor,
+                fontSize: _kSubheadFontSize,
+                fontFamily: sfText,
+                package: 'eufemia',
               ),
             )
-          : TextTheme(),
+          : null,
     );
   }
 
@@ -74,13 +84,23 @@ class Eufemia {
         ),
         iconTheme: IconThemeData(color: _kAppBarDarkIconColor),
       ),
-      fontFamily: Platform.isIOS ? null : 'FedraSansStd',
+      fontFamily: Platform.isIOS ? null : fedraSans,
       textTheme: Platform.isIOS
           ? TextTheme(
               display4: TextStyle(
-                fontFamily: 'FedraSansStd',
+                fontFamily: fedraSans,
                 package: 'eufemia',
-                fontSize: 34.0,
+                fontSize: _kDisplay4FontSize,
+              ),
+              subtitle: TextStyle(
+                fontSize: _kSubtitleFontSize,
+                fontFamily: sfText,
+                package: 'eufemia',
+              ),
+              subhead: TextStyle(
+                fontSize: _kSubheadFontSize,
+                fontFamily: sfText,
+                package: 'eufemia',
               ),
             )
           : null,
