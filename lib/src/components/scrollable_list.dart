@@ -9,17 +9,23 @@ final Color _kBorderColor = EufemiaColors.softGray;
 class ScrollableList extends StatelessWidget {
   final List<Widget> children;
   final bool shrinkWrap;
-  const ScrollableList({Key key, this.children, this.shrinkWrap = false}) : super(key: key);
+  final bool topPadding;
+  const ScrollableList({
+    Key key,
+    this.children,
+    this.shrinkWrap = false,
+    this.topPadding = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: ListView(
         shrinkWrap: shrinkWrap,
-        padding: const EdgeInsets.only(
+        padding: EdgeInsets.only(
           left: _kHorizontalPadding,
           right: _kHorizontalPadding,
-          top: _kTopPadding,
+          top: topPadding ? _kTopPadding : 0.0,
         ),
         children: [
           Container(

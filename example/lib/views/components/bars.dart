@@ -46,7 +46,7 @@ class BarsView extends StatelessWidget {
               Icon(Icons.edit),
             ],
           ),
-          eufemia.BottomNavigationBar(
+          eufemia.BottomNavBar(
             items: <Widget>[
               Text('Y'),
               Text('Y'),

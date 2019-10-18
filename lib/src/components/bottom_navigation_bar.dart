@@ -6,10 +6,10 @@ const double _kItemVerticalPadding = 10.75;
 const double _kItemHorizontalPadding = 16.75;
 final Color _kBorderColor = EufemiaColors.softGray;
 
-class BottomNavigationBar extends StatelessWidget {
+class BottomNavBar extends StatelessWidget {
   final List<Widget> items;
 
-  const BottomNavigationBar({Key key, this.items}) : super(key: key);
+  const BottomNavBar({Key key, this.items}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
