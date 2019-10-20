@@ -99,9 +99,11 @@ class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateM
             child: AnimatedBuilder(
               animation: colorAnimationController,
               builder: (context, _) {
-                return Material(
-                  color: buttonColorAnimation.value,
-                  borderRadius: BorderRadius.circular(_kButtonBorderRadius),
+                return Container(
+                  decoration: BoxDecoration(
+                    color: buttonColorAnimation.value,
+                    borderRadius: BorderRadius.circular(_kButtonBorderRadius),
+                  ),
                   child: Padding(
                     padding: _getContentPadding(),
                     child: Text(
