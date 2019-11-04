@@ -18,7 +18,7 @@ class CustomIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(hasBackground ? 4.0 : 0.0),
+      padding: EdgeInsets.all(hasBackground ? (Platform.isIOS ? 4.0 : 6.0) : 0.0),
       width: size,
       height: size,
       decoration: BoxDecoration(
