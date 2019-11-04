@@ -27,7 +27,7 @@ class CustomIcon extends StatelessWidget {
       ),
       child: SvgPicture.asset(
         asset,
-        color: color ?? hasBackground ? Colors.white : EufemiaColors.seaGreenAlt,
+        color: color ?? hasBackground ? null : EufemiaColors.seaGreenAlt,
       ),
     );
   }
