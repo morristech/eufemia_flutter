@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-const double _kBorderRadius = 100.0;
+const double _borderRadius = 100.0;
 
 class FlagData {
   String fromCountryCode(String countryCode) {
@@ -88,7 +88,7 @@ class Flag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(_kBorderRadius),
+      borderRadius: BorderRadius.circular(_borderRadius),
       child: SvgPicture.asset(
         country,
         width: width,

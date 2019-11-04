@@ -2,8 +2,8 @@ import 'package:eufemia/src/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as material;
 
-final Color _kActiveColor = EufemiaColors.seaGreenAlt;
-final Color _kInactiveColor = EufemiaColors.softGray;
+final Color _activeColor = EufemiaColors.seaGreenAlt;
+final Color _inactiveColor = EufemiaColors.softGray;
 
 /// Range slider from the Eufemia Design System
 class RangeSlider extends StatelessWidget {
@@ -43,8 +43,8 @@ class RangeSlider extends StatelessWidget {
           onChanged: onChanged,
           onChangeStart: onChangeStart,
           onChangeEnd: onChangeEnd,
-          activeColor: _kActiveColor,
-          inactiveColor: _kInactiveColor,
+          activeColor: _activeColor,
+          inactiveColor: _inactiveColor,
         ),
       ],
     );

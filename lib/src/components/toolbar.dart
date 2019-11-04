@@ -1,11 +1,11 @@
 import 'package:eufemia/src/style/colors.dart';
 import 'package:flutter/material.dart';
 
-const double _kBorderWidth = 0.5;
-const double _kIconVerticalPadding = 10.75;
-const double _kIconHorizontalPadding = 16.75;
-final Color _kBorderColor = EufemiaColors.softGray;
-final Color _kIconColor = EufemiaColors.seaGreenAlt;
+const double _borderWidth = 0.5;
+const double _iconVerticalPadding = 10.75;
+const double _iconHorizontalPadding = 16.75;
+final Color _borderColor = EufemiaColors.softGray;
+final Color _iconColor = EufemiaColors.seaGreenAlt;
 
 class Toolbar extends StatelessWidget {
   final List<Widget> children;
@@ -18,19 +18,19 @@ class Toolbar extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border(
           top: BorderSide(
-            width: _kBorderWidth,
-            color: _kBorderColor,
+            width: _borderWidth,
+            color: _borderColor,
           ),
         ),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: _kIconHorizontalPadding,
-          vertical: _kIconVerticalPadding,
+          horizontal: _iconHorizontalPadding,
+          vertical: _iconVerticalPadding,
         ),
         child: IconTheme(
           data: IconThemeData(
-            color: _kIconColor,
+            color: _iconColor,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

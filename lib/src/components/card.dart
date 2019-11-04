@@ -1,15 +1,15 @@
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
-const double _kCardShadowSpreadRadius = 4.0;
-const double _kCardShadowBlurRadius = 16.0;
-const double _kCardBorderRadius = 4.0;
-const double _kCardBorderWidth = 1.0;
-final Color _kCardColor = Colors.white;
-final Color _kCardLabelColor = EufemiaColors.subtleGray;
-final Color _kCardBorderColor = EufemiaColors.outlineGray;
-final Color _kCardShadowColor = EufemiaColors.lightShadow;
-final Offset _kCardShadowOffset = Offset(0.0, 0.5);
+const double _cardShadowSpreadRadius = 4.0;
+const double _cardShadowBlurRadius = 16.0;
+const double _cardBorderRadius = 4.0;
+const double _cardBorderWidth = 1.0;
+final Color _cardColor = Colors.white;
+final Color _cardLabelColor = EufemiaColors.subtleGray;
+final Color _cardBorderColor = EufemiaColors.outlineGray;
+final Color _cardShadowColor = EufemiaColors.lightShadow;
+final Offset _cardShadowOffset = Offset(0.0, 0.5);
 
 /// A card from the Eufemia Design System
 class Card extends StatelessWidget {
@@ -32,17 +32,17 @@ class Card extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: _kCardShadowColor,
-              spreadRadius: _kCardShadowSpreadRadius,
-              blurRadius: _kCardShadowBlurRadius,
-              offset: _kCardShadowOffset,
+              color: _cardShadowColor,
+              spreadRadius: _cardShadowSpreadRadius,
+              blurRadius: _cardShadowBlurRadius,
+              offset: _cardShadowOffset,
             ),
           ],
-          color: _kCardColor,
-          borderRadius: BorderRadius.circular(_kCardBorderRadius),
+          color: _cardColor,
+          borderRadius: BorderRadius.circular(_cardBorderRadius),
           border: Border.all(
-            width: _kCardBorderWidth,
-            color: _kCardBorderColor,
+            width: _cardBorderWidth,
+            color: _cardBorderColor,
           ),
         ),
         child: Column(
@@ -52,11 +52,11 @@ class Card extends StatelessWidget {
             child,
             if (label != null) ...{
               Container(
-                height: _kCardBorderWidth,
-                color: _kCardBorderColor,
+                height: _cardBorderWidth,
+                color: _cardBorderColor,
               ),
               Container(
-                color: _kCardLabelColor,
+                color: _cardLabelColor,
                 child: label,
               ),
             },

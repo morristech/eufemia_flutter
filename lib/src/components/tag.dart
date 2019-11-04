@@ -1,14 +1,14 @@
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
-const double _kFontSize = 13.0;
-const double _kBorderRadius = 100.0;
-const double _kIconSize = 16.0;
-const double _kLabelPadding = 4.0;
-const int _kAnimationDuration = 250;
-final Color _kIconColor = EufemiaColors.darkGray;
-final Color _kColor = EufemiaColors.outlineGray;
-final Color _kFontColor = EufemiaColors.coal;
+const double _FontSize = 13.0;
+const double _borderRadius = 100.0;
+const double _iconSize = 16.0;
+const double _labelPadding = 4.0;
+const int _animationDuration = 250;
+final Color _iconColor = EufemiaColors.darkGray;
+final Color _color = EufemiaColors.outlineGray;
+final Color _FontColor = EufemiaColors.coal;
 
 /// Tag from the Eufemia Design System
 class Tag extends StatelessWidget {
@@ -27,10 +27,10 @@ class Tag extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         AnimatedContainer(
-          duration: Duration(milliseconds: _kAnimationDuration),
+          duration: Duration(milliseconds: _animationDuration),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(_kBorderRadius),
-            color: _kColor,
+            borderRadius: BorderRadius.circular(_borderRadius),
+            color: _color,
           ),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -40,18 +40,18 @@ class Tag extends StatelessWidget {
                 GestureDetector(
                   child: Icon(
                     Icons.cancel,
-                    color: _kIconColor,
-                    size: _kIconSize,
+                    color: _iconColor,
+                    size: _iconSize,
                   ),
                   onTap: onDelete,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: _kLabelPadding),
+                  padding: const EdgeInsets.only(left: _labelPadding),
                   child: Text(
                     label,
                     style: TextStyle(
-                      fontSize: _kFontSize,
-                      color: _kFontColor,
+                      fontSize: _FontSize,
+                      color: _FontColor,
                     ),
                   ),
                 )

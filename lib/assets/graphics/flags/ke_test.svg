@@ -1,18 +1,10 @@
 <svg fill="none" height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
-		<linearGradient id="a" gradientUnits="userSpaceOnUse" x1="15.3334" x2="15.3334" y1="4.26666" y2="27.7333">
-        <stop offset="0" stop-color="#fff"/>
-        <stop offset="1" stop-color="#f0f0f0"/>
-    </linearGradient>
-	</defs>
-    <filter id="b" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="24.4667" width="2.13333" x="15.3334" y="4.26666">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-        <feOffset dy="1"/>
-        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"/>
-        <feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow"/>
-        <feBlend in="SourceGraphic" in2="effect1_dropShadow" mode="normal" result="shape"/>
-    </filter>
+        <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="15.3334" x2="15.3334" y1="4.26666" y2="27.7333">
+            <stop offset="0" stop-color="#fff"/>
+            <stop offset="1" stop-color="#f0f0f0"/>
+        </linearGradient>
+    </defs>
     <mask id="c" fill="#fff">
         <path d="m16 32c8.8366 0 16-7.1634 16-16 0-8.83656-7.1634-16-16-16-8.83656 0-16 7.16344-16 16 0 8.8366 7.16344 16 16 16z" fill="#fff"/>
     </mask>

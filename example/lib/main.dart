@@ -7,6 +7,7 @@ import 'package:eufemia_example/views/components.dart';
 import 'package:eufemia_example/views/components/bars.dart';
 import 'package:eufemia_example/views/components/cards.dart';
 import 'package:eufemia_example/views/components/cells.dart';
+import 'package:eufemia_example/views/components/icons.dart';
 import 'package:eufemia_example/views/components/search_bar.dart';
 import 'package:eufemia_example/views/components/controls.dart';
 import 'package:eufemia_example/views/components/snackbars.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       title: 'Eufemia',
       theme: Eufemia.lightTheme(),
       darkTheme: Eufemia.darkTheme(),
-      home: HomeView(),
+      home: DeviceSimulator(child: HomeView()),
       routes: {
         Routes.components: (context) => DeviceSimulator(child: ComponentView()),
         Routes.buttons: (context) => DeviceSimulator(child: ButtonsView()),
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         Routes.flags: (context) => DeviceSimulator(child: FlagsView()),
         Routes.graphics_cards: (context) => DeviceSimulator(child: GraphicsCardsView()),
         Routes.bars: (context) => DeviceSimulator(child: BarsView()),
+        Routes.icons: (context) => DeviceSimulator(child: IconsView()),
       },
     );
   }

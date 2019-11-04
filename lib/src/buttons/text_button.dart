@@ -1,15 +1,15 @@
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
-const double _kButtonBorderRadius = 4.0;
-const double _kButtonPadding = 4.0;
-const int _kColorAnimationDuration = 100;
-final Color _kButtonColor = Colors.transparent;
-final Color _kButtonTappedColor = EufemiaColors.oceanGreen.withOpacity(0.1);
-final Color _kButtonTextColor = EufemiaColors.seaGreenAlt;
-final Color _kButtonTappedTextColor = EufemiaColors.seaGreenAlt.withOpacity(0.8);
-final Color _kButtonDisabledColor = Colors.transparent;
-final Color _kButtonDisabledTextColor = EufemiaColors.seaGreenAltLight;
+const double _buttonBorderRadius = 4.0;
+const double _buttonPadding = 4.0;
+const int _colorAnimationDuration = 100;
+final Color _buttonColor = Colors.transparent;
+final Color _buttonTappedColor = EufemiaColors.oceanGreen.withOpacity(0.1);
+final Color _buttonTextColor = EufemiaColors.seaGreenAlt;
+final Color _buttonTappedTextColor = EufemiaColors.seaGreenAlt.withOpacity(0.8);
+final Color _buttonDisabledColor = Colors.transparent;
+final Color _buttonDisabledTextColor = EufemiaColors.seaGreenAltLight;
 
 /// A text button from the Eufemia Design System
 class TextButton extends StatefulWidget {
@@ -71,17 +71,17 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
   void initAnimations() {
     colorAnimationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: _kColorAnimationDuration),
+      duration: Duration(milliseconds: _colorAnimationDuration),
     );
 
     buttonColorAnimation = ColorTween(
-      begin: enabled ? _kButtonColor : _kButtonDisabledColor,
-      end: enabled ? _kButtonTappedColor : _kButtonDisabledColor,
+      begin: enabled ? _buttonColor : _buttonDisabledColor,
+      end: enabled ? _buttonTappedColor : _buttonDisabledColor,
     ).animate(colorAnimationController);
 
     textColorAnimation = ColorTween(
-      begin: enabled ? widget.color ?? _kButtonTextColor : _kButtonDisabledTextColor,
-      end: enabled ? widget.tappedColor ?? _kButtonTappedTextColor : _kButtonDisabledTextColor,
+      begin: enabled ? widget.color ?? _buttonTextColor : _buttonDisabledTextColor,
+      end: enabled ? widget.tappedColor ?? _buttonTappedTextColor : _buttonDisabledTextColor,
     ).animate(colorAnimationController);
   }
 
@@ -102,10 +102,10 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
             return Container(
               decoration: BoxDecoration(
                 color: buttonColorAnimation.value,
-                borderRadius: BorderRadius.circular(_kButtonBorderRadius),
+                borderRadius: BorderRadius.circular(_buttonBorderRadius),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(_kButtonPadding),
+                padding: const EdgeInsets.all(_buttonPadding),
                 child: Text(
                   widget.label,
                   style: TextStyle(

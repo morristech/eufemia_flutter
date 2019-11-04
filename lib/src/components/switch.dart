@@ -2,10 +2,10 @@ import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as material;
 
-final Color _kTrackColor = EufemiaColors.seaGreenAlt;
-final Color _kActiveTrackColor = EufemiaColors.seaGreenAlt.withOpacity(0.5);
-final Color _kInactiveTrackColor = EufemiaColors.coal.withOpacity(0.2);
-final Color _kInactiveThumbColor = EufemiaColors.outlineGray;
+final Color _trackColor = EufemiaColors.seaGreenAlt;
+final Color _activeTrackColor = EufemiaColors.seaGreenAlt.withOpacity(0.5);
+final Color _inactiveTrackColor = EufemiaColors.coal.withOpacity(0.2);
+final Color _inactiveThumbColor = EufemiaColors.outlineGray;
 
 /// Switch from the Eufemia Design System
 class Switch extends StatelessWidget {
@@ -23,10 +23,10 @@ class Switch extends StatelessWidget {
     return material.Switch.adaptive(
       value: value,
       onChanged: onChanged,
-      activeColor: _kTrackColor,
-      activeTrackColor: _kActiveTrackColor,
-      inactiveTrackColor: _kInactiveTrackColor,
-      inactiveThumbColor: _kInactiveThumbColor,
+      activeColor: _trackColor,
+      activeTrackColor: _activeTrackColor,
+      inactiveTrackColor: _inactiveTrackColor,
+      inactiveThumbColor: _inactiveThumbColor,
     );
   }
 }

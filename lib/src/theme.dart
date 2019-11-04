@@ -3,24 +3,24 @@ import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-const double _kDisplay4FontSize = 32.0;
-const double _kSubtitleFontSize = 15.0;
-const double _kSubheadFontSize = 17.0;
-const double _kTitleFontSize = 20.0;
+const double _Display4FontSize = 32.0;
+const double _subtitleFontSize = 15.0;
+const double _subheadFontSize = 17.0;
+const double _titleFontSize = 20.0;
 const String sfText = 'SF Pro Text';
 const String sfDisplay = 'SF Pro Display';
 const String fedraSans = 'FedraSansStd';
-const double _kAppBarTitleFontSize = 17.0;
-final Color _kStatusbarDarkColor = Colors.transparent;
-final Color _kStatusbarLightColor = Colors.transparent;
-final Color _kAppBarLightColor = Colors.white;
-final Color _kAppBarDarkColor = EufemiaColors.oceanGreen;
-final Color _kAppBarLightTitleColor = EufemiaColors.coal;
-final Color _kAppBarDarkTitleColor = EufemiaColors.mintGreen;
-final Color _kAppBarLightIconColor = EufemiaColors.seaGreenAlt;
-final Color _kAppBarDarkIconColor = EufemiaColors.mintGreenAlt;
-final Color _kSubtitleLightColor = EufemiaColors.darkGray;
-final Color _kSubheadLightColor = EufemiaColors.coal;
+const double _appBarTitleFontSize = 17.0;
+final Color _statusbarDarkColor = Colors.transparent;
+final Color _statusbarLightColor = Colors.transparent;
+final Color _appBarLightColor = Colors.white;
+final Color _appBarDarkColor = EufemiaColors.oceanGreen;
+final Color _appBarLightTitleColor = EufemiaColors.coal;
+final Color _appBarDarkTitleColor = EufemiaColors.mintGreen;
+final Color _appBarLightIconColor = EufemiaColors.seaGreenAlt;
+final Color _appBarDarkIconColor = EufemiaColors.mintGreenAlt;
+final Color _subtitleLightColor = EufemiaColors.darkGray;
+final Color _subheadLightColor = EufemiaColors.coal;
 
 class Eufemia {
   static ThemeData _lightThemeShared() {
@@ -30,17 +30,17 @@ class Eufemia {
       accentColor: EufemiaColors.emeraldGreen,
       appBarTheme: AppBarTheme(
         brightness: Brightness.light,
-        color: _kAppBarLightColor,
+        color: _appBarLightColor,
         textTheme: TextTheme(
           title: TextStyle(
-            color: _kAppBarLightTitleColor,
-            fontSize: _kAppBarTitleFontSize,
+            color: _appBarLightTitleColor,
+            fontSize: _appBarTitleFontSize,
             fontFamily: Platform.isIOS ? sfText : fedraSans,
             fontWeight: FontWeight.bold,
             package: 'eufemia',
           ),
         ),
-        iconTheme: IconThemeData(color: _kAppBarLightIconColor),
+        iconTheme: IconThemeData(color: _appBarLightIconColor),
       ),
       fontFamily: Platform.isIOS ? null : fedraSans,
       textTheme: Platform.isIOS
@@ -48,19 +48,18 @@ class Eufemia {
               display4: TextStyle(
                 fontFamily: fedraSans,
                 package: 'eufemia',
-                fontSize: _kDisplay4FontSize,
+                fontSize: _Display4FontSize,
               ),
-              title:
-                  TextStyle(fontFamily: sfDisplay, package: 'eufemia', fontSize: _kTitleFontSize),
+              title: TextStyle(fontFamily: sfDisplay, package: 'eufemia', fontSize: _titleFontSize),
               subtitle: TextStyle(
-                fontSize: _kSubtitleFontSize,
-                color: _kSubtitleLightColor,
+                fontSize: _subtitleFontSize,
+                color: _subtitleLightColor,
                 fontFamily: sfText,
                 package: 'eufemia',
               ),
               subhead: TextStyle(
-                color: _kSubheadLightColor,
-                fontSize: _kSubheadFontSize,
+                color: _subheadLightColor,
+                fontSize: _subheadFontSize,
                 fontFamily: sfText,
                 package: 'eufemia',
               ),
@@ -76,16 +75,16 @@ class Eufemia {
       accentColor: EufemiaColors.mintGreen,
       appBarTheme: AppBarTheme(
         brightness: Brightness.dark,
-        color: _kAppBarDarkColor,
+        color: _appBarDarkColor,
         textTheme: TextTheme(
           title: TextStyle(
-            color: _kAppBarDarkTitleColor,
-            fontSize: _kAppBarTitleFontSize,
+            color: _appBarDarkTitleColor,
+            fontSize: _appBarTitleFontSize,
             fontWeight: FontWeight.bold,
             fontFamily: Platform.isIOS ? sfText : fedraSans,
           ),
         ),
-        iconTheme: IconThemeData(color: _kAppBarDarkIconColor),
+        iconTheme: IconThemeData(color: _appBarDarkIconColor),
       ),
       fontFamily: Platform.isIOS ? null : fedraSans,
       textTheme: Platform.isIOS
@@ -93,15 +92,15 @@ class Eufemia {
               display4: TextStyle(
                 fontFamily: fedraSans,
                 package: 'eufemia',
-                fontSize: _kDisplay4FontSize,
+                fontSize: _Display4FontSize,
               ),
               subtitle: TextStyle(
-                fontSize: _kSubtitleFontSize,
+                fontSize: _subtitleFontSize,
                 fontFamily: sfText,
                 package: 'eufemia',
               ),
               subhead: TextStyle(
-                fontSize: _kSubheadFontSize,
+                fontSize: _subheadFontSize,
                 fontFamily: sfText,
                 package: 'eufemia',
               ),
@@ -130,7 +129,7 @@ class Eufemia {
   ///
   /// [statusBarColor]: Sets the status bar color. Defaults to [Colors.transparent]
   static void setLightStatusBar({Color statusBarColor}) {
-    statusBarColor ??= _kStatusbarLightColor;
+    statusBarColor ??= _statusbarLightColor;
     SystemChrome.setSystemUIOverlayStyle(getOverlayStyle(Brightness.light, statusBarColor));
   }
 
@@ -138,7 +137,7 @@ class Eufemia {
   ///
   /// [statusBarColor]: Sets the status bar color. Defaults to [Colors.transparent]
   static void setDarkStatusBar({Color statusBarColor}) {
-    statusBarColor ??= _kStatusbarDarkColor;
+    statusBarColor ??= _statusbarDarkColor;
     SystemChrome.setSystemUIOverlayStyle(getOverlayStyle(Brightness.dark, statusBarColor));
   }
 

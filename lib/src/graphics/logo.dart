@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-const double _kLogoHeight = 24.0;
+const double _logoHeight = 24.0;
 
 /// Contains asset paths to logo data
 class LogoData {
@@ -33,7 +33,7 @@ class Logo extends StatelessWidget {
     this.logo, {
     Key key,
     this.width,
-    this.height = _kLogoHeight,
+    this.height = _logoHeight,
     this.fit = BoxFit.contain,
   }) : super(key: key);
 

@@ -4,12 +4,12 @@ import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
-const double _kBorderWidth = 0.5;
-const double _kContentPadding = 16.0;
-final Color _kBorderColor = EufemiaColors.outlineGray;
-final Color _kIconColor = EufemiaColors.softGray;
-final Color _kLeadingIconColor = EufemiaColors.seaGreenAlt;
-final Duration _kStyleChangeDuration = Duration(milliseconds: 500);
+const double _borderWidth = 0.5;
+const double _contentPadding = 16.0;
+final Color _borderColor = EufemiaColors.outlineGray;
+final Color _iconColor = EufemiaColors.softGray;
+final Color _leadingIconColor = EufemiaColors.seaGreenAlt;
+final Duration _styleChangeDuration = Duration(milliseconds: 500);
 
 class Cell extends StatelessWidget {
   final Widget leading;
@@ -89,24 +89,24 @@ class Cell extends StatelessWidget {
       onTap: onTap,
       onLongPress: Platform.isIOS ? null : _handleLongPress,
       child: Padding(
-        padding: Platform.isIOS ? const EdgeInsets.only(left: _kContentPadding) : EdgeInsets.zero,
+        padding: Platform.isIOS ? const EdgeInsets.only(left: _contentPadding) : EdgeInsets.zero,
         child: Container(
           decoration: BoxDecoration(
             border: Border(
               bottom: BorderSide(
-                width: _kBorderWidth,
-                color: _kBorderColor,
+                width: _borderWidth,
+                color: _borderColor,
               ),
             ),
           ),
           child: Padding(
             padding: Platform.isIOS
                 ? EdgeInsets.only(
-                    top: _kContentPadding,
-                    right: _kContentPadding,
-                    bottom: _kContentPadding,
+                    top: _contentPadding,
+                    right: _contentPadding,
+                    bottom: _contentPadding,
                   )
-                : const EdgeInsets.all(_kContentPadding),
+                : const EdgeInsets.all(_contentPadding),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -115,12 +115,12 @@ class Cell extends StatelessWidget {
                   children: [
                     if (leading != null) ...{
                       AnimatedDefaultTextStyle(
-                        duration: _kStyleChangeDuration,
+                        duration: _styleChangeDuration,
                         style: _leadingTextStyle,
                         overflow: TextOverflow.fade,
                         child: IconTheme(
                           data: IconThemeData(
-                            color: _kLeadingIconColor,
+                            color: _leadingIconColor,
                           ),
                           child: leading,
                         ),
@@ -129,7 +129,7 @@ class Cell extends StatelessWidget {
                     if (title != null) ...{
                       Padding(
                         padding: EdgeInsets.only(
-                          left: leading != null ? _kContentPadding : 0.0,
+                          left: leading != null ? _contentPadding : 0.0,
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,14 +137,14 @@ class Cell extends StatelessWidget {
                             AnimatedDefaultTextStyle(
                               style: _titleTextStyle,
                               overflow: TextOverflow.fade,
-                              duration: _kStyleChangeDuration,
+                              duration: _styleChangeDuration,
                               child: title,
                             ),
                             if (subtitle != null) ...{
                               AnimatedDefaultTextStyle(
                                 style: _subtitleTextStyle,
                                 overflow: TextOverflow.fade,
-                                duration: _kStyleChangeDuration,
+                                duration: _styleChangeDuration,
                                 child: subtitle,
                               ),
                             },
@@ -156,21 +156,21 @@ class Cell extends StatelessWidget {
                 ),
                 if (trailing != null) ...{
                   AnimatedDefaultTextStyle(
-                    duration: _kStyleChangeDuration,
+                    duration: _styleChangeDuration,
                     style: _trailingTextStyle,
                     overflow: TextOverflow.fade,
                     child: IconTheme(
-                      data: IconThemeData(color: _kIconColor),
+                      data: IconThemeData(color: _iconColor),
                       child: trailing,
                     ),
                   )
                 } else if (implyNavigation) ...{
                   AnimatedDefaultTextStyle(
-                    duration: _kStyleChangeDuration,
+                    duration: _styleChangeDuration,
                     style: _trailingTextStyle,
                     overflow: TextOverflow.fade,
                     child: IconTheme(
-                      data: IconThemeData(color: _kIconColor),
+                      data: IconThemeData(color: _iconColor),
                       child: Icon(Icons.chevron_right),
                     ),
                   ),

@@ -18,6 +18,7 @@ export 'src/buttons/fab.dart';
 export 'src/components/search_bar.dart';
 export 'src/components/card.dart';
 export 'src/components/tab.dart';
+export 'src/components/custom_icon.dart';
 export 'src/components/tab_bar.dart';
 export 'src/components/switch.dart';
 export 'src/components/slider.dart';

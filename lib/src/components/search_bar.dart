@@ -3,16 +3,16 @@ import 'dart:io';
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
-const double _kSearchBarIOSBorderRadius = 10.0;
-const double _kSearchBarAndroidBorderRadius = 4.0;
-const double _kCancelButtonPadding = 12.0;
-const double _kSearchTextSize = 17.0;
-const double _kSearchBarSuffixIconSize = 16.0;
-const int _kSearchBarAnimationDuration = 250;
-final Color _kSearchBarColor = EufemiaColors.coal.withOpacity(0.08);
-final Color _kSearchBarFocusColor = EufemiaColors.coal.withOpacity(0.09);
-final Color _kSearchBarPrefixColor = EufemiaColors.seaGreenAlt;
-final Color _kSearchBarSuffixColor = EufemiaColors.darkGray;
+const double _searchBarIOSBorderRadius = 10.0;
+const double _searchBarAndroidBorderRadius = 4.0;
+const double _cancelButtonPadding = 12.0;
+const double _searchTextSize = 17.0;
+const double _searchBarSuffixIconSize = 16.0;
+const int _searchBarAnimationDuration = 250;
+final Color _searchBarColor = EufemiaColors.coal.withOpacity(0.08);
+final Color _searchBarFocusColor = EufemiaColors.coal.withOpacity(0.09);
+final Color _searchBarPrefixColor = EufemiaColors.seaGreenAlt;
+final Color _searchBarSuffixColor = EufemiaColors.darkGray;
 
 /// Search bar from the Eufemia Design System
 class SearchBar extends StatefulWidget {
@@ -52,14 +52,14 @@ class _SearchBarState extends State<SearchBar> {
           child: AnimatedContainer(
             width: double.infinity,
             curve: Curves.ease,
-            duration: Duration(milliseconds: _kSearchBarAnimationDuration),
+            duration: Duration(milliseconds: _searchBarAnimationDuration),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(
-                Platform.isIOS ? _kSearchBarIOSBorderRadius : _kSearchBarAndroidBorderRadius,
+                Platform.isIOS ? _searchBarIOSBorderRadius : _searchBarAndroidBorderRadius,
               ),
               child: TextField(
                 style: TextStyle(
-                  fontSize: _kSearchTextSize,
+                  fontSize: _searchTextSize,
                 ),
                 onChanged: widget.onChanged,
                 controller: widget.controller,
@@ -69,16 +69,16 @@ class _SearchBarState extends State<SearchBar> {
                   suffixIcon: AnimatedOpacity(
                     opacity: _showSuffix ? 1.0 : 0.0,
                     duration: Duration(
-                      milliseconds: _kSearchBarAnimationDuration,
+                      milliseconds: _searchBarAnimationDuration,
                     ),
                     child: _getSuffix(),
                   ),
                   hintText: 'Search',
                   hintStyle: TextStyle(
-                    fontSize: _kSearchTextSize,
+                    fontSize: _searchTextSize,
                   ),
                   filled: true,
-                  fillColor: _focusNode.hasFocus ? _kSearchBarFocusColor : _kSearchBarColor,
+                  fillColor: _focusNode.hasFocus ? _searchBarFocusColor : _searchBarColor,
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
@@ -88,10 +88,10 @@ class _SearchBarState extends State<SearchBar> {
         ),
         if (Platform.isIOS) ...{
           AnimatedContainer(
-            duration: Duration(milliseconds: _kSearchBarAnimationDuration),
+            duration: Duration(milliseconds: _searchBarAnimationDuration),
             child: _focusNode.hasFocus
                 ? Padding(
-                    padding: const EdgeInsets.only(left: _kCancelButtonPadding),
+                    padding: const EdgeInsets.only(left: _cancelButtonPadding),
                     child: TextButton(
                       size: ButtonSize.large,
                       label: 'Cancel',
@@ -118,7 +118,7 @@ class _SearchBarState extends State<SearchBar> {
   Widget _getSuffix() => GestureDetector(
         child: Icon(
           Icons.cancel,
-          color: _kSearchBarSuffixColor,
+          color: _searchBarSuffixColor,
           size: 18.0,
         ),
         onTap: _clearTextField,
@@ -128,19 +128,19 @@ class _SearchBarState extends State<SearchBar> {
     if (Platform.isIOS) {
       return Icon(
         Icons.search,
-        color: _kSearchBarPrefixColor,
+        color: _searchBarPrefixColor,
       );
     } else {
       return AnimatedSwitcher(
-        duration: Duration(milliseconds: _kSearchBarAnimationDuration),
+        duration: Duration(milliseconds: _searchBarAnimationDuration),
         child: _focusNode.hasFocus
             ? Icon(
                 Icons.arrow_back,
-                color: _kSearchBarPrefixColor,
+                color: _searchBarPrefixColor,
               )
             : Icon(
                 Icons.search,
-                color: _kSearchBarPrefixColor,
+                color: _searchBarPrefixColor,
               ),
       );
     }

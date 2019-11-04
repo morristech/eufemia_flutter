@@ -1,10 +1,10 @@
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
-const double _kBorderWidth = 0.5;
-const double _kHorizontalPadding = 16.0;
-const double _kTopPadding = 32.0;
-final Color _kBorderColor = EufemiaColors.softGray;
+const double _borderWidth = 0.5;
+const double _HorizontalPadding = 16.0;
+const double _topPadding = 32.0;
+final Color _borderColor = EufemiaColors.softGray;
 
 class ScrollableList extends StatelessWidget {
   final List<Widget> children;
@@ -30,9 +30,9 @@ class ScrollableList extends StatelessWidget {
         shrinkWrap: shrinkWrap,
         padding: customPadding ??
             EdgeInsets.only(
-              left: horizontalPadding ? _kHorizontalPadding : 0.0,
-              right: horizontalPadding ? _kHorizontalPadding : 0.0,
-              top: topPadding ? _kTopPadding : 0.0,
+              left: horizontalPadding ? _HorizontalPadding : 0.0,
+              right: horizontalPadding ? _HorizontalPadding : 0.0,
+              top: topPadding ? _topPadding : 0.0,
             ),
         children: [
           if (showBorders) ...{
@@ -41,12 +41,12 @@ class ScrollableList extends StatelessWidget {
               decoration: BoxDecoration(
                 border: Border(
                   top: BorderSide(
-                    width: _kBorderWidth,
-                    color: _kBorderColor,
+                    width: _borderWidth,
+                    color: _borderColor,
                   ),
                   bottom: BorderSide(
-                    width: _kBorderWidth,
-                    color: _kBorderColor,
+                    width: _borderWidth,
+                    color: _borderColor,
                   ),
                 ),
               ),

@@ -1,18 +1,18 @@
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
-const double _kButtonBorderRadius = 25.0;
-const double _kButtonLargeHorizontalPadding = 24.0;
-const double _kButtonLargeVerticalPadding = 16.0;
-const double _kButtonSmallVerticalPadding = 8.0;
-const double _kButtonSmallHorizontalPadding = 16.0;
-const int _kColorAnimationDuration = 100;
-final Color _kButtonColor = EufemiaColors.seaGreenAlt;
-final Color _kButtonTappedColor = EufemiaColors.oceanGreen;
-final Color _kButtonTextColor = Colors.white;
-final Color _kButtonTappedTextColor = Colors.white.withOpacity(0.8);
-final Color _kButtonDisabledColor = EufemiaColors.seaGreenAltLight;
-final Color _kButtonDisabledTextColor = Colors.white.withOpacity(0.5);
+const double _buttonBorderRadius = 25.0;
+const double _buttonLargeHorizontalPadding = 24.0;
+const double _buttonLargeVerticalPadding = 16.0;
+const double _buttonSmallVerticalPadding = 8.0;
+const double _buttonSmallHorizontalPadding = 16.0;
+const int _colorAnimationDuration = 100;
+final Color _buttonColor = EufemiaColors.seaGreenAlt;
+final Color _buttonTappedColor = EufemiaColors.oceanGreen;
+final Color _buttonTextColor = Colors.white;
+final Color _buttonTappedTextColor = Colors.white.withOpacity(0.8);
+final Color _buttonDisabledColor = EufemiaColors.seaGreenAltLight;
+final Color _buttonDisabledTextColor = Colors.white.withOpacity(0.5);
 
 /// A Primary button from the Eufemia Design System.
 /// There should only be one on every screen.
@@ -68,17 +68,17 @@ class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateM
   void initAnimations() {
     colorAnimationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: _kColorAnimationDuration),
+      duration: Duration(milliseconds: _colorAnimationDuration),
     );
 
     buttonColorAnimation = ColorTween(
-      begin: enabled ? _kButtonColor : _kButtonDisabledColor,
-      end: enabled ? _kButtonTappedColor : _kButtonDisabledColor,
+      begin: enabled ? _buttonColor : _buttonDisabledColor,
+      end: enabled ? _buttonTappedColor : _buttonDisabledColor,
     ).animate(colorAnimationController);
 
     textColorAnimation = ColorTween(
-      begin: enabled ? _kButtonTextColor : _kButtonDisabledTextColor,
-      end: enabled ? _kButtonTappedTextColor : _kButtonDisabledTextColor,
+      begin: enabled ? _buttonTextColor : _buttonDisabledTextColor,
+      end: enabled ? _buttonTappedTextColor : _buttonDisabledTextColor,
     ).animate(colorAnimationController);
   }
 
@@ -102,7 +102,7 @@ class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateM
                 return Container(
                   decoration: BoxDecoration(
                     color: buttonColorAnimation.value,
-                    borderRadius: BorderRadius.circular(_kButtonBorderRadius),
+                    borderRadius: BorderRadius.circular(_buttonBorderRadius),
                   ),
                   child: Padding(
                     padding: _getContentPadding(),
@@ -153,13 +153,13 @@ class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateM
     switch (widget.size) {
       case ButtonSize.small:
         return const EdgeInsets.symmetric(
-          horizontal: _kButtonSmallHorizontalPadding,
-          vertical: _kButtonSmallVerticalPadding,
+          horizontal: _buttonSmallHorizontalPadding,
+          vertical: _buttonSmallVerticalPadding,
         );
       case ButtonSize.large:
         return const EdgeInsets.symmetric(
-          horizontal: _kButtonLargeHorizontalPadding,
-          vertical: _kButtonLargeVerticalPadding,
+          horizontal: _buttonLargeHorizontalPadding,
+          vertical: _buttonLargeVerticalPadding,
         );
       default:
         return EdgeInsets.zero;

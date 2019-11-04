@@ -1,10 +1,10 @@
 import 'package:eufemia/src/style/colors.dart';
 import 'package:flutter/material.dart';
 
-const double _kBorderWidth = 0.5;
-const double _kItemVerticalPadding = 10.75;
-const double _kItemHorizontalPadding = 16.75;
-final Color _kBorderColor = EufemiaColors.softGray;
+const double _borderWidth = 0.5;
+const double _itemVerticalPadding = 10.75;
+const double _itemHorizontalPadding = 16.75;
+final Color _borderColor = EufemiaColors.softGray;
 
 class BottomNavBar extends StatelessWidget {
   final List<Widget> items;
@@ -17,15 +17,15 @@ class BottomNavBar extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border(
           top: BorderSide(
-            width: _kBorderWidth,
-            color: _kBorderColor,
+            width: _borderWidth,
+            color: _borderColor,
           ),
         ),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: _kItemHorizontalPadding,
-          vertical: _kItemVerticalPadding,
+          horizontal: _itemHorizontalPadding,
+          vertical: _itemVerticalPadding,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

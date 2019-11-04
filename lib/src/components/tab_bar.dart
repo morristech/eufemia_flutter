@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-const double _kTabHeight = 24.0;
-const double _kTabIndicatorWeight = 2.0;
+const double _tabHeight = 24.0;
+const double _tabIndicatorWeight = 2.0;
 
 class TabBar extends StatefulWidget implements PreferredSizeWidget {
   final List<Widget> tabs;
@@ -14,13 +14,13 @@ class TabBar extends StatefulWidget implements PreferredSizeWidget {
   }) : super(key: key);
 
   @override
-  _TabBarState createState() => _TabBarState();
+  _tabBarState createState() => _tabBarState();
 
   @override
-  Size get preferredSize => Size.fromHeight(_kTabHeight);
+  Size get preferredSize => Size.fromHeight(_tabHeight);
 }
 
-class _TabBarState extends State<TabBar> {
+class _tabBarState extends State<TabBar> {
   List<GlobalKey> _tabKeys;
 
   @override

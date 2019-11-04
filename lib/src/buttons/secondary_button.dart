@@ -1,21 +1,21 @@
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
-const double _kButtonBorderRadius = 25.0;
-const double _kButtonLargeHorizontalPadding = 24.0;
-const double _kButtonLargeVerticalPadding = 16.0;
-const double _kButtonSmallVerticalPadding = 8.0;
-const double _kButtonSmallHorizontalPadding = 16.0;
-const double _kButtonBorderWidth = 1.0;
-const int _kColorAnimationDuration = 100;
-final Color _kButtonColor = Colors.white;
-final Color _kButtonBorderColor = EufemiaColors.seaGreenAlt;
-final Color _kButtonTappedColor = EufemiaColors.softGray;
-final Color _kButtonTextColor = EufemiaColors.seaGreenAlt;
-final Color _kButtonTappedTextColor = EufemiaColors.seaGreenAlt.withOpacity(0.8);
-final Color _kButtonDisabledColor = Colors.transparent;
-final Color _kButtonDisabledTextColor = EufemiaColors.seaGreenAltLight;
-final Color _kButtonDisabledBorderColor = EufemiaColors.seaGreenAlt.withOpacity(0.5);
+const double _buttonBorderRadius = 25.0;
+const double _buttonLargeHorizontalPadding = 24.0;
+const double _buttonLargeVerticalPadding = 16.0;
+const double _buttonSmallVerticalPadding = 8.0;
+const double _buttonSmallHorizontalPadding = 16.0;
+const double _buttonBorderWidth = 1.0;
+const int _colorAnimationDuration = 100;
+final Color _buttonColor = Colors.white;
+final Color _buttonBorderColor = EufemiaColors.seaGreenAlt;
+final Color _buttonTappedColor = EufemiaColors.softGray;
+final Color _buttonTextColor = EufemiaColors.seaGreenAlt;
+final Color _buttonTappedTextColor = EufemiaColors.seaGreenAlt.withOpacity(0.8);
+final Color _buttonDisabledColor = Colors.transparent;
+final Color _buttonDisabledTextColor = EufemiaColors.seaGreenAltLight;
+final Color _buttonDisabledBorderColor = EufemiaColors.seaGreenAlt.withOpacity(0.5);
 
 /// A Secondary button from the Eufemia Design System
 class SecondaryButton extends StatefulWidget {
@@ -69,17 +69,17 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
   void initAnimations() {
     colorAnimationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: _kColorAnimationDuration),
+      duration: Duration(milliseconds: _colorAnimationDuration),
     );
 
     buttonColorAnimation = ColorTween(
-      begin: enabled ? _kButtonColor : _kButtonDisabledColor,
-      end: enabled ? _kButtonTappedColor : _kButtonDisabledColor,
+      begin: enabled ? _buttonColor : _buttonDisabledColor,
+      end: enabled ? _buttonTappedColor : _buttonDisabledColor,
     ).animate(colorAnimationController);
 
     textColorAnimation = ColorTween(
-      begin: enabled ? _kButtonTextColor : _kButtonDisabledTextColor,
-      end: enabled ? _kButtonTappedTextColor : _kButtonDisabledTextColor,
+      begin: enabled ? _buttonTextColor : _buttonDisabledTextColor,
+      end: enabled ? _buttonTappedTextColor : _buttonDisabledTextColor,
     ).animate(colorAnimationController);
   }
 
@@ -102,10 +102,10 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
                 return Container(
                   decoration: BoxDecoration(
                     color: buttonColorAnimation.value,
-                    borderRadius: BorderRadius.circular(_kButtonBorderRadius),
+                    borderRadius: BorderRadius.circular(_buttonBorderRadius),
                     border: Border.all(
-                      color: enabled ? _kButtonBorderColor : _kButtonDisabledBorderColor,
-                      width: _kButtonBorderWidth,
+                      color: enabled ? _buttonBorderColor : _buttonDisabledBorderColor,
+                      width: _buttonBorderWidth,
                     ),
                   ),
                   child: Padding(
@@ -113,7 +113,7 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
                     child: Text(
                       widget.label,
                       style: TextStyle(
-                        color: enabled ? textColorAnimation.value : _kButtonDisabledTextColor,
+                        color: enabled ? textColorAnimation.value : _buttonDisabledTextColor,
                         fontSize: _getFontSize(),
                       ),
                     ),
@@ -157,13 +157,13 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
     switch (widget.size) {
       case ButtonSize.small:
         return const EdgeInsets.symmetric(
-          horizontal: _kButtonSmallHorizontalPadding,
-          vertical: _kButtonSmallVerticalPadding,
+          horizontal: _buttonSmallHorizontalPadding,
+          vertical: _buttonSmallVerticalPadding,
         );
       case ButtonSize.large:
         return const EdgeInsets.symmetric(
-          horizontal: _kButtonLargeHorizontalPadding,
-          vertical: _kButtonLargeVerticalPadding,
+          horizontal: _buttonLargeHorizontalPadding,
+          vertical: _buttonLargeVerticalPadding,
         );
       default:
         return EdgeInsets.zero;

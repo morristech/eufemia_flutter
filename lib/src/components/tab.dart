@@ -2,10 +2,10 @@ import 'package:eufemia/eufemia.dart';
 import 'package:eufemia/src/buttons/text_button.dart';
 import 'package:flutter/material.dart';
 
-const double _kTabHighllighterWidth = 2.0;
-const int _kTabAnimationDuration = 500;
-final Color _kTabHighlighterColor = EufemiaColors.seaGreenAlt;
-final Color _kTabHighlighterDisabledColor = Colors.transparent;
+const double _tabHighllighterWidth = 2.0;
+const int _tabAnimationDuration = 500;
+final Color _tabHighlighterColor = EufemiaColors.seaGreenAlt;
+final Color _tabHighlighterDisabledColor = Colors.transparent;
 
 class Tab extends StatelessWidget {
   final String label;
@@ -22,12 +22,12 @@ class Tab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: _kTabAnimationDuration),
+      duration: Duration(milliseconds: _tabAnimationDuration),
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: active ? _kTabHighlighterColor : _kTabHighlighterDisabledColor,
-            width: _kTabHighllighterWidth,
+            color: active ? _tabHighlighterColor : _tabHighlighterDisabledColor,
+            width: _tabHighllighterWidth,
           ),
         ),
       ),
