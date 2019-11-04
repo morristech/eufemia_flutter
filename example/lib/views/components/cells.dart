@@ -23,10 +23,26 @@ class _CellsViewState extends State<CellsView> {
         title: Text('Cells'),
       ),
       body: ScrollableList(
+        topPadding: false,
         children: [
           Cell(
             title: Text('Master cell'),
             trailing: Icon(Icons.chevron_right),
+            actions: [
+              CellAction(
+                label: 'Label',
+                icon: Icon(
+                  Icons.delete,
+                  color: Colors.white,
+                ),
+                color: Colors.red,
+                onTap: () => Scaffold.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Tapped'),
+                  ),
+                ),
+              ),
+            ],
           ),
           Cell(
             leading: Column(
@@ -46,11 +62,41 @@ class _CellsViewState extends State<CellsView> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(right: 8.0),
-                  child: Text('-888 888,00'),
+                  child: Text(
+                    '-888,00',
+                  ),
                 ),
                 Icon(Icons.chevron_right),
               ],
             ),
+            actions: [
+              CellAction(
+                label: 'Label',
+                icon: Icon(
+                  Icons.delete,
+                  color: Colors.white,
+                ),
+                color: EufemiaColors.seaGreenAlt,
+                onTap: () => Scaffold.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Tapped'),
+                  ),
+                ),
+              ),
+              CellAction(
+                label: 'Label 2',
+                icon: Icon(
+                  Icons.add,
+                  color: Colors.white,
+                ),
+                color: EufemiaColors.emeraldGreen,
+                onTap: () => Scaffold.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Tapped'),
+                  ),
+                ),
+              ),
+            ],
           ),
           Cell(
             leading: Icon(Icons.check),

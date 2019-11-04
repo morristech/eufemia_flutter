@@ -43,18 +43,32 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.2"
+  device_simulator:
+    dependency: "direct main"
+    description:
+      name: device_simulator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.9.5"
   eufemia:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.6+5"
+    version: "0.0.6+6"
   flutter:
     dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_slidable:
+    dependency: transitive
+    description:
+      name: flutter_slidable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.4"
   flutter_svg:
     dependency: transitive
     description:

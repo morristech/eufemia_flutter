@@ -1,3 +1,4 @@
+import 'package:device_simulator/device_simulator.dart';
 import 'package:eufemia/eufemia.dart';
 import 'package:eufemia_example/home.dart';
 import 'package:eufemia_example/routes.dart';
@@ -27,18 +28,18 @@ class MyApp extends StatelessWidget {
       darkTheme: Eufemia.darkTheme(),
       home: HomeView(),
       routes: {
-        Routes.components: (context) => ComponentView(),
-        Routes.buttons: (context) => ButtonsView(),
-        Routes.search_bars: (context) => SearchBarView(),
-        Routes.cards: (context) => CardsView(),
-        Routes.controls: (context) => ControlsView(),
-        Routes.snackbars: (context) => SnackbarsView(),
-        Routes.cells: (context) => CellsView(),
-        Routes.graphics: (context) => GraphicsView(),
-        Routes.logos: (context) => LogosView(),
-        Routes.flags: (context) => FlagsView(),
-        Routes.graphics_cards: (context) => GraphicsCardsView(),
-        Routes.bars: (context) => BarsView(),
+        Routes.components: (context) => DeviceSimulator(child: ComponentView()),
+        Routes.buttons: (context) => DeviceSimulator(child: ButtonsView()),
+        Routes.search_bars: (context) => DeviceSimulator(child: SearchBarView()),
+        Routes.cards: (context) => DeviceSimulator(child: CardsView()),
+        Routes.controls: (context) => DeviceSimulator(child: ControlsView()),
+        Routes.snackbars: (context) => DeviceSimulator(child: SnackbarsView()),
+        Routes.cells: (context) => DeviceSimulator(child: CellsView()),
+        Routes.graphics: (context) => DeviceSimulator(child: GraphicsView()),
+        Routes.logos: (context) => DeviceSimulator(child: LogosView()),
+        Routes.flags: (context) => DeviceSimulator(child: FlagsView()),
+        Routes.graphics_cards: (context) => DeviceSimulator(child: GraphicsCardsView()),
+        Routes.bars: (context) => DeviceSimulator(child: BarsView()),
       },
     );
   }

@@ -1,8 +1,7 @@
 name: eufemia
 description: A new Flutter package project.
-version: 0.0.6+5
-author:
-homepage:
+version: 0.0.6+6
+author: Arne Molland <arneolaim@gmail.com>
 
 environment:
   sdk: ">=2.4.0 <3.0.0"
@@ -11,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^0.14.2
+  flutter_slidable: ^0.5.4
 
 dev_dependencies:
   flutter_test:
