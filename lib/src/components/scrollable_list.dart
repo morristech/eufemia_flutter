@@ -13,6 +13,7 @@ class ScrollableList extends StatelessWidget {
   final bool horizontalPadding;
   final bool showBorders;
   final EdgeInsets customPadding;
+  final ScrollPhysics physics;
   const ScrollableList({
     Key key,
     this.children,
@@ -21,12 +22,14 @@ class ScrollableList extends StatelessWidget {
     this.horizontalPadding = false,
     this.customPadding,
     this.showBorders = true,
+    this.physics,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: ListView(
+        physics: physics,
         shrinkWrap: shrinkWrap,
         padding: customPadding ??
             EdgeInsets.only(
