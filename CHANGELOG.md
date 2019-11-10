@@ -1,3 +1,7 @@
+## 0.1.1+1
+
+- Ability to combine trailing widget and implied navigation in Cells
+
 ## 0.1.1
 
 - Added a new font

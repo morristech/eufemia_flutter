@@ -153,7 +153,8 @@ class Cell extends StatelessWidget {
                       child: trailing,
                     ),
                   )
-                } else if (implyNavigation) ...{
+                },
+                if (implyNavigation) ...{
                   AnimatedDefaultTextStyle(
                     duration: _styleChangeDuration,
                     style: Theme.of(context).textTheme.body2,
