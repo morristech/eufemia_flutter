@@ -1,3 +1,5 @@
-## [0.0.1] - TODO: Add release date.
+## [0.1.0]
 
-* TODO: Describe initial release.
+- Initial release
+- Most components/graphics/icons/typography implemented
+- Theming & dark mode is still WIP
