@@ -7,6 +7,10 @@ class PaymentCardsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Cards'),
+        leading: IconButton(
+          icon: Icon(EufemiaIcons.back_arrow),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
       body: SafeArea(
         child: ListView(

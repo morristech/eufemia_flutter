@@ -5,14 +5,16 @@ const double _cardShadowSpreadRadius = 4.0;
 const double _cardShadowBlurRadius = 16.0;
 const double _cardBorderRadius = 4.0;
 const double _cardBorderWidth = 1.0;
-final Color _cardColor = Colors.white;
-final Color _cardLabelColor = EufemiaColors.subtleGray;
-final Color _cardBorderColor = EufemiaColors.outlineGray;
-final Color _cardShadowColor = EufemiaColors.lightShadow;
+final Color _cardLightLabelColor = EufemiaColors.subtleGray;
+final Color _cardLightBorderColor = EufemiaColors.outlineGray;
+final Color _cardLightShadowColor = EufemiaColors.lightShadow;
+final Color _cardDarkLabelColor = Colors.black54;
+final Color _cardDarkBorderColor = Colors.white.withOpacity(0.05);
+final Color _cardDarkShadowColor = Colors.white.withOpacity(0.05);
 final Offset _cardShadowOffset = Offset(0.0, 0.5);
 
-/// A card from the Eufemia Design System
-class Card extends StatelessWidget {
+/// A card from the Eufemia Design SystemR
+class ContentCard extends StatelessWidget {
   final Widget child;
   final Widget label;
   final String semanticLabel;
@@ -22,7 +24,7 @@ class Card extends StatelessWidget {
   /// * [child]: The main content of the card
   /// * [label]: Optional label to appear below the content
   /// * [semanticLabel]: Accessibility label
-  const Card({Key key, this.label, this.child, this.semanticLabel}) : super(key: key);
+  const ContentCard({Key key, this.label, this.child, this.semanticLabel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,17 +34,21 @@ class Card extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: _cardShadowColor,
+              color: Theme.of(context).brightness == Brightness.light
+                  ? _cardLightShadowColor
+                  : _cardDarkShadowColor,
               spreadRadius: _cardShadowSpreadRadius,
               blurRadius: _cardShadowBlurRadius,
               offset: _cardShadowOffset,
             ),
           ],
-          color: _cardColor,
+          color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(_cardBorderRadius),
           border: Border.all(
             width: _cardBorderWidth,
-            color: _cardBorderColor,
+            color: Theme.of(context).brightness == Brightness.light
+                ? _cardLightBorderColor
+                : _cardDarkBorderColor,
           ),
         ),
         child: Column(
@@ -53,10 +59,20 @@ class Card extends StatelessWidget {
             if (label != null) ...{
               Container(
                 height: _cardBorderWidth,
-                color: _cardBorderColor,
+                color: Theme.of(context).brightness == Brightness.light
+                    ? _cardLightBorderColor
+                    : _cardDarkBorderColor,
               ),
               Container(
-                color: _cardLabelColor,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).brightness == Brightness.light
+                      ? _cardLightLabelColor
+                      : _cardDarkLabelColor,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(_cardBorderRadius),
+                    bottomRight: Radius.circular(_cardBorderRadius),
+                  ),
+                ),
                 child: label,
               ),
             },

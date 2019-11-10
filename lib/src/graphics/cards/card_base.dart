@@ -22,7 +22,7 @@ class CardBase extends StatelessWidget {
     return LayoutBuilder(builder: (context, constraints) {
       return Stack(
         fit: StackFit.expand,
-        overflow: Overflow.visible,
+        overflow: Overflow.clip,
         children: [
           Container(
             decoration: BoxDecoration(

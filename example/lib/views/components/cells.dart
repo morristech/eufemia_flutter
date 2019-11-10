@@ -21,6 +21,10 @@ class _CellsViewState extends State<CellsView> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Cells'),
+        leading: IconButton(
+          icon: Icon(EufemiaIcons.back_arrow),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
       body: ScrollableList(
         topPadding: false,
@@ -51,7 +55,9 @@ class _CellsViewState extends State<CellsView> {
                   'Man',
                   style: TextStyle(
                     fontSize: 11,
-                    color: EufemiaColors.coal,
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? EufemiaColors.coal
+                        : null,
                   ),
                 ),
                 Text('88'),
@@ -109,7 +115,7 @@ class _CellsViewState extends State<CellsView> {
           Cell(
             title: Text('Label with switch'),
             trailing: eufemia.Switch(
-              value: true,
+              value: value,
               onChanged: (value) => setState(() => this.value = value),
             ),
           ),

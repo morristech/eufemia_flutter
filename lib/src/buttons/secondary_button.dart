@@ -115,6 +115,7 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
                       style: TextStyle(
                         color: enabled ? textColorAnimation.value : _buttonDisabledTextColor,
                         fontSize: _getFontSize(),
+                        height: 1.2,
                       ),
                     ),
                   ),

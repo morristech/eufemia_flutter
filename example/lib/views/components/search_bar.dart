@@ -20,17 +20,22 @@ class _SearchBarViewState extends State<SearchBarView> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Search bar'),
+        leading: IconButton(
+          icon: Icon(EufemiaIcons.back_arrow),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 16.0),
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: SearchBar(
-              controller: _controller,
+      body: SafeArea(
+        child: ScrollableList(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SearchBar(
+                controller: _controller,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

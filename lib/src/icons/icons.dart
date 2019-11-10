@@ -1,4 +1,4 @@
-import 'package:eufemia/src/components/icon_data.dart';
+import 'package:eufemia/src/icons/icon_data.dart';
 import 'package:flutter/widgets.dart';
 
 class EufemiaIcons {

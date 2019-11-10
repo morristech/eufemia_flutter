@@ -7,6 +7,10 @@ class FlagsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Flags'),
+        leading: IconButton(
+          icon: Icon(EufemiaIcons.back_arrow),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 16.0),

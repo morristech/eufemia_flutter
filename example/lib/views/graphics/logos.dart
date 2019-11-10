@@ -7,9 +7,13 @@ class LogosView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Logos'),
+        leading: IconButton(
+          icon: Icon(EufemiaIcons.back_arrow),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 16.0),
+      body: ScrollableList(
+        showBorders: false,
         children: [
           Wrap(
             direction: Axis.horizontal,

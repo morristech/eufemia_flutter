@@ -7,23 +7,24 @@ class SnackbarsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Snackbars & Toasts'),
+        leading: IconButton(
+          icon: Icon(EufemiaIcons.back_arrow),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
       body: Builder(
         builder: (context) {
-          return ListView(
-            padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
+          return ScrollableList(
             children: [
-              TextButton(
-                label: 'Empty snackbar',
-                size: ButtonSize.small,
-                onPressed: () => Scaffold.of(context).showSnackBar(
+              Cell(
+                title: Text('Empty snackbar'),
+                onTap: () => Scaffold.of(context).showSnackBar(
                   Snacks.buildSnackBar(),
                 ),
               ),
-              TextButton(
-                label: 'With message',
-                size: ButtonSize.small,
-                onPressed: () => Scaffold.of(context).showSnackBar(
+              Cell(
+                title: Text('With message'),
+                onTap: () => Scaffold.of(context).showSnackBar(
                   Snacks.buildSnackBar(
                     label: 'Message',
                     actionLabel: 'Hide',
@@ -31,10 +32,9 @@ class SnackbarsView extends StatelessWidget {
                   ),
                 ),
               ),
-              TextButton(
-                label: 'Persistent ',
-                size: ButtonSize.small,
-                onPressed: () => Scaffold.of(context).showSnackBar(
+              Cell(
+                title: Text('Persistent'),
+                onTap: () => Scaffold.of(context).showSnackBar(
                   Snacks.buildSnackBar(
                     onActionPressed: Scaffold.of(context).hideCurrentSnackBar,
                     label: 'This persists until dismissed',
@@ -43,10 +43,9 @@ class SnackbarsView extends StatelessWidget {
                   ),
                 ),
               ),
-              TextButton(
-                label: 'With loading indicator',
-                size: ButtonSize.small,
-                onPressed: () => Scaffold.of(context).showSnackBar(
+              Cell(
+                title: Text('With loading indicator'),
+                onTap: () => Scaffold.of(context).showSnackBar(
                   Snacks.buildSnackBar(
                     onActionPressed: Scaffold.of(context).hideCurrentSnackBar,
                     showProgressIndicator: true,

@@ -111,6 +111,7 @@ class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateM
                       style: TextStyle(
                         color: textColorAnimation.value,
                         fontSize: _getFontSize(),
+                        height: 1.2,
                       ),
                     ),
                   ),

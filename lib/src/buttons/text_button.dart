@@ -112,6 +112,7 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
                     color: textColorAnimation.value,
                     fontSize: _getFontSize(),
                     fontWeight: widget.emphasized ? FontWeight.bold : null,
+                    height: 1.2,
                   ),
                 ),
               ),

@@ -1,4 +1,4 @@
-import 'package:eufemia/eufemia.dart' as eufemia;
+import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
 class CardsView extends StatelessWidget {
@@ -7,41 +7,44 @@ class CardsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Cards'),
+        leading: IconButton(
+          icon: Icon(EufemiaIcons.back_arrow),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 16.0),
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: eufemia.Card(
-              child: Container(
-                width: 80.0,
-                height: 80.0,
-                child: Center(
-                  child: Text('Card'),
+      body: SafeArea(
+        child: ListView(
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ContentCard(
+                child: Container(
+                  width: 80.0,
+                  height: 80.0,
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: eufemia.Card(
-              child: Container(
-                width: 80.0,
-                height: 80.0,
-                child: Center(
-                  child: Text('Card'),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ContentCard(
+                child: Container(
+                  width: 80.0,
+                  height: 80.0,
                 ),
-              ),
-              label: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: Text('Label'),
+                label: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: Text(
+                      'Label',
+                      style: Theme.of(context).textTheme.subtitle,
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

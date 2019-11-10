@@ -1,5 +1,4 @@
 import 'package:eufemia/eufemia.dart';
-import 'package:eufemia/eufemia.dart' as eufemia;
 import 'package:flutter/material.dart';
 
 class BarsView extends StatelessWidget {
@@ -8,50 +7,49 @@ class BarsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Bars'),
+        leading: IconButton(
+          icon: Icon(EufemiaIcons.back_arrow),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
       body: ScrollableList(
+        showBorders: false,
         children: [
           Toolbar(
             children: [
-              Icon(Icons.edit),
+              Icon(EufemiaIcons.pencil),
             ],
           ),
           Toolbar(
             children: [
-              Icon(Icons.settings),
-              Icon(Icons.edit),
+              Icon(EufemiaIcons.cog),
+              Icon(EufemiaIcons.pencil),
             ],
           ),
           Toolbar(
             children: [
-              Icon(Icons.settings),
-              Icon(Icons.info_outline),
-              Icon(Icons.edit),
+              Icon(EufemiaIcons.cog),
+              Icon(EufemiaIcons.information),
+              Icon(EufemiaIcons.pencil),
             ],
           ),
           Toolbar(
             children: [
-              Icon(Icons.settings),
-              Icon(Icons.info_outline),
-              Icon(Icons.file_download),
-              Icon(Icons.edit),
+              Icon(EufemiaIcons.cog),
+              Icon(EufemiaIcons.information),
+              Icon(EufemiaIcons.download),
+              Icon(EufemiaIcons.pencil),
             ],
           ),
           Toolbar(
             children: [
-              Icon(Icons.settings),
-              Icon(Icons.info_outline),
-              Icon(Icons.filter_list),
-              Icon(Icons.file_download),
-              Icon(Icons.edit),
+              Icon(EufemiaIcons.cog),
+              Icon(EufemiaIcons.information),
+              Icon(EufemiaIcons.filter),
+              Icon(EufemiaIcons.download),
+              Icon(EufemiaIcons.pencil),
             ],
           ),
-          eufemia.BottomNavBar(
-            items: <Widget>[
-              Text('Y'),
-              Text('Y'),
-            ],
-          )
         ],
       ),
     );

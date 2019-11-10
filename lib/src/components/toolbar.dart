@@ -5,7 +5,6 @@ const double _borderWidth = 0.5;
 const double _iconVerticalPadding = 10.75;
 const double _iconHorizontalPadding = 16.75;
 final Color _borderColor = EufemiaColors.softGray;
-final Color _iconColor = EufemiaColors.seaGreenAlt;
 
 class Toolbar extends StatelessWidget {
   final List<Widget> children;
@@ -28,19 +27,14 @@ class Toolbar extends StatelessWidget {
           horizontal: _iconHorizontalPadding,
           vertical: _iconVerticalPadding,
         ),
-        child: IconTheme(
-          data: IconThemeData(
-            color: _iconColor,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              if (children.length == 1) ...{
-                Spacer(),
-              },
-              ...children,
-            ],
-          ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            if (children.length == 1) ...{
+              Spacer(),
+            },
+            ...children,
+          ],
         ),
       ),
     );

@@ -8,7 +8,6 @@ const double _borderWidth = 0.5;
 const double _contentPadding = 16.0;
 final Color _borderColor = EufemiaColors.outlineGray;
 final Color _iconColor = EufemiaColors.softGray;
-final Color _leadingIconColor = EufemiaColors.seaGreenAlt;
 final Duration _styleChangeDuration = Duration(milliseconds: 500);
 
 class Cell extends StatelessWidget {
@@ -77,14 +76,6 @@ class Cell extends StatelessWidget {
   void _handleLongPress() {}
 
   Widget _buildCell(BuildContext context) {
-    final _subtitleTextStyle = Theme.of(context).textTheme.subtitle;
-    final _titleTextStyle = Theme.of(context).textTheme.subhead;
-    final _trailingTextStyle = Theme.of(context).textTheme.subhead.copyWith(
-          fontWeight: FontWeight.bold,
-        );
-    final _leadingTextStyle = _trailingTextStyle.copyWith(
-      fontSize: 20.0,
-    );
     return GestureDetector(
       onTap: onTap,
       onLongPress: Platform.isIOS ? null : _handleLongPress,
@@ -116,14 +107,10 @@ class Cell extends StatelessWidget {
                     if (leading != null) ...{
                       AnimatedDefaultTextStyle(
                         duration: _styleChangeDuration,
-                        style: _leadingTextStyle,
+                        style:
+                            Theme.of(context).textTheme.title.copyWith(fontWeight: FontWeight.bold),
                         overflow: TextOverflow.fade,
-                        child: IconTheme(
-                          data: IconThemeData(
-                            color: _leadingIconColor,
-                          ),
-                          child: leading,
-                        ),
+                        child: leading,
                       ),
                     },
                     if (title != null) ...{
@@ -135,14 +122,16 @@ class Cell extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             AnimatedDefaultTextStyle(
-                              style: _titleTextStyle,
+                              style: Theme.of(context).textTheme.body1,
                               overflow: TextOverflow.fade,
                               duration: _styleChangeDuration,
                               child: title,
                             ),
                             if (subtitle != null) ...{
                               AnimatedDefaultTextStyle(
-                                style: _subtitleTextStyle,
+                                style: Theme.of(context).textTheme.subhead.copyWith(
+                                      color: EufemiaColors.darkGray,
+                                    ),
                                 overflow: TextOverflow.fade,
                                 duration: _styleChangeDuration,
                                 child: subtitle,
@@ -157,7 +146,7 @@ class Cell extends StatelessWidget {
                 if (trailing != null) ...{
                   AnimatedDefaultTextStyle(
                     duration: _styleChangeDuration,
-                    style: _trailingTextStyle,
+                    style: Theme.of(context).textTheme.body2,
                     overflow: TextOverflow.fade,
                     child: IconTheme(
                       data: IconThemeData(color: _iconColor),
@@ -167,11 +156,14 @@ class Cell extends StatelessWidget {
                 } else if (implyNavigation) ...{
                   AnimatedDefaultTextStyle(
                     duration: _styleChangeDuration,
-                    style: _trailingTextStyle,
+                    style: Theme.of(context).textTheme.body2,
                     overflow: TextOverflow.fade,
                     child: IconTheme(
                       data: IconThemeData(color: _iconColor),
-                      child: Icon(Icons.chevron_right),
+                      child: Icon(
+                        EufemiaIcons.chevron,
+                        size: 12,
+                      ),
                     ),
                   ),
                 },

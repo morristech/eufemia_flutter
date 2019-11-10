@@ -8,6 +8,10 @@ class ComponentView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Components'),
+        leading: IconButton(
+          icon: Icon(EufemiaIcons.back_arrow),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
       body: ScrollableList(
         children: [
@@ -39,16 +43,6 @@ class ComponentView extends StatelessWidget {
           Cell(
             title: Text('Bars'),
             onTap: () => Navigator.pushNamed(context, Routes.bars),
-            implyNavigation: true,
-          ),
-          Cell(
-            title: Text('Icons'),
-            onTap: () => Navigator.pushNamed(context, Routes.icons),
-            implyNavigation: true,
-          ),
-          Cell(
-            title: Text('Spinner'),
-            onTap: () => Navigator.pushNamed(context, Routes.spinner),
             implyNavigation: true,
           ),
         ],

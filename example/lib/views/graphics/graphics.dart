@@ -8,6 +8,10 @@ class GraphicsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Graphics'),
+        leading: IconButton(
+          icon: Icon(EufemiaIcons.back_arrow),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
       body: ScrollableList(
         children: [

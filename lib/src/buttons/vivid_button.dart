@@ -105,6 +105,7 @@ class _VividButtonState extends State<VividButton> with TickerProviderStateMixin
                       style: TextStyle(
                         color: textColorAnimation.value,
                         fontSize: _getFontSize(),
+                        height: 1.2,
                       ),
                     ),
                   ),

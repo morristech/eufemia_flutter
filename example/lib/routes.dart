@@ -15,4 +15,5 @@ class Routes {
   static const logos = '/graphics/logos';
   static const flags = '/graphics/flags';
   static const graphics_cards = '/graphics/cards';
+  static const system = '/system';
 }

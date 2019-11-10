@@ -26,6 +26,16 @@ class HomeView extends StatelessWidget {
             onTap: () => Navigator.pushNamed(context, Routes.graphics),
             implyNavigation: true,
           ),
+          Cell(
+            title: Text('Icons'),
+            onTap: () => Navigator.pushNamed(context, Routes.icons),
+            implyNavigation: true,
+          ),
+          Cell(
+            title: Text('System'),
+            onTap: () => Navigator.pushNamed(context, Routes.system),
+            implyNavigation: true,
+          ),
         ],
       ),
     );

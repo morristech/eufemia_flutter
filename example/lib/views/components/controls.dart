@@ -33,6 +33,10 @@ class _ControlsViewState extends State<ControlsView> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Controls'),
+        leading: IconButton(
+          icon: Icon(EufemiaIcons.back_arrow),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),

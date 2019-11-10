@@ -28,6 +28,7 @@ class Logo extends StatelessWidget {
   final double width;
   final double height;
   final BoxFit fit;
+  final Color color;
 
   const Logo(
     this.logo, {
@@ -35,6 +36,7 @@ class Logo extends StatelessWidget {
     this.width,
     this.height = _logoHeight,
     this.fit = BoxFit.contain,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -46,6 +48,7 @@ class Logo extends StatelessWidget {
       fit: fit,
       alignment: Alignment.center,
       package: 'eufemia',
+      color: Theme.of(context).brightness == Brightness.dark ? Colors.white : null,
     );
   }
 }
