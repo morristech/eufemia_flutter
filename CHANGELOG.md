@@ -1,3 +1,7 @@
+## 0.1.1+2
+
+- Fixed alignment of trailing widgets combined with implied navigation
+
 ## 0.1.1+1
 
 - Ability to combine trailing widget and implied navigation in Cells

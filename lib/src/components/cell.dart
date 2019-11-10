@@ -144,17 +144,35 @@ class Cell extends StatelessWidget {
                   ],
                 ),
                 if (trailing != null) ...{
-                  AnimatedDefaultTextStyle(
-                    duration: _styleChangeDuration,
-                    style: Theme.of(context).textTheme.body2,
-                    overflow: TextOverflow.fade,
-                    child: IconTheme(
-                      data: IconThemeData(color: _iconColor),
-                      child: trailing,
-                    ),
-                  )
-                },
-                if (implyNavigation) ...{
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      AnimatedDefaultTextStyle(
+                        duration: _styleChangeDuration,
+                        style: Theme.of(context).textTheme.body2,
+                        overflow: TextOverflow.fade,
+                        child: IconTheme(
+                          data: IconThemeData(color: _iconColor),
+                          child: trailing,
+                        ),
+                      ),
+                      if (implyNavigation) ...{
+                        AnimatedDefaultTextStyle(
+                          duration: _styleChangeDuration,
+                          style: Theme.of(context).textTheme.body2,
+                          overflow: TextOverflow.fade,
+                          child: IconTheme(
+                            data: IconThemeData(color: _iconColor),
+                            child: Icon(
+                              EufemiaIcons.chevron,
+                              size: 12,
+                            ),
+                          ),
+                        ),
+                      }
+                    ],
+                  ),
+                } else if (implyNavigation) ...{
                   AnimatedDefaultTextStyle(
                     duration: _styleChangeDuration,
                     style: Theme.of(context).textTheme.body2,

@@ -31,7 +31,7 @@ class _CellsViewState extends State<CellsView> {
         children: [
           Cell(
             title: Text('Master cell'),
-            trailing: Icon(Icons.chevron_right),
+            implyNavigation: true,
             actions: [
               CellAction(
                 label: 'Label',
@@ -72,9 +72,9 @@ class _CellsViewState extends State<CellsView> {
                     '-888,00',
                   ),
                 ),
-                Icon(Icons.chevron_right),
               ],
             ),
+            implyNavigation: true,
             actions: [
               CellAction(
                 label: 'Label',
