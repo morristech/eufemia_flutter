@@ -1,4 +1,4 @@
-package no.dnb.example
+package no.dnb.eufemia
 
 import android.os.Bundle
 

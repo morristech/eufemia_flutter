@@ -21,6 +21,9 @@ flutter:
     - lib/assets/graphics/logos/
     - lib/assets/graphics/flags/
     - lib/assets/graphics/cards/
+    - lib/assets/graphics/cards/programs/
+    - lib/assets/graphics/cards/types/
+    - lib/assets/graphics/cards/logos/
 
   fonts:
     - family: Menlo-Regular

@@ -33,6 +33,9 @@ class EufemiaColors {
   static const violet = Color.fromARGB(255, 110, 35, 130);
   static const skyBlue = Color.fromARGB(255, 75, 190, 210);
 
+  // Card colors
+  static const sagaGold = Color(0xFFC6B27F);
+
   static Color getForegroundColor(Color backgroundColor) {
     final value = backgroundColor.value;
 

@@ -2,7 +2,7 @@ import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
 const double _borderWidth = 0.5;
-const double _HorizontalPadding = 16.0;
+const double _horizontalPadding = 16.0;
 const double _topPadding = 32.0;
 final Color _borderColor = EufemiaColors.softGray;
 
@@ -33,8 +33,8 @@ class ScrollableList extends StatelessWidget {
         shrinkWrap: shrinkWrap,
         padding: customPadding ??
             EdgeInsets.only(
-              left: horizontalPadding ? _HorizontalPadding : 0.0,
-              right: horizontalPadding ? _HorizontalPadding : 0.0,
+              left: horizontalPadding ? _horizontalPadding : 0.0,
+              right: horizontalPadding ? _horizontalPadding : 0.0,
               top: topPadding ? _topPadding : 0.0,
             ),
         children: [

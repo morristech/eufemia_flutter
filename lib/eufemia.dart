@@ -31,7 +31,9 @@ export 'src/components/cell.dart';
 export 'src/components/scrollable_list.dart';
 export 'src/components/toolbar.dart';
 export 'src/components/bottom_navigation_bar.dart';
+export 'src/components/icons.dart';
 
 // Graphics
 export 'src/graphics/logo.dart';
 export 'src/graphics/flag.dart';
+export 'src/graphics/cards/payment_card.dart';

@@ -14,11 +14,11 @@ const double _appBarTitleFontSize = 17.0;
 final Color _statusbarDarkColor = Colors.transparent;
 final Color _statusbarLightColor = Colors.transparent;
 final Color _appBarLightColor = Colors.white;
-final Color _appBarDarkColor = EufemiaColors.oceanGreen;
+final Color _appBarDarkColor = Colors.black;
 final Color _appBarLightTitleColor = EufemiaColors.coal;
-final Color _appBarDarkTitleColor = EufemiaColors.mintGreen;
+final Color _appBarDarkTitleColor = Colors.white;
 final Color _appBarLightIconColor = EufemiaColors.seaGreenAlt;
-final Color _appBarDarkIconColor = EufemiaColors.mintGreenAlt;
+final Color _appBarDarkIconColor = Colors.white;
 final Color _subtitleLightColor = EufemiaColors.darkGray;
 final Color _subheadLightColor = EufemiaColors.coal;
 
@@ -73,6 +73,7 @@ class Eufemia {
       brightness: Brightness.dark,
       primaryColor: EufemiaColors.emeraldGreen,
       accentColor: EufemiaColors.mintGreen,
+      canvasColor: Colors.black,
       appBarTheme: AppBarTheme(
         brightness: Brightness.dark,
         color: _appBarDarkColor,
