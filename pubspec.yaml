@@ -1,6 +1,6 @@
 name: eufemia
 description: A new Flutter package project.
-version: 0.1.0+1
+version: 0.1.1
 author: Arne Molland <arneolaim@gmail.com>
 
 environment:
@@ -62,4 +62,3 @@ flutter:
         - asset: lib/assets/fonts/Inter-SemiBoldItalic.ttf
           weight: 600
           style: italic
-        
