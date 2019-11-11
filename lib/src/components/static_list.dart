@@ -9,6 +9,7 @@ final Color _borderColor = EufemiaColors.softGray;
 class StaticList extends StatelessWidget {
   final List<Widget> children;
   final bool topPadding;
+  final bool bottomPadding;
   final bool horizontalPadding;
   final bool showBorders;
   final EdgeInsets customPadding;
@@ -18,6 +19,7 @@ class StaticList extends StatelessWidget {
     Key key,
     this.children,
     this.topPadding = false,
+    this.bottomPadding = false,
     this.horizontalPadding = false,
     this.customPadding,
     this.showBorders = true,
@@ -55,7 +57,8 @@ class StaticList extends StatelessWidget {
         children: [
           if (showBorders) ...{
             Container(
-              padding: EdgeInsets.only(top: topPadding ? 16.0 : 0.0, bottom: 16.0),
+              padding:
+                  EdgeInsets.only(top: topPadding ? 16.0 : 0.0, bottom: bottomPadding ? 16.0 : 0.0),
               decoration: BoxDecoration(
                 border: Border(
                   top: BorderSide(

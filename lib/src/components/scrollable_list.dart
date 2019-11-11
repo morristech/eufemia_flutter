@@ -10,6 +10,7 @@ class ScrollableList extends StatelessWidget {
   final List<Widget> children;
   final bool shrinkWrap;
   final bool topPadding;
+  final bool bottomPadding;
   final bool horizontalPadding;
   final bool showBorders;
   final EdgeInsets customPadding;
@@ -23,6 +24,7 @@ class ScrollableList extends StatelessWidget {
     this.customPadding,
     this.showBorders = true,
     this.physics,
+    this.bottomPadding = false,
   }) : super(key: key);
 
   @override
@@ -57,7 +59,8 @@ class ScrollableList extends StatelessWidget {
         children: [
           if (showBorders) ...{
             Container(
-              padding: EdgeInsets.only(top: topPadding ? 16.0 : 0.0, bottom: 16.0),
+              padding:
+                  EdgeInsets.only(top: topPadding ? 16.0 : 0.0, bottom: bottomPadding ? 16.0 : 0.0),
               decoration: BoxDecoration(
                 border: Border(
                   top: BorderSide(

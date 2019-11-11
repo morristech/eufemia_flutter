@@ -1,3 +1,7 @@
+## 0.1.3+3
+
+- Added bottom padding parameter to all lists
+
 ## 0.1.3+1
 
 - Removed duplicate bottom border in StaticList
