@@ -1,3 +1,7 @@
+## 0.1.2+6
+
+- Fixed a bug causing Hero widgets to be duplicated in lists
+
 ## 0.1.2+5
 
 - Changed the behavior of ScrollableList and StaticList with Cells and children to automatically add a border to the end of the list

@@ -30,22 +30,16 @@ class StaticList extends StatelessWidget {
       if (children.last is Cell) {
         children.last = (children.last as Cell).copyWithListOrder(lastInList: true);
       } else {
-        children.replaceRange(
-          children.length,
-          children.length,
-          [
-            Container(
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: _borderColor,
-                    width: _borderWidth,
-                  ),
-                ),
+        children.last = Container(
+          decoration: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(
+                color: _borderColor,
+                width: _borderWidth,
               ),
-              child: children.last,
-            )
-          ],
+            ),
+          ),
+          child: children.last,
         );
       }
     }
