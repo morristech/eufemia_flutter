@@ -6,23 +6,22 @@ const double _horizontalPadding = 16.0;
 const double _topPadding = 32.0;
 final Color _borderColor = EufemiaColors.softGray;
 
-class ScrollableList extends StatelessWidget {
+class StaticList extends StatelessWidget {
   final List<Widget> children;
-  final bool shrinkWrap;
   final bool topPadding;
   final bool horizontalPadding;
   final bool showBorders;
   final EdgeInsets customPadding;
-  final ScrollPhysics physics;
-  const ScrollableList({
+  final Color backgroundColor;
+
+  const StaticList({
     Key key,
     this.children,
-    this.shrinkWrap = false,
     this.topPadding = false,
     this.horizontalPadding = false,
     this.customPadding,
     this.showBorders = true,
-    this.physics,
+    this.backgroundColor,
   }) : super(key: key);
 
   @override
@@ -51,15 +50,14 @@ class ScrollableList extends StatelessWidget {
       }
     }
     return Container(
-      child: ListView(
-        physics: physics,
-        shrinkWrap: shrinkWrap,
-        padding: customPadding ??
-            EdgeInsets.only(
-              left: horizontalPadding ? _horizontalPadding : 0.0,
-              right: horizontalPadding ? _horizontalPadding : 0.0,
-              top: topPadding ? _topPadding : 0.0,
-            ),
+      color: backgroundColor,
+      padding: customPadding ??
+          EdgeInsets.only(
+            left: horizontalPadding ? _horizontalPadding : 0.0,
+            right: horizontalPadding ? _horizontalPadding : 0.0,
+            top: topPadding ? _topPadding : 0.0,
+          ),
+      child: Column(
         children: [
           if (showBorders) ...{
             Container(
@@ -67,6 +65,10 @@ class ScrollableList extends StatelessWidget {
               decoration: BoxDecoration(
                 border: Border(
                   top: BorderSide(
+                    width: _borderWidth,
+                    color: _borderColor,
+                  ),
+                  bottom: BorderSide(
                     width: _borderWidth,
                     color: _borderColor,
                   ),

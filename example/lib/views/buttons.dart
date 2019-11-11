@@ -14,6 +14,7 @@ class ButtonsView extends StatelessWidget {
       ),
       body: SafeArea(
         child: ScrollableList(
+          showBorders: false,
           children: [
             PrimaryButton(
               label: 'Large',
@@ -119,7 +120,7 @@ class ButtonsView extends StatelessWidget {
               enabled: false,
             ),
           ]
-              .map(
+              .map<Widget>(
                 (widget) => Center(
                   child: Padding(
                     child: widget,

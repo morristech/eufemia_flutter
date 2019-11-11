@@ -7,6 +7,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 const double _borderWidth = 0.5;
 const double _contentPadding = 16.0;
 final Color _borderColor = EufemiaColors.outlineGray;
+final Color _borderEndColor = EufemiaColors.softGray;
 final Color _iconColor = EufemiaColors.softGray;
 final Duration _styleChangeDuration = Duration(milliseconds: 500);
 
@@ -17,6 +18,7 @@ class Cell extends StatelessWidget {
   final Widget subtitle;
   final VoidCallback onTap;
   final bool implyNavigation;
+  final bool isLastInList;
   final List<CellAction> actions;
 
   const Cell({
@@ -28,6 +30,7 @@ class Cell extends StatelessWidget {
     this.onTap,
     this.implyNavigation = false,
     this.actions,
+    this.isLastInList = false,
   }) : super(key: key);
 
   @override
@@ -80,19 +83,22 @@ class Cell extends StatelessWidget {
       onTap: onTap,
       onLongPress: Platform.isIOS ? null : _handleLongPress,
       child: Padding(
-        padding: Platform.isIOS ? const EdgeInsets.only(left: _contentPadding) : EdgeInsets.zero,
+        padding: (Platform.isIOS && !isLastInList)
+            ? const EdgeInsets.only(left: _contentPadding)
+            : EdgeInsets.zero,
         child: Container(
           decoration: BoxDecoration(
             border: Border(
               bottom: BorderSide(
                 width: _borderWidth,
-                color: _borderColor,
+                color: isLastInList ? _borderEndColor : _borderColor,
               ),
             ),
           ),
           child: Padding(
             padding: Platform.isIOS
                 ? EdgeInsets.only(
+                    left: Platform.isIOS && isLastInList ? _contentPadding : 0.0,
                     top: _contentPadding,
                     right: _contentPadding,
                     bottom: _contentPadding,
@@ -194,6 +200,18 @@ class Cell extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Cell copyWithListOrder({bool lastInList}) {
+    return Cell(
+      leading: this.leading,
+      title: this.title,
+      trailing: this.trailing,
+      subtitle: this.subtitle,
+      onTap: this.onTap,
+      implyNavigation: this.implyNavigation,
+      isLastInList: lastInList ?? this.isLastInList,
     );
   }
 }

@@ -1,3 +1,7 @@
+## 0.1.2+5
+
+- Changed the behavior of ScrollableList and StaticList with Cells and children to automatically add a border to the end of the list
+
 ## 0.1.2+4
 
 - Exposing height of PaymentCard
