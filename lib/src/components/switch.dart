@@ -11,12 +11,13 @@ final Color _inactiveThumbColor = EufemiaColors.outlineGray;
 class Switch extends StatelessWidget {
   final bool value;
   final Function(bool) onChanged;
+  final bool shrink;
 
   /// Switch from the Eufemia Design System
   ///
   /// * [value]: The value of the switch
   /// * [onChanged]: Callback for when the value is changed
-  const Switch({Key key, this.value, this.onChanged}) : super(key: key);
+  const Switch({Key key, this.value, this.onChanged, this.shrink = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,7 @@ class Switch extends StatelessWidget {
       activeTrackColor: _activeTrackColor,
       inactiveTrackColor: _inactiveTrackColor,
       inactiveThumbColor: _inactiveThumbColor,
+      materialTapTargetSize: shrink ? MaterialTapTargetSize.shrinkWrap : null,
     );
   }
 }
