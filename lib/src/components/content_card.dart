@@ -18,13 +18,15 @@ class ContentCard extends StatelessWidget {
   final Widget child;
   final Widget label;
   final String semanticLabel;
+  final bool shadow;
 
   /// A card from the Eufemia Design System
   ///
   /// * [child]: The main content of the card
   /// * [label]: Optional label to appear below the content
   /// * [semanticLabel]: Accessibility label
-  const ContentCard({Key key, this.label, this.child, this.semanticLabel}) : super(key: key);
+  const ContentCard({Key key, this.label, this.child, this.semanticLabel, this.shadow = true})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,16 +34,18 @@ class ContentCard extends StatelessWidget {
       label: semanticLabel,
       child: Container(
         decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Theme.of(context).brightness == Brightness.light
-                  ? _cardLightShadowColor
-                  : _cardDarkShadowColor,
-              spreadRadius: _cardShadowSpreadRadius,
-              blurRadius: _cardShadowBlurRadius,
-              offset: _cardShadowOffset,
-            ),
-          ],
+          boxShadow: shadow
+              ? [
+                  BoxShadow(
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? _cardLightShadowColor
+                        : _cardDarkShadowColor,
+                    spreadRadius: _cardShadowSpreadRadius,
+                    blurRadius: _cardShadowBlurRadius,
+                    offset: _cardShadowOffset,
+                  ),
+                ]
+              : null,
           color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(_cardBorderRadius),
           border: Border.all(

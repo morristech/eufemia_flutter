@@ -1,3 +1,7 @@
+## 0.1.2+1
+
+- Added shadow parameter for content cards
+
 ## 0.1.2
 
 - Added company card designs
