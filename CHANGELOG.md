@@ -1,3 +1,7 @@
+## 0.1.2+4
+
+- Exposing height of PaymentCard
+
 ## 0.1.2+3
 
 - Added padding to trailing text in cells

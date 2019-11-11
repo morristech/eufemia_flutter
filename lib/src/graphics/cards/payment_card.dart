@@ -39,6 +39,7 @@ class PaymentCard extends StatelessWidget {
     this.digitsText = 'KORTNUMMER',
     this.logoColor = Colors.white,
   }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -141,6 +142,9 @@ class PaymentCard extends StatelessWidget {
       ),
     );
   }
+
+  /// The rendered height of the widget
+  double get height => width / goldenRatio;
 
   Brightness get _cardBrightness => (design == CardDesign.white || design == CardDesign.grey)
       ? Brightness.light
