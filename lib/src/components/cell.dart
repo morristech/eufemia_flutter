@@ -20,6 +20,7 @@ class Cell extends StatelessWidget {
   final bool implyNavigation;
   final bool isLastInList;
   final List<CellAction> actions;
+  final EdgeInsets contentPadding;
 
   const Cell({
     Key key,
@@ -31,6 +32,7 @@ class Cell extends StatelessWidget {
     this.implyNavigation = false,
     this.actions,
     this.isLastInList = false,
+    this.contentPadding,
   }) : super(key: key);
 
   @override
@@ -97,13 +99,14 @@ class Cell extends StatelessWidget {
           ),
           child: Padding(
             padding: Platform.isIOS
-                ? EdgeInsets.only(
-                    left: Platform.isIOS && isLastInList ? _contentPadding : 0.0,
-                    top: _contentPadding,
-                    right: _contentPadding,
-                    bottom: _contentPadding,
-                  )
-                : const EdgeInsets.all(_contentPadding),
+                ? contentPadding ??
+                    EdgeInsets.only(
+                      left: Platform.isIOS && isLastInList ? _contentPadding : 0.0,
+                      top: _contentPadding,
+                      right: _contentPadding,
+                      bottom: _contentPadding,
+                    )
+                : contentPadding ?? const EdgeInsets.all(_contentPadding),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

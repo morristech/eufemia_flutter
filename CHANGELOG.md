@@ -1,3 +1,7 @@
+## 0.1.3+4
+
+- Added contentPadding parameter to Cell
+
 ## 0.1.3+3
 
 - Added shrink parameter to Switches
