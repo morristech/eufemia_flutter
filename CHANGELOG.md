@@ -1,3 +1,7 @@
+## 0.1.3+1
+
+- Removed duplicate bottom border in StaticList
+
 ## 0.1.3
 
 - Added static lists

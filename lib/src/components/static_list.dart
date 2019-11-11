@@ -62,10 +62,6 @@ class StaticList extends StatelessWidget {
                     width: _borderWidth,
                     color: _borderColor,
                   ),
-                  bottom: BorderSide(
-                    width: _borderWidth,
-                    color: _borderColor,
-                  ),
                 ),
               ),
               child: Column(
