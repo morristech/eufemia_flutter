@@ -1,3 +1,7 @@
+## 0.1.3
+
+- Added static lists
+
 ## 0.1.2+6
 
 - Fixed a bug causing Hero widgets to be duplicated in lists

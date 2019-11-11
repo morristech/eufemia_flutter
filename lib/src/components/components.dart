@@ -14,3 +14,4 @@ export 'table.dart';
 export 'tag.dart';
 export 'toggle_label.dart';
 export 'toolbar.dart';
+export 'static_list.dart';
