@@ -156,6 +156,9 @@ class Cell extends StatelessWidget {
                           child: trailing,
                         ),
                       ),
+                      if (trailing is Text) ...{
+                        SizedBox(width: 8.0),
+                      },
                       if (implyNavigation) ...{
                         AnimatedDefaultTextStyle(
                           duration: _styleChangeDuration,

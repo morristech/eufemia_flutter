@@ -1,3 +1,7 @@
+## 0.1.2+3
+
+- Added padding to trailing text in cells
+
 ## 0.1.2+2
 
 - Added parameters for content card borders and separators
