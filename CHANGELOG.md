@@ -1,3 +1,7 @@
+## 0.1.2
+
+- Added company card designs
+
 ## 0.1.1+2
 
 - Fixed alignment of trailing widgets combined with implied navigation

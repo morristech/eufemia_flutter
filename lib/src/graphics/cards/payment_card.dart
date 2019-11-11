@@ -176,6 +176,18 @@ class PaymentCard extends StatelessWidget {
           endColor: Color(0xFF251D23),
           stops: [0.0631, 0.852],
         );
+      case CardDesign.brightGreen:
+        return CardBase(
+          startColor: Color(0xFF2CC48E),
+          endColor: Color(0xFF28B482),
+          stops: [0.0631, 0.8266],
+        );
+      case CardDesign.brightBlue:
+        return CardBase(
+          startColor: Color(0xFF50C9DE),
+          endColor: Color(0xFF4BBED2),
+          stops: [0.0631, 0.8266],
+        );
       default:
         return CardBase(
           startColor: Color(0xFF008484),

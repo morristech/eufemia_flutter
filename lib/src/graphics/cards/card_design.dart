@@ -7,4 +7,6 @@ enum CardDesign {
   gold,
   saga,
   black,
+  brightGreen,
+  brightBlue,
 }
