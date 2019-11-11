@@ -1,3 +1,7 @@
+## 0.1.2+2
+
+- Added parameters for content card borders and separators
+
 ## 0.1.2+1
 
 - Added shadow parameter for content cards

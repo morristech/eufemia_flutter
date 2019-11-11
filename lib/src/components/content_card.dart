@@ -19,14 +19,23 @@ class ContentCard extends StatelessWidget {
   final Widget label;
   final String semanticLabel;
   final bool shadow;
+  final bool border;
+  final bool separator;
 
   /// A card from the Eufemia Design System
   ///
   /// * [child]: The main content of the card
   /// * [label]: Optional label to appear below the content
   /// * [semanticLabel]: Accessibility label
-  const ContentCard({Key key, this.label, this.child, this.semanticLabel, this.shadow = true})
-      : super(key: key);
+  const ContentCard({
+    Key key,
+    this.label,
+    this.child,
+    this.semanticLabel,
+    this.shadow = true,
+    this.border = true,
+    this.separator = true,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -48,12 +57,14 @@ class ContentCard extends StatelessWidget {
               : null,
           color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(_cardBorderRadius),
-          border: Border.all(
-            width: _cardBorderWidth,
-            color: Theme.of(context).brightness == Brightness.light
-                ? _cardLightBorderColor
-                : _cardDarkBorderColor,
-          ),
+          border: border
+              ? Border.all(
+                  width: _cardBorderWidth,
+                  color: Theme.of(context).brightness == Brightness.light
+                      ? _cardLightBorderColor
+                      : _cardDarkBorderColor,
+                )
+              : null,
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -61,12 +72,14 @@ class ContentCard extends StatelessWidget {
           children: [
             child,
             if (label != null) ...{
-              Container(
-                height: _cardBorderWidth,
-                color: Theme.of(context).brightness == Brightness.light
-                    ? _cardLightBorderColor
-                    : _cardDarkBorderColor,
-              ),
+              if (separator) ...{
+                Container(
+                  height: _cardBorderWidth,
+                  color: Theme.of(context).brightness == Brightness.light
+                      ? _cardLightBorderColor
+                      : _cardDarkBorderColor,
+                ),
+              },
               Container(
                 decoration: BoxDecoration(
                   color: Theme.of(context).brightness == Brightness.light
