@@ -1,0 +1,30 @@
+<svg fill="none" height="50" viewBox="0 0 50 50" width="50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <filter id="a" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="50" width="50" x="0" y="0">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="1"/>
+        <feGaussianBlur stdDeviation=".5"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0"/>
+        <feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow"/>
+        <feBlend in="SourceGraphic" in2="effect1_dropShadow" mode="normal" result="shape"/>
+    </filter>
+    <filter id="b" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="13" width="13" x="37" y="0">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="1"/>
+        <feGaussianBlur stdDeviation=".5"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+        <feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow"/>
+        <feBlend in="SourceGraphic" in2="effect1_dropShadow" mode="normal" result="shape"/>
+    </filter>
+    <g filter="url(#a)">
+        <path d="m25 48c13.2548 0 24-10.7452 24-24s-10.7452-24-24-24-24 10.7452-24 24 10.7452 24 24 24z" fill="#f8f8f8"/>
+    </g>
+    <path d="m14.135 15.4206v17.0997c0 .8652.3947 1.5936.9845 2.07l10.832-10.8046-10.7456-10.502c-.6373.4736-1.0709 1.2302-1.0709 2.1369z" fill="#02d2ff"/>
+    <path d="m30.0111 19.9804-11.8743-6.8681c-.9928-.5742-2.1248-.4277-2.9309.1714l10.7456 10.502z" fill="#09ec78"/>
+    <path d="m32.9185 26.2787c1.7753-1.0269 1.7753-3.5899 0-4.6167l-2.9074-1.6816-4.0596 3.8053 4.175 4.1079z" fill="#fec804"/>
+    <path d="m15.1195 34.5903c.8102.6545 1.9885.8334 3.0173.2383l11.9897-6.935-4.175-4.1079z" fill="#f03d4f"/>
+    <g filter="url(#b)">
+        <path d="m43.5 11c3.0376 0 5.5-2.46243 5.5-5.5s-2.4624-5.5-5.5-5.5-5.5 2.46243-5.5 5.5 2.4624 5.5 5.5 5.5z" fill="#1dd5a7"/>
+    </g>
+</svg>

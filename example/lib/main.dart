@@ -9,6 +9,7 @@ import 'package:eufemia_example/views/components/cells.dart';
 import 'package:eufemia_example/views/components/search_bar.dart';
 import 'package:eufemia_example/views/components/controls.dart';
 import 'package:eufemia_example/views/components/snackbars.dart';
+import 'package:eufemia_example/views/components/spinner.dart';
 import 'package:eufemia_example/views/graphics/flags.dart';
 import 'package:eufemia_example/views/graphics/graphics.dart';
 import 'package:eufemia_example/views/graphics/payment_cards.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         Routes.bars: (context) => BarsView(),
         Routes.icons: (context) => IconsView(),
         Routes.system: (context) => SystemView(),
+        Routes.spinner: (context) => SpinnerView(),
       },
     );
   }

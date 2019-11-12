@@ -23,6 +23,7 @@ class PaymentCard extends StatelessWidget {
   final CardPreset preset;
   final Color logoColor;
   final double width;
+  final bool shadow;
 
   final int digits;
   final String digitsText;
@@ -38,6 +39,7 @@ class PaymentCard extends StatelessWidget {
     this.digits = 1358,
     this.digitsText = 'KORTNUMMER',
     this.logoColor = Colors.white,
+    this.shadow = false,
   }) : super(key: key);
 
   @override
@@ -156,46 +158,54 @@ class PaymentCard extends StatelessWidget {
         return CardBase(
           startColor: Colors.black,
           endColor: Colors.black,
+          shadow: shadow,
         );
       case CardDesign.white:
         return CardBase(
           startColor: Color(0xFFFAFAFA),
           endColor: Colors.white,
           stops: [0.0463, 0.9204],
+          shadow: shadow,
         );
       case CardDesign.grey:
         return CardBase(
           startColor: Color(0xFFCCCCCC),
           endColor: Color(0xFFE8E8E8),
+          shadow: shadow,
         );
       case CardDesign.gold:
         return CardBase(
           startColor: Color(0xFFBFA970),
           endColor: Color(0xFFD3BD83),
           stops: [0.0463, 0.8457],
+          shadow: shadow,
         );
       case CardDesign.saga:
         return CardBase(
           startColor: Color(0xFF241E23),
           endColor: Color(0xFF251D23),
           stops: [0.0631, 0.852],
+          shadow: shadow,
         );
       case CardDesign.brightGreen:
         return CardBase(
           startColor: Color(0xFF2CC48E),
           endColor: Color(0xFF28B482),
           stops: [0.0631, 0.8266],
+          shadow: shadow,
         );
       case CardDesign.brightBlue:
         return CardBase(
           startColor: Color(0xFF50C9DE),
           endColor: Color(0xFF4BBED2),
           stops: [0.0631, 0.8266],
+          shadow: shadow,
         );
       default:
         return CardBase(
           startColor: Color(0xFF008484),
           endColor: Color(0xFF007272),
+          shadow: shadow,
         );
     }
   }

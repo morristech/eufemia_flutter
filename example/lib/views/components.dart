@@ -45,6 +45,11 @@ class ComponentView extends StatelessWidget {
             onTap: () => Navigator.pushNamed(context, Routes.bars),
             implyNavigation: true,
           ),
+          Cell(
+            title: Text('Spinner'),
+            onTap: () => Navigator.pushNamed(context, Routes.spinner),
+            implyNavigation: true,
+          ),
         ],
       ),
     );

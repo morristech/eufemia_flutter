@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class CardBase extends StatelessWidget {
   final bool softLight;
+  final bool shadow;
   final Color startColor;
   final Color endColor;
   final List<double> stops;
@@ -15,6 +16,7 @@ class CardBase extends StatelessWidget {
     this.endColor,
     this.width,
     this.stops,
+    this.shadow = false,
   }) : super(key: key);
 
   @override

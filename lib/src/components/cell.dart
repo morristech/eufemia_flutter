@@ -98,107 +98,113 @@ class Cell extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: Platform.isIOS
-                ? contentPadding ??
-                    EdgeInsets.only(
-                      left: Platform.isIOS && isLastInList ? _contentPadding : 0.0,
-                      top: _contentPadding,
-                      right: _contentPadding,
-                      bottom: _contentPadding,
-                    )
-                : contentPadding ?? const EdgeInsets.all(_contentPadding),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    if (leading != null) ...{
-                      AnimatedDefaultTextStyle(
-                        duration: _styleChangeDuration,
-                        style:
-                            Theme.of(context).textTheme.title.copyWith(fontWeight: FontWeight.bold),
-                        overflow: TextOverflow.fade,
-                        child: leading,
-                      ),
-                    },
-                    if (title != null) ...{
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: leading != null ? _contentPadding : 0.0,
+            padding: contentPadding ??
+                (Platform.isIOS
+                    ? EdgeInsets.only(
+                        left: Platform.isIOS && isLastInList ? _contentPadding : 0.0,
+                        top: _contentPadding,
+                        right: _contentPadding,
+                        bottom: _contentPadding,
+                      )
+                    : const EdgeInsets.all(_contentPadding)),
+            child: SafeArea(
+              bottom: false,
+              top: false,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      if (leading != null) ...{
+                        AnimatedDefaultTextStyle(
+                          duration: _styleChangeDuration,
+                          style: Theme.of(context)
+                              .textTheme
+                              .title
+                              .copyWith(fontWeight: FontWeight.bold),
+                          overflow: TextOverflow.fade,
+                          child: leading,
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            AnimatedDefaultTextStyle(
-                              style: Theme.of(context).textTheme.body1,
-                              overflow: TextOverflow.fade,
-                              duration: _styleChangeDuration,
-                              child: title,
-                            ),
-                            if (subtitle != null) ...{
+                      },
+                      if (title != null) ...{
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: leading != null ? _contentPadding : 0.0,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
                               AnimatedDefaultTextStyle(
-                                style: Theme.of(context).textTheme.subhead.copyWith(
-                                      color: EufemiaColors.darkGray,
-                                    ),
+                                style: Theme.of(context).textTheme.body1,
                                 overflow: TextOverflow.fade,
                                 duration: _styleChangeDuration,
-                                child: subtitle,
+                                child: title,
                               ),
-                            },
-                          ],
-                        ),
-                      )
-                    },
-                  ],
-                ),
-                if (trailing != null) ...{
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      AnimatedDefaultTextStyle(
-                        duration: _styleChangeDuration,
-                        style: Theme.of(context).textTheme.body2,
-                        overflow: TextOverflow.fade,
-                        child: IconTheme(
-                          data: IconThemeData(color: _iconColor),
-                          child: trailing,
-                        ),
-                      ),
-                      if (trailing is Text) ...{
-                        SizedBox(width: 8.0),
+                              if (subtitle != null) ...{
+                                AnimatedDefaultTextStyle(
+                                  style: Theme.of(context).textTheme.subhead.copyWith(
+                                        color: EufemiaColors.darkGray,
+                                      ),
+                                  overflow: TextOverflow.fade,
+                                  duration: _styleChangeDuration,
+                                  child: subtitle,
+                                ),
+                              },
+                            ],
+                          ),
+                        )
                       },
-                      if (implyNavigation) ...{
+                    ],
+                  ),
+                  if (trailing != null) ...{
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
                         AnimatedDefaultTextStyle(
                           duration: _styleChangeDuration,
                           style: Theme.of(context).textTheme.body2,
                           overflow: TextOverflow.fade,
                           child: IconTheme(
                             data: IconThemeData(color: _iconColor),
-                            child: Icon(
-                              EufemiaIcons.chevron,
-                              size: 12,
-                            ),
+                            child: trailing,
                           ),
                         ),
-                      }
-                    ],
-                  ),
-                } else if (implyNavigation) ...{
-                  AnimatedDefaultTextStyle(
-                    duration: _styleChangeDuration,
-                    style: Theme.of(context).textTheme.body2,
-                    overflow: TextOverflow.fade,
-                    child: IconTheme(
-                      data: IconThemeData(color: _iconColor),
-                      child: Icon(
-                        EufemiaIcons.chevron,
-                        size: 12,
+                        if (trailing is Text || trailing is AnimatedDefaultTextStyle) ...{
+                          SizedBox(width: 8.0),
+                        },
+                        if (implyNavigation) ...{
+                          AnimatedDefaultTextStyle(
+                            duration: _styleChangeDuration,
+                            style: Theme.of(context).textTheme.body2,
+                            overflow: TextOverflow.fade,
+                            child: IconTheme(
+                              data: IconThemeData(color: _iconColor),
+                              child: Icon(
+                                EufemiaIcons.chevron,
+                                size: 12,
+                              ),
+                            ),
+                          ),
+                        }
+                      ],
+                    ),
+                  } else if (implyNavigation) ...{
+                    AnimatedDefaultTextStyle(
+                      duration: _styleChangeDuration,
+                      style: Theme.of(context).textTheme.body2,
+                      overflow: TextOverflow.fade,
+                      child: IconTheme(
+                        data: IconThemeData(color: _iconColor),
+                        child: Icon(
+                          EufemiaIcons.chevron,
+                          size: 12,
+                        ),
                       ),
                     ),
-                  ),
-                },
-              ],
+                  },
+                ],
+              ),
             ),
           ),
         ),
@@ -215,6 +221,7 @@ class Cell extends StatelessWidget {
       onTap: this.onTap,
       implyNavigation: this.implyNavigation,
       isLastInList: lastInList ?? this.isLastInList,
+      contentPadding: this.contentPadding,
     );
   }
 }

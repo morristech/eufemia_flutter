@@ -54,6 +54,7 @@ class StaticList extends StatelessWidget {
             top: topPadding ? _topPadding : 0.0,
           ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           if (showBorders) ...{
             Container(
@@ -68,11 +69,13 @@ class StaticList extends StatelessWidget {
                 ),
               ),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: children,
               ),
             )
           } else ...{
             Column(
+              mainAxisSize: MainAxisSize.min,
               children: children,
             )
           },

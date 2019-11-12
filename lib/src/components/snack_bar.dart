@@ -1,8 +1,9 @@
+import 'package:eufemia/eufemia.dart';
 import 'package:eufemia/src/style/colors.dart';
 import 'package:flutter/material.dart';
 
 const double _borderRadius = 2.0;
-final Color _FontColor = Colors.white;
+final Color _fontColor = Colors.white;
 final Color _backgroundColor = EufemiaColors.coal;
 final Color _actionLabelColor = EufemiaColors.mintGreen;
 
@@ -25,13 +26,13 @@ class Snacks {
           if (showProgressIndicator) ...{
             Padding(
               padding: const EdgeInsets.only(right: 16.0),
-              child: CircularProgressIndicator(),
+              child: Spinner(),
             ),
           },
           if (label != null) ...{
             Text(
               label,
-              style: TextStyle(color: _FontColor),
+              style: TextStyle(color: _fontColor),
             ),
           },
         ],
