@@ -1,4 +1,3 @@
-export 'bottom_navigation_bar.dart';
 export 'cell.dart';
 export 'content_card.dart';
 export 'page_indicator.dart';

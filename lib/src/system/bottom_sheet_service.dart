@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:eufemia/eufemia.dart';
 import 'package:eufemia/src/system/modal_action.dart';
 import 'package:flutter/cupertino.dart';
@@ -7,7 +6,7 @@ import 'package:flutter/material.dart';
 class BottomSheetService {
   /// Shows a native modal bottom sheet in the given [BuildContext]
   static void showNativeBottomSheet(BuildContext context, WidgetBuilder builder) {
-    if (Platform.isIOS) {
+    if (Theme.of(context).platform == TargetPlatform.iOS) {
       showCupertinoModalPopup(
         context: context,
         builder: builder,
@@ -25,10 +24,11 @@ class BottomSheetService {
   static void showActionsSheet(
     BuildContext context, {
     @required String title,
+    @required String message,
     @required ModalAction cancel,
     @required List<ModalAction> actions,
   }) {
-    if (Platform.isIOS) {
+    if (Theme.of(context).platform == TargetPlatform.iOS) {
       showNativeBottomSheet(
         context,
         (context) {
@@ -37,7 +37,7 @@ class BottomSheetService {
               (action) {
                 return CupertinoActionSheetAction(
                   onPressed: action.onPressed,
-                  isDefaultAction: action.isDefault,
+                  isDefaultAction: action.isDefaultAction,
                   isDestructiveAction: action.isDestructive,
                   child: Text(
                     action.label,
@@ -52,9 +52,10 @@ class BottomSheetService {
               },
             ).toList(),
             title: Text(title),
+            message: Text(message),
             cancelButton: CupertinoActionSheetAction(
               onPressed: cancel.onPressed,
-              isDefaultAction: cancel.isDefault,
+              isDefaultAction: cancel.isDefaultAction,
               isDestructiveAction: cancel.isDestructive,
               child: Text(
                 cancel.label,

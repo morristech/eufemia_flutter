@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -19,6 +17,7 @@ class Cell extends StatelessWidget {
   final VoidCallback onTap;
   final bool implyNavigation;
   final bool isLastInList;
+  final bool showBottomBorder;
   final List<CellAction> actions;
   final EdgeInsets contentPadding;
 
@@ -33,11 +32,12 @@ class Cell extends StatelessWidget {
     this.actions,
     this.isLastInList = false,
     this.contentPadding,
+    this.showBottomBorder = true,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (Platform.isIOS) {
+    if (Theme.of(context).platform == TargetPlatform.iOS) {
       return Slidable(
         actionPane: SlidableDrawerActionPane(),
         child: _buildCell(context),
@@ -83,25 +83,29 @@ class Cell extends StatelessWidget {
   Widget _buildCell(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      onLongPress: Platform.isIOS ? null : _handleLongPress,
+      onLongPress: Theme.of(context).platform == TargetPlatform.iOS ? null : _handleLongPress,
       child: Padding(
-        padding: (Platform.isIOS && !isLastInList)
+        padding: (Theme.of(context).platform == TargetPlatform.iOS && !isLastInList)
             ? const EdgeInsets.only(left: _contentPadding)
             : EdgeInsets.zero,
         child: Container(
           decoration: BoxDecoration(
-            border: Border(
-              bottom: BorderSide(
-                width: _borderWidth,
-                color: isLastInList ? _borderEndColor : _borderColor,
-              ),
-            ),
+            border: showBottomBorder
+                ? Border(
+                    bottom: BorderSide(
+                      width: _borderWidth,
+                      color: isLastInList ? _borderEndColor : _borderColor,
+                    ),
+                  )
+                : null,
           ),
           child: Padding(
             padding: contentPadding ??
-                (Platform.isIOS
+                (Theme.of(context).platform == TargetPlatform.iOS
                     ? EdgeInsets.only(
-                        left: Platform.isIOS && isLastInList ? _contentPadding : 0.0,
+                        left: Theme.of(context).platform == TargetPlatform.iOS && isLastInList
+                            ? _contentPadding
+                            : 0.0,
                         top: _contentPadding,
                         right: _contentPadding,
                         bottom: _contentPadding,
@@ -163,7 +167,9 @@ class Cell extends StatelessWidget {
                       children: [
                         AnimatedDefaultTextStyle(
                           duration: _styleChangeDuration,
-                          style: Theme.of(context).textTheme.body2,
+                          style: Theme.of(context).textTheme.body1.copyWith(
+                                color: EufemiaColors.darkGray,
+                              ),
                           overflow: TextOverflow.fade,
                           child: IconTheme(
                             data: IconThemeData(color: _iconColor),

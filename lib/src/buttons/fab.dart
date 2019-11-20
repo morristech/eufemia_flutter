@@ -5,6 +5,8 @@ const double _buttonShadowSpreadRadius = 1.0;
 const double _buttonShadowBlurRadius = 16.0;
 const double _iconSize = 24.0;
 const int _colorAnimationDuration = 100;
+
+// Light mode
 final Color _buttonColor = EufemiaColors.seaGreenAlt;
 final Color _buttonDisabledColor = EufemiaColors.seaGreenAltLight;
 final Color _buttonTappedColor = EufemiaColors.seaGreenAltDark;
@@ -12,6 +14,16 @@ final Color _buttonShadowColor = EufemiaColors.seaGreenAltShadow;
 final Color _buttonIconColor = Colors.white;
 final Color _buttonTappedIconColor = Colors.white.withOpacity(0.8);
 final Color _buttonDisabledIconColor = Colors.white.withOpacity(0.5);
+
+// Dark mode
+final Color _buttonDarkColor = EufemiaColors.mintGreen;
+final Color _buttonDarkDisabledColor = EufemiaColors.mintGreen.withOpacity(0.8);
+final Color _buttonDarkTappedColor = EufemiaColors.mintGreen.withOpacity(0.8);
+final Color _buttonDarkShadowColor = EufemiaColors.mintGreenAlt.withOpacity(0.2);
+final Color _buttonDarkIconColor = EufemiaColors.emeraldGreen;
+final Color _buttonDarkTappedIconColor = EufemiaColors.emeraldGreen.withOpacity(0.8);
+final Color _buttonDarkDisabledIconColor = EufemiaColors.emeraldGreen.withOpacity(0.5);
+
 final Offset _buttonShadowOffset = Offset(0.0, 8.0);
 
 /// A floating action button
@@ -45,6 +57,8 @@ class FAB extends StatefulWidget {
 class _FABState extends State<FAB> with TickerProviderStateMixin {
   Animation<Color> buttonColorAnimation;
   Animation<Color> iconColorAnimation;
+  Animation<Color> buttonDarkColorAnimation;
+  Animation<Color> iconDarkColorAnimation;
   AnimationController colorAnimationController;
 
   @override
@@ -86,6 +100,16 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
       begin: enabled ? _buttonIconColor : _buttonDisabledIconColor,
       end: enabled ? _buttonTappedIconColor : _buttonDisabledIconColor,
     ).animate(colorAnimationController);
+
+    buttonDarkColorAnimation = ColorTween(
+      begin: enabled ? _buttonDarkColor : _buttonDarkDisabledColor,
+      end: enabled ? _buttonDarkTappedColor : _buttonDarkDisabledColor,
+    ).animate(colorAnimationController);
+
+    iconDarkColorAnimation = ColorTween(
+      begin: enabled ? _buttonDarkIconColor : _buttonDarkDisabledIconColor,
+      end: enabled ? _buttonDarkTappedIconColor : _buttonDarkDisabledIconColor,
+    ).animate(colorAnimationController);
   }
 
   @override
@@ -105,11 +129,15 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
             return FittedBox(
               child: Container(
                 decoration: BoxDecoration(
-                  color: buttonColorAnimation.value,
+                  color: Theme.of(context).brightness == Brightness.light
+                      ? buttonColorAnimation.value
+                      : buttonDarkColorAnimation.value,
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: _buttonShadowColor,
+                      color: Theme.of(context).brightness == Brightness.light
+                          ? _buttonShadowColor
+                          : _buttonDarkShadowColor,
                       spreadRadius: _buttonShadowSpreadRadius,
                       blurRadius: _buttonShadowBlurRadius,
                       offset: _buttonShadowOffset,
@@ -121,7 +149,9 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
                     padding: const EdgeInsets.all(16.0),
                     child: IconTheme(
                       data: IconThemeData(
-                        color: iconColorAnimation.value,
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? iconColorAnimation.value
+                            : iconDarkColorAnimation.value,
                         size: _iconSize,
                       ),
                       child: widget.child,

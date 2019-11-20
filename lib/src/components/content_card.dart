@@ -21,6 +21,7 @@ class ContentCard extends StatelessWidget {
   final bool shadow;
   final bool border;
   final bool separator;
+  final bool expand;
 
   /// A card from the Eufemia Design System
   ///
@@ -35,65 +36,76 @@ class ContentCard extends StatelessWidget {
     this.shadow = true,
     this.border = true,
     this.separator = true,
+    this.expand = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Semantics(
       label: semanticLabel,
-      child: Container(
-        decoration: BoxDecoration(
-          boxShadow: shadow
-              ? [
-                  BoxShadow(
+      child: SafeArea(
+        top: !expand,
+        bottom: !expand,
+        left: !expand,
+        right: !expand,
+        child: Container(
+          width: expand ? MediaQuery.of(context).size.width : null,
+          decoration: BoxDecoration(
+            boxShadow: shadow
+                ? [
+                    BoxShadow(
+                      color: Theme.of(context).brightness == Brightness.light
+                          ? _cardLightShadowColor
+                          : _cardDarkShadowColor,
+                      spreadRadius: _cardShadowSpreadRadius,
+                      blurRadius: _cardShadowBlurRadius,
+                      offset: _cardShadowOffset,
+                    ),
+                  ]
+                : null,
+            color: Theme.of(context).cardColor,
+            borderRadius: BorderRadius.circular(_cardBorderRadius),
+            border: border
+                ? Border.all(
+                    width: _cardBorderWidth,
                     color: Theme.of(context).brightness == Brightness.light
-                        ? _cardLightShadowColor
-                        : _cardDarkShadowColor,
-                    spreadRadius: _cardShadowSpreadRadius,
-                    blurRadius: _cardShadowBlurRadius,
-                    offset: _cardShadowOffset,
+                        ? _cardLightBorderColor
+                        : _cardDarkBorderColor,
+                  )
+                : null,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SafeArea(
+                bottom: false,
+                child: child,
+              ),
+              if (label != null) ...{
+                if (separator) ...{
+                  Container(
+                    height: _cardBorderWidth,
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? _cardLightBorderColor
+                        : _cardDarkBorderColor,
                   ),
-                ]
-              : null,
-          color: Theme.of(context).cardColor,
-          borderRadius: BorderRadius.circular(_cardBorderRadius),
-          border: border
-              ? Border.all(
-                  width: _cardBorderWidth,
-                  color: Theme.of(context).brightness == Brightness.light
-                      ? _cardLightBorderColor
-                      : _cardDarkBorderColor,
-                )
-              : null,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            child,
-            if (label != null) ...{
-              if (separator) ...{
+                },
                 Container(
-                  height: _cardBorderWidth,
-                  color: Theme.of(context).brightness == Brightness.light
-                      ? _cardLightBorderColor
-                      : _cardDarkBorderColor,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? _cardLightLabelColor
+                        : _cardDarkLabelColor,
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(_cardBorderRadius),
+                      bottomRight: Radius.circular(_cardBorderRadius),
+                    ),
+                  ),
+                  child: label,
                 ),
               },
-              Container(
-                decoration: BoxDecoration(
-                  color: Theme.of(context).brightness == Brightness.light
-                      ? _cardLightLabelColor
-                      : _cardDarkLabelColor,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(_cardBorderRadius),
-                    bottomRight: Radius.circular(_cardBorderRadius),
-                  ),
-                ),
-                child: label,
-              ),
-            },
-          ],
+            ],
+          ),
         ),
       ),
     );

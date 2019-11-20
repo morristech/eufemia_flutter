@@ -11,6 +11,14 @@ final Color _buttonTappedTextColor = EufemiaColors.seaGreenAlt.withOpacity(0.8);
 final Color _buttonDisabledColor = Colors.transparent;
 final Color _buttonDisabledTextColor = EufemiaColors.seaGreenAltLight;
 
+// Dark mode
+final Color _buttonDarkColor = Colors.transparent;
+final Color _buttonDarkTappedColor = Colors.white.withOpacity(0.1);
+final Color _buttonDarkTextColor = Colors.white;
+final Color _buttonDarkTappedTextColor = Colors.white.withOpacity(0.8);
+final Color _buttonDarkDisabledColor = Colors.transparent;
+final Color _buttonDarkDisabledTextColor = Colors.white.withOpacity(0.5);
+
 /// A text button from the Eufemia Design System
 class TextButton extends StatefulWidget {
   final String label;
@@ -20,6 +28,7 @@ class TextButton extends StatefulWidget {
   final VoidCallback onPressed;
   final Color color;
   final Color tappedColor;
+  final TextStyle style;
 
   /// A text button from the Eufemia Design System
   ///
@@ -39,6 +48,7 @@ class TextButton extends StatefulWidget {
     this.emphasized = false,
     this.color,
     this.tappedColor,
+    this.style,
   }) : super(key: key);
 
   @override
@@ -48,6 +58,8 @@ class TextButton extends StatefulWidget {
 class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
   Animation<Color> buttonColorAnimation;
   Animation<Color> textColorAnimation;
+  Animation<Color> buttonDarkColorAnimation;
+  Animation<Color> textDarkColorAnimation;
   AnimationController colorAnimationController;
 
   @override
@@ -83,6 +95,17 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
       begin: enabled ? widget.color ?? _buttonTextColor : _buttonDisabledTextColor,
       end: enabled ? widget.tappedColor ?? _buttonTappedTextColor : _buttonDisabledTextColor,
     ).animate(colorAnimationController);
+
+    buttonDarkColorAnimation = ColorTween(
+      begin: enabled ? _buttonDarkColor : _buttonDarkDisabledColor,
+      end: enabled ? _buttonDarkTappedColor : _buttonDarkDisabledColor,
+    ).animate(colorAnimationController);
+
+    textDarkColorAnimation = ColorTween(
+      begin: enabled ? widget.color ?? _buttonDarkTextColor : _buttonDarkDisabledTextColor,
+      end:
+          enabled ? widget.tappedColor ?? _buttonDarkTappedTextColor : _buttonDarkDisabledTextColor,
+    ).animate(colorAnimationController);
   }
 
   @override
@@ -101,19 +124,24 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
           builder: (context, _) {
             return Container(
               decoration: BoxDecoration(
-                color: buttonColorAnimation.value,
+                color: Theme.of(context).brightness == Brightness.light
+                    ? buttonColorAnimation.value
+                    : buttonDarkColorAnimation.value,
                 borderRadius: BorderRadius.circular(_buttonBorderRadius),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(_buttonPadding),
                 child: Text(
                   widget.label,
-                  style: TextStyle(
-                    color: textColorAnimation.value,
-                    fontSize: _getFontSize(),
-                    fontWeight: widget.emphasized ? FontWeight.bold : null,
-                    height: 1.2,
-                  ),
+                  style: widget.style ??
+                      TextStyle(
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? textColorAnimation.value
+                            : textDarkColorAnimation.value,
+                        fontSize: _getFontSize(),
+                        fontWeight: widget.emphasized ? FontWeight.bold : null,
+                        height: 1.2,
+                      ),
                 ),
               ),
             );

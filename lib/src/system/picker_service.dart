@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:eufemia/eufemia.dart';
 import 'package:eufemia/src/system/picker_action.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,14 +13,14 @@ class PickerService {
     double itemExtent = 32.0,
     bool looping = false,
   }) {
-    if (Platform.isIOS) {
+    if (Theme.of(context).platform == TargetPlatform.iOS) {
       showCupertinoModalPopup(
           context: context,
           builder: (context) {
             return Container(
               height: _pickerSheetHeight,
               child: CupertinoPicker(
-                backgroundColor: Theme.of(context).cardColor,
+                backgroundColor: Theme.of(context).bottomAppBarColor,
                 onSelectedItemChanged: onValueChanged,
                 itemExtent: itemExtent,
                 children: actions.map((action) {

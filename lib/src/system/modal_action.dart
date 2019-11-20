@@ -12,7 +12,7 @@ class ModalAction {
   final VoidCallback onPressed;
 
   /// If the action is a default action (iOS only)
-  final bool isDefault;
+  final bool isDefaultAction;
 
   /// If the action is destructive (iOS only)
   final bool isDestructive;
@@ -26,7 +26,7 @@ class ModalAction {
   ModalAction({
     this.label,
     this.onPressed,
-    this.isDefault = false,
+    this.isDefaultAction = false,
     this.isDestructive = false,
     this.enabled = true,
     this.icon,

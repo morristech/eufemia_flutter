@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -19,7 +17,7 @@ class UpdateIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (Platform.isIOS && platform == TargetPlatform.iOS) {
+    if (Theme.of(context).platform == TargetPlatform.iOS && platform == TargetPlatform.iOS) {
       return SvgPicture.asset(
         'lib/assets/graphics/other/app_store_update.svg',
         package: 'eufemia',

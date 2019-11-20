@@ -1,6 +1,6 @@
 name: eufemia
 description: A new Flutter package project.
-version: 0.1.4
+version: 0.1.5
 author: Arne Molland <arneolaim@gmail.com>
 
 environment:
@@ -37,31 +37,13 @@ flutter:
       fonts:
         - asset: lib/assets/fonts/EufemiaIcons.ttf
 
-    - family: FedraSansStd
+    - family: DNB
       fonts:
-        - asset: lib/assets/fonts/FedraSansStd-Bold.otf
-          weight: 800
-        - asset: lib/assets/fonts/FedraSansStd-Book.otf
+        - asset: lib/assets/fonts/DNB-Light.otf
+          weight: 300
+        - asset: lib/assets/fonts/DNB-Regular.otf
           weight: 400
-        - asset: lib/assets/fonts/FedraSansStd-Demi.otf
+        - asset: lib/assets/fonts/DNB-Medium.otf
           weight: 500
-        - asset: lib/assets/fonts/FedraSansStd-Medium.otf
+        - asset: lib/assets/fonts/DNB-Bold.otf
           weight: 600
-
-    - family: Inter
-      fonts:
-        - asset: lib/assets/fonts/Inter-Regular.ttf
-          weight: 400
-        - asset: lib/assets/fonts/Inter-Italic.ttf
-          weight: 400
-          style: italic
-        - asset: lib/assets/fonts/Inter-Medium.ttf
-          weight: 500
-        - asset: lib/assets/fonts/Inter-MediumItalic.ttf
-          weight: 500
-          style: italic
-        - asset: lib/assets/fonts/Inter-SemiBold.ttf
-          weight: 600
-        - asset: lib/assets/fonts/Inter-SemiBoldItalic.ttf
-          weight: 600
-          style: italic

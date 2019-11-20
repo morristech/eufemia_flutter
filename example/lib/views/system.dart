@@ -121,7 +121,7 @@ class SystemView extends StatelessWidget {
         ),
         ModalAction(
           label: 'Default action',
-          isDefault: true,
+          isDefaultAction: true,
           onPressed: () => Navigator.pop(context),
         ),
         ModalAction(

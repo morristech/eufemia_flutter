@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -36,12 +34,15 @@ class ColoredIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(_hasBackground ? (Platform.isIOS ? 4.0 : 6.0) : 0.0),
+      padding: EdgeInsets.all(
+          _hasBackground ? (Theme.of(context).platform == TargetPlatform.iOS ? 4.0 : 6.0) : 0.0),
       width: size,
       height: size,
       decoration: BoxDecoration(
         color: _hasBackground ? backgroundColor : null,
-        borderRadius: Platform.isIOS ? BorderRadius.circular(8.0) : BorderRadius.circular(100),
+        borderRadius: Theme.of(context).platform == TargetPlatform.iOS
+            ? BorderRadius.circular(8.0)
+            : BorderRadius.circular(100),
       ),
       child: SizedBox(
         width: 24.0,

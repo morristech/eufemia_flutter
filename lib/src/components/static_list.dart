@@ -7,11 +7,13 @@ const double _topPadding = 32.0;
 final Color _borderColor = EufemiaColors.softGray;
 
 class StaticList extends StatelessWidget {
+  final String title;
   final List<Widget> children;
   final bool topPadding;
   final bool bottomPadding;
   final bool horizontalPadding;
   final bool showBorders;
+  final bool addBottomBorder;
   final EdgeInsets customPadding;
   final Color backgroundColor;
 
@@ -24,6 +26,8 @@ class StaticList extends StatelessWidget {
     this.customPadding,
     this.showBorders = true,
     this.backgroundColor,
+    this.addBottomBorder = true,
+    this.title,
   }) : super(key: key);
 
   @override
@@ -31,7 +35,7 @@ class StaticList extends StatelessWidget {
     if (showBorders) {
       if (children.last is Cell) {
         children.last = (children.last as Cell).copyWithListOrder(lastInList: true);
-      } else {
+      } else if (addBottomBorder) {
         children.last = Container(
           decoration: BoxDecoration(
             border: Border(
@@ -46,7 +50,6 @@ class StaticList extends StatelessWidget {
       }
     }
     return Container(
-      color: backgroundColor,
       padding: customPadding ??
           EdgeInsets.only(
             left: horizontalPadding ? _horizontalPadding : 0.0,
@@ -56,11 +59,34 @@ class StaticList extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          if (title != null) ...{
+            SafeArea(
+              bottom: false,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 16.0,
+                    bottom: 8.0,
+                  ),
+                  child: Text(
+                    title,
+                    style: Theme.of(context).textTheme.subhead.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ),
+              ),
+            ),
+          },
           if (showBorders) ...{
             Container(
-              padding:
-                  EdgeInsets.only(top: topPadding ? 16.0 : 0.0, bottom: bottomPadding ? 16.0 : 0.0),
+              margin: EdgeInsets.only(
+                top: topPadding ? 16.0 : 0.0,
+                bottom: bottomPadding ? 16.0 : 0.0,
+              ),
               decoration: BoxDecoration(
+                color: backgroundColor ?? Theme.of(context).cardColor,
                 border: Border(
                   top: BorderSide(
                     width: _borderWidth,
@@ -74,10 +100,13 @@ class StaticList extends StatelessWidget {
               ),
             )
           } else ...{
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: children,
-            )
+            Container(
+              color: backgroundColor ?? Theme.of(context).cardColor,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: children,
+              ),
+            ),
           },
         ],
       ),

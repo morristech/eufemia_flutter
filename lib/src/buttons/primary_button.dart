@@ -14,6 +14,13 @@ final Color _buttonTappedTextColor = Colors.white.withOpacity(0.8);
 final Color _buttonDisabledColor = EufemiaColors.seaGreenAltLight;
 final Color _buttonDisabledTextColor = Colors.white.withOpacity(0.5);
 
+final Color _buttonDarkColor = EufemiaColors.mintGreen;
+final Color _buttonDarkTappedColor = EufemiaColors.mintGreen;
+final Color _buttonDarkTextColor = EufemiaColors.emeraldGreen;
+final Color _buttonDarkTappedTextColor = EufemiaColors.emeraldGreen.withOpacity(0.8);
+final Color _buttonDarkDisabledColor = EufemiaColors.mintGreen.withOpacity(0.5);
+final Color _buttonDarkDisabledTextColor = EufemiaColors.emeraldGreen.withOpacity(0.5);
+
 /// A Primary button from the Eufemia Design System.
 /// There should only be one on every screen.
 class PrimaryButton extends StatefulWidget {
@@ -45,6 +52,8 @@ class PrimaryButton extends StatefulWidget {
 class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateMixin {
   Animation<Color> buttonColorAnimation;
   Animation<Color> textColorAnimation;
+  Animation<Color> buttonDarkColorAnimation;
+  Animation<Color> textDarkColorAnimation;
   AnimationController colorAnimationController;
 
   @override
@@ -80,6 +89,16 @@ class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateM
       begin: enabled ? _buttonTextColor : _buttonDisabledTextColor,
       end: enabled ? _buttonTappedTextColor : _buttonDisabledTextColor,
     ).animate(colorAnimationController);
+
+    buttonDarkColorAnimation = ColorTween(
+      begin: enabled ? _buttonDarkColor : _buttonDarkDisabledColor,
+      end: enabled ? _buttonDarkTappedColor : _buttonDarkDisabledColor,
+    ).animate(colorAnimationController);
+
+    textDarkColorAnimation = ColorTween(
+      begin: enabled ? _buttonDarkTextColor : _buttonDarkDisabledTextColor,
+      end: enabled ? _buttonDarkTappedTextColor : _buttonDarkDisabledTextColor,
+    ).animate(colorAnimationController);
   }
 
   @override
@@ -101,7 +120,9 @@ class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateM
               builder: (context, _) {
                 return Container(
                   decoration: BoxDecoration(
-                    color: buttonColorAnimation.value,
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? buttonColorAnimation.value
+                        : buttonDarkColorAnimation.value,
                     borderRadius: BorderRadius.circular(_buttonBorderRadius),
                   ),
                   child: Padding(
@@ -109,7 +130,9 @@ class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateM
                     child: Text(
                       widget.label,
                       style: TextStyle(
-                        color: textColorAnimation.value,
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? textColorAnimation.value
+                            : textDarkColorAnimation.value,
                         fontSize: _getFontSize(),
                         height: 1.2,
                       ),

@@ -97,11 +97,11 @@ class _BarsViewState extends State<BarsView> with TickerProviderStateMixin {
           BottomTabBar(
             controller: controller,
             theme: theme,
-            icons: [
-              TabIcon.house,
-              TabIcon.wallet,
-              TabIcon.coins,
-              TabIcon.person,
+            items: [
+              TabItem(icon: TabIcon.house, label: 'Home'),
+              TabItem(icon: TabIcon.wallet, label: 'Payments'),
+              TabItem(icon: TabIcon.coins, label: 'Funds'),
+              TabItem(icon: TabIcon.person, label: 'Me'),
             ],
           ),
         ],

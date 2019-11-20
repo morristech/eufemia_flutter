@@ -17,6 +17,16 @@ final Color _buttonDisabledColor = Colors.transparent;
 final Color _buttonDisabledTextColor = EufemiaColors.seaGreenAltLight;
 final Color _buttonDisabledBorderColor = EufemiaColors.seaGreenAlt.withOpacity(0.5);
 
+// Dark mode
+final Color _buttonDarkColor = Colors.black;
+final Color _buttonDarkBorderColor = Colors.white;
+final Color _buttonDarkTappedColor = EufemiaColors.lightShadow;
+final Color _buttonDarkTextColor = Colors.white;
+final Color _buttonDarkTappedTextColor = Colors.white.withOpacity(0.8);
+final Color _buttonDarkDisabledColor = EufemiaColors.coal;
+final Color _buttonDarkDisabledTextColor = Colors.white.withOpacity(0.8);
+final Color _buttonDarkDisabledBorderColor = Colors.white.withOpacity(0.8);
+
 /// A Secondary button from the Eufemia Design System
 class SecondaryButton extends StatefulWidget {
   final String label;
@@ -46,6 +56,8 @@ class SecondaryButton extends StatefulWidget {
 class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderStateMixin {
   Animation<Color> buttonColorAnimation;
   Animation<Color> textColorAnimation;
+  Animation<Color> buttonDarkColorAnimation;
+  Animation<Color> textDarkColorAnimation;
   AnimationController colorAnimationController;
 
   @override
@@ -81,6 +93,16 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
       begin: enabled ? _buttonTextColor : _buttonDisabledTextColor,
       end: enabled ? _buttonTappedTextColor : _buttonDisabledTextColor,
     ).animate(colorAnimationController);
+
+    buttonDarkColorAnimation = ColorTween(
+      begin: enabled ? _buttonDarkColor : _buttonDarkDisabledColor,
+      end: enabled ? _buttonDarkTappedColor : _buttonDarkDisabledColor,
+    ).animate(colorAnimationController);
+
+    textDarkColorAnimation = ColorTween(
+      begin: enabled ? _buttonDarkTextColor : _buttonDarkDisabledTextColor,
+      end: enabled ? _buttonDarkTappedTextColor : _buttonDarkDisabledTextColor,
+    ).animate(colorAnimationController);
   }
 
   @override
@@ -101,10 +123,14 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
               builder: (context, _) {
                 return Container(
                   decoration: BoxDecoration(
-                    color: buttonColorAnimation.value,
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? buttonColorAnimation.value
+                        : buttonDarkColorAnimation.value,
                     borderRadius: BorderRadius.circular(_buttonBorderRadius),
                     border: Border.all(
-                      color: enabled ? _buttonBorderColor : _buttonDisabledBorderColor,
+                      color: Theme.of(context).brightness == Brightness.light
+                          ? (enabled ? _buttonBorderColor : _buttonDisabledBorderColor)
+                          : (enabled ? _buttonDarkBorderColor : _buttonDarkDisabledBorderColor),
                       width: _buttonBorderWidth,
                     ),
                   ),
@@ -113,7 +139,11 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
                     child: Text(
                       widget.label,
                       style: TextStyle(
-                        color: enabled ? textColorAnimation.value : _buttonDisabledTextColor,
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? (enabled ? textColorAnimation.value : _buttonDisabledTextColor)
+                            : (enabled
+                                ? textDarkColorAnimation.value
+                                : _buttonDarkDisabledTextColor),
                         fontSize: _getFontSize(),
                         height: 1.2,
                       ),

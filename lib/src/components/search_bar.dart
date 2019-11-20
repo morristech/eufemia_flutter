@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +5,6 @@ const double _searchBarIOSBorderRadius = 10.0;
 const double _searchBarAndroidBorderRadius = 4.0;
 const double _cancelButtonPadding = 12.0;
 const double _searchTextSize = 17.0;
-const double _searchBarSuffixIconSize = 16.0;
 const int _searchBarAnimationDuration = 250;
 final Color _searchBarColor = EufemiaColors.coal.withOpacity(0.08);
 final Color _searchBarFocusColor = EufemiaColors.coal.withOpacity(0.09);
@@ -55,7 +52,9 @@ class _SearchBarState extends State<SearchBar> {
             duration: Duration(milliseconds: _searchBarAnimationDuration),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(
-                Platform.isIOS ? _searchBarIOSBorderRadius : _searchBarAndroidBorderRadius,
+                Theme.of(context).platform == TargetPlatform.iOS
+                    ? _searchBarIOSBorderRadius
+                    : _searchBarAndroidBorderRadius,
               ),
               child: TextField(
                 style: TextStyle(
@@ -86,7 +85,7 @@ class _SearchBarState extends State<SearchBar> {
             ),
           ),
         ),
-        if (Platform.isIOS) ...{
+        if (Theme.of(context).platform == TargetPlatform.iOS) ...{
           AnimatedContainer(
             duration: Duration(milliseconds: _searchBarAnimationDuration),
             child: _focusNode.hasFocus
@@ -125,7 +124,7 @@ class _SearchBarState extends State<SearchBar> {
       );
 
   Widget _getPrefix() {
-    if (Platform.isIOS) {
+    if (Theme.of(context).platform == TargetPlatform.iOS) {
       return Icon(
         Icons.search,
         color: _searchBarPrefixColor,

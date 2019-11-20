@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +9,7 @@ class DialogService {
     String content,
     List<DialogAction> actions,
   }) {
-    if (Platform.isIOS) {
+    if (Theme.of(context).platform == TargetPlatform.iOS) {
       showDialog(
         context: context,
         builder: (context) => CupertinoAlertDialog(

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 const double _iconSize = 16.0;
-const String inter = 'Inter';
+const String dnbFont = 'DNB';
 final Color _statusbarDarkColor = Colors.transparent;
 final Color _statusbarLightColor = Colors.transparent;
 final Color _appBarLightColor = Colors.white;
@@ -22,8 +22,12 @@ class Eufemia {
         color: _appBarLightColor,
         iconTheme: IconThemeData(color: _appBarLightIconColor, size: _iconSize),
       ),
-      fontFamily: inter,
+      iconTheme: IconThemeData(
+        size: _iconSize,
+      ),
+      fontFamily: dnbFont,
       textTheme: lightTextTheme,
+      bottomAppBarColor: Colors.white,
     );
   }
 
@@ -34,12 +38,16 @@ class Eufemia {
       accentColor: EufemiaColors.mintGreen,
       canvasColor: Colors.black,
       cardColor: EufemiaColors.coal,
+      iconTheme: IconThemeData(
+        size: _iconSize,
+      ),
       appBarTheme: AppBarTheme(
         brightness: Brightness.dark,
         color: _appBarDarkColor,
         iconTheme: IconThemeData(color: _appBarDarkIconColor, size: _iconSize),
       ),
       textTheme: darkTextTheme,
+      bottomAppBarColor: Colors.black,
     );
   }
 
@@ -80,6 +88,7 @@ class Eufemia {
   static TextStyle get buttonSmall => TextStyle(
         fontSize: 14.0,
         height: 1.2,
+        fontWeight: FontWeight.w500,
       );
 
   /// 34pt Bold
