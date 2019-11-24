@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0+1
+
+- Tweaked BottomAppBarItem padding
+
 ## 0.2.0
 
 - New colors, font and tweaks

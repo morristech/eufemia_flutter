@@ -72,7 +72,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
                   onLongPress: item.onLongPressed ?? null,
                   onTap: () => _navigateTo(widget.items.indexOf(item)),
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 10.0, bottom: 4.0),
+                    padding: const EdgeInsets.only(top: 8.0),
                     child: _TabItem(
                       active: widget.controller.index == widget.items.indexOf(item),
                       label: item.label,
@@ -127,7 +127,7 @@ class _TabItemState extends State<_TabItem> {
             child: Text(
               widget.label,
               style: TextStyle(
-                fontSize: 12.0,
+                fontSize: 10.0,
                 height: 1.33,
                 color: _getLabelColor(widget.theme, widget.active),
                 fontWeight: widget.active ? FontWeight.bold : FontWeight.w500,
