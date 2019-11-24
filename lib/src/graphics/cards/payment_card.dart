@@ -1,13 +1,13 @@
 import 'package:eufemia/eufemia.dart';
 import 'package:eufemia/src/graphics/cards/card_base.dart';
+import 'package:eufemia/src/graphics/cards/card_design.dart';
+import 'package:eufemia/src/graphics/cards/card_logo.dart';
+import 'package:eufemia/src/graphics/cards/card_preset.dart';
+import 'package:eufemia/src/graphics/cards/card_program.dart';
+import 'package:eufemia/src/graphics/cards/card_type.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-part 'card_design.dart';
-part 'card_logo.dart';
-part 'card_preset.dart';
-part 'card_program.dart';
-part 'card_type.dart';
 
 const designBase = 'lib/assets/graphics/cards';
 const logoBase = 'lib/assets/graphics/cards/logos';

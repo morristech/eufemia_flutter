@@ -12,6 +12,7 @@ class BottomTabBar extends StatefulWidget implements PreferredSizeWidget {
   final TabController controller;
   final TabTheme theme;
   final Color color;
+  final bool bottomSafeArea;
 
   const BottomTabBar({
     Key key,
@@ -19,6 +20,7 @@ class BottomTabBar extends StatefulWidget implements PreferredSizeWidget {
     this.controller,
     this.theme,
     this.color,
+    this.bottomSafeArea = true,
   }) : super(key: key);
 
   @override
@@ -60,26 +62,25 @@ class _BottomTabBarState extends State<BottomTabBar> {
       ),
       child: SafeArea(
         top: false,
+        bottom: widget.bottomSafeArea,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: widget.items
               .map(
-                (item) => Expanded(
-                  child: GestureDetector(
-                    onLongPress: item.onLongPressed ?? null,
-                    onTap: () => _navigateTo(widget.items.indexOf(item)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 8.0, bottom: 2.0),
-                      child: _TabItem(
-                        active: widget.controller.index == widget.items.indexOf(item),
-                        label: item.label,
-                        icon: item.icon,
-                        theme: widget.theme ??
-                            (Theme.of(context).brightness == Brightness.light
-                                ? TabTheme.light
-                                : TabTheme.dark),
-                      ),
+                (item) => GestureDetector(
+                  onLongPress: item.onLongPressed ?? null,
+                  onTap: () => _navigateTo(widget.items.indexOf(item)),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 10.0, bottom: 4.0),
+                    child: _TabItem(
+                      active: widget.controller.index == widget.items.indexOf(item),
+                      label: item.label,
+                      icon: item.icon,
+                      theme: widget.theme ??
+                          (Theme.of(context).brightness == Brightness.light
+                              ? TabTheme.light
+                              : TabTheme.dark),
                     ),
                   ),
                 ),
@@ -122,7 +123,7 @@ class _TabItemState extends State<_TabItem> {
         ),
         if (widget.label != null) ...{
           Padding(
-            padding: const EdgeInsets.only(top: 4),
+            padding: const EdgeInsets.only(top: 5.54),
             child: Text(
               widget.label,
               style: TextStyle(

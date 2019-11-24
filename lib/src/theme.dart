@@ -82,12 +82,12 @@ class Eufemia {
   ///Large button
   static TextStyle get buttonLarge => TextStyle(
         fontSize: 16.0,
-        height: 1.2,
+        height: 1.33,
       );
 
   static TextStyle get buttonSmall => TextStyle(
         fontSize: 14.0,
-        height: 1.2,
+        height: 1.33,
         fontWeight: FontWeight.w500,
       );
 
@@ -95,92 +95,92 @@ class Eufemia {
   static TextStyle get titleLarge => TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 34,
-        height: 1.2,
+        height: 1.33,
       );
 
   /// 24pt Regular
   static TextStyle get titleMedium => TextStyle(
         fontSize: 24,
-        height: 1.2,
+        height: 1.33,
       );
 
   /// 24pt Bold
   static TextStyle get titleMediumEmphasized => TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 24,
-        height: 1.2,
+        height: 1.33,
       );
 
   /// 20pt Regular
   static TextStyle get title => TextStyle(
         fontSize: 20,
-        height: 1.2,
+        height: 1.33,
       );
 
   /// 20pt Semibold
   static TextStyle get titleDemi => TextStyle(
         fontWeight: FontWeight.w500,
         fontSize: 20,
-        height: 1.2,
+        height: 1.33,
       );
 
   /// 20pt Bold
   static TextStyle get titleEmphasized => TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 20,
-        height: 1.2,
+        height: 1.33,
       );
 
   ///  17pt Regular
   static TextStyle get body => TextStyle(
         fontSize: 17,
-        height: 1.2,
+        height: 1.33,
       );
 
   /// 17pt Bold
   static TextStyle get bodyEmphasized => TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 17,
-        height: 1.2,
+        height: 1.33,
       );
 
   /// 15pt Regular
   static TextStyle get subhead => TextStyle(
         fontSize: 15,
-        height: 1.2,
+        height: 1.33,
       );
 
   /// 15pt Bold
   static TextStyle get subheadEmphasized => TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 15,
-        height: 1.2,
+        height: 1.33,
       );
 
   /// 13pt Regular
   static TextStyle get footnote => TextStyle(
         fontSize: 13,
-        height: 1.2,
+        height: 1.33,
       );
 
   /// 13pt Bold
   static TextStyle get footnoteEmphasized => TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 13,
-        height: 1.2,
+        height: 1.33,
       );
 
   /// 11pt Regular
   static TextStyle get caption => TextStyle(
         fontSize: 11,
-        height: 1.2,
+        height: 1.33,
       );
 
   /// 11pt Bold
   static TextStyle get captionEmphasized => TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 11,
-        height: 1.2,
+        height: 1.33,
       );
 
   /// Returns the default Eufemia light theme, and sets the status bar brightness.

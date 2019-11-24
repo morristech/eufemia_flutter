@@ -119,6 +119,14 @@ class _CellsViewState extends State<CellsView> {
               onChanged: (value) => setState(() => this.value = value),
             ),
           ),
+          Material(
+            color: EufemiaColors.accentYellow,
+            child: Cell(
+              title: Text(
+                'Cells can also be used as labels containing information that spans over multiple lines',
+              ),
+            ),
+          ),
         ],
       ),
     );

@@ -10,9 +10,17 @@ class EufemiaColors {
   static const mintGreen = Color.fromARGB(255, 165, 225, 210);
   static const mintGreenAlt = Color.fromARGB(255, 235, 255, 250);
 
-  // Signal colors
+  // Accent / UX
   static const signalOrange = Color.fromARGB(255, 255, 84, 0);
-  static const signalYellow = Color.fromARGB(255, 255, 255, 122);
+  static const accentYellow = Color.fromARGB(255, 253, 187, 49);
+  static const successGreen = Color.fromRGBO(0, 128, 0, 1);
+  static const fireRed = Color.fromRGBO(220, 42, 42, 1);
+
+  // Background
+  static const lightGray = Color.fromRGBO(250, 250, 250, 1);
+  static const lavender = Color.fromRGBO(242, 242, 245, 1);
+  static const sandYellow = Color.fromRGBO(251, 246, 236, 1);
+  static const pistachio = Color.fromRGBO(242, 244, 236, 1);
 
   // Color blends
   static const signalYellowDark = Color.fromARGB(255, 192, 192, 92);
@@ -49,7 +57,7 @@ class EufemiaColors {
       return oceanGreen;
     } else if (value == mintGreen.value) {
       return emeraldGreen;
-    } else if (value == signalYellow.value) {
+    } else if (value == accentYellow.value) {
       return oceanGreen;
     } else {
       return Colors.white;

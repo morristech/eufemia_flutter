@@ -1,3 +1,9 @@
+# Changelog
+
+## 0.2.0
+
+- New colors, font and tweaks
+
 ## 0.1.3+4
 
 - Added contentPadding parameter to Cell

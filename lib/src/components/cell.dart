@@ -117,49 +117,54 @@ class Cell extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      if (leading != null) ...{
-                        AnimatedDefaultTextStyle(
-                          duration: _styleChangeDuration,
-                          style: Theme.of(context)
-                              .textTheme
-                              .title
-                              .copyWith(fontWeight: FontWeight.bold),
-                          overflow: TextOverflow.fade,
-                          child: leading,
-                        ),
-                      },
-                      if (title != null) ...{
-                        Padding(
-                          padding: EdgeInsets.only(
-                            left: leading != null ? _contentPadding : 0.0,
+                  Flexible(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if (leading != null) ...{
+                          AnimatedDefaultTextStyle(
+                            duration: _styleChangeDuration,
+                            style: Theme.of(context)
+                                .textTheme
+                                .title
+                                .copyWith(fontWeight: FontWeight.bold),
+                            overflow: TextOverflow.fade,
+                            child: leading,
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              AnimatedDefaultTextStyle(
-                                style: Theme.of(context).textTheme.body1,
-                                overflow: TextOverflow.fade,
-                                duration: _styleChangeDuration,
-                                child: title,
+                        },
+                        if (title != null) ...{
+                          Flexible(
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                left: leading != null ? 8.0 : 0.0,
                               ),
-                              if (subtitle != null) ...{
-                                AnimatedDefaultTextStyle(
-                                  style: Theme.of(context).textTheme.subhead.copyWith(
-                                        color: EufemiaColors.darkGray,
-                                      ),
-                                  overflow: TextOverflow.fade,
-                                  duration: _styleChangeDuration,
-                                  child: subtitle,
-                                ),
-                              },
-                            ],
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  AnimatedDefaultTextStyle(
+                                    style: Theme.of(context).textTheme.body1,
+                                    overflow: TextOverflow.fade,
+                                    duration: _styleChangeDuration,
+                                    child: title,
+                                  ),
+                                  if (subtitle != null) ...{
+                                    AnimatedDefaultTextStyle(
+                                      style: Theme.of(context).textTheme.subhead.copyWith(
+                                            color: EufemiaColors.darkGray,
+                                          ),
+                                      overflow: TextOverflow.fade,
+                                      duration: _styleChangeDuration,
+                                      child: subtitle,
+                                    ),
+                                  },
+                                ],
+                              ),
+                            ),
                           ),
-                        )
-                      },
-                    ],
+                        },
+                      ],
+                    ),
                   ),
                   if (trailing != null) ...{
                     Row(

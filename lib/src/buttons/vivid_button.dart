@@ -7,11 +7,11 @@ const double _buttonLargeVerticalPadding = 16.0;
 const double _buttonSmallVerticalPadding = 8.0;
 const double _buttonSmallHorizontalPadding = 16.0;
 const int _colorAnimationDuration = 100;
-final Color _buttonColor = EufemiaColors.signalYellow;
+final Color _buttonColor = EufemiaColors.accentYellow;
 final Color _buttonTappedColor = EufemiaColors.signalYellowDark;
 final Color _buttonTextColor = EufemiaColors.oceanGreen;
 final Color _buttonTappedTextColor = EufemiaColors.oceanGreen.withOpacity(0.8);
-final Color _buttonDisabledColor = EufemiaColors.signalYellow.withOpacity(0.5);
+final Color _buttonDisabledColor = EufemiaColors.accentYellow.withOpacity(0.5);
 final Color _buttonDisabledTextColor = EufemiaColors.oceanGreen.withOpacity(0.5);
 
 /// A vivid button from the Eufemia Design System
