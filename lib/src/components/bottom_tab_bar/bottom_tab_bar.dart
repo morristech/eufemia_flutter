@@ -68,19 +68,22 @@ class _BottomTabBarState extends State<BottomTabBar> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: widget.items
               .map(
-                (item) => GestureDetector(
-                  onLongPress: item.onLongPressed ?? null,
-                  onTap: () => _navigateTo(widget.items.indexOf(item)),
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: _TabItem(
-                      active: widget.controller.index == widget.items.indexOf(item),
-                      label: item.label,
-                      icon: item.icon,
-                      theme: widget.theme ??
-                          (Theme.of(context).brightness == Brightness.light
-                              ? TabTheme.light
-                              : TabTheme.dark),
+                (item) => Expanded(
+                  child: GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onLongPress: item.onLongPressed ?? null,
+                    onTap: () => _navigateTo(widget.items.indexOf(item)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: _TabItem(
+                        active: widget.controller.index == widget.items.indexOf(item),
+                        label: item.label,
+                        icon: item.icon,
+                        theme: widget.theme ??
+                            (Theme.of(context).brightness == Brightness.light
+                                ? TabTheme.light
+                                : TabTheme.dark),
+                      ),
                     ),
                   ),
                 ),
@@ -117,9 +120,13 @@ class _TabItemState extends State<_TabItem> {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        AnimatedSwitcher(
-          duration: Duration(milliseconds: 250),
-          child: widget.active ? _getActiveIcon() : _getInactiveIcon(),
+        LimitedBox(
+          maxHeight: 24,
+          maxWidth: 24,
+          child: AnimatedSwitcher(
+            duration: Duration(milliseconds: 250),
+            child: widget.active ? _getActiveIcon() : _getInactiveIcon(),
+          ),
         ),
         if (widget.label != null) ...{
           Padding(
@@ -127,7 +134,7 @@ class _TabItemState extends State<_TabItem> {
             child: Text(
               widget.label,
               style: TextStyle(
-                fontSize: 10.0,
+                fontSize: Theme.of(context).platform == TargetPlatform.iOS ? 10.0 : 12.0,
                 height: 1.33,
                 color: _getLabelColor(widget.theme, widget.active),
                 fontWeight: widget.active ? FontWeight.bold : FontWeight.w500,

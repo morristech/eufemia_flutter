@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0+2
+
+- Added option to un-center leading widgets in a Cell
+- Expanded touch area on bottom app bar items
+
 ## 0.2.0+1
 
 - Tweaked BottomAppBarItem padding

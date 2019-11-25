@@ -18,6 +18,7 @@ class Cell extends StatelessWidget {
   final bool implyNavigation;
   final bool isLastInList;
   final bool showBottomBorder;
+  final bool centerLeading;
   final List<CellAction> actions;
   final EdgeInsets contentPadding;
 
@@ -33,6 +34,7 @@ class Cell extends StatelessWidget {
     this.isLastInList = false,
     this.contentPadding,
     this.showBottomBorder = true,
+    this.centerLeading = true,
   }) : super(key: key);
 
   @override
@@ -120,7 +122,8 @@ class Cell extends StatelessWidget {
                   Flexible(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment:
+                          centerLeading ? CrossAxisAlignment.center : CrossAxisAlignment.start,
                       children: [
                         if (leading != null) ...{
                           AnimatedDefaultTextStyle(
