@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0+3
+
+- Tweaks to BottomTabBar padding
+
 ## 0.2.0+2
 
 - Added option to un-center leading widgets in a Cell

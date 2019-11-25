@@ -74,7 +74,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
                     onLongPress: item.onLongPressed ?? null,
                     onTap: () => _navigateTo(widget.items.indexOf(item)),
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
+                      padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
                       child: _TabItem(
                         active: widget.controller.index == widget.items.indexOf(item),
                         label: item.label,

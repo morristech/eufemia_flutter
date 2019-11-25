@@ -8,7 +8,7 @@ const double _labelPadding = 4.0;
 const int _animationDuration = 250;
 final Color _iconColor = EufemiaColors.darkGray;
 final Color _color = EufemiaColors.outlineGray;
-final Color _FontColor = EufemiaColors.coal;
+final Color _fontColor = EufemiaColors.coal;
 
 /// Tag from the Eufemia Design System
 class Tag extends StatelessWidget {
@@ -39,7 +39,7 @@ class Tag extends StatelessWidget {
               children: [
                 GestureDetector(
                   child: Icon(
-                    Icons.cancel,
+                    EufemiaIcons.clear,
                     color: _iconColor,
                     size: _iconSize,
                   ),
@@ -51,7 +51,7 @@ class Tag extends StatelessWidget {
                     label,
                     style: TextStyle(
                       fontSize: _FontSize,
-                      color: _FontColor,
+                      color: _fontColor,
                     ),
                   ),
                 )

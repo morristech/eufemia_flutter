@@ -18,6 +18,7 @@ class Eufemia {
       primaryColor: EufemiaColors.mintGreen,
       accentColor: EufemiaColors.emeraldGreen,
       appBarTheme: AppBarTheme(
+        elevation: 0,
         brightness: Brightness.light,
         color: _appBarLightColor,
         iconTheme: IconThemeData(color: _appBarLightIconColor, size: _iconSize),
@@ -42,6 +43,7 @@ class Eufemia {
         size: _iconSize,
       ),
       appBarTheme: AppBarTheme(
+        elevation: 0,
         brightness: Brightness.dark,
         color: _appBarDarkColor,
         iconTheme: IconThemeData(color: _appBarDarkIconColor, size: _iconSize),
