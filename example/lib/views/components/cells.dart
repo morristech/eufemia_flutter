@@ -114,7 +114,7 @@ class _CellsViewState extends State<CellsView> {
           ),
           Cell(
             title: Text('Label with switch'),
-            trailing: eufemia.Switch(
+            trailing: EufemiaSwitch(
               value: value,
               onChanged: (value) => setState(() => this.value = value),
             ),

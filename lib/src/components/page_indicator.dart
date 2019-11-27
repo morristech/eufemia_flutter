@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 const double _borderWidth = 1.0;
 const int _animationDuration = 250;
 final Color _color = EufemiaColors.seaGreenAlt;
-final Color _UnselectedColor = Colors.transparent;
+final Color _unselectedColor = Colors.transparent;
 
 /// Page indicator from the Eufemia Design System
 class PageIndicator extends StatelessWidget {
@@ -20,7 +20,7 @@ class PageIndicator extends StatelessWidget {
     return AnimatedContainer(
       duration: Duration(milliseconds: _animationDuration),
       decoration: BoxDecoration(
-        color: selected ? _color : _UnselectedColor,
+        color: selected ? _color : _unselectedColor,
         shape: BoxShape.circle,
         border: Border.all(width: _borderWidth, color: _color),
       ),

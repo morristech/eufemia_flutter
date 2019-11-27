@@ -188,39 +188,32 @@ class Cell extends StatelessWidget {
                           SizedBox(width: 8.0),
                         },
                         if (implyNavigation) ...{
-                          AnimatedDefaultTextStyle(
-                            duration: _styleChangeDuration,
-                            style: Theme.of(context).textTheme.body2,
-                            overflow: TextOverflow.fade,
-                            child: IconTheme(
-                              data: IconThemeData(color: _iconColor),
-                              child: Icon(
-                                EufemiaIcons.chevron,
-                                size: 12,
-                              ),
-                            ),
-                          ),
+                          _buildNavigationButton(context),
                         }
                       ],
                     ),
                   } else if (implyNavigation) ...{
-                    AnimatedDefaultTextStyle(
-                      duration: _styleChangeDuration,
-                      style: Theme.of(context).textTheme.body2,
-                      overflow: TextOverflow.fade,
-                      child: IconTheme(
-                        data: IconThemeData(color: _iconColor),
-                        child: Icon(
-                          EufemiaIcons.chevron,
-                          size: 12,
-                        ),
-                      ),
-                    ),
+                    _buildNavigationButton(context),
                   },
                 ],
               ),
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildNavigationButton(BuildContext context) {
+    return AnimatedDefaultTextStyle(
+      duration: _styleChangeDuration,
+      style: Theme.of(context).textTheme.body2,
+      overflow: TextOverflow.fade,
+      child: IconTheme(
+        data: IconThemeData(color: _iconColor),
+        child: Icon(
+          EufemiaIcons.chevron,
+          size: 12,
         ),
       ),
     );

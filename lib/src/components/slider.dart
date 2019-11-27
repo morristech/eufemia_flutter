@@ -6,7 +6,7 @@ final Color _activeColor = EufemiaColors.seaGreenAlt;
 final Color _inactiveColor = EufemiaColors.softGray;
 
 /// Slider from the Eufemia Design System
-class Slider extends StatelessWidget {
+class EufemiaSlider extends StatelessWidget {
   final double value;
   final Function(double) onChanged;
   final Function(double) onChangeStart;
@@ -18,7 +18,7 @@ class Slider extends StatelessWidget {
   /// * [onChanged]: Callback for when the value changes
   /// * [onChangeStart]: Callback for when a change starts
   /// * [onChangeEnd]: Callback for when a change ends
-  const Slider({
+  const EufemiaSlider({
     Key key,
     @required this.value,
     @required this.onChanged,

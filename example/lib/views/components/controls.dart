@@ -1,4 +1,3 @@
-import 'package:eufemia/eufemia.dart' as eufemia;
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +11,6 @@ class _ControlsViewState extends State<ControlsView> {
   bool _firstSwitchValue;
   bool _secondSwitchValue;
   double _sliderValue;
-  RangeValues _rangeValues;
   bool _firstToggleValue;
   bool _secondToggleValue;
 
@@ -23,7 +21,6 @@ class _ControlsViewState extends State<ControlsView> {
     _firstSwitchValue = true;
     _secondSwitchValue = false;
     _sliderValue = 0.5;
-    _rangeValues = RangeValues(0.4, 0.6);
     _firstToggleValue = true;
     _secondToggleValue = false;
   }
@@ -44,17 +41,17 @@ class _ControlsViewState extends State<ControlsView> {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              eufemia.Tab(
+              EufemiaTab(
                 label: 'Tab',
                 active: _tabValue == 0,
                 onSelected: () => _setTab(0),
               ),
-              eufemia.Tab(
+              EufemiaTab(
                 label: 'Tab',
                 active: _tabValue == 1,
                 onSelected: () => _setTab(1),
               ),
-              eufemia.Tab(
+              EufemiaTab(
                 label: 'Tab',
                 active: _tabValue == 2,
                 onSelected: () => _setTab(2),
@@ -63,17 +60,17 @@ class _ControlsViewState extends State<ControlsView> {
           ),
           Row(
             children: [
-              eufemia.Switch(
+              EufemiaSwitch(
                 value: _firstSwitchValue,
                 onChanged: (value) => setState(() => _firstSwitchValue = value),
               ),
-              eufemia.Switch(
+              EufemiaSwitch(
                 value: _secondSwitchValue,
                 onChanged: (value) => setState(() => _secondSwitchValue = value),
               ),
             ],
           ),
-          eufemia.Slider(
+          EufemiaSlider(
             value: _sliderValue,
             onChanged: (value) => setState(() => _sliderValue = value),
           ),

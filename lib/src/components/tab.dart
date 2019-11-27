@@ -7,12 +7,12 @@ const int _tabAnimationDuration = 500;
 final Color _tabHighlighterColor = EufemiaColors.seaGreenAlt;
 final Color _tabHighlighterDisabledColor = Colors.transparent;
 
-class Tab extends StatelessWidget {
+class EufemiaTab extends StatelessWidget {
   final String label;
   final bool active;
   final Function() onSelected;
 
-  const Tab({
+  const EufemiaTab({
     Key key,
     @required this.label,
     @required this.active,

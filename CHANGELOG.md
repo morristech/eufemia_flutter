@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1
+
+- BREAKING: Switch -> EufemiaSwitch
+- BREAKING: Slider -> EufemiaSlider
+
 ## 0.2.0+3
 
 - Tweaks to BottomTabBar padding

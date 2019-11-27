@@ -97,6 +97,7 @@ class SystemView extends StatelessWidget {
     BottomSheetService.showActionsSheet(
       context,
       title: 'A short description of the action goes here',
+      message: 'Some message to explain some more detailed information',
       actions: [
         ModalAction(
           label: 'Action',
