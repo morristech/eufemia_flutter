@@ -1,6 +1,5 @@
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
-import 'package:quiver/iterables.dart';
 
 const double _borderWidth = 0.5;
 const double _horizontalPadding = 16.0;

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1+1
+
+- Removed unneeded dependencies
+
 ## 0.2.1
 
 - BREAKING: Switch -> EufemiaSwitch
