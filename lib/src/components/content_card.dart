@@ -74,37 +74,40 @@ class ContentCard extends StatelessWidget {
                   )
                 : null,
           ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SafeArea(
-                bottom: false,
-                child: child,
-              ),
-              if (label != null) ...{
-                if (separator) ...{
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(_cardBorderRadius),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SafeArea(
+                  bottom: false,
+                  child: child,
+                ),
+                if (label != null) ...{
+                  if (separator) ...{
+                    Container(
+                      height: _cardBorderWidth,
+                      color: Theme.of(context).brightness == Brightness.light
+                          ? _cardLightBorderColor
+                          : _cardDarkBorderColor,
+                    ),
+                  },
                   Container(
-                    height: _cardBorderWidth,
-                    color: Theme.of(context).brightness == Brightness.light
-                        ? _cardLightBorderColor
-                        : _cardDarkBorderColor,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).brightness == Brightness.light
+                          ? _cardLightLabelColor
+                          : _cardDarkLabelColor,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(_cardBorderRadius),
+                        bottomRight: Radius.circular(_cardBorderRadius),
+                      ),
+                    ),
+                    child: label,
                   ),
                 },
-                Container(
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).brightness == Brightness.light
-                        ? _cardLightLabelColor
-                        : _cardDarkLabelColor,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(_cardBorderRadius),
-                      bottomRight: Radius.circular(_cardBorderRadius),
-                    ),
-                  ),
-                  child: label,
-                ),
-              },
-            ],
+              ],
+            ),
           ),
         ),
       ),

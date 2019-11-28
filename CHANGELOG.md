@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2+2
+
+- ContentCard now clips its children correctly
+
 ## 0.2.1+1
 
 - Removed unneeded dependencies
