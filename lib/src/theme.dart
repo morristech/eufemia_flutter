@@ -75,7 +75,7 @@ class Eufemia {
       body1: body.copyWith(color: EufemiaColors.coal),
       body2: bodyEmphasized.copyWith(color: EufemiaColors.coal),
       caption: caption.copyWith(color: EufemiaColors.coal),
-      subtitle: footnote.copyWith(color: EufemiaColors.coal),
+      subtitle: footnote.copyWith(color: EufemiaColors.darkGray),
     );
   }
 
@@ -88,7 +88,7 @@ class Eufemia {
       body1: body.copyWith(color: Colors.white),
       body2: bodyEmphasized.copyWith(color: Colors.white),
       caption: caption.copyWith(color: Colors.white),
-      subtitle: footnote.copyWith(color: Colors.white),
+      subtitle: footnote.copyWith(color: Colors.white.withOpacity(0.75)),
     );
   }
 
