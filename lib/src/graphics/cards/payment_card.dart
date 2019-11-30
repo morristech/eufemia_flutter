@@ -113,7 +113,9 @@ class PaymentCard extends StatelessWidget {
                   child: AnimatedDefaultTextStyle(
                     duration: Duration(milliseconds: 250),
                     style: TextStyle(
-                      color: _cardBrightness == Brightness.dark ? Colors.white : EufemiaColors.coal,
+                      color: _cardBrightness == Brightness.dark
+                          ? Colors.white
+                          : EufemiaColors.coal,
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -123,14 +125,16 @@ class PaymentCard extends StatelessWidget {
                           opacity: 0.5,
                           child: Text(
                             digitsText,
-                            style: TextStyle(fontSize: constraints.maxWidth * 0.02332),
+                            style: TextStyle(
+                                fontSize: constraints.maxWidth * 0.02332),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 4.0),
                           child: Text(
                             '**** $digits',
-                            style: TextStyle(fontSize: constraints.maxWidth * 0.0583),
+                            style: TextStyle(
+                                fontSize: constraints.maxWidth * 0.0583),
                           ),
                         )
                       ],
@@ -148,9 +152,10 @@ class PaymentCard extends StatelessWidget {
   /// The rendered height of the widget
   double get height => width / goldenRatio;
 
-  Brightness get _cardBrightness => (design == CardDesign.white || design == CardDesign.grey)
-      ? Brightness.light
-      : Brightness.dark;
+  Brightness get _cardBrightness =>
+      (design == CardDesign.white || design == CardDesign.grey)
+          ? Brightness.light
+          : Brightness.dark;
 
   CardBase getCardBase(CardDesign design) {
     switch (design) {

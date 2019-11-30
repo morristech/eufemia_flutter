@@ -17,7 +17,9 @@ class EufemiaSwitch extends StatelessWidget {
   ///
   /// * [value]: The value of the switch
   /// * [onChanged]: Callback for when the value is changed
-  const EufemiaSwitch({Key key, this.value, this.onChanged, this.shrink = false}) : super(key: key);
+  const EufemiaSwitch(
+      {Key key, this.value, this.onChanged, this.shrink = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

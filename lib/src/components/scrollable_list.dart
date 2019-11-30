@@ -38,7 +38,8 @@ class ScrollableList extends StatelessWidget {
   Widget build(BuildContext context) {
     if (showBorders) {
       if (children.last is Cell) {
-        children.last = (children.last as Cell).copyWithListOrder(lastInList: true);
+        children.last =
+            (children.last as Cell).copyWithListOrder(lastInList: true);
       } else if (addBottomBorder) {
         children.last = Container(
           decoration: BoxDecoration(
@@ -87,8 +88,9 @@ class ScrollableList extends StatelessWidget {
           },
           if (showBorders) ...{
             Container(
-              margin:
-                  EdgeInsets.only(top: topPadding ? 16.0 : 0.0, bottom: bottomPadding ? 16.0 : 0.0),
+              margin: EdgeInsets.only(
+                  top: topPadding ? 16.0 : 0.0,
+                  bottom: bottomPadding ? 16.0 : 0.0),
               decoration: BoxDecoration(
                 border: Border(
                   top: BorderSide(

@@ -34,8 +34,9 @@ class ColoredIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(
-          _hasBackground ? (Theme.of(context).platform == TargetPlatform.iOS ? 4.0 : 6.0) : 0.0),
+      padding: EdgeInsets.all(_hasBackground
+          ? (Theme.of(context).platform == TargetPlatform.iOS ? 4.0 : 6.0)
+          : 0.0),
       width: size,
       height: size,
       decoration: BoxDecoration(
@@ -51,12 +52,16 @@ class ColoredIcon extends StatelessWidget {
           child: customAsset != null
               ? SvgPicture.asset(
                   customAsset,
-                  color: color ?? (_hasBackground ? null : EufemiaColors.seaGreenAlt),
+                  color: color ??
+                      (_hasBackground ? null : EufemiaColors.seaGreenAlt),
                 )
               : Icon(
                   icon,
                   size: 18.0,
-                  color: color ?? (_hasBackground ? Colors.white : EufemiaColors.seaGreenAlt),
+                  color: color ??
+                      (_hasBackground
+                          ? Colors.white
+                          : EufemiaColors.seaGreenAlt),
                 ),
         ),
       ),

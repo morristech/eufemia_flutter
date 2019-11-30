@@ -48,7 +48,8 @@ class Logo extends StatelessWidget {
       fit: fit,
       alignment: Alignment.center,
       package: 'eufemia',
-      color: Theme.of(context).brightness == Brightness.dark ? Colors.white : null,
+      color:
+          Theme.of(context).brightness == Brightness.dark ? Colors.white : null,
     );
   }
 }

@@ -24,6 +24,7 @@ class ButtonsView extends StatelessWidget {
             PrimaryButton(
               label: 'Large disabled',
               size: ButtonSize.large,
+              onPressed: null,
             ),
             PrimaryButton(
               label: 'Small',
@@ -33,6 +34,7 @@ class ButtonsView extends StatelessWidget {
             PrimaryButton(
               label: 'Small disabled',
               size: ButtonSize.small,
+              onPressed: null,
             ),
             SecondaryButton(
               label: 'Large',
@@ -42,6 +44,7 @@ class ButtonsView extends StatelessWidget {
             SecondaryButton(
               label: 'Large disabled',
               size: ButtonSize.large,
+              onPressed: null,
             ),
             SecondaryButton(
               label: 'Small',
@@ -51,6 +54,7 @@ class ButtonsView extends StatelessWidget {
             SecondaryButton(
               label: 'Small disabled',
               size: ButtonSize.small,
+              onPressed: null,
             ),
             VividButton(
               label: 'Large',
@@ -60,6 +64,7 @@ class ButtonsView extends StatelessWidget {
             VividButton(
               label: 'Large disabled',
               size: ButtonSize.large,
+              onPressed: null,
             ),
             VividButton(
               label: 'Small',
@@ -69,6 +74,7 @@ class ButtonsView extends StatelessWidget {
             VividButton(
               label: 'Small disabled',
               size: ButtonSize.small,
+              onPressed: null,
             ),
             TextButton(
               label: 'Large emphasized',

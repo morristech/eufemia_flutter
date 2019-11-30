@@ -17,9 +17,11 @@ final Color _buttonDisabledTextColor = Colors.white.withOpacity(0.5);
 final Color _buttonDarkColor = EufemiaColors.mintGreen;
 final Color _buttonDarkTappedColor = EufemiaColors.mintGreen;
 final Color _buttonDarkTextColor = EufemiaColors.emeraldGreen;
-final Color _buttonDarkTappedTextColor = EufemiaColors.emeraldGreen.withOpacity(0.8);
+final Color _buttonDarkTappedTextColor =
+    EufemiaColors.emeraldGreen.withOpacity(0.8);
 final Color _buttonDarkDisabledColor = EufemiaColors.mintGreen.withOpacity(0.5);
-final Color _buttonDarkDisabledTextColor = EufemiaColors.emeraldGreen.withOpacity(0.5);
+final Color _buttonDarkDisabledTextColor =
+    EufemiaColors.emeraldGreen.withOpacity(0.5);
 
 /// A Primary button from the Eufemia Design System.
 /// There should only be one on every screen.
@@ -49,7 +51,8 @@ class PrimaryButton extends StatefulWidget {
   _PrimaryButtonState createState() => _PrimaryButtonState();
 }
 
-class _PrimaryButtonState extends State<PrimaryButton> with TickerProviderStateMixin {
+class _PrimaryButtonState extends State<PrimaryButton>
+    with TickerProviderStateMixin {
   Animation<Color> buttonColorAnimation;
   Animation<Color> textColorAnimation;
   Animation<Color> buttonDarkColorAnimation;

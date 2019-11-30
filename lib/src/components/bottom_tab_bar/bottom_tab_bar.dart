@@ -50,7 +50,8 @@ class _BottomTabBarState extends State<BottomTabBar> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: widget.color ?? Theme.of(context).bottomAppBarColor ?? Colors.white,
+        color:
+            widget.color ?? Theme.of(context).bottomAppBarColor ?? Colors.white,
         border: Border(
           top: BorderSide(
             width: 1,
@@ -76,7 +77,8 @@ class _BottomTabBarState extends State<BottomTabBar> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
                       child: _TabItem(
-                        active: widget.controller.index == widget.items.indexOf(item),
+                        active: widget.controller.index ==
+                            widget.items.indexOf(item),
                         label: item.label,
                         icon: item.icon,
                         theme: widget.theme ??
@@ -134,7 +136,9 @@ class _TabItemState extends State<_TabItem> {
             child: Text(
               widget.label,
               style: TextStyle(
-                fontSize: Theme.of(context).platform == TargetPlatform.iOS ? 10.0 : 12.0,
+                fontSize: Theme.of(context).platform == TargetPlatform.iOS
+                    ? 10.0
+                    : 12.0,
                 height: 1.33,
                 color: _getLabelColor(widget.theme, widget.active),
                 fontWeight: widget.active ? FontWeight.bold : FontWeight.w500,

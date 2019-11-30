@@ -6,10 +6,10 @@ const double _borderWidth = 1.5;
 const int _animationDuration = 250;
 
 final Color _selectedColor = EufemiaColors.emeraldGreen;
-final Color _UnselectedColor = Colors.white;
+final Color _unselectedColor = Colors.white;
 final Color _borderColor = EufemiaColors.emeraldGreen;
 final Color _selectedFontColor = EufemiaColors.mintGreen;
-final Color _UnselectedFontColor = EufemiaColors.emeraldGreen;
+final Color _unselectedFontColor = EufemiaColors.emeraldGreen;
 
 /// Toggle label from the Eufemia Design System
 class ToggleLabel extends StatelessWidget {
@@ -35,7 +35,7 @@ class ToggleLabel extends StatelessWidget {
       child: AnimatedContainer(
         duration: Duration(milliseconds: _animationDuration),
         decoration: BoxDecoration(
-          color: selected ? _selectedColor : _UnselectedColor,
+          color: selected ? _selectedColor : _unselectedColor,
           border: Border.all(
             color: _borderColor,
             width: _borderWidth,
@@ -47,7 +47,7 @@ class ToggleLabel extends StatelessWidget {
           child: Text(
             label,
             style: TextStyle(
-              color: selected ? _selectedFontColor : _UnselectedFontColor,
+              color: selected ? _selectedFontColor : _unselectedFontColor,
             ),
           ),
         ),

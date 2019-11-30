@@ -34,7 +34,8 @@ class StaticList extends StatelessWidget {
   Widget build(BuildContext context) {
     if (showBorders) {
       if (children.last is Cell) {
-        children.last = (children.last as Cell).copyWithListOrder(lastInList: true);
+        children.last =
+            (children.last as Cell).copyWithListOrder(lastInList: true);
       } else if (addBottomBorder) {
         children.last = Container(
           decoration: BoxDecoration(

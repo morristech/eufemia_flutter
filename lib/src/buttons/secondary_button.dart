@@ -15,7 +15,8 @@ final Color _buttonTextColor = EufemiaColors.seaGreenAlt;
 final Color _buttonTappedTextColor = EufemiaColors.seaGreenAlt.withOpacity(0.8);
 final Color _buttonDisabledColor = Colors.transparent;
 final Color _buttonDisabledTextColor = EufemiaColors.seaGreenAltLight;
-final Color _buttonDisabledBorderColor = EufemiaColors.seaGreenAlt.withOpacity(0.5);
+final Color _buttonDisabledBorderColor =
+    EufemiaColors.seaGreenAlt.withOpacity(0.5);
 
 // Dark mode
 final Color _buttonDarkColor = Colors.black;
@@ -53,7 +54,8 @@ class SecondaryButton extends StatefulWidget {
   _SecondaryButtonState createState() => _SecondaryButtonState();
 }
 
-class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderStateMixin {
+class _SecondaryButtonState extends State<SecondaryButton>
+    with TickerProviderStateMixin {
   Animation<Color> buttonColorAnimation;
   Animation<Color> textColorAnimation;
   Animation<Color> buttonDarkColorAnimation;
@@ -129,8 +131,12 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
                     borderRadius: BorderRadius.circular(_buttonBorderRadius),
                     border: Border.all(
                       color: Theme.of(context).brightness == Brightness.light
-                          ? (enabled ? _buttonBorderColor : _buttonDisabledBorderColor)
-                          : (enabled ? _buttonDarkBorderColor : _buttonDarkDisabledBorderColor),
+                          ? (enabled
+                              ? _buttonBorderColor
+                              : _buttonDisabledBorderColor)
+                          : (enabled
+                              ? _buttonDarkBorderColor
+                              : _buttonDarkDisabledBorderColor),
                       width: _buttonBorderWidth,
                     ),
                   ),
@@ -140,7 +146,9 @@ class _SecondaryButtonState extends State<SecondaryButton> with TickerProviderSt
                       widget.label,
                       style: TextStyle(
                         color: Theme.of(context).brightness == Brightness.light
-                            ? (enabled ? textColorAnimation.value : _buttonDisabledTextColor)
+                            ? (enabled
+                                ? textColorAnimation.value
+                                : _buttonDisabledTextColor)
                             : (enabled
                                 ? textDarkColorAnimation.value
                                 : _buttonDarkDisabledTextColor),

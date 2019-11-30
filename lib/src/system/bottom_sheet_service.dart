@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 
 class BottomSheetService {
   /// Shows a native modal bottom sheet in the given [BuildContext]
-  static void showNativeBottomSheet(BuildContext context, WidgetBuilder builder) {
+  static void showNativeBottomSheet(
+      BuildContext context, WidgetBuilder builder) {
     if (Theme.of(context).platform == TargetPlatform.iOS) {
       showCupertinoModalPopup(
         context: context,
@@ -43,7 +44,9 @@ class BottomSheetService {
                     action.label,
                     style: Eufemia.buttonLarge.copyWith(
                       color: action.enabled
-                          ? (action.isDestructive ? Color(0xFFFF3B30) : EufemiaColors.seaGreenAlt)
+                          ? (action.isDestructive
+                              ? Color(0xFFFF3B30)
+                              : EufemiaColors.seaGreenAlt)
                           : EufemiaColors.darkGray,
                       fontFamily: 'SF Pro Text',
                     ),

@@ -12,7 +12,8 @@ final Color _buttonTappedColor = EufemiaColors.signalYellowDark;
 final Color _buttonTextColor = EufemiaColors.oceanGreen;
 final Color _buttonTappedTextColor = EufemiaColors.oceanGreen.withOpacity(0.8);
 final Color _buttonDisabledColor = EufemiaColors.accentYellow.withOpacity(0.5);
-final Color _buttonDisabledTextColor = EufemiaColors.oceanGreen.withOpacity(0.5);
+final Color _buttonDisabledTextColor =
+    EufemiaColors.oceanGreen.withOpacity(0.5);
 
 /// A vivid button from the Eufemia Design System
 class VividButton extends StatefulWidget {
@@ -39,7 +40,8 @@ class VividButton extends StatefulWidget {
   _VividButtonState createState() => _VividButtonState();
 }
 
-class _VividButtonState extends State<VividButton> with TickerProviderStateMixin {
+class _VividButtonState extends State<VividButton>
+    with TickerProviderStateMixin {
   Animation<Color> buttonColorAnimation;
   Animation<Color> textColorAnimation;
   AnimationController colorAnimationController;

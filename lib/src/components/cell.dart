@@ -85,11 +85,14 @@ class Cell extends StatelessWidget {
   Widget _buildCell(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      onLongPress: Theme.of(context).platform == TargetPlatform.iOS ? null : _handleLongPress,
+      onLongPress: Theme.of(context).platform == TargetPlatform.iOS
+          ? null
+          : _handleLongPress,
       child: Padding(
-        padding: (Theme.of(context).platform == TargetPlatform.iOS && !isLastInList)
-            ? const EdgeInsets.only(left: _contentPadding)
-            : EdgeInsets.zero,
+        padding:
+            (Theme.of(context).platform == TargetPlatform.iOS && !isLastInList)
+                ? const EdgeInsets.only(left: _contentPadding)
+                : EdgeInsets.zero,
         child: Container(
           decoration: BoxDecoration(
             border: showBottomBorder
@@ -105,9 +108,11 @@ class Cell extends StatelessWidget {
             padding: contentPadding ??
                 (Theme.of(context).platform == TargetPlatform.iOS
                     ? EdgeInsets.only(
-                        left: Theme.of(context).platform == TargetPlatform.iOS && isLastInList
-                            ? _contentPadding
-                            : 0.0,
+                        left:
+                            Theme.of(context).platform == TargetPlatform.iOS &&
+                                    isLastInList
+                                ? _contentPadding
+                                : 0.0,
                         top: _contentPadding,
                         right: _contentPadding,
                         bottom: _contentPadding,
@@ -122,8 +127,9 @@ class Cell extends StatelessWidget {
                   Flexible(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment:
-                          centerLeading ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+                      crossAxisAlignment: centerLeading
+                          ? CrossAxisAlignment.center
+                          : CrossAxisAlignment.start,
                       children: [
                         if (leading != null) ...{
                           AnimatedDefaultTextStyle(
@@ -153,7 +159,10 @@ class Cell extends StatelessWidget {
                                   ),
                                   if (subtitle != null) ...{
                                     AnimatedDefaultTextStyle(
-                                      style: Theme.of(context).textTheme.subhead.copyWith(
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .subhead
+                                          .copyWith(
                                             color: EufemiaColors.darkGray,
                                           ),
                                       overflow: TextOverflow.fade,
@@ -184,7 +193,8 @@ class Cell extends StatelessWidget {
                             child: trailing,
                           ),
                         ),
-                        if (trailing is Text || trailing is AnimatedDefaultTextStyle) ...{
+                        if (trailing is Text ||
+                            trailing is AnimatedDefaultTextStyle) ...{
                           SizedBox(width: 8.0),
                         },
                         if (implyNavigation) ...{

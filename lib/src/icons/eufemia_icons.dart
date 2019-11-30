@@ -35,7 +35,8 @@ class EufemiaIcons {
   static const IconData down_payment = const EufemiaIconData(0xe81d);
   static const IconData download = const EufemiaIconData(0xe81e);
   static const IconData e_invoice = const EufemiaIconData(0xe81f);
-  static const IconData equities_and_mutual_funds = const EufemiaIconData(0xe820);
+  static const IconData equities_and_mutual_funds =
+      const EufemiaIconData(0xe820);
   static const IconData filter = const EufemiaIconData(0xe821);
   static const IconData flying_money = const EufemiaIconData(0xe822);
   static const IconData from_account = const EufemiaIconData(0xe823);

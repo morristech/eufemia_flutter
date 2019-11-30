@@ -20,7 +20,8 @@ class SearchBar extends StatefulWidget {
   ///
   /// * [controller]: The [TextEditingController] to use
   /// * [onChanged]: Callback for when the given [controller] changes
-  const SearchBar({Key key, @required this.controller, this.onChanged}) : super(key: key);
+  const SearchBar({Key key, @required this.controller, this.onChanged})
+      : super(key: key);
   @override
   _SearchBarState createState() => _SearchBarState();
 }
@@ -77,7 +78,9 @@ class _SearchBarState extends State<SearchBar> {
                     fontSize: _searchTextSize,
                   ),
                   filled: true,
-                  fillColor: _focusNode.hasFocus ? _searchBarFocusColor : _searchBarColor,
+                  fillColor: _focusNode.hasFocus
+                      ? _searchBarFocusColor
+                      : _searchBarColor,
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),

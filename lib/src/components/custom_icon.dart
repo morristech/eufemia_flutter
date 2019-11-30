@@ -10,14 +10,16 @@ class CustomIcon extends StatelessWidget {
   final Color color;
   final double size;
 
-  const CustomIcon(this.asset, {Key key, this.color, this.backgroundColor, this.size = _iconSize})
+  const CustomIcon(this.asset,
+      {Key key, this.color, this.backgroundColor, this.size = _iconSize})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(
-          hasBackground ? (Theme.of(context).platform == TargetPlatform.iOS ? 4.0 : 6.0) : 0.0),
+      padding: EdgeInsets.all(hasBackground
+          ? (Theme.of(context).platform == TargetPlatform.iOS ? 4.0 : 6.0)
+          : 0.0),
       width: size,
       height: size,
       decoration: BoxDecoration(

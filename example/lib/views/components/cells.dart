@@ -1,5 +1,4 @@
 import 'package:eufemia/eufemia.dart';
-import 'package:eufemia/eufemia.dart' as eufemia;
 import 'package:flutter/material.dart';
 
 class CellsView extends StatefulWidget {

@@ -19,10 +19,13 @@ final Color _buttonDisabledIconColor = Colors.white.withOpacity(0.5);
 final Color _buttonDarkColor = EufemiaColors.mintGreen;
 final Color _buttonDarkDisabledColor = EufemiaColors.mintGreen.withOpacity(0.8);
 final Color _buttonDarkTappedColor = EufemiaColors.mintGreen.withOpacity(0.8);
-final Color _buttonDarkShadowColor = EufemiaColors.mintGreenAlt.withOpacity(0.2);
+final Color _buttonDarkShadowColor =
+    EufemiaColors.mintGreenAlt.withOpacity(0.2);
 final Color _buttonDarkIconColor = EufemiaColors.emeraldGreen;
-final Color _buttonDarkTappedIconColor = EufemiaColors.emeraldGreen.withOpacity(0.8);
-final Color _buttonDarkDisabledIconColor = EufemiaColors.emeraldGreen.withOpacity(0.5);
+final Color _buttonDarkTappedIconColor =
+    EufemiaColors.emeraldGreen.withOpacity(0.8);
+final Color _buttonDarkDisabledIconColor =
+    EufemiaColors.emeraldGreen.withOpacity(0.5);
 
 final Offset _buttonShadowOffset = Offset(0.0, 8.0);
 
