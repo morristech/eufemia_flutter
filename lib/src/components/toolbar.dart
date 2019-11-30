@@ -8,8 +8,13 @@ final Color _borderColor = EufemiaColors.softGray;
 
 class Toolbar extends StatelessWidget {
   final List<Widget> children;
+  final MainAxisAlignment alignment;
 
-  const Toolbar({Key key, this.children}) : super(key: key);
+  const Toolbar({
+    Key key,
+    this.children,
+    this.alignment = MainAxisAlignment.spaceBetween,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +33,7 @@ class Toolbar extends StatelessWidget {
           vertical: _iconVerticalPadding,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: alignment,
           children: [
             if (children.length == 1) ...{
               Spacer(),
