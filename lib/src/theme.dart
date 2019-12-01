@@ -36,8 +36,8 @@ class Eufemia {
           borderRadius: BorderRadius.circular(_dialogBorderRadius),
         ),
       ),
-      textSelectionColor: EufemiaColors.mintGreen.withOpacity(0.5),
-      textSelectionHandleColor: EufemiaColors.mintGreen,
+      textSelectionColor: EufemiaColors.emeraldGreen.withOpacity(0.5),
+      textSelectionHandleColor: EufemiaColors.emeraldGreen,
       cursorColor: EufemiaColors.emeraldGreen,
     );
   }

@@ -123,57 +123,61 @@ class Cell extends StatelessWidget {
               top: false,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Flexible(
-                    child: Row(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: centerLeading
-                          ? CrossAxisAlignment.center
-                          : CrossAxisAlignment.start,
-                      children: [
-                        if (leading != null) ...{
-                          AnimatedDefaultTextStyle(
-                            duration: _styleChangeDuration,
-                            style: Theme.of(context)
-                                .textTheme
-                                .title
-                                .copyWith(fontWeight: FontWeight.bold),
-                            overflow: TextOverflow.fade,
-                            child: leading,
-                          ),
-                        },
-                        if (title != null) ...{
-                          Flexible(
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                left: leading != null ? 8.0 : 0.0,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: centerLeading
+                              ? CrossAxisAlignment.center
+                              : CrossAxisAlignment.start,
+                          children: [
+                            if (leading != null) ...{
+                              AnimatedDefaultTextStyle(
+                                duration: _styleChangeDuration,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .title
+                                    .copyWith(fontWeight: FontWeight.bold),
+                                overflow: TextOverflow.fade,
+                                child: leading,
                               ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  AnimatedDefaultTextStyle(
-                                    style: Theme.of(context).textTheme.body1,
-                                    overflow: TextOverflow.fade,
-                                    duration: _styleChangeDuration,
-                                    child: title,
-                                  ),
-                                  if (subtitle != null) ...{
-                                    AnimatedDefaultTextStyle(
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .subhead
-                                          .copyWith(
-                                            color: EufemiaColors.darkGray,
-                                          ),
-                                      overflow: TextOverflow.fade,
-                                      duration: _styleChangeDuration,
-                                      child: subtitle,
-                                    ),
-                                  },
-                                ],
+                            },
+                            Flexible(
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    left: leading != null ? 16.0 : 0.0),
+                                child: AnimatedDefaultTextStyle(
+                                  style: Theme.of(context).textTheme.body1,
+                                  overflow: TextOverflow.fade,
+                                  duration: _styleChangeDuration,
+                                  child: title,
+                                ),
                               ),
                             ),
-                          ),
+                          ],
+                        ),
+                        if (subtitle != null) ...{
+                          Padding(
+                            padding: EdgeInsets.only(
+                              left: leading != null
+                                  ? 16.0 + Theme.of(context).iconTheme.size
+                                  : 0.0,
+                            ),
+                            child: AnimatedDefaultTextStyle(
+                              style:
+                                  Theme.of(context).textTheme.subhead.copyWith(
+                                        color: EufemiaColors.darkGray,
+                                      ),
+                              overflow: TextOverflow.fade,
+                              duration: _styleChangeDuration,
+                              child: subtitle,
+                            ),
+                          )
                         },
                       ],
                     ),
