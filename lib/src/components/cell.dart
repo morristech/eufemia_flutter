@@ -1,4 +1,5 @@
 import 'package:eufemia/eufemia.dart';
+import 'package:eufemia/src/components/shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
@@ -36,6 +37,16 @@ class Cell extends StatelessWidget {
     this.showBottomBorder = true,
     this.centerLeading = true,
   }) : super(key: key);
+
+  factory Cell.shimmer() {
+    return Cell(
+      title: Shimmer(),
+    );
+  }
+
+  static List<Cell> shimmerList({int count = 1}) {
+    return List.generate(count, (i) => i + 1).map((i) => Cell.shimmer()).toList();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,14 +96,11 @@ class Cell extends StatelessWidget {
   Widget _buildCell(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      onLongPress: Theme.of(context).platform == TargetPlatform.iOS
-          ? null
-          : _handleLongPress,
+      onLongPress: Theme.of(context).platform == TargetPlatform.iOS ? null : _handleLongPress,
       child: Padding(
-        padding:
-            (Theme.of(context).platform == TargetPlatform.iOS && !isLastInList)
-                ? const EdgeInsets.only(left: _contentPadding)
-                : EdgeInsets.zero,
+        padding: (Theme.of(context).platform == TargetPlatform.iOS && !isLastInList)
+            ? const EdgeInsets.only(left: _contentPadding)
+            : EdgeInsets.zero,
         child: Container(
           decoration: BoxDecoration(
             border: showBottomBorder
@@ -108,11 +116,9 @@ class Cell extends StatelessWidget {
             padding: contentPadding ??
                 (Theme.of(context).platform == TargetPlatform.iOS
                     ? EdgeInsets.only(
-                        left:
-                            Theme.of(context).platform == TargetPlatform.iOS &&
-                                    isLastInList
-                                ? _contentPadding
-                                : 0.0,
+                        left: Theme.of(context).platform == TargetPlatform.iOS && isLastInList
+                            ? _contentPadding
+                            : 0.0,
                         top: _contentPadding,
                         right: _contentPadding,
                         bottom: _contentPadding,
@@ -132,9 +138,8 @@ class Cell extends StatelessWidget {
                       children: <Widget>[
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: centerLeading
-                              ? CrossAxisAlignment.center
-                              : CrossAxisAlignment.start,
+                          crossAxisAlignment:
+                              centerLeading ? CrossAxisAlignment.center : CrossAxisAlignment.start,
                           children: [
                             if (leading != null) ...{
                               AnimatedDefaultTextStyle(
@@ -149,8 +154,7 @@ class Cell extends StatelessWidget {
                             },
                             Flexible(
                               child: Padding(
-                                padding: EdgeInsets.only(
-                                    left: leading != null ? 16.0 : 0.0),
+                                padding: EdgeInsets.only(left: leading != null ? 16.0 : 0.0),
                                 child: AnimatedDefaultTextStyle(
                                   style: Theme.of(context).textTheme.body1,
                                   overflow: TextOverflow.fade,
@@ -164,15 +168,12 @@ class Cell extends StatelessWidget {
                         if (subtitle != null) ...{
                           Padding(
                             padding: EdgeInsets.only(
-                              left: leading != null
-                                  ? 16.0 + Theme.of(context).iconTheme.size
-                                  : 0.0,
+                              left: leading != null ? 16.0 + Theme.of(context).iconTheme.size : 0.0,
                             ),
                             child: AnimatedDefaultTextStyle(
-                              style:
-                                  Theme.of(context).textTheme.subhead.copyWith(
-                                        color: EufemiaColors.darkGray,
-                                      ),
+                              style: Theme.of(context).textTheme.subhead.copyWith(
+                                    color: EufemiaColors.darkGray,
+                                  ),
                               overflow: TextOverflow.fade,
                               duration: _styleChangeDuration,
                               child: subtitle,
@@ -197,8 +198,7 @@ class Cell extends StatelessWidget {
                             child: trailing,
                           ),
                         ),
-                        if (trailing is Text ||
-                            trailing is AnimatedDefaultTextStyle) ...{
+                        if (trailing is Text || trailing is AnimatedDefaultTextStyle) ...{
                           SizedBox(width: 8.0),
                         },
                         if (implyNavigation) ...{

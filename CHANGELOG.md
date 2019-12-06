@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.3
+
+- Added shimmer/skeleton
+- Added shimmerList to Cell
+
 ## 0.2.2+2
 
 - ContentCard now clips its children correctly

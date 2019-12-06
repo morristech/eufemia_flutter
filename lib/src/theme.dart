@@ -23,6 +23,7 @@ class Eufemia {
         brightness: Brightness.light,
         color: _appBarLightColor,
         iconTheme: IconThemeData(color: _appBarLightIconColor, size: _iconSize),
+        actionsIconTheme: IconThemeData(color: _appBarDarkIconColor, size: _iconSize),
       ),
       iconTheme: IconThemeData(
         size: _iconSize,
@@ -35,6 +36,10 @@ class Eufemia {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(_dialogBorderRadius),
         ),
+      ),
+      buttonTheme: ButtonThemeData(
+        highlightColor: EufemiaColors.oceanGreen.withOpacity(0.2),
+        splashColor: EufemiaColors.oceanGreen.withOpacity(0.1),
       ),
       textSelectionColor: EufemiaColors.emeraldGreen.withOpacity(0.5),
       textSelectionHandleColor: EufemiaColors.emeraldGreen,
@@ -57,6 +62,7 @@ class Eufemia {
         brightness: Brightness.dark,
         color: _appBarDarkColor,
         iconTheme: IconThemeData(color: _appBarDarkIconColor, size: _iconSize),
+        actionsIconTheme: IconThemeData(color: _appBarDarkIconColor, size: _iconSize),
       ),
       textTheme: darkTextTheme,
       bottomAppBarColor: Colors.black,
@@ -68,6 +74,10 @@ class Eufemia {
       ),
       textSelectionColor: EufemiaColors.mintGreenAlt.withOpacity(0.5),
       textSelectionHandleColor: EufemiaColors.mintGreen,
+      buttonTheme: ButtonThemeData(
+        highlightColor: EufemiaColors.mintGreenAlt.withOpacity(0.2),
+        splashColor: EufemiaColors.mintGreenAlt.withOpacity(0.1),
+      ),
     );
   }
 
@@ -222,8 +232,7 @@ class Eufemia {
   /// [statusBarColor]: Sets the status bar color. Defaults to [Colors.transparent]
   static void setLightStatusBar({Color statusBarColor}) {
     statusBarColor ??= _statusbarLightColor;
-    SystemChrome.setSystemUIOverlayStyle(
-        getOverlayStyle(Brightness.light, statusBarColor));
+    SystemChrome.setSystemUIOverlayStyle(getOverlayStyle(Brightness.light, statusBarColor));
   }
 
   /// Sets the status bar brightness.
@@ -231,8 +240,7 @@ class Eufemia {
   /// [statusBarColor]: Sets the status bar color. Defaults to [Colors.transparent]
   static void setDarkStatusBar({Color statusBarColor}) {
     statusBarColor ??= _statusbarDarkColor;
-    SystemChrome.setSystemUIOverlayStyle(
-        getOverlayStyle(Brightness.dark, statusBarColor));
+    SystemChrome.setSystemUIOverlayStyle(getOverlayStyle(Brightness.dark, statusBarColor));
   }
 
   /// Returns a [SystemUiOverlayStyle] object which can be used with [SystemChrome] to
@@ -241,8 +249,7 @@ class Eufemia {
   /// [brightness]: The brightness of the status bar. Affects the icon brightness accordingly.
   /// [statusBarColor]: The color of the status bar. Should reflect the brightness given, e.g.
   /// a dark color for [Brightness.dark] to make the icons visible.
-  static SystemUiOverlayStyle getOverlayStyle(
-      Brightness brightness, Color statusBarColor) {
+  static SystemUiOverlayStyle getOverlayStyle(Brightness brightness, Color statusBarColor) {
     if (brightness == Brightness.dark) {
       return SystemUiOverlayStyle(
         // Only affects Android

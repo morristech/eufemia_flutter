@@ -18,3 +18,4 @@ export 'toggle_label.dart';
 export 'toolbar.dart';
 export 'static_list.dart';
 export 'spinner.dart';
+export 'shimmer.dart';
