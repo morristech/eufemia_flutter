@@ -1,48 +1,47 @@
 import 'package:eufemia/eufemia.dart';
 import 'package:eufemia/src/style/colors.dart';
-import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 
-const double _borderRadius = 2.0;
-final Color _backgroundColor = EufemiaColors.coal;
+// Exports some convenience extensions
+export 'package:snack/snack.dart';
+
+const _borderRadius = 2.0;
+const _snackDisplayDuration = Duration(milliseconds: 4000);
+final _backgroundColor = EufemiaColors.coal;
 
 class Snacks {
-  static Flushbar bar({
-    String title,
-    @required String message,
-    Widget icon,
-    VoidCallback onTap,
-    EdgeInsets margin,
-    EdgeInsets padding,
+  static SnackBar bar({
+    @required String title,
+    Widget leading,
+    String actionLabel,
+    VoidCallback onPressed,
     Duration duration,
-    Widget button,
-    TextStyle messageStyle,
-    TextStyle titleStyle,
-    bool showSpinner = false,
   }) {
-    if (button is TextButton) {
-      button = (button as TextButton).copyWith(
-        color: EufemiaColors.mintGreen,
-        tappedColor: EufemiaColors.mintGreen.withOpacity(0.5),
-        emphasized: true,
-        size: ButtonSize.small,
-      );
-    }
-
-    return Flushbar(
-      icon: showSpinner ? Spinner() : icon,
-      duration: duration ?? Duration(milliseconds: 2000),
-      margin: margin ?? EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8.0),
-      borderRadius: _borderRadius,
-      backgroundColor: _backgroundColor,
-      title: title,
-      message: message,
-      messageStyle: messageStyle ?? Eufemia.subhead.copyWith(color: Colors.white),
-      onTap: (_) => onTap,
-      button: Padding(
-        padding: const EdgeInsets.only(right: 8.0),
-        child: button,
+    return SnackBar(
+      content: Row(
+        children: [
+          if (leading != null) ...{
+            Padding(
+              padding: const EdgeInsets.only(right: 16.0),
+              child: leading,
+            ),
+          },
+          Text(title),
+        ],
       ),
+      action: actionLabel != null
+          ? SnackBarAction(
+              textColor: EufemiaColors.mintGreen,
+              label: actionLabel,
+              onPressed: onPressed,
+            )
+          : null,
+      backgroundColor: _backgroundColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(_borderRadius),
+      ),
+      behavior: SnackBarBehavior.floating,
+      duration: duration ?? _snackDisplayDuration,
     );
   }
 }

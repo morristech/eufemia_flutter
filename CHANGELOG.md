@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.4
+
+- Switched to native SnackBar for toasts
+
 ## 0.2.3
 
 - Added shimmer/skeleton
