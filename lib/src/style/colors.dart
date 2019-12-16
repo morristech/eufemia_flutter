@@ -29,6 +29,8 @@ class EufemiaColors {
   static const seaGreenAltShadow = Color.fromRGBO(0, 132, 132, 0.3);
 
   // Grayscale
+  // In lack of better name
+  static const darkModeCard = Color.fromRGBO(27, 28, 30, 1);
   static const coal = Color.fromARGB(255, 51, 51, 51);
   static const darkGray = Color.fromARGB(255, 117, 117, 117);
   static const softGray = Color.fromARGB(255, 204, 204, 204);
@@ -43,6 +45,72 @@ class EufemiaColors {
 
   // Card colors
   static const sagaGold = Color(0xFFC6B27F);
+
+  static const all = [
+    seaGreen,
+    seaGreenAlt,
+    oceanGreen,
+    emeraldGreen,
+    summerGreen,
+    mintGreen,
+    mintGreenAlt,
+    signalOrange,
+    accentYellow,
+    successGreen,
+    fireRed,
+    lightGray,
+    lavender,
+    sandYellow,
+    pistachio,
+    signalYellowDark,
+    seaGreenAltDark,
+    seaGreenAltLight,
+    seaGreenAltShadow,
+    darkModeCard,
+    coal,
+    darkGray,
+    softGray,
+    outlineGray,
+    lightShadow,
+    subtleGray,
+    indigo,
+    violet,
+    skyBlue,
+    sagaGold,
+  ];
+
+  static Map<Color, String> map = {
+    seaGreen: 'Sea Green',
+    seaGreenAlt: 'Sea Green Alt',
+    oceanGreen: 'Ocean Green',
+    emeraldGreen: 'Emerald Green',
+    summerGreen: 'Summer Green',
+    mintGreen: 'Mint Green',
+    mintGreenAlt: 'Mint Green Alt',
+    signalOrange: 'Signal Orange',
+    accentYellow: 'Accent Yellow',
+    successGreen: 'Success Green',
+    fireRed: 'Fire Red',
+    lightGray: 'Light Gray',
+    lavender: 'Lavender',
+    sandYellow: 'Sand Yellow',
+    pistachio: 'Pistachio',
+    signalYellowDark: 'Signal Yellow Dark',
+    seaGreenAltDark: 'Sea Green Alt Dark',
+    seaGreenAltLight: 'Sea Green Alt Light',
+    seaGreenAltShadow: 'Sea Green Alt Shadow',
+    darkModeCard: 'Dark Mode Card',
+    coal: 'Coal',
+    darkGray: 'Dark Gray',
+    softGray: 'Soft Gray',
+    outlineGray: 'Outline Gray',
+    lightShadow: 'Light Shadow',
+    subtleGray: 'Subtle Gray',
+    indigo: 'Indigo',
+    violet: 'Violet',
+    skyBlue: 'Sky Blue',
+    sagaGold: 'Saga Gold',
+  };
 
   static Color getForegroundColor(Color backgroundColor) {
     final value = backgroundColor.value;

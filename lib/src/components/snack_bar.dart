@@ -1,49 +1,48 @@
 import 'package:eufemia/eufemia.dart';
 import 'package:eufemia/src/style/colors.dart';
+import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 
 const double _borderRadius = 2.0;
-final Color _fontColor = Colors.white;
 final Color _backgroundColor = EufemiaColors.coal;
-final Color _actionLabelColor = EufemiaColors.mintGreen;
 
 class Snacks {
-  static SnackBar buildSnackBar({
-    String label,
-    String actionLabel,
-    VoidCallback onActionPressed,
-    bool showProgressIndicator = false,
-    bool persist = false,
+  static Flushbar bar({
+    String title,
+    @required String message,
+    Widget icon,
+    VoidCallback onTap,
+    EdgeInsets margin,
+    EdgeInsets padding,
+    Duration duration,
+    Widget button,
+    TextStyle messageStyle,
+    TextStyle titleStyle,
+    bool showSpinner = false,
   }) {
-    return SnackBar(
-      duration: persist ? Duration(days: 365) : Duration(seconds: 4),
+    if (button is TextButton) {
+      button = (button as TextButton).copyWith(
+        color: EufemiaColors.mintGreen,
+        tappedColor: EufemiaColors.mintGreen.withOpacity(0.5),
+        emphasized: true,
+        size: ButtonSize.small,
+      );
+    }
+
+    return Flushbar(
+      icon: showSpinner ? Spinner() : icon,
+      duration: duration ?? Duration(milliseconds: 2000),
+      margin: margin ?? EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8.0),
+      borderRadius: _borderRadius,
       backgroundColor: _backgroundColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(_borderRadius),
+      title: title,
+      message: message,
+      messageStyle: messageStyle ?? Eufemia.subhead.copyWith(color: Colors.white),
+      onTap: (_) => onTap,
+      button: Padding(
+        padding: const EdgeInsets.only(right: 8.0),
+        child: button,
       ),
-      content: Row(
-        children: [
-          if (showProgressIndicator) ...{
-            Padding(
-              padding: const EdgeInsets.only(right: 16.0),
-              child: Spinner(),
-            ),
-          },
-          if (label != null) ...{
-            Text(
-              label,
-              style: TextStyle(color: _fontColor),
-            ),
-          },
-        ],
-      ),
-      action: actionLabel != null && onActionPressed != null
-          ? SnackBarAction(
-              label: actionLabel,
-              textColor: _actionLabelColor,
-              onPressed: onActionPressed,
-            )
-          : null,
     );
   }
 }

@@ -53,7 +53,7 @@ class Eufemia {
       primaryColor: EufemiaColors.emeraldGreen,
       accentColor: EufemiaColors.mintGreen,
       canvasColor: Colors.black,
-      cardColor: EufemiaColors.coal,
+      cardColor: EufemiaColors.darkModeCard,
       iconTheme: IconThemeData(
         size: _iconSize,
       ),

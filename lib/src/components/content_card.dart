@@ -17,6 +17,7 @@ final Offset _cardShadowOffset = Offset(0.0, 0.5);
 class ContentCard extends StatelessWidget {
   final Widget child;
   final Widget label;
+  final bool centerLabel;
   final String semanticLabel;
   final bool shadow;
   final bool border;
@@ -37,6 +38,7 @@ class ContentCard extends StatelessWidget {
     this.border = true,
     this.separator = true,
     this.expand = false,
+    this.centerLabel = true,
   }) : super(key: key);
 
   @override
@@ -49,7 +51,6 @@ class ContentCard extends StatelessWidget {
         left: !expand,
         right: !expand,
         child: Container(
-          width: expand ? MediaQuery.of(context).size.width : null,
           decoration: BoxDecoration(
             boxShadow: shadow
                 ? [
@@ -103,7 +104,7 @@ class ContentCard extends StatelessWidget {
                         bottomRight: Radius.circular(_cardBorderRadius),
                       ),
                     ),
-                    child: label,
+                    child: centerLabel ? Center(child: label) : label,
                   ),
                 },
               ],

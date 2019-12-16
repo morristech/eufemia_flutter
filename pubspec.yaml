@@ -1,6 +1,6 @@
 name: eufemia
 description: A new Flutter package project.
-version: 0.2.3
+version: 0.2.3+1
 author: Arne Molland <arneolaim@gmail.com>
 homepage: https://dnb.no
 
@@ -14,6 +14,9 @@ dependencies:
   flutter_slidable: ^0.5.4
   meta: ^1.1.8
   shimmer: ^1.0.1
+  flushbar:
+    git: https://github.com/arnemolland/flushbar
+    #path: ../forks/flushbar
 
 dev_dependencies:
   flutter_test:
