@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.5
+
+- Introduced circular/custom-shaped shimmer
+
 ## 0.2.4
 
 - Switched to native SnackBar for toasts

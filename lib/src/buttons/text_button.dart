@@ -54,7 +54,8 @@ class TextButton extends StatefulWidget {
   @override
   _TextButtonState createState() => _TextButtonState();
 
-  TextButton copyWith({Color color, Color tappedColor, bool emphasized, ButtonSize size}) {
+  TextButton copyWith(
+      {Color color, Color tappedColor, bool emphasized, ButtonSize size}) {
     return TextButton(
       label: label,
       size: size ?? this.size,
@@ -105,8 +106,11 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
     ).animate(colorAnimationController);
 
     textColorAnimation = ColorTween(
-      begin: enabled ? widget.color ?? _buttonTextColor : _buttonDisabledTextColor,
-      end: enabled ? widget.tappedColor ?? _buttonTappedTextColor : _buttonDisabledTextColor,
+      begin:
+          enabled ? widget.color ?? _buttonTextColor : _buttonDisabledTextColor,
+      end: enabled
+          ? widget.tappedColor ?? _buttonTappedTextColor
+          : _buttonDisabledTextColor,
     ).animate(colorAnimationController);
 
     buttonDarkColorAnimation = ColorTween(
@@ -115,9 +119,12 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
     ).animate(colorAnimationController);
 
     textDarkColorAnimation = ColorTween(
-      begin: enabled ? widget.color ?? _buttonDarkTextColor : _buttonDarkDisabledTextColor,
-      end:
-          enabled ? widget.tappedColor ?? _buttonDarkTappedTextColor : _buttonDarkDisabledTextColor,
+      begin: enabled
+          ? widget.color ?? _buttonDarkTextColor
+          : _buttonDarkDisabledTextColor,
+      end: enabled
+          ? widget.tappedColor ?? _buttonDarkTappedTextColor
+          : _buttonDarkDisabledTextColor,
     ).animate(colorAnimationController);
   }
 

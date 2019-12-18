@@ -10,8 +10,21 @@ class Shimmer extends StatelessWidget {
   /// Shimmer width
   final double width;
 
+  /// The shape
+  final BoxShape shape;
+
   /// Constructs a [PulsShimmer] object
-  const Shimmer({Key key, this.height = 16 * 1.33, this.width = 128}) : super(key: key);
+  const Shimmer(
+      {Key key, this.height = 16 * 1.33, this.width = 128, this.shape})
+      : super(key: key);
+
+  factory Shimmer.circular(double size) {
+    return Shimmer(
+      height: size,
+      width: size,
+      shape: BoxShape.circle,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +37,7 @@ class Shimmer extends StatelessWidget {
           : Colors.white.withOpacity(0.1),
       child: Container(
         decoration: BoxDecoration(
+          shape: shape,
           borderRadius: BorderRadius.circular(2.5),
           color: Colors.white,
         ),
