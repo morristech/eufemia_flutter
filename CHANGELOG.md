@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.6+1
+
+- Fixed borderRadius in circular shimmer
+
 ## 0.2.6
 
 - Added license
