@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.6
+
+- Added license
+
 ## 0.2.5
 
 - Introduced circular/custom-shaped shimmer
