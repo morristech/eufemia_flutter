@@ -36,74 +36,91 @@ class _ControlsViewState extends State<ControlsView> {
         ),
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              EufemiaTab(
-                label: 'Tab',
-                active: _tabValue == 0,
-                onSelected: () => _setTab(0),
-              ),
-              EufemiaTab(
-                label: 'Tab',
-                active: _tabValue == 1,
-                onSelected: () => _setTab(1),
-              ),
-              EufemiaTab(
-                label: 'Tab',
-                active: _tabValue == 2,
-                onSelected: () => _setTab(2),
-              )
-            ],
-          ),
-          Row(
-            children: [
-              EufemiaSwitch(
-                value: _firstSwitchValue,
-                onChanged: (value) => setState(() => _firstSwitchValue = value),
-              ),
-              EufemiaSwitch(
-                value: _secondSwitchValue,
-                onChanged: (value) => setState(() => _secondSwitchValue = value),
-              ),
-            ],
-          ),
-          EufemiaSlider(
-            value: _sliderValue,
-            onChanged: (value) => setState(() => _sliderValue = value),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
-            child: Tag(
+          padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                EufemiaTab(
+                  label: 'Tab',
+                  active: _tabValue == 0,
+                  onSelected: () => _setTab(0),
+                ),
+                EufemiaTab(
+                  label: 'Tab',
+                  active: _tabValue == 1,
+                  onSelected: () => _setTab(1),
+                ),
+                EufemiaTab(
+                  label: 'Tab',
+                  active: _tabValue == 2,
+                  onSelected: () => _setTab(2),
+                )
+              ],
+            ),
+            Row(
+              children: [
+                EufemiaSwitch(
+                  value: _firstSwitchValue,
+                  onChanged: (value) =>
+                      setState(() => _firstSwitchValue = value),
+                ),
+                EufemiaSwitch(
+                  value: _secondSwitchValue,
+                  onChanged: (value) =>
+                      setState(() => _secondSwitchValue = value),
+                ),
+              ],
+            ),
+            EufemiaSlider(
+              value: _sliderValue,
+              onChanged: (value) => setState(() => _sliderValue = value),
+            ),
+            Tag(
               label: '#tagname',
               onDelete: () {},
             ),
-          ),
-          Row(
-            children: [
-              ToggleLabel(
-                label: 'Toggle label',
-                selected: _firstToggleValue,
-                onChange: (value) => setState(() => _firstToggleValue = value),
-              ),
-              ToggleLabel(
-                label: 'Toggle label',
-                selected: _secondToggleValue,
-                onChange: (value) => setState(() => _secondToggleValue = value),
-              )
-            ]
-                .map(
-                  (i) => Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: i,
-                  ),
+            Row(
+              children: [
+                ToggleLabel(
+                  label: 'Toggle label',
+                  selected: _firstToggleValue,
+                  onChange: (value) =>
+                      setState(() => _firstToggleValue = value),
+                ),
+                ToggleLabel(
+                  label: 'Toggle label',
+                  selected: _secondToggleValue,
+                  onChange: (value) =>
+                      setState(() => _secondToggleValue = value),
                 )
-                .toList(),
-          ),
-        ],
-      ),
+              ]
+                  .map(
+                    (i) => Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: i,
+                    ),
+                  )
+                  .toList(),
+            ),
+            Row(
+              children: [
+                Checkmark(
+                  value: _firstToggleValue,
+                  onChanged: (value) =>
+                      setState(() => _firstToggleValue = value),
+                ),
+                SizedBox(width: 8),
+                Checkmark(
+                  value: _secondToggleValue,
+                  onChanged: (value) =>
+                      setState(() => _secondToggleValue = value),
+                ),
+              ],
+            )
+          ]
+              .map((i) => Padding(padding: const EdgeInsets.all(8.0), child: i))
+              .toList()),
     );
   }
 

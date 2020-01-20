@@ -14,7 +14,9 @@ class Shimmer extends StatelessWidget {
   final BoxShape shape;
 
   /// Constructs a [PulsShimmer] object
-  const Shimmer({Key key, this.height = 16 * 1.33, this.width = 128, this.shape}) : super(key: key);
+  const Shimmer(
+      {Key key, this.height = 16 * 1.33, this.width = 128, this.shape})
+      : super(key: key);
 
   factory Shimmer.circular(double size) {
     return Shimmer(

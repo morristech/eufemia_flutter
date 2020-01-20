@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.7
+
+- Added InputField
+- Added Checkmark
+
 ## 0.2.6+1
 
 - Fixed borderRadius in circular shimmer

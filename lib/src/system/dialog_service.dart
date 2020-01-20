@@ -55,6 +55,9 @@ class DialogService {
                     action.label,
                     style: TextStyle(
                       fontFamily: 'Roboto',
+                      color: Theme.of(context).brightness == Brightness.light
+                          ? EufemiaColors.seaGreenAlt
+                          : null,
                     ),
                   ),
                   onPressed: action.onPressed,

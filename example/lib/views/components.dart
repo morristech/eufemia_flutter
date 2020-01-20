@@ -16,8 +16,8 @@ class ComponentView extends StatelessWidget {
       body: ScrollableList(
         children: [
           Cell(
-            title: Text('Search bar'),
-            onTap: () => Navigator.pushNamed(context, Routes.search_bars),
+            title: Text('Input fields'),
+            onTap: () => Navigator.pushNamed(context, Routes.input_fields),
             implyNavigation: true,
           ),
           Cell(

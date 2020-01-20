@@ -42,10 +42,40 @@ class Eufemia {
         highlightColor: EufemiaColors.oceanGreen.withOpacity(0.2),
         splashColor: EufemiaColors.oceanGreen.withOpacity(0.1),
       ),
-      textSelectionColor: EufemiaColors.emeraldGreen.withOpacity(0.5),
+      textSelectionColor: EufemiaColors.mintGreenAlt,
       textSelectionHandleColor: EufemiaColors.emeraldGreen,
-      cursorColor: EufemiaColors.emeraldGreen,
+      cursorColor: EufemiaColors.seaGreenAlt,
       buttonColor: EufemiaColors.seaGreenAlt,
+      inputDecorationTheme: InputDecorationTheme(
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4.0),
+          borderSide: BorderSide(
+            width: 0.5,
+            color: EufemiaColors.darkGray,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4.0),
+          borderSide: BorderSide(
+            color: EufemiaColors.seaGreenAlt,
+            width: 1.5,
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4.0),
+          borderSide: BorderSide(
+            color: EufemiaColors.fireRed,
+            width: 0.5,
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4.0),
+          borderSide: BorderSide(
+            color: EufemiaColors.fireRed,
+            width: 1.5,
+          ),
+        ),
+      ),
     );
   }
 
@@ -274,5 +304,18 @@ class Eufemia {
         systemNavigationBarIconBrightness: Brightness.light,
       );
     }
+  }
+
+  static InputBorder unfocusedWithTextBorder(BuildContext context) {
+    return Theme.of(context).inputDecorationTheme.focusedBorder.copyWith(
+          borderSide: BorderSide(
+            width: 0.5,
+            color: Theme.of(context)
+                .inputDecorationTheme
+                .focusedBorder
+                .borderSide
+                .color,
+          ),
+        );
   }
 }
