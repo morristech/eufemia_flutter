@@ -28,6 +28,7 @@ class Eufemia {
       ),
       iconTheme: IconThemeData(
         size: _iconSize,
+        color: EufemiaColors.seaGreenAlt,
       ),
       fontFamily: dnbFont,
       textTheme: lightTextTheme,
@@ -88,6 +89,7 @@ class Eufemia {
       cardColor: EufemiaColors.darkModeCard,
       iconTheme: IconThemeData(
         size: _iconSize,
+        color: Colors.white,
       ),
       appBarTheme: AppBarTheme(
         elevation: 0,
@@ -112,32 +114,62 @@ class Eufemia {
         splashColor: EufemiaColors.mintGreenAlt.withOpacity(0.1),
       ),
       buttonColor: Colors.white,
+      inputDecorationTheme: InputDecorationTheme(
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4.0),
+          borderSide: BorderSide(
+            width: 0.5,
+            color: EufemiaColors.darkGray,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4.0),
+          borderSide: BorderSide(
+            color: EufemiaColors.seaGreenAlt,
+            width: 1.5,
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4.0),
+          borderSide: BorderSide(
+            color: EufemiaColors.fireRed,
+            width: 0.5,
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4.0),
+          borderSide: BorderSide(
+            color: EufemiaColors.fireRed,
+            width: 1.5,
+          ),
+        ),
+      ),
     );
   }
 
   static TextTheme get lightTextTheme {
     return TextTheme(
-      display1: titleLarge.copyWith(color: EufemiaColors.coal),
-      headline: titleMedium.copyWith(color: EufemiaColors.coal),
-      title: title.copyWith(color: EufemiaColors.coal),
-      subhead: subhead.copyWith(color: EufemiaColors.coal),
-      body1: body.copyWith(color: EufemiaColors.coal),
-      body2: bodyEmphasized.copyWith(color: EufemiaColors.coal),
+      headline4: titleLarge.copyWith(color: EufemiaColors.coal),
+      headline5: titleMedium.copyWith(color: EufemiaColors.coal),
+      headline6: title.copyWith(color: EufemiaColors.coal),
+      subtitle1: subhead.copyWith(color: EufemiaColors.coal),
+      bodyText2: body.copyWith(color: EufemiaColors.coal),
+      bodyText1: bodyEmphasized.copyWith(color: EufemiaColors.coal),
       caption: caption.copyWith(color: EufemiaColors.coal),
-      subtitle: footnote.copyWith(color: EufemiaColors.darkGray),
+      subtitle2: footnote.copyWith(color: EufemiaColors.darkGray),
     );
   }
 
   static TextTheme get darkTextTheme {
     return TextTheme(
-      display1: titleLarge.copyWith(color: Colors.white),
-      headline: titleMedium.copyWith(color: Colors.white),
-      title: title.copyWith(color: Colors.white),
-      subhead: subhead.copyWith(color: Colors.white),
-      body1: body.copyWith(color: Colors.white),
-      body2: bodyEmphasized.copyWith(color: Colors.white),
+      headline4: titleLarge.copyWith(color: Colors.white),
+      headline5: titleMedium.copyWith(color: Colors.white),
+      headline6: title.copyWith(color: Colors.white),
+      subtitle1: subhead.copyWith(color: Colors.white),
+      bodyText2: body.copyWith(color: Colors.white),
+      bodyText1: bodyEmphasized.copyWith(color: Colors.white),
       caption: caption.copyWith(color: Colors.white),
-      subtitle: footnote.copyWith(color: Colors.white.withOpacity(0.75)),
+      subtitle2: footnote.copyWith(color: Colors.white.withOpacity(0.75)),
     );
   }
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.8
+
+- Added macOS, web examples
+- Fixed InputField borders in dark mode
+- Updated to latest Material TextTheme API
+
 ## 0.2.7
 
 - Added InputField

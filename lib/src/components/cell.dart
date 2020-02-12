@@ -155,7 +155,7 @@ class Cell extends StatelessWidget {
                                 duration: _styleChangeDuration,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .title
+                                    .headline6
                                     .copyWith(fontWeight: FontWeight.bold),
                                 overflow: TextOverflow.fade,
                                 child: leading,
@@ -166,7 +166,7 @@ class Cell extends StatelessWidget {
                                 padding: EdgeInsets.only(
                                     left: leading != null ? 16.0 : 0.0),
                                 child: AnimatedDefaultTextStyle(
-                                  style: Theme.of(context).textTheme.body1,
+                                  style: Theme.of(context).textTheme.bodyText2,
                                   overflow: TextOverflow.fade,
                                   duration: _styleChangeDuration,
                                   child: title,
@@ -183,10 +183,12 @@ class Cell extends StatelessWidget {
                                   : 0.0,
                             ),
                             child: AnimatedDefaultTextStyle(
-                              style:
-                                  Theme.of(context).textTheme.subhead.copyWith(
-                                        color: EufemiaColors.darkGray,
-                                      ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .subtitle1
+                                  .copyWith(
+                                    color: EufemiaColors.darkGray,
+                                  ),
                               overflow: TextOverflow.fade,
                               duration: _styleChangeDuration,
                               child: subtitle,
@@ -202,7 +204,7 @@ class Cell extends StatelessWidget {
                       children: [
                         AnimatedDefaultTextStyle(
                           duration: _styleChangeDuration,
-                          style: Theme.of(context).textTheme.body1.copyWith(
+                          style: Theme.of(context).textTheme.bodyText2.copyWith(
                                 color: EufemiaColors.darkGray,
                               ),
                           overflow: TextOverflow.fade,
@@ -235,7 +237,7 @@ class Cell extends StatelessWidget {
   Widget _buildNavigationButton(BuildContext context) {
     return AnimatedDefaultTextStyle(
       duration: _styleChangeDuration,
-      style: Theme.of(context).textTheme.body2,
+      style: Theme.of(context).textTheme.bodyText1,
       overflow: TextOverflow.fade,
       child: IconTheme(
         data: IconThemeData(color: _iconColor),

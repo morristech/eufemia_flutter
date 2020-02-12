@@ -1,6 +1,6 @@
 name: eufemia
-description: A new Flutter package project.
-version: 0.2.7
+description: A set of Flutter widgets and components adhering to to DNB's Eufemia design system
+version: 0.2.8
 homepage: https://dnb.no
 
 environment:
@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^0.16.1
+  flutter_svg: ^0.17.1
   flutter_slidable: ^0.5.4
   meta: ^1.1.8
   shimmer: ^1.0.1

@@ -24,15 +24,17 @@ class PickerService {
                 onSelectedItemChanged: onValueChanged,
                 itemExtent: itemExtent,
                 children: actions.map((action) {
-                  return Text(
-                    action.label,
-                    style: TextStyle(
-                      fontFamily: 'SF Pro Text',
-                      letterSpacing: 1.18,
-                      fontSize: 17.0,
-                      fontWeight: action.selected ? FontWeight.bold : null,
-                      height: 1.18,
-                      color: EufemiaColors.seaGreenAlt,
+                  return Center(
+                    child: Text(
+                      action.label,
+                      style: TextStyle(
+                        fontFamily: 'SF Pro Text',
+                        letterSpacing: 1.18,
+                        fontSize: 17.0,
+                        fontWeight: action.selected ? FontWeight.bold : null,
+                        height: 1.18,
+                        color: EufemiaColors.seaGreenAlt,
+                      ),
                     ),
                   );
                 }).toList(),

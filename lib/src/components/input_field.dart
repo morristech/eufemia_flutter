@@ -59,7 +59,7 @@ class _InputFieldState extends State<InputField> {
       style: TextStyle(
         color: Theme.of(context).brightness == Brightness.light
             ? EufemiaColors.coal
-            : null,
+            : Colors.white,
         fontSize: 17.0,
       ),
       decoration: InputDecoration(
