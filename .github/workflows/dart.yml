@@ -6,12 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    container:
-      image: cirrusci/flutter:dev
-
     steps:
       - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
       - name: Install dependencies
-        run: sudo flutter packages get
+        run: flutter packages get
       - name: Analyze
         run: flutter analyze
