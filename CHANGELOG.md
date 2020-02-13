@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0
+
+- Added DNB Sans variants
+
+### **BREAKING CHANGES**
+
+- Replaced Menlo-Regular with DNB Mono
+
 ## 0.2.8
 
 - Added macOS, web examples

@@ -4,7 +4,8 @@ import 'package:flutter/services.dart';
 
 const double _iconSize = 16.0;
 const double _dialogBorderRadius = 8.0;
-const String dnbFont = 'DNB';
+const String dnbFont = 'DNB Sans';
+const String dnbMonoFont = 'DNB Mono';
 final Color _statusbarDarkColor = Colors.transparent;
 final Color _statusbarLightColor = Colors.transparent;
 final Color _appBarLightColor = Colors.white;
@@ -151,7 +152,7 @@ class Eufemia {
     return TextTheme(
       headline4: titleLarge.copyWith(color: EufemiaColors.coal),
       headline5: titleMedium.copyWith(color: EufemiaColors.coal),
-      headline6: title.copyWith(color: EufemiaColors.coal),
+      headline6: bodyEmphasized.copyWith(color: EufemiaColors.coal),
       subtitle1: subhead.copyWith(color: EufemiaColors.coal),
       bodyText2: body.copyWith(color: EufemiaColors.coal),
       bodyText1: bodyEmphasized.copyWith(color: EufemiaColors.coal),
@@ -164,7 +165,7 @@ class Eufemia {
     return TextTheme(
       headline4: titleLarge.copyWith(color: Colors.white),
       headline5: titleMedium.copyWith(color: Colors.white),
-      headline6: title.copyWith(color: Colors.white),
+      headline6: bodyEmphasized.copyWith(color: Colors.white),
       subtitle1: subhead.copyWith(color: Colors.white),
       bodyText2: body.copyWith(color: Colors.white),
       bodyText1: bodyEmphasized.copyWith(color: Colors.white),
