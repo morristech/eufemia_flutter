@@ -23,9 +23,14 @@ class Eufemia {
         elevation: 0,
         brightness: Brightness.light,
         color: _appBarLightColor,
-        iconTheme: IconThemeData(color: _appBarLightIconColor, size: _iconSize),
-        actionsIconTheme:
-            IconThemeData(color: _appBarDarkIconColor, size: _iconSize),
+        iconTheme: IconThemeData(
+          color: _appBarLightIconColor,
+          size: _iconSize,
+        ),
+        actionsIconTheme: IconThemeData(
+          color: _appBarDarkIconColor,
+          size: _iconSize,
+        ),
       ),
       iconTheme: IconThemeData(
         size: _iconSize,
@@ -78,6 +83,7 @@ class Eufemia {
           ),
         ),
       ),
+      primaryTextTheme: lightTextTheme,
     );
   }
 
@@ -145,6 +151,7 @@ class Eufemia {
           ),
         ),
       ),
+      primaryTextTheme: darkTextTheme,
     );
   }
 
@@ -179,11 +186,15 @@ class Eufemia {
   ///Large button
   static TextStyle get buttonLarge => TextStyle(
         fontSize: 16.0,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   static TextStyle get buttonSmall => TextStyle(
         fontSize: 14.0,
         fontWeight: FontWeight.w500,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   /// 34pt Bold
@@ -191,12 +202,16 @@ class Eufemia {
         fontWeight: FontWeight.bold,
         fontSize: 34,
         height: 1.4,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   /// 24pt Regular
   static TextStyle get titleMedium => TextStyle(
         fontSize: 24,
         height: 1.4,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   /// 24pt Bold
@@ -204,12 +219,16 @@ class Eufemia {
         fontWeight: FontWeight.bold,
         fontSize: 24,
         height: 1.4,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   /// 20pt Regular
   static TextStyle get title => TextStyle(
         fontSize: 20,
         height: 1.4,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   /// 20pt Semibold
@@ -217,6 +236,8 @@ class Eufemia {
         fontWeight: FontWeight.w500,
         fontSize: 20,
         height: 1.4,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   /// 20pt Bold
@@ -224,12 +245,16 @@ class Eufemia {
         fontWeight: FontWeight.bold,
         fontSize: 20,
         height: 1.4,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   ///  17pt Regular
   static TextStyle get body => TextStyle(
         fontSize: 17,
         height: 1.4,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   /// 17pt Bold
@@ -237,12 +262,16 @@ class Eufemia {
         fontWeight: FontWeight.bold,
         fontSize: 17,
         height: 1.4,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   /// 15pt Regular
   static TextStyle get subhead => TextStyle(
         fontSize: 15,
         height: 1.33,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   /// 15pt Bold
@@ -250,12 +279,16 @@ class Eufemia {
         fontWeight: FontWeight.bold,
         fontSize: 15,
         height: 1.33,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   /// 13pt Regular
   static TextStyle get footnote => TextStyle(
         fontSize: 13,
         height: 1.33,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   /// 13pt Bold
@@ -263,12 +296,16 @@ class Eufemia {
         fontWeight: FontWeight.bold,
         fontSize: 13,
         height: 1.33,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   /// 11pt Regular
   static TextStyle get caption => TextStyle(
         fontSize: 11,
         height: 1.33,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   /// 11pt Bold
@@ -276,6 +313,8 @@ class Eufemia {
         fontWeight: FontWeight.bold,
         fontSize: 11,
         height: 1.33,
+        package: 'eufemia',
+        fontFamily: 'DNB Sans',
       );
 
   /// Returns the default Eufemia light theme, and sets the status bar brightness.
@@ -299,8 +338,10 @@ class Eufemia {
   /// [statusBarColor]: Sets the status bar color. Defaults to [Colors.transparent]
   static void setLightStatusBar({Color statusBarColor}) {
     statusBarColor ??= _statusbarLightColor;
-    SystemChrome.setSystemUIOverlayStyle(
-        getOverlayStyle(Brightness.light, statusBarColor));
+    SystemChrome.setSystemUIOverlayStyle(getOverlayStyle(
+      Brightness.light,
+      statusBarColor,
+    ));
   }
 
   /// Sets the status bar brightness.
@@ -308,8 +349,10 @@ class Eufemia {
   /// [statusBarColor]: Sets the status bar color. Defaults to [Colors.transparent]
   static void setDarkStatusBar({Color statusBarColor}) {
     statusBarColor ??= _statusbarDarkColor;
-    SystemChrome.setSystemUIOverlayStyle(
-        getOverlayStyle(Brightness.dark, statusBarColor));
+    SystemChrome.setSystemUIOverlayStyle(getOverlayStyle(
+      Brightness.dark,
+      statusBarColor,
+    ));
   }
 
   /// Returns a [SystemUiOverlayStyle] object which can be used with [SystemChrome] to
@@ -319,7 +362,9 @@ class Eufemia {
   /// [statusBarColor]: The color of the status bar. Should reflect the brightness given, e.g.
   /// a dark color for [Brightness.dark] to make the icons visible.
   static SystemUiOverlayStyle getOverlayStyle(
-      Brightness brightness, Color statusBarColor) {
+    Brightness brightness,
+    Color statusBarColor,
+  ) {
     if (brightness == Brightness.dark) {
       return SystemUiOverlayStyle(
         // Only affects Android

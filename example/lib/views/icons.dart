@@ -19,7 +19,7 @@ class IconsView extends StatelessWidget {
             padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
             child: Text(
               'Icons',
-              style: Theme.of(context).textTheme.bodyText2,
+              style: Theme.of(context).textTheme.bodyText1,
             ),
           ),
           Wrap(
@@ -152,10 +152,7 @@ class IconsView extends StatelessWidget {
               Icon(EufemiaIcons.vehicle),
               Icon(EufemiaIcons.web),
               Icon(EufemiaIcons.widget_android),
-            ]
-                .map((i) =>
-                    Padding(padding: const EdgeInsets.all(8.0), child: i))
-                .toList(),
+            ].map((i) => Padding(padding: const EdgeInsets.all(8.0), child: i)).toList(),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
@@ -179,10 +176,7 @@ class IconsView extends StatelessWidget {
                 icon: EufemiaIcons.cog,
                 backgroundColor: Colors.blue,
               ),
-            ]
-                .map((i) =>
-                    Padding(padding: const EdgeInsets.all(8.0), child: i))
-                .toList(),
+            ].map((i) => Padding(padding: const EdgeInsets.all(8.0), child: i)).toList(),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
@@ -196,10 +190,7 @@ class IconsView extends StatelessWidget {
             children: [
               UpdateIcon(),
               UpdateIcon(platform: TargetPlatform.android),
-            ]
-                .map((i) =>
-                    Padding(padding: const EdgeInsets.all(8.0), child: i))
-                .toList(),
+            ].map((i) => Padding(padding: const EdgeInsets.all(8.0), child: i)).toList(),
           ),
         ],
       ),

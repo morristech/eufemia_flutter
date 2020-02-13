@@ -1,14 +1,33 @@
-# eufemia
+# DNB Design System 👨‍🎨
 
-A new Flutter package project.
+![preview](https://github.com/dnb-asa/eufemia_flutter/blob/master/assets/preview.png?raw=true)
 
-## Getting Started
+> **DISCLAIMER**: This package is in an early stage
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+## Themes
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Two base themes are provided:
+
+- `Eufemia.lightTheme()`
+- `Eufemia.darkTheme()`
+
+These can be extended using the `copyWith` method. Read more about `ThemeData` overrides [here](https://api.flutter.dev/flutter/material/ThemeData/copyWith.html).
+
+## Fonts
+
+If using the included themes, fonts are automatically set up. Otherwise, specify the `fontFamily` and `package` properties:
+
+```dart
+TextStyle(
+  fontFamily: 'DNB Sans',
+  package: 'eufemia',
+)
+```
+
+## Desktop
+
+Desktop targets are supported but not currently tested extensively, but may be prioritized in the future.
+
+## Web
+
+Web targets are supported, but the Web APIs are unstable, and the target is not tested at all. If building a web application, check out [eufemia for web](https://github.com/dnbexperience/eufemia) for a web version.

@@ -7,7 +7,9 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Eufemia'),
+        title: Text(
+          'Eufemia',
+        ),
       ),
       body: ScrollableList(
         children: [
