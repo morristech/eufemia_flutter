@@ -1,0 +1,146 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Current Device Debug",
+			"request": "launch",
+			"type": "dart",
+			"flutterMode": "debug"
+		},
+		{
+			"name": "Current Device Profile",
+			"request": "launch",
+			"type": "dart",
+			"flutterMode": "profile"
+		},
+		{
+			"name": "Current Device Release",
+			"request": "launch",
+			"type": "dart",
+			"flutterMode": "release"
+		},
+		{
+			"name": "Android Debug",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "android",
+			"flutterMode": "debug"
+		},
+		{
+			"name": "Android Profile",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "android",
+			"flutterMode": "profile"
+		},
+		{
+			"name": "Android Release",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "android",
+			"flutterMode": "release"
+		},
+		{
+			"name": "macOS Debug",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "macOS",
+			"flutterMode": "debug"
+		},
+		{
+			"name": "macOS Profile",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "macOS",
+			"flutterMode": "profile"
+		},
+		{
+			"name": "macOS Release",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "macOS",
+			"flutterMode": "release"
+		},
+		{
+			"name": "iPhone Debug",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "iphone",
+			"flutterMode": "debug"
+		},
+		{
+			"name": "iPhone Profile",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "iphone",
+			"flutterMode": "profile"
+		},
+		{
+			"name": "iPhone Release",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "iphone",
+			"flutterMode": "release"
+		},
+		{
+			"name": "iPad Debug",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "ipad",
+			"flutterMode": "debug"
+		},
+		{
+			"name": "iPad Profile",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "ipad",
+			"flutterMode": "profile"
+		},
+		{
+			"name": "iPad Release",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "ipad",
+			"flutterMode": "release"
+		},
+		{
+			"name": "Chrome Debug",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "chrome",
+			"flutterMode": "debug"
+		},
+		{
+			"name": "Chrome Profile",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "chrome",
+			"flutterMode": "profile"
+		},
+		{
+			"name": "Chrome Release",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "chrome",
+			"flutterMode": "release"
+		},
+	],
+	"compounds": [
+		{
+			"name": "All devices debug",
+			"configurations": [
+				"macOS Debug",
+				"iPhone Debug",
+				"Android Debug",
+				"Chrome Debug"
+			],
+		},
+		{
+			"name": "Mobile",
+			"configurations": [
+				"iPhone Debug",
+				"Android Debug"
+			]
+		}
+	]
+}

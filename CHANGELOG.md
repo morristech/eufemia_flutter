@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.4.0
+
+- Added Segmented Control component
+- Refactored components
+- Added adaptive StaticList/ScrollableList
+- Tweaked dark mode colors
+- Added extensions
+- Added flippable parameter to PaymentCard
+
+### **BREAKING CHANGES**
+
+- TabItem renamed to TabItemData
+- Updated PaymentCard API
+
 ## 0.3.0
 
 - Added DNB Sans variants

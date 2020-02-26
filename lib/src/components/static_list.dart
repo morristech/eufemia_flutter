@@ -14,6 +14,7 @@ class StaticList extends StatelessWidget {
   final bool horizontalPadding;
   final bool showBorders;
   final bool addBottomBorder;
+  final bool adaptive;
   final EdgeInsets customPadding;
   final Color backgroundColor;
 
@@ -28,28 +29,11 @@ class StaticList extends StatelessWidget {
     this.backgroundColor,
     this.addBottomBorder = true,
     this.title,
+    this.adaptive = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (showBorders) {
-      if (children.last is Cell) {
-        children.last =
-            (children.last as Cell).copyWithListOrder(lastInList: true);
-      } else if (addBottomBorder) {
-        children.last = Container(
-          decoration: BoxDecoration(
-            border: Border(
-              bottom: BorderSide(
-                color: _borderColor,
-                width: _borderWidth,
-              ),
-            ),
-          ),
-          child: children.last,
-        );
-      }
-    }
     return Container(
       padding: customPadding ??
           EdgeInsets.only(
@@ -72,9 +56,9 @@ class StaticList extends StatelessWidget {
                   ),
                   child: Text(
                     title,
-                    style: Theme.of(context).textTheme.subtitle1.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                    style: context.textTheme.subtitle1.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -87,7 +71,7 @@ class StaticList extends StatelessWidget {
                 bottom: bottomPadding ? 16.0 : 0.0,
               ),
               decoration: BoxDecoration(
-                color: backgroundColor ?? Theme.of(context).cardColor,
+                color: backgroundColor ?? context.theme.cardColor,
                 border: Border(
                   top: BorderSide(
                     width: _borderWidth,
@@ -95,22 +79,28 @@ class StaticList extends StatelessWidget {
                   ),
                 ),
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: children,
-              ),
+              child: buildList(context),
             )
           } else ...{
             Container(
-              color: backgroundColor ?? Theme.of(context).cardColor,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: children,
-              ),
+              color: backgroundColor ?? context.theme.cardColor,
+              child: buildList(context),
             ),
           },
         ],
       ),
     );
+  }
+
+  Widget buildList(BuildContext context) {
+    if (adaptive && context.mediaQuery.size.aspectRatio > 1) {
+      return GridView.builder(
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 3,
+        ),
+        itemBuilder: (context, index) => children[index],
+      );
+    } else
+      return Column(children: children, mainAxisSize: MainAxisSize.min);
   }
 }

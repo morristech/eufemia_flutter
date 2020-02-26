@@ -21,3 +21,6 @@ export 'src/graphics/graphics.dart';
 
 // System
 export 'src/system/system.dart';
+
+// Extensions
+export 'src/extensions.dart';

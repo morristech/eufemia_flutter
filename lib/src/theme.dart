@@ -11,7 +11,7 @@ final Color _statusbarLightColor = Colors.transparent;
 final Color _appBarLightColor = Colors.white;
 final Color _appBarDarkColor = Colors.black;
 final Color _appBarLightIconColor = EufemiaColors.seaGreenAlt;
-final Color _appBarDarkIconColor = Colors.white;
+final Color _darkIconColor = EufemiaColors.mintGreen;
 
 class Eufemia {
   static ThemeData _lightThemeShared() {
@@ -28,7 +28,7 @@ class Eufemia {
           size: _iconSize,
         ),
         actionsIconTheme: IconThemeData(
-          color: _appBarDarkIconColor,
+          color: _darkIconColor,
           size: _iconSize,
         ),
       ),
@@ -96,23 +96,29 @@ class Eufemia {
       cardColor: EufemiaColors.darkModeCard,
       iconTheme: IconThemeData(
         size: _iconSize,
-        color: Colors.white,
+        color: EufemiaColors.mintGreen,
       ),
       appBarTheme: AppBarTheme(
         elevation: 0,
         brightness: Brightness.dark,
         color: _appBarDarkColor,
-        iconTheme: IconThemeData(color: _appBarDarkIconColor, size: _iconSize),
-        actionsIconTheme:
-            IconThemeData(color: _appBarDarkIconColor, size: _iconSize),
+        textTheme: darkTextTheme.apply(
+          displayColor: EufemiaColors.mintGreen,
+          bodyColor: EufemiaColors.mintGreen,
+        ),
+        iconTheme: IconThemeData(color: _darkIconColor, size: _iconSize),
+        actionsIconTheme: IconThemeData(color: _darkIconColor, size: _iconSize),
       ),
       textTheme: darkTextTheme,
       bottomAppBarColor: Colors.black,
-      toggleableActiveColor: EufemiaColors.seaGreenAlt,
+      toggleableActiveColor: EufemiaColors.mintGreen,
       dialogTheme: DialogTheme(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(_dialogBorderRadius),
         ),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        selectedColor: EufemiaColors.mintGreen,
       ),
       textSelectionColor: EufemiaColors.mintGreenAlt.withOpacity(0.5),
       textSelectionHandleColor: EufemiaColors.mintGreen,
@@ -120,7 +126,7 @@ class Eufemia {
         highlightColor: EufemiaColors.mintGreenAlt.withOpacity(0.2),
         splashColor: EufemiaColors.mintGreenAlt.withOpacity(0.1),
       ),
-      buttonColor: Colors.white,
+      buttonColor: EufemiaColors.mintGreen,
       inputDecorationTheme: InputDecorationTheme(
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4.0),
@@ -132,7 +138,7 @@ class Eufemia {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4.0),
           borderSide: BorderSide(
-            color: EufemiaColors.seaGreenAlt,
+            color: EufemiaColors.mintGreen,
             width: 1.5,
           ),
         ),
@@ -385,15 +391,12 @@ class Eufemia {
   }
 
   static InputBorder unfocusedWithTextBorder(BuildContext context) {
-    return Theme.of(context).inputDecorationTheme.focusedBorder.copyWith(
-          borderSide: BorderSide(
-            width: 0.5,
-            color: Theme.of(context)
-                .inputDecorationTheme
-                .focusedBorder
-                .borderSide
-                .color,
-          ),
-        );
+    return context.theme.inputDecorationTheme.focusedBorder.copyWith(
+      borderSide: BorderSide(
+        width: 0.5,
+        color:
+            context.theme.inputDecorationTheme.focusedBorder.borderSide.color,
+      ),
+    );
   }
 }

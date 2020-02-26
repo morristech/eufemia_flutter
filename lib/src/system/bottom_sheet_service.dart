@@ -7,7 +7,7 @@ class BottomSheetService {
   /// Shows a native modal bottom sheet in the given [BuildContext]
   static void showNativeBottomSheet(
       BuildContext context, WidgetBuilder builder) {
-    if (Theme.of(context).platform == TargetPlatform.iOS) {
+    if (context.cupertino) {
       showCupertinoModalPopup(
         context: context,
         builder: builder,
@@ -29,7 +29,7 @@ class BottomSheetService {
     @required ModalAction cancel,
     @required List<ModalAction> actions,
   }) {
-    if (Theme.of(context).platform == TargetPlatform.iOS) {
+    if (context.cupertino) {
       showNativeBottomSheet(
         context,
         (context) {

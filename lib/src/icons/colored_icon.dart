@@ -34,14 +34,13 @@ class ColoredIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(_hasBackground
-          ? (Theme.of(context).platform == TargetPlatform.iOS ? 4.0 : 6.0)
-          : 0.0),
+      padding: EdgeInsets.all(
+          _hasBackground ? (context.cupertino ? 4.0 : 6.0) : 0.0),
       width: size,
       height: size,
       decoration: BoxDecoration(
         color: _hasBackground ? backgroundColor : null,
-        borderRadius: Theme.of(context).platform == TargetPlatform.iOS
+        borderRadius: context.cupertino
             ? BorderRadius.circular(8.0)
             : BorderRadius.circular(100),
       ),

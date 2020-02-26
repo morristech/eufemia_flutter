@@ -1,14 +1,11 @@
-import 'package:eufemia/src/components/bottom_tab_bar/tab_icon.dart';
-import 'package:eufemia/src/components/bottom_tab_bar/tab_item.dart';
-import 'package:eufemia/src/components/bottom_tab_bar/tab_theme.dart';
-import 'package:eufemia/src/style/colors.dart';
+import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 const double _tabHeight = 24.0;
 
 class BottomTabBar extends StatefulWidget implements PreferredSizeWidget {
-  final List<TabItem> items;
+  final List<TabItemData> items;
   final TabController controller;
   final TabTheme theme;
   final Color color;
@@ -50,12 +47,11 @@ class _BottomTabBarState extends State<BottomTabBar> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color:
-            widget.color ?? Theme.of(context).bottomAppBarColor ?? Colors.white,
+        color: widget.color ?? context.theme.bottomAppBarColor ?? Colors.white,
         border: Border(
           top: BorderSide(
             width: 1,
-            color: Theme.of(context).brightness == Brightness.light
+            color: context.bright
                 ? EufemiaColors.lightShadow
                 : Colors.white.withOpacity(0.1),
           ),
@@ -76,15 +72,13 @@ class _BottomTabBarState extends State<BottomTabBar> {
                     onTap: () => _navigateTo(widget.items.indexOf(item)),
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
-                      child: _TabItem(
+                      child: TabItem(
                         active: widget.controller.index ==
                             widget.items.indexOf(item),
                         label: item.label,
                         icon: item.icon,
                         theme: widget.theme ??
-                            (Theme.of(context).brightness == Brightness.light
-                                ? TabTheme.light
-                                : TabTheme.dark),
+                            (context.bright ? TabTheme.light : TabTheme.dark),
                       ),
                     ),
                   ),
@@ -97,13 +91,25 @@ class _BottomTabBarState extends State<BottomTabBar> {
   }
 }
 
-class _TabItem extends StatefulWidget {
+class TabItemData {
+  final TabIcon icon;
+  final String label;
+  final VoidCallback onLongPressed;
+
+  TabItemData({
+    @required this.icon,
+    this.onLongPressed,
+    this.label,
+  });
+}
+
+class TabItem extends StatefulWidget {
   final TabIcon icon;
   final TabTheme theme;
   final bool active;
   final String label;
 
-  const _TabItem({
+  const TabItem({
     Key key,
     @required this.icon,
     this.theme,
@@ -115,7 +121,7 @@ class _TabItem extends StatefulWidget {
   _TabItemState createState() => _TabItemState();
 }
 
-class _TabItemState extends State<_TabItem> {
+class _TabItemState extends State<TabItem> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -136,9 +142,7 @@ class _TabItemState extends State<_TabItem> {
             child: Text(
               widget.label,
               style: TextStyle(
-                fontSize: Theme.of(context).platform == TargetPlatform.iOS
-                    ? 10.0
-                    : 12.0,
+                fontSize: context.cupertino ? 10.0 : 12.0,
                 height: 1.33,
                 color: _getLabelColor(widget.theme, widget.active),
                 fontWeight: widget.active ? FontWeight.bold : FontWeight.w500,
@@ -165,16 +169,18 @@ class _TabItemState extends State<_TabItem> {
     }
   }
 
+  TabTheme get _defaultTheme => context.bright ? TabTheme.light : TabTheme.dark;
+
   Widget _getActiveIcon() {
     return SvgPicture.asset(
-      '${_getAssetPath(widget.theme, widget.icon)}_active.svg',
+      '${_getAssetPath(widget.theme ?? _defaultTheme, widget.icon)}_active.svg',
       package: 'eufemia',
     );
   }
 
   Widget _getInactiveIcon() {
     return SvgPicture.asset(
-      '${_getAssetPath(widget.theme, widget.icon)}_inactive.svg',
+      '${_getAssetPath(widget.theme ?? _defaultTheme, widget.icon)}_inactive.svg',
       package: 'eufemia',
     );
   }

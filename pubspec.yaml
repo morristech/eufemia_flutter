@@ -1,6 +1,6 @@
 name: eufemia
 description: A set of Flutter widgets and components adhering to to DNB's Eufemia design system
-version: 0.3.0
+version: 0.4.0
 homepage: https://dnb.no
 
 environment:
@@ -13,7 +13,8 @@ dependencies:
   flutter_slidable: ^0.5.4
   meta: ^1.1.8
   shimmer: ^1.0.1
-  snack: ^1.0.3
+  snack: ^1.0.4
+  flippable_box: ^1.0.6
 
 dev_dependencies:
   flutter_test:

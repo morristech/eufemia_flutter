@@ -18,9 +18,15 @@ class Checkmark extends StatelessWidget {
         height: 24,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: value ? EufemiaColors.seaGreenAlt : Colors.white,
+          color: value
+              ? context.bright
+                  ? EufemiaColors.seaGreenAlt
+                  : EufemiaColors.mintGreen
+              : context.bright ? Colors.white : Colors.transparent,
           border: Border.all(
-            color: EufemiaColors.seaGreenAlt,
+            color: context.bright
+                ? EufemiaColors.seaGreenAlt
+                : EufemiaColors.mintGreen,
             width: 1.5,
           ),
         ),
@@ -28,7 +34,7 @@ class Checkmark extends StatelessWidget {
             ? Center(
                 child: Icon(
                   EufemiaIcons.checkmark,
-                  color: Colors.white,
+                  color: context.bright ? Colors.white : EufemiaColors.coal,
                   size: 12,
                 ),
               )

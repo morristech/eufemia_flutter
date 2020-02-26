@@ -77,7 +77,14 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.3.0"
+    version: "0.4.0"
+  flippable_box:
+    dependency: transitive
+    description:
+      name: flippable_box
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.6"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -183,7 +190,7 @@ packages:
       name: snack
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.3"
+    version: "1.0.4"
   source_span:
     dependency: transitive
     description:

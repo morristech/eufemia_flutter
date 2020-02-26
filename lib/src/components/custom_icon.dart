@@ -17,14 +17,13 @@ class CustomIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(hasBackground
-          ? (Theme.of(context).platform == TargetPlatform.iOS ? 4.0 : 6.0)
-          : 0.0),
+      padding:
+          EdgeInsets.all(hasBackground ? (context.cupertino ? 4.0 : 6.0) : 0.0),
       width: size,
       height: size,
       decoration: BoxDecoration(
         color: hasBackground ? backgroundColor : null,
-        borderRadius: Theme.of(context).platform == TargetPlatform.iOS
+        borderRadius: context.cupertino
             ? BorderRadius.circular(8.0)
             : BorderRadius.circular(100),
       ),

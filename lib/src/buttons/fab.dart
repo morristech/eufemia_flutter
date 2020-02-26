@@ -132,13 +132,13 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
             return FittedBox(
               child: Container(
                 decoration: BoxDecoration(
-                  color: Theme.of(context).brightness == Brightness.light
+                  color: context.bright
                       ? buttonColorAnimation.value
                       : buttonDarkColorAnimation.value,
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: Theme.of(context).brightness == Brightness.light
+                      color: context.bright
                           ? _buttonShadowColor
                           : _buttonDarkShadowColor,
                       spreadRadius: _buttonShadowSpreadRadius,
@@ -152,7 +152,7 @@ class _FABState extends State<FAB> with TickerProviderStateMixin {
                     padding: const EdgeInsets.all(16.0),
                     child: IconTheme(
                       data: IconThemeData(
-                        color: Theme.of(context).brightness == Brightness.light
+                        color: context.bright
                             ? iconColorAnimation.value
                             : iconDarkColorAnimation.value,
                         size: _iconSize,

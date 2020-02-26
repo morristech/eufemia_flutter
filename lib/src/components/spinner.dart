@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:eufemia/eufemia.dart';
 
 class Spinner extends StatefulWidget {
   final Color color;
@@ -45,9 +46,7 @@ class _SpinnerState extends State<Spinner> with TickerProviderStateMixin {
       child: SvgPicture.asset(
         'lib/assets/icons/spinner.svg',
         package: 'eufemia',
-        color: widget.color ?? Theme.of(context).brightness == Brightness.light
-            ? Theme.of(context).accentColor
-            : Colors.white,
+        color: widget.color ?? context.theme.accentColor,
       ),
     );
   }

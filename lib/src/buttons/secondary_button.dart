@@ -8,25 +8,18 @@ const double _buttonSmallVerticalPadding = 8.0;
 const double _buttonSmallHorizontalPadding = 16.0;
 const double _buttonBorderWidth = 1.0;
 const int _colorAnimationDuration = 100;
-final Color _buttonColor = Colors.white;
-final Color _buttonBorderColor = EufemiaColors.seaGreenAlt;
+final Color _buttonBackgroundColor = Colors.white;
+final Color _buttonColor = EufemiaColors.seaGreenAlt;
 final Color _buttonTappedColor = EufemiaColors.softGray;
-final Color _buttonTextColor = EufemiaColors.seaGreenAlt;
-final Color _buttonTappedTextColor = EufemiaColors.seaGreenAlt.withOpacity(0.8);
-final Color _buttonDisabledColor = Colors.transparent;
-final Color _buttonDisabledTextColor = EufemiaColors.seaGreenAltLight;
-final Color _buttonDisabledBorderColor =
-    EufemiaColors.seaGreenAlt.withOpacity(0.5);
+final Color _buttonDisabledBackgroundColor = Colors.transparent;
+final Color _buttonDisabledColor = EufemiaColors.seaGreenAlt.withOpacity(0.5);
 
 // Dark mode
-final Color _buttonDarkColor = Colors.black;
-final Color _buttonDarkBorderColor = Colors.white;
-final Color _buttonDarkTappedColor = EufemiaColors.lightShadow;
-final Color _buttonDarkTextColor = Colors.white;
-final Color _buttonDarkTappedTextColor = Colors.white.withOpacity(0.8);
-final Color _buttonDarkDisabledColor = EufemiaColors.coal;
-final Color _buttonDarkDisabledTextColor = Colors.white.withOpacity(0.8);
-final Color _buttonDarkDisabledBorderColor = Colors.white.withOpacity(0.8);
+final Color _buttonDarkBackgroundColor = Colors.transparent;
+final Color _buttonDarkColor = EufemiaColors.mintGreen;
+final Color _buttonDarkTappedColor = EufemiaColors.mintGreen.withOpacity(0.5);
+final Color _buttonDarkDisabledBackgroundColor = Colors.transparent;
+final Color _buttonDarkDisabledColor = EufemiaColors.mintGreen.withOpacity(0.5);
 
 /// A Secondary button from the Eufemia Design System
 class SecondaryButton extends StatefulWidget {
@@ -34,6 +27,12 @@ class SecondaryButton extends StatefulWidget {
   final ButtonSize size;
   final VoidCallback onPressed;
   final bool enabled;
+
+  final Color color;
+  final Color disabledColor;
+  final Color tappedColor;
+  final Color backgroundColor;
+  final Color backgroundTappedColor;
 
   /// A Secondary button from the Eufemia Design System
   ///
@@ -48,6 +47,11 @@ class SecondaryButton extends StatefulWidget {
     @required this.onPressed,
     this.size = ButtonSize.large,
     this.enabled = true,
+    this.color,
+    this.disabledColor,
+    this.tappedColor,
+    this.backgroundColor,
+    this.backgroundTappedColor,
   }) : super(key: key);
 
   @override
@@ -56,15 +60,13 @@ class SecondaryButton extends StatefulWidget {
 
 class _SecondaryButtonState extends State<SecondaryButton>
     with TickerProviderStateMixin {
-  Animation<Color> buttonColorAnimation;
-  Animation<Color> textColorAnimation;
-  Animation<Color> buttonDarkColorAnimation;
-  Animation<Color> textDarkColorAnimation;
+  Animation<Color> backgroundColorAnimation;
+  Animation<Color> colorAnimation;
   AnimationController colorAnimationController;
 
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     initAnimations();
   }
 
@@ -81,89 +83,87 @@ class _SecondaryButtonState extends State<SecondaryButton>
   }
 
   void initAnimations() {
-    colorAnimationController = AnimationController(
-      vsync: this,
-      duration: Duration(milliseconds: _colorAnimationDuration),
-    );
+    var color =
+        widget.color ?? (context.bright ? _buttonColor : _buttonDarkColor);
 
-    buttonColorAnimation = ColorTween(
-      begin: enabled ? _buttonColor : _buttonDisabledColor,
-      end: enabled ? _buttonTappedColor : _buttonDisabledColor,
-    ).animate(colorAnimationController);
+    var tappedColor = widget.tappedColor ??
+        (context.bright ? _buttonTappedColor : _buttonDarkTappedColor);
 
-    textColorAnimation = ColorTween(
-      begin: enabled ? _buttonTextColor : _buttonDisabledTextColor,
-      end: enabled ? _buttonTappedTextColor : _buttonDisabledTextColor,
-    ).animate(colorAnimationController);
+    var disabledColor = widget.disabledColor ??
+        (context.bright ? _buttonDisabledColor : _buttonDarkDisabledColor);
 
-    buttonDarkColorAnimation = ColorTween(
-      begin: enabled ? _buttonDarkColor : _buttonDarkDisabledColor,
-      end: enabled ? _buttonDarkTappedColor : _buttonDarkDisabledColor,
-    ).animate(colorAnimationController);
+    var backgroundColor = widget.backgroundColor ??
+        (context.bright ? _buttonBackgroundColor : _buttonDarkBackgroundColor);
 
-    textDarkColorAnimation = ColorTween(
-      begin: enabled ? _buttonDarkTextColor : _buttonDarkDisabledTextColor,
-      end: enabled ? _buttonDarkTappedTextColor : _buttonDarkDisabledTextColor,
-    ).animate(colorAnimationController);
+    var disabledBackgroundColor = widget.backgroundColor?.withOpacity(0.8) ??
+        (context.bright
+            ? _buttonDisabledBackgroundColor
+            : _buttonDarkDisabledBackgroundColor);
+
+    setState(() {
+      colorAnimationController = AnimationController(
+        vsync: this,
+        duration: Duration(milliseconds: _colorAnimationDuration),
+      );
+
+      backgroundColorAnimation = ColorTween(
+        begin: enabled ? backgroundColor : disabledBackgroundColor,
+        end: disabledBackgroundColor,
+      ).animate(colorAnimationController);
+
+      colorAnimation = ColorTween(
+        begin: enabled ? color : disabledColor,
+        end: enabled ? tappedColor : disabledColor,
+      ).animate(colorAnimationController);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      children: <Widget>[
-        Semantics(
-          label: widget.label,
-          enabled: enabled,
-          button: true,
-          value: widget.label,
-          child: GestureDetector(
-            onTapDown: enabled ? _handleTapDown : null,
-            onTapUp: enabled ? _handleTapUp : null,
-            onTapCancel: enabled ? _handleTapCancel : null,
-            child: AnimatedBuilder(
-              animation: colorAnimationController,
-              builder: (context, _) {
-                return Container(
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).brightness == Brightness.light
-                        ? buttonColorAnimation.value
-                        : buttonDarkColorAnimation.value,
-                    borderRadius: BorderRadius.circular(_buttonBorderRadius),
-                    border: Border.all(
-                      color: Theme.of(context).brightness == Brightness.light
-                          ? (enabled
-                              ? _buttonBorderColor
-                              : _buttonDisabledBorderColor)
-                          : (enabled
-                              ? _buttonDarkBorderColor
-                              : _buttonDarkDisabledBorderColor),
-                      width: _buttonBorderWidth,
-                    ),
-                  ),
-                  child: Padding(
-                    padding: _getContentPadding(),
-                    child: Text(
-                      widget.label,
-                      style: TextStyle(
-                        color: Theme.of(context).brightness == Brightness.light
-                            ? (enabled
-                                ? textColorAnimation.value
-                                : _buttonDisabledTextColor)
-                            : (enabled
-                                ? textDarkColorAnimation.value
-                                : _buttonDarkDisabledTextColor),
-                        fontSize: _getFontSize(),
-                        height: 1.2,
+    if (colorAnimation != null) {
+      return Wrap(
+        children: <Widget>[
+          Semantics(
+            label: widget.label,
+            enabled: enabled,
+            button: true,
+            value: widget.label,
+            child: GestureDetector(
+              onTapDown: enabled ? _handleTapDown : null,
+              onTapUp: enabled ? _handleTapUp : null,
+              onTapCancel: enabled ? _handleTapCancel : null,
+              child: AnimatedBuilder(
+                animation: colorAnimationController,
+                builder: (context, _) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: backgroundColorAnimation.value,
+                      borderRadius: BorderRadius.circular(_buttonBorderRadius),
+                      border: Border.all(
+                        color: colorAnimation.value,
+                        width: _buttonBorderWidth,
                       ),
                     ),
-                  ),
-                );
-              },
+                    child: Padding(
+                      padding: _getContentPadding(),
+                      child: Text(
+                        widget.label,
+                        style: TextStyle(
+                          color: colorAnimation.value,
+                          fontSize: _getFontSize(),
+                          height: 1.2,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
             ),
           ),
-        ),
-      ],
-    );
+        ],
+      );
+    } else
+      return Container();
   }
 
   bool get enabled => widget.onPressed != null && widget.enabled;

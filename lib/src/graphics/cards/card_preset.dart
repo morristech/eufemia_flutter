@@ -7,4 +7,5 @@ enum CardPreset {
   silver,
   white,
   youth,
+  matte,
 }

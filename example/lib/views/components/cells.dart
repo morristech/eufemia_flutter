@@ -54,9 +54,7 @@ class _CellsViewState extends State<CellsView> {
                   'Man',
                   style: TextStyle(
                     fontSize: 11,
-                    color: Theme.of(context).brightness == Brightness.light
-                        ? EufemiaColors.coal
-                        : null,
+                    color: context.bright ? EufemiaColors.coal : null,
                   ),
                 ),
                 Text('88'),

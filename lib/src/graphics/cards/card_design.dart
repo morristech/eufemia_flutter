@@ -7,4 +7,5 @@ enum CardDesign {
   black,
   brightGreen,
   brightBlue,
+  matteBlack,
 }

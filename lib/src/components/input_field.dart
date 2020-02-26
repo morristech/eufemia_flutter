@@ -57,15 +57,13 @@ class _InputFieldState extends State<InputField> {
         }
       },
       style: TextStyle(
-        color: Theme.of(context).brightness == Brightness.light
-            ? EufemiaColors.coal
-            : Colors.white,
+        color: context.bright ? EufemiaColors.coal : Colors.white,
         fontSize: 17.0,
       ),
       decoration: InputDecoration(
         hintText: widget.hint,
         enabledBorder: widget.controller.text.isEmpty
-            ? Theme.of(context).inputDecorationTheme.enabledBorder
+            ? context.theme.inputDecorationTheme.enabledBorder
             : Eufemia.unfocusedWithTextBorder(context),
       ),
     );

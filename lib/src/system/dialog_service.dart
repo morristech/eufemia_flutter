@@ -9,7 +9,7 @@ class DialogService {
     String content,
     List<DialogAction> actions,
   }) {
-    if (Theme.of(context).platform == TargetPlatform.iOS) {
+    if (context.cupertino) {
       showDialog(
         context: context,
         builder: (context) => CupertinoAlertDialog(
@@ -55,9 +55,7 @@ class DialogService {
                     action.label,
                     style: TextStyle(
                       fontFamily: 'Roboto',
-                      color: Theme.of(context).brightness == Brightness.light
-                          ? EufemiaColors.seaGreenAlt
-                          : null,
+                      color: context.bright ? EufemiaColors.seaGreenAlt : null,
                     ),
                   ),
                   onPressed: action.onPressed,

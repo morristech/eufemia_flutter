@@ -13,14 +13,14 @@ class PickerService {
     double itemExtent = 32.0,
     bool looping = false,
   }) {
-    if (Theme.of(context).platform == TargetPlatform.iOS) {
+    if (context.cupertino) {
       showCupertinoModalPopup(
           context: context,
           builder: (context) {
             return Container(
               height: _pickerSheetHeight,
               child: CupertinoPicker(
-                backgroundColor: Theme.of(context).bottomAppBarColor,
+                backgroundColor: context.theme.bottomAppBarColor,
                 onSelectedItemChanged: onValueChanged,
                 itemExtent: itemExtent,
                 children: actions.map((action) {

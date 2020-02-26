@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 const double _tabHighllighterWidth = 2.0;
 const int _tabAnimationDuration = 500;
-final Color _tabHighlighterColor = EufemiaColors.seaGreenAlt;
 final Color _tabHighlighterDisabledColor = Colors.transparent;
 
 class EufemiaTab extends StatelessWidget {
@@ -26,7 +25,11 @@ class EufemiaTab extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: active ? _tabHighlighterColor : _tabHighlighterDisabledColor,
+            color: active
+                ? context.bright
+                    ? EufemiaColors.seaGreenAlt
+                    : EufemiaColors.mintGreen
+                : _tabHighlighterDisabledColor,
             width: _tabHighllighterWidth,
           ),
         ),

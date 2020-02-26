@@ -8,7 +8,6 @@ const double _searchTextSize = 17.0;
 const int _searchBarAnimationDuration = 250;
 final Color _searchBarColor = EufemiaColors.coal.withOpacity(0.08);
 final Color _searchBarFocusColor = EufemiaColors.coal.withOpacity(0.09);
-final Color _searchBarPrefixColor = EufemiaColors.seaGreenAlt;
 final Color _searchBarSuffixColor = EufemiaColors.darkGray;
 
 /// Search bar from the Eufemia Design System
@@ -53,7 +52,7 @@ class _SearchBarState extends State<SearchBar> {
             duration: Duration(milliseconds: _searchBarAnimationDuration),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(
-                Theme.of(context).platform == TargetPlatform.iOS
+                context.cupertino
                     ? _searchBarIOSBorderRadius
                     : _searchBarAndroidBorderRadius,
               ),
@@ -88,7 +87,7 @@ class _SearchBarState extends State<SearchBar> {
             ),
           ),
         ),
-        if (Theme.of(context).platform == TargetPlatform.iOS) ...{
+        if (context.cupertino) ...{
           AnimatedContainer(
             duration: Duration(milliseconds: _searchBarAnimationDuration),
             child: _focusNode.hasFocus
@@ -127,10 +126,10 @@ class _SearchBarState extends State<SearchBar> {
       );
 
   Widget _getPrefix() {
-    if (Theme.of(context).platform == TargetPlatform.iOS) {
+    if (context.cupertino) {
       return Icon(
         Icons.search,
-        color: _searchBarPrefixColor,
+        color: context.theme.iconTheme.color,
       );
     } else {
       return AnimatedSwitcher(
@@ -138,11 +137,11 @@ class _SearchBarState extends State<SearchBar> {
         child: _focusNode.hasFocus
             ? Icon(
                 Icons.arrow_back,
-                color: _searchBarPrefixColor,
+                color: context.theme.iconTheme.color,
               )
             : Icon(
                 Icons.search,
-                color: _searchBarPrefixColor,
+                color: context.theme.iconTheme.color,
               ),
       );
     }

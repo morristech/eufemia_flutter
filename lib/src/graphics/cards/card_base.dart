@@ -1,9 +1,7 @@
-import 'package:eufemia/src/style/colors.dart';
 import 'package:flutter/material.dart';
 
 class CardBase extends StatelessWidget {
   final bool softLight;
-  final bool shadow;
   final Color startColor;
   final Color endColor;
   final List<double> stops;
@@ -16,7 +14,6 @@ class CardBase extends StatelessWidget {
     this.endColor,
     this.width,
     this.stops,
-    this.shadow = false,
   }) : super(key: key);
 
   @override
@@ -28,13 +25,6 @@ class CardBase extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: EufemiaColors.lightShadow.withOpacity(0.08),
-                  blurRadius: 12.0,
-                  spreadRadius: 2.0,
-                ),
-              ],
               gradient: LinearGradient(
                 begin: Alignment.centerRight,
                 end: Alignment.centerLeft,

@@ -13,11 +13,13 @@ final Color _buttonDisabledTextColor = EufemiaColors.seaGreenAltLight;
 
 // Dark mode
 final Color _buttonDarkColor = Colors.transparent;
-final Color _buttonDarkTappedColor = Colors.white.withOpacity(0.1);
-final Color _buttonDarkTextColor = Colors.white;
-final Color _buttonDarkTappedTextColor = Colors.white.withOpacity(0.8);
+final Color _buttonDarkTappedColor = EufemiaColors.mintGreen.withOpacity(0.1);
+final Color _buttonDarkTextColor = EufemiaColors.mintGreen;
+final Color _buttonDarkTappedTextColor =
+    EufemiaColors.mintGreen.withOpacity(0.8);
 final Color _buttonDarkDisabledColor = Colors.transparent;
-final Color _buttonDarkDisabledTextColor = Colors.white.withOpacity(0.5);
+final Color _buttonDarkDisabledTextColor =
+    EufemiaColors.mintGreen.withOpacity(0.5);
 
 /// A text button from the Eufemia Design System
 class TextButton extends StatefulWidget {
@@ -144,7 +146,7 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
           builder: (context, _) {
             return Container(
               decoration: BoxDecoration(
-                color: Theme.of(context).brightness == Brightness.light
+                color: context.bright
                     ? buttonColorAnimation.value
                     : buttonDarkColorAnimation.value,
                 borderRadius: BorderRadius.circular(_buttonBorderRadius),
@@ -155,7 +157,7 @@ class _TextButtonState extends State<TextButton> with TickerProviderStateMixin {
                   widget.label,
                   style: widget.style ??
                       TextStyle(
-                        color: Theme.of(context).brightness == Brightness.light
+                        color: context.bright
                             ? textColorAnimation.value
                             : textDarkColorAnimation.value,
                         fontSize: _getFontSize(),

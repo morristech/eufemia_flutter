@@ -45,6 +45,18 @@ class EufemiaColors {
 
   // Card colors
   static const sagaGold = Color(0xFFC6B27F);
+  static const sagaContrast = Color(0xFF807045);
+  static const matteBlack = Color(0xFF262626);
+  static const sand = Color(0xFFFFF5DB);
+  static const sagaPb = Color(0xFF222222);
+
+  // Dark mode colors
+  static const gray1 = Color(0xFF8E8E93);
+  static const gray2 = Color(0xFF636366);
+  static const gray3 = Color(0xFF48484A);
+  static const gray4 = Color(0xFF3A3A3C);
+  static const gray5 = Color(0xFF2C2C2E);
+  static const gray6 = Color(0xFF1C1C1E);
 
   static const all = [
     seaGreen,
@@ -77,6 +89,13 @@ class EufemiaColors {
     violet,
     skyBlue,
     sagaGold,
+    matteBlack,
+    gray1,
+    gray2,
+    gray3,
+    gray4,
+    gray5,
+    gray6,
   ];
 
   static Map<Color, String> map = {

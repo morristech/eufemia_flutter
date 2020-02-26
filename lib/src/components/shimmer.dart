@@ -29,10 +29,10 @@ class Shimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return shimmer.Shimmer.fromColors(
-      baseColor: Theme.of(context).brightness == Brightness.light
+      baseColor: context.bright
           ? EufemiaColors.outlineGray
           : Colors.white.withOpacity(0.05),
-      highlightColor: Theme.of(context).brightness == Brightness.light
+      highlightColor: context.bright
           ? EufemiaColors.subtleGray
           : Colors.white.withOpacity(0.1),
       child: Container(

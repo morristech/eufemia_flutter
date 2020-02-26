@@ -55,7 +55,7 @@ class ContentCard extends StatelessWidget {
             boxShadow: shadow
                 ? [
                     BoxShadow(
-                      color: Theme.of(context).brightness == Brightness.light
+                      color: context.bright
                           ? _cardLightShadowColor
                           : _cardDarkShadowColor,
                       spreadRadius: _cardShadowSpreadRadius,
@@ -64,12 +64,12 @@ class ContentCard extends StatelessWidget {
                     ),
                   ]
                 : null,
-            color: Theme.of(context).cardColor,
+            color: context.theme.cardColor,
             borderRadius: BorderRadius.circular(_cardBorderRadius),
             border: border
                 ? Border.all(
                     width: _cardBorderWidth,
-                    color: Theme.of(context).brightness == Brightness.light
+                    color: context.bright
                         ? _cardLightBorderColor
                         : _cardDarkBorderColor,
                   )
@@ -89,14 +89,15 @@ class ContentCard extends StatelessWidget {
                   if (separator) ...{
                     Container(
                       height: _cardBorderWidth,
-                      color: Theme.of(context).brightness == Brightness.light
+                      color: context.bright
                           ? _cardLightBorderColor
                           : _cardDarkBorderColor,
                     ),
                   },
                   Container(
+                    width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Theme.of(context).brightness == Brightness.light
+                      color: context.bright
                           ? _cardLightLabelColor
                           : _cardDarkLabelColor,
                       borderRadius: BorderRadius.only(

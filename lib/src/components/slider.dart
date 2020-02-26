@@ -1,8 +1,7 @@
-import 'package:eufemia/src/style/colors.dart';
+import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as material;
 
-final Color _activeColor = EufemiaColors.seaGreenAlt;
 final Color _inactiveColor = EufemiaColors.softGray;
 
 /// Slider from the Eufemia Design System
@@ -33,7 +32,8 @@ class EufemiaSlider extends StatelessWidget {
       onChanged: onChanged,
       onChangeStart: onChangeStart,
       onChangeEnd: onChangeEnd,
-      activeColor: _activeColor,
+      activeColor:
+          context.bright ? EufemiaColors.seaGreenAlt : EufemiaColors.mintGreen,
       inactiveColor: _inactiveColor,
     );
   }

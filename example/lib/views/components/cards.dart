@@ -37,7 +37,7 @@ class CardsView extends StatelessWidget {
                   child: Center(
                     child: Text(
                       'Label',
-                      style: Theme.of(context).textTheme.subtitle2,
+                      style: context.textTheme.subtitle2,
                     ),
                   ),
                 ),

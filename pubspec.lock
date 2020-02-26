@@ -57,6 +57,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.3"
+  flippable_box:
+    dependency: "direct main"
+    description:
+      name: flippable_box
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.6"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -162,7 +169,7 @@ packages:
       name: snack
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.3"
+    version: "1.0.4"
   source_span:
     dependency: transitive
     description:

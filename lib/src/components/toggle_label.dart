@@ -1,15 +1,11 @@
-import 'package:eufemia/src/style/colors.dart';
+import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
 const double _borderRadius = 100.0;
 const double _borderWidth = 1.5;
 const int _animationDuration = 250;
 
-final Color _selectedColor = EufemiaColors.emeraldGreen;
 final Color _unselectedColor = Colors.white;
-final Color _borderColor = EufemiaColors.emeraldGreen;
-final Color _selectedFontColor = EufemiaColors.mintGreen;
-final Color _unselectedFontColor = EufemiaColors.emeraldGreen;
 
 /// Toggle label from the Eufemia Design System
 class ToggleLabel extends StatelessWidget {
@@ -35,9 +31,11 @@ class ToggleLabel extends StatelessWidget {
       child: AnimatedContainer(
         duration: Duration(milliseconds: _animationDuration),
         decoration: BoxDecoration(
-          color: selected ? _selectedColor : _unselectedColor,
+          color: selected
+              ? context.theme.accentColor
+              : context.bright ? _unselectedColor : Colors.transparent,
           border: Border.all(
-            color: _borderColor,
+            color: context.theme.accentColor,
             width: _borderWidth,
           ),
           borderRadius: BorderRadius.circular(_borderRadius),
@@ -47,7 +45,9 @@ class ToggleLabel extends StatelessWidget {
           child: Text(
             label,
             style: TextStyle(
-              color: selected ? _selectedFontColor : _unselectedFontColor,
+              color: selected
+                  ? context.theme.primaryColor
+                  : context.theme.accentColor,
             ),
           ),
         ),

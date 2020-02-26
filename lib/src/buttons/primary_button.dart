@@ -123,7 +123,7 @@ class _PrimaryButtonState extends State<PrimaryButton>
               builder: (context, _) {
                 return Container(
                   decoration: BoxDecoration(
-                    color: Theme.of(context).brightness == Brightness.light
+                    color: context.bright
                         ? buttonColorAnimation.value
                         : buttonDarkColorAnimation.value,
                     borderRadius: BorderRadius.circular(_buttonBorderRadius),
@@ -133,7 +133,7 @@ class _PrimaryButtonState extends State<PrimaryButton>
                     child: Text(
                       widget.label,
                       style: TextStyle(
-                        color: Theme.of(context).brightness == Brightness.light
+                        color: context.bright
                             ? textColorAnimation.value
                             : textDarkColorAnimation.value,
                         fontSize: _getFontSize(),

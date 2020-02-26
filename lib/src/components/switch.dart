@@ -2,9 +2,6 @@ import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as material;
 
-final Color _trackColor = EufemiaColors.seaGreenAlt;
-final Color _activeTrackColor = EufemiaColors.seaGreenAlt.withOpacity(0.5);
-final Color _inactiveTrackColor = EufemiaColors.coal.withOpacity(0.2);
 final Color _inactiveThumbColor = EufemiaColors.outlineGray;
 
 /// Switch from the Eufemia Design System
@@ -26,9 +23,14 @@ class EufemiaSwitch extends StatelessWidget {
     return material.Switch.adaptive(
       value: value,
       onChanged: onChanged,
-      activeColor: _trackColor,
-      activeTrackColor: _activeTrackColor,
-      inactiveTrackColor: _inactiveTrackColor,
+      activeColor:
+          context.bright ? EufemiaColors.seaGreenAlt : EufemiaColors.mintGreen,
+      activeTrackColor: context.bright
+          ? EufemiaColors.seaGreenAlt.withOpacity(0.5)
+          : EufemiaColors.mintGreen.withOpacity(0.5),
+      inactiveTrackColor: context.bright
+          ? EufemiaColors.coal.withOpacity(0.2)
+          : EufemiaColors.subtleGray.withOpacity(0.5),
       inactiveThumbColor: _inactiveThumbColor,
       materialTapTargetSize: shrink ? MaterialTapTargetSize.shrinkWrap : null,
     );
