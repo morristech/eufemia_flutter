@@ -22,9 +22,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-dependency_overrides:
-  recase: 3.0.0
-
 flutter:
   assets:
     - lib/assets/icons/
