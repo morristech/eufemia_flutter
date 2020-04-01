@@ -9,7 +9,6 @@ const String dnbMonoFont = 'DNB Mono';
 final Color _statusbarDarkColor = Colors.transparent;
 final Color _statusbarLightColor = Colors.transparent;
 final Color _appBarLightColor = Colors.white;
-final Color _appBarDarkColor = Colors.black;
 final Color _appBarLightIconColor = EufemiaColors.seaGreenAlt;
 final Color _darkIconColor = EufemiaColors.mintGreen;
 
@@ -28,7 +27,7 @@ class Eufemia {
           size: _iconSize,
         ),
         actionsIconTheme: IconThemeData(
-          color: _darkIconColor,
+          color: _appBarLightIconColor,
           size: _iconSize,
         ),
       ),
@@ -53,6 +52,15 @@ class Eufemia {
       textSelectionHandleColor: EufemiaColors.emeraldGreen,
       cursorColor: EufemiaColors.seaGreenAlt,
       buttonColor: EufemiaColors.seaGreenAlt,
+      snackBarTheme: SnackBarThemeData(
+        actionTextColor: EufemiaColors.mintGreen,
+        backgroundColor: EufemiaColors.coal,
+        contentTextStyle: Eufemia.subhead.copyWith(
+          color: Colors.white,
+        ),
+        elevation: 0.1,
+        behavior: SnackBarBehavior.floating,
+      ),
       inputDecorationTheme: InputDecorationTheme(
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4.0),
@@ -93,7 +101,7 @@ class Eufemia {
       primaryColor: EufemiaColors.emeraldGreen,
       accentColor: EufemiaColors.mintGreen,
       canvasColor: Colors.black,
-      cardColor: EufemiaColors.darkModeCard,
+      cardColor: EufemiaColors.gray5,
       iconTheme: IconThemeData(
         size: _iconSize,
         color: EufemiaColors.mintGreen,
@@ -101,13 +109,22 @@ class Eufemia {
       appBarTheme: AppBarTheme(
         elevation: 0,
         brightness: Brightness.dark,
-        color: _appBarDarkColor,
+        color: EufemiaColors.gray6,
         textTheme: darkTextTheme.apply(
           displayColor: EufemiaColors.mintGreen,
           bodyColor: EufemiaColors.mintGreen,
         ),
         iconTheme: IconThemeData(color: _darkIconColor, size: _iconSize),
         actionsIconTheme: IconThemeData(color: _darkIconColor, size: _iconSize),
+      ),
+      snackBarTheme: SnackBarThemeData(
+        actionTextColor: EufemiaColors.mintGreen,
+        backgroundColor: EufemiaColors.coal,
+        contentTextStyle: Eufemia.subhead.copyWith(
+          color: Colors.white,
+        ),
+        elevation: 0.1,
+        behavior: SnackBarBehavior.floating,
       ),
       textTheme: darkTextTheme,
       bottomAppBarColor: Colors.black,
@@ -207,7 +224,7 @@ class Eufemia {
   static TextStyle get titleLarge => TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 34,
-        height: 1.4,
+        height: 1.29,
         package: 'eufemia',
         fontFamily: 'DNB Sans',
       );
@@ -215,7 +232,7 @@ class Eufemia {
   /// 24pt Regular
   static TextStyle get titleMedium => TextStyle(
         fontSize: 24,
-        height: 1.4,
+        height: 1.33,
         package: 'eufemia',
         fontFamily: 'DNB Sans',
       );
@@ -224,7 +241,7 @@ class Eufemia {
   static TextStyle get titleMediumEmphasized => TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 24,
-        height: 1.4,
+        height: 1.33,
         package: 'eufemia',
         fontFamily: 'DNB Sans',
       );
@@ -258,7 +275,7 @@ class Eufemia {
   ///  17pt Regular
   static TextStyle get body => TextStyle(
         fontSize: 17,
-        height: 1.4,
+        height: 1.41,
         package: 'eufemia',
         fontFamily: 'DNB Sans',
       );
@@ -267,7 +284,7 @@ class Eufemia {
   static TextStyle get bodyEmphasized => TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 17,
-        height: 1.4,
+        height: 1.41,
         package: 'eufemia',
         fontFamily: 'DNB Sans',
       );
@@ -292,7 +309,7 @@ class Eufemia {
   /// 13pt Regular
   static TextStyle get footnote => TextStyle(
         fontSize: 13,
-        height: 1.33,
+        height: 1.23,
         package: 'eufemia',
         fontFamily: 'DNB Sans',
       );
@@ -301,7 +318,7 @@ class Eufemia {
   static TextStyle get footnoteEmphasized => TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 13,
-        height: 1.33,
+        height: 1.23,
         package: 'eufemia',
         fontFamily: 'DNB Sans',
       );
@@ -309,7 +326,7 @@ class Eufemia {
   /// 11pt Regular
   static TextStyle get caption => TextStyle(
         fontSize: 11,
-        height: 1.33,
+        height: 1.45,
         package: 'eufemia',
         fontFamily: 'DNB Sans',
       );
@@ -318,7 +335,7 @@ class Eufemia {
   static TextStyle get captionEmphasized => TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 11,
-        height: 1.33,
+        height: 1.45,
         package: 'eufemia',
         fontFamily: 'DNB Sans',
       );

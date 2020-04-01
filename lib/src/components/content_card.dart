@@ -1,17 +1,12 @@
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
-const double _cardShadowSpreadRadius = 4.0;
-const double _cardShadowBlurRadius = 16.0;
 const double _cardBorderRadius = 4.0;
 const double _cardBorderWidth = 1.0;
 final Color _cardLightLabelColor = EufemiaColors.subtleGray;
 final Color _cardLightBorderColor = EufemiaColors.outlineGray;
-final Color _cardLightShadowColor = EufemiaColors.lightShadow;
 final Color _cardDarkLabelColor = Colors.black54;
 final Color _cardDarkBorderColor = Colors.white.withOpacity(0.05);
-final Color _cardDarkShadowColor = Colors.white.withOpacity(0.05);
-final Offset _cardShadowOffset = Offset(0.0, 0.5);
 
 /// A card from the Eufemia Design SystemR
 class ContentCard extends StatelessWidget {
@@ -23,6 +18,9 @@ class ContentCard extends StatelessWidget {
   final bool border;
   final bool separator;
   final bool expand;
+  final Color color;
+  final Widget background;
+  final List<BoxShadow> boxShadow;
 
   /// A card from the Eufemia Design System
   ///
@@ -39,6 +37,9 @@ class ContentCard extends StatelessWidget {
     this.separator = true,
     this.expand = false,
     this.centerLabel = true,
+    this.color,
+    this.background,
+    this.boxShadow,
   }) : super(key: key);
 
   @override
@@ -52,19 +53,8 @@ class ContentCard extends StatelessWidget {
         right: !expand,
         child: Container(
           decoration: BoxDecoration(
-            boxShadow: shadow
-                ? [
-                    BoxShadow(
-                      color: context.bright
-                          ? _cardLightShadowColor
-                          : _cardDarkShadowColor,
-                      spreadRadius: _cardShadowSpreadRadius,
-                      blurRadius: _cardShadowBlurRadius,
-                      offset: _cardShadowOffset,
-                    ),
-                  ]
-                : null,
-            color: context.theme.cardColor,
+            boxShadow: shadow ? boxShadow ?? adaptiveShadows(context) : null,
+            color: color ?? context.theme.cardColor,
             borderRadius: BorderRadius.circular(_cardBorderRadius),
             border: border
                 ? Border.all(
@@ -81,9 +71,20 @@ class ContentCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SafeArea(
-                  bottom: false,
-                  child: child,
+                Stack(
+                  fit: StackFit.loose,
+                  overflow: Overflow.clip,
+                  children: <Widget>[
+                    if (background != null) ...{
+                      Positioned.fill(
+                        child: background,
+                      ),
+                    },
+                    SafeArea(
+                      bottom: false,
+                      child: child,
+                    ),
+                  ],
                 ),
                 if (label != null) ...{
                   if (separator) ...{

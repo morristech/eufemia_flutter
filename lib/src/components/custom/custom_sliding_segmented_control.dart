@@ -142,6 +142,7 @@ class CustomSlidingSegmentedControl<T> extends StatefulWidget {
     this.backgroundColor = CupertinoColors.tertiarySystemFill,
     this.thumbRadius = 6.93,
     this.trackRadius = 8.0,
+    this.border,
   })  : assert(children != null),
         assert(children.length >= 2),
         assert(padding != null),
@@ -233,6 +234,8 @@ class CustomSlidingSegmentedControl<T> extends StatefulWidget {
   final double thumbRadius;
 
   final double trackRadius;
+
+  final BoxBorder border;
 
   @override
   _SegmentedControlState<T> createState() => _SegmentedControlState<T>();
@@ -428,6 +431,7 @@ class _SegmentedControlState<T> extends State<CustomSlidingSegmentedControl<T>>
               DefaultTextStyle.of(context).style.copyWith(
                     fontWeight: _highlightTween
                         .evaluate(_highlightControllers[currentKey]),
+                    height: 1.23,
                   );
 
           final Widget child = DefaultTextStyle(
@@ -474,6 +478,7 @@ class _SegmentedControlState<T> extends State<CustomSlidingSegmentedControl<T>>
               ),
               color: CupertinoDynamicColor.resolve(
                   widget.backgroundColor, context),
+              border: widget.border,
             ),
             child: box,
           ),

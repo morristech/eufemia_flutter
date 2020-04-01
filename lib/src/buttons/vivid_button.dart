@@ -108,6 +108,7 @@ class _VividButtonState extends State<VividButton>
                         color: textColorAnimation.value,
                         fontSize: _getFontSize(),
                         height: 1.2,
+                        fontWeight: FontWeight.normal,
                       ),
                     ),
                   ),

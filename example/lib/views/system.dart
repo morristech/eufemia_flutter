@@ -61,7 +61,7 @@ class SystemView extends StatelessWidget {
     DialogService.showAlertDialog(
       context,
       title: 'Alert',
-      content: 'This is an alert dialog',
+      content: Text('This is an alert dialog'),
       actions: [
         DialogAction(
           label: 'Button',
@@ -76,7 +76,7 @@ class SystemView extends StatelessWidget {
     DialogService.showAlertDialog(
       context,
       title: 'Alert',
-      content: 'This is an alert dialog',
+      content: Text('This is an alert dialog'),
       actions: [
         DialogAction(
           label: 'Button',

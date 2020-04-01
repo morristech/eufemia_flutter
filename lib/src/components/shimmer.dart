@@ -31,14 +31,14 @@ class Shimmer extends StatelessWidget {
     return shimmer.Shimmer.fromColors(
       baseColor: context.bright
           ? EufemiaColors.outlineGray
-          : Colors.white.withOpacity(0.05),
+          : Colors.white.withOpacity(0.16),
       highlightColor: context.bright
-          ? EufemiaColors.subtleGray
-          : Colors.white.withOpacity(0.1),
+          ? Colors.white.withOpacity(0.72)
+          : Colors.white.withOpacity(0.64),
       child: Container(
         decoration: BoxDecoration(
           shape: shape ?? BoxShape.rectangle,
-          borderRadius: shape != null ? null : BorderRadius.circular(2.5),
+          borderRadius: shape != null ? null : BorderRadius.circular(2.0),
           color: Colors.white,
         ),
         height: height,

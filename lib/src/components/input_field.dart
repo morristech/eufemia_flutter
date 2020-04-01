@@ -36,35 +36,37 @@ class InputField extends StatefulWidget {
 class _InputFieldState extends State<InputField> {
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      focusNode: widget.focusNode,
-      expands: widget.multiLine &&
-          widget.maxLines == null &&
-          widget.minLines == null,
-      minLines: widget.minLines,
-      maxLines: widget.maxLines,
-      maxLength: widget.maxLength,
-      controller: widget.controller,
-      keyboardType:
-          widget.multiLine ? TextInputType.multiline : widget.keyboardType,
-      validator: widget.validator ?? _defaultValidator,
-      onChanged: (String value) {
-        // Needed to update the border color/size
-        setState(() {});
+    return Material(
+      child: TextFormField(
+        focusNode: widget.focusNode,
+        expands: widget.multiLine &&
+            widget.maxLines == null &&
+            widget.minLines == null,
+        minLines: widget.minLines,
+        maxLines: widget.maxLines,
+        maxLength: widget.maxLength,
+        controller: widget.controller,
+        keyboardType:
+            widget.multiLine ? TextInputType.multiline : widget.keyboardType,
+        validator: widget.validator ?? _defaultValidator,
+        onChanged: (String value) {
+          // Needed to update the border color/size
+          setState(() {});
 
-        if (widget.onChanged != null) {
-          widget.onChanged(value);
-        }
-      },
-      style: TextStyle(
-        color: context.bright ? EufemiaColors.coal : Colors.white,
-        fontSize: 17.0,
-      ),
-      decoration: InputDecoration(
-        hintText: widget.hint,
-        enabledBorder: widget.controller.text.isEmpty
-            ? context.theme.inputDecorationTheme.enabledBorder
-            : Eufemia.unfocusedWithTextBorder(context),
+          if (widget.onChanged != null) {
+            widget.onChanged(value);
+          }
+        },
+        style: TextStyle(
+          color: context.bright ? EufemiaColors.coal : Colors.white,
+          fontSize: 17.0,
+        ),
+        decoration: InputDecoration(
+          hintText: widget.hint,
+          enabledBorder: widget.controller.text.isEmpty
+              ? context.theme.inputDecorationTheme.enabledBorder
+              : Eufemia.unfocusedWithTextBorder(context),
+        ),
       ),
     );
   }

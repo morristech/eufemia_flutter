@@ -105,7 +105,7 @@ class _PaymentCardState extends State<PaymentCard> {
           child: LayoutBuilder(
             builder: (context, constraints) {
               return GestureDetector(
-                onTap: flip,
+                onTap: widget.flippable ? flip : null,
                 child: widget.flippable
                     ? FlippableBox(
                         front: Container(

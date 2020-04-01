@@ -6,11 +6,11 @@ class DialogService {
   static void showAlertDialog(
     BuildContext context, {
     String title,
-    String content,
+    Widget content,
     List<DialogAction> actions,
   }) {
     if (context.cupertino) {
-      showDialog(
+      showCupertinoDialog(
         context: context,
         builder: (context) => CupertinoAlertDialog(
           title: Text(
@@ -20,26 +20,30 @@ class DialogService {
               fontWeight: FontWeight.w600,
             ),
           ),
-          content: Text(
-            content,
+          content: AnimatedDefaultTextStyle(
+            duration: Duration(milliseconds: 250),
+            child: content,
             style: TextStyle(
               fontFamily: 'SF Pro Text',
             ),
           ),
-          actions: actions.map((action) {
-            return CupertinoDialogAction(
-              child: Text(
-                action.label,
-                style: TextStyle(
-                  fontFamily: 'SF Pro Text',
-                  color: EufemiaColors.seaGreenAlt,
-                ),
-              ),
-              onPressed: action.onPressed,
-              isDefaultAction: action.isDefaultAction,
-              isDestructiveAction: action.isDestructiveAction,
-            );
-          }).toList(),
+          actions: actions?.map((action) {
+                return CupertinoDialogAction(
+                  child: Text(
+                    action.label,
+                    style: TextStyle(
+                      fontFamily: 'SF Pro Text',
+                      color: context.bright
+                          ? EufemiaColors.seaGreenAlt
+                          : EufemiaColors.mintGreen,
+                    ),
+                  ),
+                  onPressed: action.onPressed,
+                  isDefaultAction: action.isDefaultAction,
+                  isDestructiveAction: action.isDestructiveAction,
+                );
+              })?.toList() ??
+              [],
         ),
       );
     } else {
@@ -48,7 +52,7 @@ class DialogService {
           builder: (context) {
             return AlertDialog(
               title: Text(title),
-              content: Text(content),
+              content: content,
               actions: actions.map((action) {
                 return FlatButton(
                   child: Text(

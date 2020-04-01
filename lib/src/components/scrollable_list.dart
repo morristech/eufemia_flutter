@@ -100,29 +100,32 @@ class ScrollableList extends StatelessWidget {
             ),
           )
         },
-        if (showBorders) ...{
-          Container(
-            margin: EdgeInsets.only(
-              top: topPadding ? 16.0 : 0.0,
-              bottom: bottomPadding ? 16.0 : 0.0,
-            ),
-            decoration: BoxDecoration(
-              border: Border(
-                top: BorderSide(
-                  width: _borderWidth,
-                  color: _borderColor,
+        Builder(
+          builder: (context) {
+            if (showBorders)
+              return Container(
+                margin: EdgeInsets.only(
+                  top: topPadding ? 16.0 : 0.0,
+                  bottom: bottomPadding ? 16.0 : 0.0,
                 ),
-              ),
-            ),
-            child: Column(
-              children: children,
-            ),
-          )
-        } else ...{
-          Column(
-            children: children,
-          )
-        },
+                decoration: BoxDecoration(
+                  border: Border(
+                    top: BorderSide(
+                      width: _borderWidth,
+                      color: _borderColor,
+                    ),
+                  ),
+                ),
+                child: Column(
+                  children: children,
+                ),
+              );
+            else
+              return Column(
+                children: children,
+              );
+          },
+        ),
       ],
     );
   }

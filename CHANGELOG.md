@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0
+
+- Changes color on tapped buttons
+- Finetunes padding for SegmentedControl
+- Adds new GradientWidget component
+- Adds new language features
+- Tweaks to StaticList, Cell, ScrollableList, Shimmer, shadows, sheets
+
 ## 0.4.0
 
 - Added Segmented Control component

@@ -10,7 +10,7 @@ const double _buttonBorderWidth = 1.0;
 const int _colorAnimationDuration = 100;
 final Color _buttonBackgroundColor = Colors.white;
 final Color _buttonColor = EufemiaColors.seaGreenAlt;
-final Color _buttonTappedColor = EufemiaColors.softGray;
+final Color _buttonTappedColor = EufemiaColors.seaGreenAlt.withOpacity(0.5);
 final Color _buttonDisabledBackgroundColor = Colors.transparent;
 final Color _buttonDisabledColor = EufemiaColors.seaGreenAlt.withOpacity(0.5);
 
@@ -152,6 +152,7 @@ class _SecondaryButtonState extends State<SecondaryButton>
                           color: colorAnimation.value,
                           fontSize: _getFontSize(),
                           height: 1.2,
+                          fontWeight: FontWeight.normal,
                         ),
                       ),
                     ),

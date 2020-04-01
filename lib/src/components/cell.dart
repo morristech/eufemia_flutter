@@ -22,6 +22,7 @@ class Cell extends StatelessWidget {
   final bool centerLeading;
   final List<CellAction> actions;
   final EdgeInsets contentPadding;
+  final double iconSize;
 
   const Cell({
     Key key,
@@ -36,18 +37,21 @@ class Cell extends StatelessWidget {
     this.contentPadding,
     this.showBottomBorder = true,
     this.centerLeading = true,
+    this.iconSize,
   }) : super(key: key);
 
-  factory Cell.shimmer({bool leading = false}) {
+  factory Cell.shimmer({bool leading = false, bool trailing = false}) {
     return Cell(
       leading: leading ? Shimmer.circular(24.0) : null,
       title: Shimmer(),
+      trailing: trailing ? Shimmer(width: 48.0) : null,
     );
   }
 
-  static List<Cell> shimmerList({int count = 1, bool leading = true}) {
+  static List<Cell> shimmerList(
+      {int count = 1, bool leading = true, bool trailing = false}) {
     return List.generate(count, (i) => i + 1)
-        .map((i) => Cell.shimmer(leading: leading))
+        .map((i) => Cell.shimmer(leading: leading, trailing: trailing))
         .toList();
   }
 
@@ -138,6 +142,7 @@ class Cell extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -151,13 +156,20 @@ class Cell extends StatelessWidget {
                                 style: context.textTheme.headline6
                                     .copyWith(fontWeight: FontWeight.bold),
                                 overflow: TextOverflow.fade,
-                                child: leading,
+                                child: IconTheme(
+                                  child: leading,
+                                  data: Theme.of(context).iconTheme.copyWith(
+                                        size: iconSize ??
+                                            Theme.of(context).iconTheme.size,
+                                      ),
+                                ),
                               ),
                             },
                             Flexible(
                               child: Padding(
                                 padding: EdgeInsets.only(
-                                    left: leading != null ? 16.0 : 0.0),
+                                  left: leading != null ? 16.0 : 0.0,
+                                ),
                                 child: AnimatedDefaultTextStyle(
                                   style: context.textTheme.bodyText2,
                                   overflow: TextOverflow.fade,
@@ -172,11 +184,12 @@ class Cell extends StatelessWidget {
                           Padding(
                             padding: EdgeInsets.only(
                               left: leading != null
-                                  ? 16.0 + context.theme.iconTheme.size
+                                  ? 16.0 +
+                                      (iconSize ?? context.theme.iconTheme.size)
                                   : 0.0,
                             ),
                             child: AnimatedDefaultTextStyle(
-                              style: context.textTheme.subtitle1.copyWith(
+                              style: Eufemia.subhead.copyWith(
                                 color: EufemiaColors.darkGray,
                               ),
                               overflow: TextOverflow.fade,
@@ -194,8 +207,10 @@ class Cell extends StatelessWidget {
                       children: [
                         AnimatedDefaultTextStyle(
                           duration: _styleChangeDuration,
-                          style: context.textTheme.bodyText2.copyWith(
-                            color: EufemiaColors.darkGray,
+                          style: Eufemia.body.copyWith(
+                            color: context.bright
+                                ? EufemiaColors.darkGray
+                                : EufemiaColors.softGray,
                           ),
                           overflow: TextOverflow.fade,
                           child: IconTheme(

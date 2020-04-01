@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 class BottomSheetService {
   /// Shows a native modal bottom sheet in the given [BuildContext]
   static void showNativeBottomSheet(
-      BuildContext context, WidgetBuilder builder) {
+    BuildContext context,
+    WidgetBuilder builder,
+  ) {
     if (context.cupertino) {
       showCupertinoModalPopup(
         context: context,
@@ -17,6 +19,8 @@ class BottomSheetService {
         backgroundColor: Colors.transparent,
         context: context,
         builder: builder,
+        enableDrag: true,
+        isDismissible: true,
       );
     }
   }
@@ -81,8 +85,7 @@ class BottomSheetService {
               topLeft: Radius.circular(10),
               topRight: Radius.circular(10),
             ),
-            child: ScrollableList(
-              shrinkWrap: true,
+            child: StaticList(
               children: [
                 Cell(
                   title: Text(

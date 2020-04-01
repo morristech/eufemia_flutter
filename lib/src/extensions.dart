@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+export 'package:recase/recase.dart';
 
 extension EufemiaContextExtension on BuildContext {
   bool get bright => this.brightness == Brightness.light;

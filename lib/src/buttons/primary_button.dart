@@ -138,6 +138,7 @@ class _PrimaryButtonState extends State<PrimaryButton>
                             : textDarkColorAnimation.value,
                         fontSize: _getFontSize(),
                         height: 1.2,
+                        fontWeight: FontWeight.normal,
                       ),
                     ),
                   ),

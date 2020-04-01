@@ -56,7 +56,7 @@ class StaticList extends StatelessWidget {
                   ),
                   child: Text(
                     title,
-                    style: context.textTheme.subtitle1.copyWith(
+                    style: Eufemia.subheadEmphasized.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -67,7 +67,6 @@ class StaticList extends StatelessWidget {
           if (showBorders) ...{
             Container(
               margin: EdgeInsets.only(
-                top: topPadding ? 16.0 : 0.0,
                 bottom: bottomPadding ? 16.0 : 0.0,
               ),
               decoration: BoxDecoration(
