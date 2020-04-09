@@ -1,5 +1,7 @@
 # DNB Design System 👨‍🎨
 
+![sigv4](https://github.com/dnb-asa/eufemia_flutter/workflows/Dart%20CI/badge.svg) ![pub](https://img.shields.io/pub/v/eufemia.svg) [![style: pedantic](https://img.shields.io/badge/style-pedantic-9cf)](https://github.com/dart-lang/pedantic) ![license](https://img.shields.io/github/license/dnb-asa/eufemia_flutter.svg)
+
 ![preview](https://github.com/dnb-asa/eufemia_flutter/blob/master/assets/preview.png?raw=true)
 
 > **DISCLAIMER**: This package is in an early stage
