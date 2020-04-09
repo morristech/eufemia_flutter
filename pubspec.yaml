@@ -1,6 +1,6 @@
 name: eufemia
 description: A set of Flutter widgets and components adhering to to DNB's Eufemia design system
-version: 0.6.0
+version: 0.6.0+1
 homepage: https://dnb.no
 
 environment:

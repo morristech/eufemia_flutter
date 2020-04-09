@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.0+1
+
+- Readme badges
+
 ## 0.6.0
 
 - Adds `MessageBox` component
