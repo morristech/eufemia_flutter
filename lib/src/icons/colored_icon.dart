@@ -21,6 +21,8 @@ class ColoredIcon extends StatelessWidget {
   /// Size of the icon, defaults to [32.0]
   final double size;
 
+  final BorderRadiusGeometry borderRadius;
+
   /// Constructs a [ColoredIcon] object
   const ColoredIcon({
     Key key,
@@ -29,6 +31,7 @@ class ColoredIcon extends StatelessWidget {
     this.backgroundColor,
     this.size = _iconSize,
     this.icon,
+    this.borderRadius,
   }) : super(key: key);
 
   @override
@@ -40,9 +43,10 @@ class ColoredIcon extends StatelessWidget {
       height: size,
       decoration: BoxDecoration(
         color: _hasBackground ? backgroundColor : null,
-        borderRadius: context.cupertino
-            ? BorderRadius.circular(8.0)
-            : BorderRadius.circular(100),
+        borderRadius: borderRadius ??
+            (context.cupertino
+                ? BorderRadius.circular(8.0)
+                : BorderRadius.circular(100)),
       ),
       child: SizedBox(
         width: 24.0,

@@ -15,6 +15,7 @@ class EufemiaColors {
   static const accentYellow = Color.fromARGB(255, 253, 187, 49);
   static const successGreen = Color.fromRGBO(0, 128, 0, 1);
   static const fireRed = Color.fromRGBO(220, 42, 42, 1);
+  static const emberRed = Color(0xFFFCEEE);
 
   // Background
   static const lightGray = Color.fromRGBO(250, 250, 250, 1);
@@ -90,6 +91,7 @@ class EufemiaColors {
     skyBlue,
     sagaGold,
     matteBlack,
+    emberRed,
     gray1,
     gray2,
     gray3,
@@ -129,6 +131,13 @@ class EufemiaColors {
     violet: 'Violet',
     skyBlue: 'Sky Blue',
     sagaGold: 'Saga Gold',
+    emberRed: 'Ember red',
+    gray1: 'Gray 1',
+    gray2: 'Gray 2',
+    gray3: 'Gray 3',
+    gray4: 'Gray 4',
+    gray5: 'Gray 5',
+    gray6: 'Gray 6',
   };
 
   static Color getForegroundColor(Color backgroundColor) {

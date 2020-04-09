@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.0
+
+- Adds `MessageBox` component
+- Adds `borderRadius` property on `ColoredIcon`
+
 ## 0.5.0
 
 - Changes color on tapped buttons

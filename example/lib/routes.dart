@@ -16,4 +16,5 @@ class Routes {
   static const flags = '/graphics/flags';
   static const graphics_cards = '/graphics/cards';
   static const system = '/system';
+  static const messageBoxes = '/components/messageBoxes';
 }

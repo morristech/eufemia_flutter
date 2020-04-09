@@ -8,6 +8,7 @@ import 'package:eufemia_example/views/components/cards.dart';
 import 'package:eufemia_example/views/components/cells.dart';
 import 'package:eufemia_example/views/components/input_fields.dart';
 import 'package:eufemia_example/views/components/controls.dart';
+import 'package:eufemia_example/views/components/message_boxes.dart';
 import 'package:eufemia_example/views/components/snackbars.dart';
 import 'package:eufemia_example/views/components/spinner.dart';
 import 'package:eufemia_example/views/graphics/flags.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
         Routes.icons: (context) => IconsView(),
         Routes.system: (context) => SystemView(),
         Routes.spinner: (context) => SpinnerView(),
+        Routes.messageBoxes: (context) => MessageBoxesView(),
       },
     );
   }
