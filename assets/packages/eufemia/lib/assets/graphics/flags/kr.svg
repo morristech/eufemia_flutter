@@ -1,0 +1,30 @@
+<svg enable-background="new 0 0 32 32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <mask id="a" height="33" maskUnits="userSpaceOnUse" width="33" x="-.5" y="-.5">
+        <path d="m16 32c8.8 0 16-7.2 16-16s-7.2-16-16-16-16 7.2-16 16 7.2 16 16 16z" fill="#fff"/>
+    </mask>
+    <mask id="b" height="33" maskUnits="userSpaceOnUse" width="33" x="-.5" y="-.5">
+        <path d="m16 32c8.8 0 16-7.2 16-16s-7.2-16-16-16-16 7.2-16 16 7.2 16 16 16z" fill="#fff"/>
+    </mask>
+    <clipPath id="c">
+        <path d="m16.3 21.1c2.9 0 5.3-2.4 5.3-5.3s-2.4-5.3-5.3-5.3-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3z"/>
+    </clipPath>
+    <mask id="d" height="6.3" maskUnits="userSpaceOnUse" width="11.6" x="9.9" y="14.9">
+        <path clip-path="url(#c)" clip-rule="evenodd" d="m16.3 21.1c2.9 0 5.3-2.4 5.3-5.3s-2.4-5.3-5.3-5.3-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3z" fill="#fff" fill-rule="evenodd"/>
+    </mask>
+    <path d="m16 32c8.8 0 16-7.2 16-16s-7.2-16-16-16-16 7.2-16 16 7.2 16 16 16z" fill="#fff" mask="url(#a)" stroke="#f8f8f8"/>
+    <path d="m16 32c8.8 0 16-7.2 16-16s-7.2-16-16-16-16 7.2-16 16 7.2 16 16 16z" fill="#fff" mask="url(#b)" stroke="#fff"/>
+    <g clip-rule="evenodd" fill-rule="evenodd">
+        <path d="m7.2 8.5c.1-.2.3-.2.5-.1l.7.4c.2.1.2.3.1.5l-1.9 3.4c-.1.2-.3.2-.5.1l-.7-.4c-.2-.1-.2-.3-.1-.5z" opacity=".75"/>
+        <path d="m23.7 8.8c-.2.1-.2.3-.1.5l1.9 3.4c.1.2.3.2.5.1l.7-.4c.2-.1.2-.3.1-.5l-1.9-3.4c-.1-.2-.3-.2-.5-.1z" opacity=".75"/>
+        <path d="m21.8 9.9c-.2.1-.2.3-.1.5l1.9 3.4c.1.2.3.2.5.1l.7-.4c.2-.1.2-.3.1-.5l-1.9-3.4c-.1-.2-.3-.2-.5-.1z" opacity=".75"/>
+        <path d="m5.2 19.9c-.1-.2 0-.4.1-.5l.8-.4c.2-.1.4 0 .5.1l1.9 3.4c.1.2 0 .4-.1.5l-.7.4c-.2.1-.4 0-.5-.1z" opacity=".75"/>
+        <path d="m7.3 18.3c-.2.1-.2.3-.1.5l1.9 3.4c.1.2.3.2.5.1l.7-.4c.2-.1.2-.3.1-.5l-1.9-3.4c-.1-.2-.3-.2-.5-.1z" opacity=".75"/>
+        <path d="m23.6 18c.1-.2.3-.2.5-.1l.7.4c.2.1.2.3.1.5l-1.9 3.3c-.1.2-.3.2-.5.1l-.7-.4c-.2-.1-.2-.3-.1-.5z" opacity=".75"/>
+        <path d="m26 19c-.2-.1-.4 0-.5.1l-1.9 3.4c-.1.2 0 .4.1.5l.7.4c.2.1.4 0 .5-.1l1.9-3.4c.1-.2 0-.4-.1-.5z" opacity=".75"/>
+        <path d="m9.6 9.5c-.2-.1-.4 0-.5.1l-1.9 3.4c-.1.2 0 .4.1.5l.7.4c.2.1.4 0 .5-.1l1.9-3.4c.1-.2 0-.4-.1-.5z" opacity=".75"/>
+        <path d="m16.3 21.1c2.9 0 5.3-2.4 5.3-5.3s-2.4-5.3-5.3-5.3-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3z" fill="#cd2e3a"/>
+    </g>
+    <g clip-path="url(#c)" mask="url(#d)">
+        <path clip-rule="evenodd" d="m10.6 16.6c1.5 1.4 3.8 2.3 5.3 0s4.6-2.3 5.3 0c.8 2.3 0 4.6 0 4.6h-10.6s-1.5-6 0-4.6z" fill="#0047a0" fill-rule="evenodd"/>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg enable-background="new 0 0 33 33" viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <clipPath id="a">
+        <path d="m32.8 17c0-8.8-7.2-16-16-16s-16 7.2-16 16 7.2 16 16 16 16-7.2 16-16z"/>
+    </clipPath>
+    <mask id="b" height="45.3" maskUnits="userSpaceOnUse" width="45.3" x="-5.7" y="-5.8">
+        <path clip-path="url(#a)" d="m32.8 17c0-8.8-7.2-16-16-16s-16 7.2-16 16 7.2 16 16 16 16-7.2 16-16z" fill="#fff"/>
+    </mask>
+    <path d="m32.8 17c0-8.8-7.2-16-16-16s-16 7.2-16 16 7.2 16 16 16 16-7.2 16-16z" fill="#fcd116"/>
+    <g clip-path="url(#a)" clip-rule="evenodd" fill-rule="evenodd" mask="url(#b)">
+        <path d="m17 39.5 22.6-22.6-5.7-5.7-22.6 22.6z" fill="#00a3dd"/>
+        <path d="m9.2 31.7 22.6-22.6-7.1-7.1-22.6 22.6c-1.5 1.5 7.1 7.1 7.1 7.1z"/>
+        <path d="m0 22.5 22.6-22.6-5.6-5.7-22.7 22.6z" fill="#1eb53a"/>
+    </g>
+</svg>
