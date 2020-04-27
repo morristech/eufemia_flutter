@@ -3,7 +3,7 @@ name: Dart CI
 on: [push]
 
 jobs:
-  build_packages:
+  analyze_packages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -15,7 +15,7 @@ jobs:
       - name: Analyze
         run: ./scripts/analyze.sh
 
-  deploy:
+  deploy_packages:
     runs-on: ubuntu-latest
     container:
       image: google/dart:latest
