@@ -29,10 +29,12 @@ class SecondaryButton extends StatelessWidget {
       child: child,
       onTap: onTap,
       style: EufemiaButtonStyle.secondary(
-        backgroundColor: palette.toggledColor,
+        backgroundColor:
+            palette.bright ? palette.nonToggledColor : palette.nonToggledColor,
         borderColor: palette.buttonColor,
         foregroundColor: palette.buttonColor,
         textStyle: getStyle(context, size),
+        context: context,
       ),
       focusNode: focusNode,
       autofocus: autofocus,

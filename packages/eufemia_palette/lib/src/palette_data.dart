@@ -31,6 +31,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
     @required @ColorJsonConverter() Color cardAccentColor,
     @required @ColorJsonConverter() Color buttonColor,
     @required @ColorJsonConverter() Color toggledColor,
+    @required @ColorJsonConverter() Color nonToggledColor,
   }) = _EufemiaPaletteData;
 
   factory EufemiaPaletteData.fallback() => const EufemiaPaletteData(
@@ -54,6 +55,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         cardAccentColor: EufemiaColors.mintGreen,
         buttonColor: EufemiaColors.seaGreen,
         toggledColor: EufemiaColors.subtleGray,
+        nonToggledColor: EufemiaColors.white,
       );
 
   factory EufemiaPaletteData.regular() => const EufemiaPaletteData(
@@ -77,6 +79,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         cardAccentColor: EufemiaColors.mintGreen,
         buttonColor: EufemiaColors.seaGreen,
         toggledColor: EufemiaColors.subtleGray,
+        nonToggledColor: EufemiaColors.white,
       );
 
   factory EufemiaPaletteData.saga() => const EufemiaPaletteData(
@@ -100,6 +103,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         cardAccentColor: EufemiaColors.sandYellow,
         buttonColor: EufemiaColors.saga,
         toggledColor: EufemiaColors.subtleGray,
+        nonToggledColor: EufemiaColors.white,
       );
 
   factory EufemiaPaletteData.dark() => const EufemiaPaletteData(
@@ -123,6 +127,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         cardAccentColor: EufemiaColors.gray5,
         buttonColor: EufemiaColors.mintGreen,
         toggledColor: EufemiaColors.darkGray,
+        nonToggledColor: EufemiaColors.gray6,
       );
 
   factory EufemiaPaletteData.privateBanking() => const EufemiaPaletteData(
@@ -146,6 +151,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         cardAccentColor: EufemiaColors.outlineGray,
         buttonColor: EufemiaColors.pb,
         toggledColor: EufemiaColors.subtleGray,
+        nonToggledColor: EufemiaColors.white,
       );
 
   factory EufemiaPaletteData.fromJson(Map<String, dynamic> json) =>

@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
     return Eufemia(
       data: EufemiaData(
         typography: EufemiaTypographyData.fallback(),
-        palette: EufemiaPaletteData.regular(),
+        palette: EufemiaPaletteData.dark(),
         spacing: EufemiaSpacingData.fallback(),
         button: EufemiaButtonThemeData.fallback(),
       ),

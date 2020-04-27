@@ -5,14 +5,14 @@ import 'package:flutter/widgets.dart';
 import 'button.dart';
 import 'style.dart';
 
-class PrimaryButton extends StatelessWidget {
+class VividButton extends StatelessWidget {
   final Widget child;
   final VoidCallback onTap;
   final bool autofocus;
   final FocusNode focusNode;
   final EufemiaButtonSize size;
 
-  const PrimaryButton({
+  const VividButton({
     Key key,
     this.onTap,
     this.child,
@@ -23,14 +23,10 @@ class PrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final palette = EufemiaPalette.of(context);
-
     return EufemiaButton(
       child: child,
       onTap: onTap,
-      style: EufemiaButtonStyle.primary(
-        backgroundColor: palette.buttonColor,
-        foregroundColor: palette.buttonText,
+      style: EufemiaButtonStyle.vivid(
         textStyle: getStyle(context, size),
         context: context,
       ),

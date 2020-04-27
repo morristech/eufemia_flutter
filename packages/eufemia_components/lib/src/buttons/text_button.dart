@@ -34,6 +34,7 @@ class TextButton extends StatelessWidget {
         backgroundColor: palette.toggledColor,
         foregroundColor: palette.buttonColor,
         textStyle: getStyle(context, size, emphasized),
+        context: context,
       ),
       focusNode: focusNode,
       autofocus: autofocus,

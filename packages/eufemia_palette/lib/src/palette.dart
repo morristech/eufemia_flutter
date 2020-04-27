@@ -145,7 +145,9 @@ class _EufemiaPaletteState extends State<EufemiaPalette> {
   @override
   Widget build(BuildContext context) {
     return EufemiaPaletteProvider(
-      value: _data ?? EufemiaPaletteData.fallback(),
+      value: (_data ?? EufemiaPaletteData.fallback()).copyWith.call(
+            brightness: MediaQuery.of(context).platformBrightness,
+          ),
       child: widget.child,
     );
   }

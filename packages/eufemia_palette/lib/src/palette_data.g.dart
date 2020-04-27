@@ -30,6 +30,8 @@ _$_EufemiaPaletteData _$_$_EufemiaPaletteDataFromJson(
         const ColorJsonConverter().fromJson(json['cardAccentColor']),
     buttonColor: const ColorJsonConverter().fromJson(json['buttonColor']),
     toggledColor: const ColorJsonConverter().fromJson(json['toggledColor']),
+    nonToggledColor:
+        const ColorJsonConverter().fromJson(json['nonToggledColor']),
   );
 }
 
@@ -57,6 +59,8 @@ Map<String, dynamic> _$_$_EufemiaPaletteDataToJson(
           const ColorJsonConverter().toJson(instance.cardAccentColor),
       'buttonColor': const ColorJsonConverter().toJson(instance.buttonColor),
       'toggledColor': const ColorJsonConverter().toJson(instance.toggledColor),
+      'nonToggledColor':
+          const ColorJsonConverter().toJson(instance.nonToggledColor),
     };
 
 T _$enumDecode<T>(

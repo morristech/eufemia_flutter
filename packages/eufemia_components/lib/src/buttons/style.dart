@@ -9,9 +9,9 @@ import 'theme.dart';
 
 part 'style.freezed.dart';
 
-const defaultEufemiaPrimaryDarkenFactor = 0.032234;
-const defaultEufemiaSecondaryDarkenFactor = 0.075199;
-const defaultEufemiaVividDarkenFactor = 0.160308;
+const defaultEufemiaPrimaryDarkenFactor = 0.05;
+const defaultEufemiaSecondaryDarkenFactor = 0.075;
+const defaultEufemiaVividDarkenFactor = 0.16;
 
 @freezed
 abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
@@ -54,13 +54,18 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
         disabled: 0.5,
       ),
       decoration: EufemiaButtonState(
-        enabled: decoration.copyWith(color: backgroundColor),
+        enabled: decoration.copyWith(
+          color: backgroundColor,
+        ),
         hover: decoration.copyWith(
-          color:
-              backgroundColor.darken(defaultEufemiaPrimaryDarkenFactor * 0.5),
+          color: backgroundColor.darken(
+            defaultEufemiaPrimaryDarkenFactor * 0.5,
+          ),
         ),
         active: decoration.copyWith(
-          color: backgroundColor.darken(defaultEufemiaPrimaryDarkenFactor),
+          color: backgroundColor.darken(
+            defaultEufemiaPrimaryDarkenFactor,
+          ),
         ),
       ),
       textStyle: EufemiaButtonState(
@@ -139,6 +144,8 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
     BuildContext context,
   }) {
     final buttonTheme = context != null ? EufemiaButtonTheme.of(context) : null;
+    final palette = context != null ? EufemiaPalette.of(context) : null;
+
     backgroundColor = backgroundColor ?? buttonTheme?.fill;
     foregroundColor ??= borderColor;
     textStyle = size.toTextStyle(
@@ -150,6 +157,8 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
     var decoration = size.toDecoration(buttonTheme?.cornerRadius);
 
     final padding = size.toPadding();
+
+    final mix = Color.lerp(foregroundColor, backgroundColor, 0.99);
 
     return EufemiaButtonStyle(
       padding: EufemiaButtonState(enabled: padding),
@@ -165,16 +174,18 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
           ),
         ),
         hover: decoration.copyWith(
-          color: Color.lerp(foregroundColor, backgroundColor, 0.99)
-              .darken(defaultEufemiaSecondaryDarkenFactor * 0.5),
+          color: palette?.bright ?? true
+              ? mix.darken(defaultEufemiaSecondaryDarkenFactor * 0.5)
+              : mix.lighten(defaultEufemiaPrimaryDarkenFactor * 0.5),
           border: Border.all(
             color:
                 borderColor.darken(defaultEufemiaSecondaryDarkenFactor * 0.5),
           ),
         ),
         active: decoration.copyWith(
-          color: Color.lerp(foregroundColor, backgroundColor, 0.99)
-              .darken(defaultEufemiaSecondaryDarkenFactor),
+          color: palette?.bright ?? true
+              ? mix.darken(defaultEufemiaSecondaryDarkenFactor)
+              : mix.lighten(defaultEufemiaSecondaryDarkenFactor),
           border: Border.all(
             color: borderColor.darken(defaultEufemiaSecondaryDarkenFactor),
           ),
