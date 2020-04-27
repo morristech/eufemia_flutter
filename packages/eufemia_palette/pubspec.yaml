@@ -1,0 +1,28 @@
+name: eufemia_palette
+description: A new Flutter package project.
+version: 0.0.1
+homepage: https://github.com/dnb-asa/eufemia_flutter
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  http: ^0.12.0
+  shared_preferences: ^0.5.7
+  json_annotation: ^3.0.1
+  freezed_annotation: ^0.7.1
+  provider: ^4.0.5
+  derived_colors: ^0.2.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  json_serializable: ^3.3.0
+  build_runner: ^1.9.0
+  freezed: ^0.10.7
+  pedantic: ^1.9.0
+
+flutter:

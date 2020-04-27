@@ -1,0 +1,23 @@
+name: eufemia_spacing
+description: A new Flutter package project.
+version: 0.0.1
+homepage: https://github.com/dnb-asa/eufemia_flutter
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  provider: ^4.0.5
+  freezed_annotation: ^0.7.1
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  json_serializable: ^3.3.0
+  build_runner:
+  freezed: ^0.10.7
+  pedantic: ^1.9.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
