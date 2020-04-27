@@ -20,7 +20,7 @@ jobs:
     container:
       image: google/dart:latest
     if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-    needs: build_packages
+    needs: analyze_packages
     steps:
       - uses: actions/checkout@v1
       - name: Setup credentials
