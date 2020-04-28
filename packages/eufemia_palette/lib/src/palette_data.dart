@@ -149,7 +149,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         iconColor: EufemiaColors.oceanGreen,
         cardColor: EufemiaColors.white,
         cardAccentColor: EufemiaColors.outlineGray,
-        buttonColor: EufemiaColors.pb,
+        buttonColor: EufemiaColors.pbButton,
         toggledColor: EufemiaColors.subtleGray,
         nonToggledColor: EufemiaColors.white,
       );

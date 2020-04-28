@@ -7,8 +7,9 @@ import 'package:eufemia_typography/eufemia_typography.dart';
 import 'default_button.dart';
 import 'default_typography.dart';
 import 'eufemia_data.dart';
+import 'extensions.dart';
 
-class Eufemia extends StatefulWidget {
+class Eufemia extends StatelessWidget {
   final EufemiaData data;
   final Widget child;
 
@@ -27,10 +28,40 @@ class Eufemia extends StatefulWidget {
   }
 
   @override
-  _EufemiaState createState() => _EufemiaState();
+  Widget build(BuildContext context) {
+    return _MediaQueryFromWindow(
+      child: Builder(
+        builder: (context) {
+          return EufemiaPalette(
+            data: context.platformBright ? data.palette : data.darkPalette,
+            child: EufemiaSpacing(
+              data: data.spacing,
+              child: EufemiaDefaultTypography(
+                data: data.typography,
+                child: EufemiaDefaultButtonTheme(
+                  data: data.button,
+                  child: child,
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
 }
 
-class _EufemiaState extends State<Eufemia> with WidgetsBindingObserver {
+class _MediaQueryFromWindow extends StatefulWidget {
+  final Widget child;
+
+  const _MediaQueryFromWindow({Key key, this.child}) : super(key: key);
+
+  @override
+  _MediaQueryFromWindowState createState() => _MediaQueryFromWindowState();
+}
+
+class _MediaQueryFromWindowState extends State<_MediaQueryFromWindow>
+    with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
@@ -58,19 +89,7 @@ class _EufemiaState extends State<Eufemia> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return MediaQuery(
       data: MediaQueryData.fromWindow(WidgetsBinding.instance.window),
-      child: EufemiaPalette(
-        data: widget.data?.palette,
-        child: EufemiaSpacing(
-          data: widget.data?.spacing,
-          child: EufemiaDefaultTypography(
-            data: widget.data?.typography,
-            child: EufemiaDefaultButtonTheme(
-              data: widget.data?.button,
-              child: widget.child,
-            ),
-          ),
-        ),
-      ),
+      child: widget.child,
     );
   }
 

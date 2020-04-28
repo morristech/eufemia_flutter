@@ -97,6 +97,22 @@ class _EufemiaPaletteState extends State<EufemiaPalette> {
     super.initState();
   }
 
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (widget.data != null) {
+      setState(() => _data = widget.data);
+    }
+  }
+
+  @override
+  void didUpdateWidget(EufemiaPalette oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.data != null) {
+      setState(() => _data = widget.data);
+    }
+  }
+
   Future<void> _initAsync() async {
     try {
       await updateFromPreferences();

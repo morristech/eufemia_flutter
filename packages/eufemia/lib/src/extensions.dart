@@ -4,6 +4,8 @@ export 'package:recase/recase.dart';
 extension EufemiaContextExtension on BuildContext {
   bool get bright => brightness == Brightness.light;
   bool get dark => brightness == Brightness.dark;
+  bool get platformBright => mediaQuery.platformBrightness == Brightness.light;
+  bool get platformDark => !platformBright;
   bool get iOS => platform == TargetPlatform.iOS;
   bool get macOS => platform == TargetPlatform.macOS;
   bool get cupertino => iOS || macOS;

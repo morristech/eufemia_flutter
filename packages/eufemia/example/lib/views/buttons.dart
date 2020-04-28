@@ -17,12 +17,18 @@ class ButtonsView extends StatelessWidget {
           showBorders: false,
           children: [
             PrimaryButton(
-              child: Text('New primary'),
+              child: Text('Primary button'),
+              onTap: () {},
+            ),
+            PrimaryButton(
+              child: Text('Primary button disabled'),
+            ),
+            SecondaryButton(
+              child: Text('Secondary button'),
               onTap: () {},
             ),
             SecondaryButton(
-              child: Text('New secondary'),
-              onTap: () {},
+              child: Text('Secondary button disabled'),
             ),
             EufemiaButton(
               child: Text('New vivid'),

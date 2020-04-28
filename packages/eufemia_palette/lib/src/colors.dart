@@ -54,6 +54,7 @@ class EufemiaColors {
   static const pb = Color.fromRGBO(88, 88, 88, 1.0);
   static const pbContrast = Color.fromRGBO(164, 164, 164, 1.0);
   static const pbLight = Color.fromRGBO(244, 244, 244, 1.0);
+  static const pbButton = Color.fromRGBO(144, 144, 144, 1.0);
 
   // Shadows
   static const lightShadow = Color.fromRGBO(51, 51, 51, 0.08);

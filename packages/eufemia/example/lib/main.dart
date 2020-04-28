@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Eufemia(
       data: EufemiaData(
+        palette: EufemiaPaletteData.saga(),
         typography: EufemiaTypographyData.fallback(),
-        palette: EufemiaPaletteData.dark(),
         spacing: EufemiaSpacingData.fallback(),
         button: EufemiaButtonThemeData.fallback(),
       ),
