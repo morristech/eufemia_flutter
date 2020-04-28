@@ -5,7 +5,8 @@
 			"name": "Current Device Debug",
 			"request": "launch",
 			"type": "dart",
-			"flutterMode": "debug"
+			"flutterMode": "debug",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "Current Device Profile",

@@ -1,0 +1,192 @@
+import 'package:eufemia/eufemia.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+
+class Cell extends StatelessWidget {
+  final Widget leading;
+  final Widget title;
+  final Widget trailing;
+  final Widget subtitle;
+  final VoidCallback onTap;
+  final bool implyNavigation;
+  final bool borders;
+  final List<CellAction> actions;
+  final EufemiaSpacing contentPadding;
+
+  const Cell({
+    Key key,
+    this.leading,
+    this.title,
+    this.trailing,
+    this.subtitle,
+    this.onTap,
+    this.borders = true,
+    this.implyNavigation = false,
+    this.actions,
+    this.contentPadding,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final typography = EufemiaTypography.of(context);
+    final palette = EufemiaPalette.of(context);
+
+    print(typography.styles.subhead.color);
+    print(palette.textLight);
+
+    final cell = GestureDetector(
+      onTap: onTap,
+      child: EufemiaPadding.only(
+        context.cupertino ? EufemiaSpace.medium : EufemiaSpace.none,
+        sides: EufemiaSides.left,
+        child: Container(
+          decoration: cellDecoration(palette),
+          child: EufemiaPadding.medium(
+            child: SafeArea(
+              bottom: false,
+              top: false,
+              child: EufemiaRow(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Flexible(
+                    child: EufemiaColumn(
+                      children: [
+                        EufemiaRow(
+                          children: [
+                            if (hasLeading) ...{
+                              DefaultTextStyle(
+                                style: typography.styles.titleDemi.toTextStyle(
+                                  context,
+                                ),
+                                child: leading,
+                              ),
+                            },
+                            Flexible(
+                              child: EufemiaPadding.only(
+                                hasLeading
+                                    ? EufemiaSpace.medium
+                                    : EufemiaSpace.none,
+                                sides: EufemiaSides.left,
+                                child: DefaultTextStyle(
+                                  style: typography.styles.body.toTextStyle(
+                                    context,
+                                  ),
+                                  child: title,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        if (hasSubtitle) ...{
+                          EufemiaPadding.only(
+                            hasLeading
+                                ? EufemiaSpace.medium
+                                : EufemiaSpace.none,
+                            sides: EufemiaSides.left,
+                            child: DefaultTextStyle(
+                              style: typography.styles.subhead.toTextStyle(
+                                context,
+                              ),
+                              child: subtitle,
+                            ),
+                          ),
+                        }
+                      ],
+                    ),
+                  ),
+                  if (hasTrailing) ...{
+                    EufemiaRow(
+                      children: [
+                        DefaultTextStyle(
+                          style: typography.styles.body.toTextStyle(
+                            context,
+                          ),
+                          child: trailing,
+                        ),
+                        if (trailingIsText) ...{
+                          EufemiaPadding.small(),
+                        },
+                        if (implyNavigation) ...{
+                          Icon(
+                            EufemiaIcons.chevron,
+                            size: 12.0,
+                            color: palette.grey,
+                          ),
+                        }
+                      ],
+                    ),
+                  } else if (implyNavigation) ...{
+                    Icon(
+                      EufemiaIcons.chevron,
+                      size: 12.0,
+                      color: palette.light,
+                    ),
+                  }
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+
+    return Slidable(
+      key: UniqueKey(),
+      actionPane: context.cupertino
+          ? SlidableDrawerActionPane()
+          : SlidableDrawerDismissal(),
+      dismissal: SlidableDismissal(
+        child: SlidableDrawerDismissal(),
+      ),
+      child: cell,
+      actions: slideActions,
+    );
+  }
+
+  BoxDecoration cellDecoration(EufemiaPaletteData palette) {
+    if (borders) {
+      return BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            width: 0.5,
+            color: palette.outline,
+          ),
+        ),
+      );
+    }
+    return null;
+  }
+
+  bool get hasLeading => leading != null;
+  bool get hasSubtitle => subtitle != null;
+  bool get hasTrailing => trailing != null;
+  bool get trailingIsText =>
+      trailing is Text ||
+      trailing is DefaultTextStyle ||
+      trailing is AnimatedDefaultTextStyle;
+
+  List<IconSlideAction> get slideActions => actions
+      ?.map(
+        (action) => IconSlideAction(
+          caption: action.label,
+          color: action.color,
+          iconWidget: action.icon,
+          onTap: action.onTap,
+        ),
+      )
+      ?.toList();
+}
+
+class CellAction {
+  final String label;
+  final Color color;
+  final Widget icon;
+  final VoidCallback onTap;
+
+  CellAction({
+    @required this.label,
+    @required this.color,
+    @required this.icon,
+    @required this.onTap,
+  });
+}

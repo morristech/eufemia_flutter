@@ -11,14 +11,10 @@ class EufemiaData {
   final EufemiaButtonThemeData button;
 
   EufemiaData({
-    EufemiaTypographyData typography,
-    EufemiaPaletteData palette,
-    EufemiaPaletteData darkPalette,
-    EufemiaSpacingData spacing,
-    EufemiaButtonThemeData button,
-  })  : typography = typography ?? EufemiaTypographyData.fallback(),
-        palette = palette ?? EufemiaPaletteData.regular(),
-        darkPalette = darkPalette ?? EufemiaPaletteData.dark(),
-        spacing = spacing ?? EufemiaSpacingData.fallback(),
-        button = button ?? EufemiaButtonThemeData.fallback();
+    this.typography,
+    this.palette,
+    this.darkPalette,
+    this.spacing,
+    this.button,
+  });
 }

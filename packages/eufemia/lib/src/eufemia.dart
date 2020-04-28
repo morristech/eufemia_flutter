@@ -29,6 +29,7 @@ class Eufemia extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(data.typography);
     return _MediaQueryFromWindow(
       child: Builder(
         builder: (context) {

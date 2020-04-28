@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_slidable: ^0.5.4
 
   http: ^0.12.0
   shared_preferences: ^0.5.7
@@ -21,6 +22,10 @@ dependencies:
     path: ../eufemia_palette
   eufemia_typography:
     path: ../eufemia_typography
+  eufemia_spacing:
+    path: ../eufemia_spacing
+  eufemia:
+    path: ../eufemia
 
 dev_dependencies:
   flutter_test:

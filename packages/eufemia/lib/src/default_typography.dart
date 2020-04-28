@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:eufemia_palette/eufemia_palette.dart';
 import 'package:eufemia_typography/eufemia_typography.dart';
 
-class EufemiaDefaultTypography extends StatelessWidget {
+class EufemiaDefaultTypography extends StatefulWidget {
   final Widget child;
   final EufemiaTypographyData data;
 
@@ -12,19 +12,35 @@ class EufemiaDefaultTypography extends StatelessWidget {
     @required this.child,
   }) : super(key: key);
 
+  @override
+  _EufemiaDefaultTypographyState createState() =>
+      _EufemiaDefaultTypographyState();
+}
+
+class _EufemiaDefaultTypographyState extends State<EufemiaDefaultTypography> {
   EufemiaTypographyData fallback(BuildContext context) {
     final palette = EufemiaPalette.of(context);
     return EufemiaTypographyData.fallback(
-      bodyColor: palette.dark,
-      titleColor: palette.black,
+      subheadColor: palette.textLight,
+      subheadEmphasizedColor: palette.text,
+      footnoteColor: palette.text,
+      footnoteEmphasizedColor: palette.text,
+      bodyEmphasizedColor: palette.text,
+      bodyColor: palette.text,
+      titleDemiColor: palette.text,
+      titleEmphasizedColor: palette.text,
+      titleLargeColor: palette.text,
+      titleMediumColor: palette.text,
+      titleMediumEmphasizedColor: palette.text,
+      titleColor: palette.text,
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return EufemiaTypography(
-      data: data ?? fallback(context),
-      child: child,
+      data: widget.data ?? fallback(context),
+      child: widget.child,
     );
   }
 }

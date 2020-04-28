@@ -1,5 +1,6 @@
 class Routes {
   static const home = '/';
+  static const themes = '/themes';
   static const components = '/components';
   static const input_fields = '/components/input_fields';
   static const cards = '/components/cards';

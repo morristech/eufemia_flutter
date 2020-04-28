@@ -50,6 +50,22 @@ class _EufemiaTypographyState extends State<EufemiaTypography> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (widget.data != null) {
+      setState(() => _data = widget.data);
+    }
+  }
+
+  @override
+  void didUpdateWidget(EufemiaTypography oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.data != null) {
+      setState(() => _data = widget.data);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     final value = _data ?? EufemiaTypographyData.fallback();
     return EufemiaTypographyProvider(

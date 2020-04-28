@@ -17,6 +17,7 @@ import 'package:eufemia_example/views/graphics/payment_cards.dart';
 import 'package:eufemia_example/views/graphics/logos.dart';
 import 'package:eufemia_example/views/icons.dart';
 import 'package:eufemia_example/views/system.dart';
+import 'package:eufemia_example/views/themes.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -27,9 +28,9 @@ class MyApp extends StatelessWidget {
     return Eufemia(
       data: EufemiaData(
         palette: EufemiaPaletteData.saga(),
-        typography: EufemiaTypographyData.fallback(),
         spacing: EufemiaSpacingData.fallback(),
         button: EufemiaButtonThemeData.fallback(),
+        darkPalette: EufemiaPaletteData.dark(),
       ),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
           Routes.system: (context) => SystemView(),
           Routes.spinner: (context) => SpinnerView(),
           Routes.messageBoxes: (context) => MessageBoxesView(),
+          Routes.themes: (context) => ThemesView(),
         },
       ),
     );

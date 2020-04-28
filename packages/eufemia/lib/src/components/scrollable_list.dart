@@ -42,12 +42,6 @@ class ScrollableList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (showBorders) {
-      if (children.last is Cell) {
-        children.last =
-            (children.last as Cell).copyWithListOrder(lastInList: true);
-      }
-    }
     return Container(
       child: adaptive && context.mediaQuery.size.aspectRatio > 1
           ? buildGridView(context)
