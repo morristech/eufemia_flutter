@@ -20,17 +20,13 @@ class EufemiaSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = EufemiaPalette.of(context);
     return material.Switch.adaptive(
       value: value,
       onChanged: onChanged,
-      activeColor:
-          context.bright ? EufemiaColors.seaGreenAlt : EufemiaColors.mintGreen,
-      activeTrackColor: context.bright
-          ? EufemiaColors.seaGreenAlt.withOpacity(0.5)
-          : EufemiaColors.mintGreen.withOpacity(0.5),
-      inactiveTrackColor: context.bright
-          ? EufemiaColors.coal.withOpacity(0.2)
-          : EufemiaColors.subtleGray.withOpacity(0.5),
+      activeColor: palette.secondary,
+      activeTrackColor: palette.secondary.withOpacity(0.5),
+      inactiveTrackColor: palette.grey.withOpacity(0.3),
       inactiveThumbColor: _inactiveThumbColor,
       materialTapTargetSize: shrink ? MaterialTapTargetSize.shrinkWrap : null,
     );

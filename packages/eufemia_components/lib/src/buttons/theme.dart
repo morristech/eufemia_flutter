@@ -46,16 +46,16 @@ abstract class EufemiaButtonThemeData with _$EufemiaButtonThemeData {
     EufemiaTypographyData typography,
   ) {
     return EufemiaButtonThemeData(
-      fill: palette.buttonColor,
+      fill: palette.button,
       textStyle: typography.styles.button.copyWith
           .call(color: palette.buttonText)
           .toTextStyle(context),
       iconTheme: IconThemeData(
-        color: palette.iconColor,
+        color: palette.icon,
       ),
       borderWidth: 1.0,
       cornerRadius: 100.0,
-      borderColor: palette.buttonColor,
+      borderColor: palette.button,
     );
   }
 

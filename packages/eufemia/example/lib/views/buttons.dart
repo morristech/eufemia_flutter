@@ -17,43 +17,68 @@ class ButtonsView extends StatelessWidget {
           showBorders: false,
           children: [
             PrimaryButton(
-              child: Text('Primary button'),
+              child: Text('Primary'),
               onTap: () {},
             ),
             PrimaryButton(
-              child: Text('Primary button disabled'),
+              child: Text('Primary disabled'),
+            ),
+            PrimaryButton(
+              child: Text('Primary small'),
+              size: EufemiaButtonSize.small,
+              onTap: () {},
+            ),
+            PrimaryButton(
+              child: Text('Primary small disabled'),
+              size: EufemiaButtonSize.small,
             ),
             SecondaryButton(
-              child: Text('Secondary button'),
+              child: Text('Secondary'),
               onTap: () {},
             ),
             SecondaryButton(
-              child: Text('Secondary button disabled'),
+              child: Text('Secondary disabled'),
             ),
-            EufemiaButton(
-              child: Text('New vivid'),
+            SecondaryButton(
+              child: Text('Secondary small'),
               onTap: () {},
-              style: EufemiaButtonStyle.vivid(),
+              size: EufemiaButtonSize.small,
+            ),
+            SecondaryButton(
+              child: Text('Secondary small disabled'),
+              size: EufemiaButtonSize.small,
+            ),
+            VividButton(
+              child: Text('Vivid'),
+              onTap: () {},
+            ),
+            VividButton(
+              child: Text('Vivid disabled'),
+            ),
+            VividButton(
+              child: Text('Vivid small'),
+              size: EufemiaButtonSize.small,
+              onTap: () {},
+            ),
+            VividButton(
+              child: Text('Vivid small disabled'),
+              size: EufemiaButtonSize.small,
             ),
             TextButton(
               child: Text('Large emphasized'),
-              size: EufemiaButtonSize.medium,
               onTap: () => {},
               emphasized: true,
             ),
             TextButton(
               child: Text('Large emphasized disabled'),
-              size: EufemiaButtonSize.medium,
               emphasized: true,
             ),
             TextButton(
               child: Text('Large'),
-              size: EufemiaButtonSize.medium,
               onTap: () => {},
             ),
             TextButton(
               child: Text('Large disabled'),
-              size: EufemiaButtonSize.medium,
             ),
             TextButton(
               child: Text('Small emphasized'),
@@ -74,6 +99,13 @@ class ButtonsView extends StatelessWidget {
             TextButton(
               child: Text('Small disabled'),
               size: EufemiaButtonSize.small,
+            ),
+            FAB(
+              child: Icon(EufemiaIcons.close),
+              onTap: () {},
+            ),
+            FAB(
+              child: Icon(EufemiaIcons.close),
             ),
           ]
               .map<Widget>(

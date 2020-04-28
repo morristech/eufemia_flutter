@@ -20,16 +20,16 @@ class EufemiaDefaultButtonTheme extends StatelessWidget {
     final fontSize = buttonTextStyle.size.toPoints(typography: typography);
 
     return EufemiaButtonThemeData(
-      fill: palette.buttonColor,
+      fill: palette.button,
       textStyle: buttonTextStyle.toTextStyle(context, typography: typography),
       cornerRadius: 100.0,
       borderWidth: 1.0,
       iconTheme: IconThemeData(
         opacity: 1.0,
         size: fontSize * 1.3,
-        color: palette.iconColor,
+        color: palette.icon,
       ),
-      borderColor: palette.buttonColor,
+      borderColor: palette.button,
     );
   }
 

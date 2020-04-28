@@ -26,12 +26,12 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
     @required @ColorJsonConverter() Color white,
     @required @ColorJsonConverter() Color text,
     @required @ColorJsonConverter() Color buttonText,
-    @required @ColorJsonConverter() Color iconColor,
-    @required @ColorJsonConverter() Color cardColor,
-    @required @ColorJsonConverter() Color cardAccentColor,
-    @required @ColorJsonConverter() Color buttonColor,
-    @required @ColorJsonConverter() Color toggledColor,
-    @required @ColorJsonConverter() Color nonToggledColor,
+    @required @ColorJsonConverter() Color icon,
+    @required @ColorJsonConverter() Color card,
+    @required @ColorJsonConverter() Color cardAccent,
+    @required @ColorJsonConverter() Color button,
+    @required @ColorJsonConverter() Color toggle,
+    @required @ColorJsonConverter() Color toggleInactive,
   }) = _EufemiaPaletteData;
 
   factory EufemiaPaletteData.fallback() => const EufemiaPaletteData(
@@ -50,12 +50,12 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         grey: EufemiaColors.darkGray,
         text: EufemiaColors.coal,
         buttonText: EufemiaColors.white,
-        iconColor: EufemiaColors.emeraldGreen,
-        cardColor: EufemiaColors.white,
-        cardAccentColor: EufemiaColors.mintGreen,
-        buttonColor: EufemiaColors.seaGreen,
-        toggledColor: EufemiaColors.subtleGray,
-        nonToggledColor: EufemiaColors.white,
+        icon: EufemiaColors.emeraldGreen,
+        card: EufemiaColors.white,
+        cardAccent: EufemiaColors.mintGreen,
+        button: EufemiaColors.seaGreen,
+        toggle: EufemiaColors.subtleGray,
+        toggleInactive: EufemiaColors.white,
       );
 
   factory EufemiaPaletteData.regular() => const EufemiaPaletteData(
@@ -74,12 +74,12 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         grey: EufemiaColors.darkGray,
         text: EufemiaColors.coal,
         buttonText: EufemiaColors.white,
-        iconColor: EufemiaColors.emeraldGreen,
-        cardColor: EufemiaColors.white,
-        cardAccentColor: EufemiaColors.mintGreen,
-        buttonColor: EufemiaColors.seaGreen,
-        toggledColor: EufemiaColors.subtleGray,
-        nonToggledColor: EufemiaColors.white,
+        icon: EufemiaColors.emeraldGreen,
+        card: EufemiaColors.white,
+        cardAccent: EufemiaColors.mintGreen,
+        button: EufemiaColors.seaGreen,
+        toggle: EufemiaColors.subtleGray,
+        toggleInactive: EufemiaColors.white,
       );
 
   factory EufemiaPaletteData.saga() => const EufemiaPaletteData(
@@ -98,12 +98,12 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         grey: EufemiaColors.darkGray,
         text: EufemiaColors.coal,
         buttonText: EufemiaColors.coal,
-        iconColor: EufemiaColors.sagaContrast,
-        cardColor: EufemiaColors.white,
-        cardAccentColor: EufemiaColors.sandYellow,
-        buttonColor: EufemiaColors.saga,
-        toggledColor: EufemiaColors.subtleGray,
-        nonToggledColor: EufemiaColors.white,
+        icon: EufemiaColors.sagaContrast,
+        card: EufemiaColors.white,
+        cardAccent: EufemiaColors.sandYellow,
+        button: EufemiaColors.saga,
+        toggle: EufemiaColors.subtleGray,
+        toggleInactive: EufemiaColors.white,
       );
 
   factory EufemiaPaletteData.dark() => const EufemiaPaletteData(
@@ -122,12 +122,12 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         grey: EufemiaColors.darkGray,
         text: EufemiaColors.white,
         buttonText: EufemiaColors.emeraldGreen,
-        iconColor: EufemiaColors.mintGreen,
-        cardColor: EufemiaColors.gray6,
-        cardAccentColor: EufemiaColors.gray5,
-        buttonColor: EufemiaColors.mintGreen,
-        toggledColor: EufemiaColors.darkGray,
-        nonToggledColor: EufemiaColors.gray6,
+        icon: EufemiaColors.mintGreen,
+        card: EufemiaColors.gray6,
+        cardAccent: EufemiaColors.gray5,
+        button: EufemiaColors.mintGreen,
+        toggle: EufemiaColors.darkGray,
+        toggleInactive: EufemiaColors.gray6,
       );
 
   factory EufemiaPaletteData.privateBanking() => const EufemiaPaletteData(
@@ -146,12 +146,12 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         grey: EufemiaColors.darkGray,
         text: EufemiaColors.coal,
         buttonText: EufemiaColors.pbBackground,
-        iconColor: EufemiaColors.oceanGreen,
-        cardColor: EufemiaColors.white,
-        cardAccentColor: EufemiaColors.outlineGray,
-        buttonColor: EufemiaColors.pbButton,
-        toggledColor: EufemiaColors.subtleGray,
-        nonToggledColor: EufemiaColors.white,
+        icon: EufemiaColors.oceanGreen,
+        card: EufemiaColors.white,
+        cardAccent: EufemiaColors.outlineGray,
+        button: EufemiaColors.pbButton,
+        toggle: EufemiaColors.subtleGray,
+        toggleInactive: EufemiaColors.white,
       );
 
   factory EufemiaPaletteData.fromJson(Map<String, dynamic> json) =>

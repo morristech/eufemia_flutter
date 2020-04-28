@@ -24,14 +24,12 @@ _$_EufemiaPaletteData _$_$_EufemiaPaletteDataFromJson(
     white: const ColorJsonConverter().fromJson(json['white']),
     text: const ColorJsonConverter().fromJson(json['text']),
     buttonText: const ColorJsonConverter().fromJson(json['buttonText']),
-    iconColor: const ColorJsonConverter().fromJson(json['iconColor']),
-    cardColor: const ColorJsonConverter().fromJson(json['cardColor']),
-    cardAccentColor:
-        const ColorJsonConverter().fromJson(json['cardAccentColor']),
-    buttonColor: const ColorJsonConverter().fromJson(json['buttonColor']),
-    toggledColor: const ColorJsonConverter().fromJson(json['toggledColor']),
-    nonToggledColor:
-        const ColorJsonConverter().fromJson(json['nonToggledColor']),
+    icon: const ColorJsonConverter().fromJson(json['icon']),
+    card: const ColorJsonConverter().fromJson(json['card']),
+    cardAccent: const ColorJsonConverter().fromJson(json['cardAccent']),
+    button: const ColorJsonConverter().fromJson(json['button']),
+    toggle: const ColorJsonConverter().fromJson(json['toggle']),
+    toggleInactive: const ColorJsonConverter().fromJson(json['toggleInactive']),
   );
 }
 
@@ -53,14 +51,13 @@ Map<String, dynamic> _$_$_EufemiaPaletteDataToJson(
       'white': const ColorJsonConverter().toJson(instance.white),
       'text': const ColorJsonConverter().toJson(instance.text),
       'buttonText': const ColorJsonConverter().toJson(instance.buttonText),
-      'iconColor': const ColorJsonConverter().toJson(instance.iconColor),
-      'cardColor': const ColorJsonConverter().toJson(instance.cardColor),
-      'cardAccentColor':
-          const ColorJsonConverter().toJson(instance.cardAccentColor),
-      'buttonColor': const ColorJsonConverter().toJson(instance.buttonColor),
-      'toggledColor': const ColorJsonConverter().toJson(instance.toggledColor),
-      'nonToggledColor':
-          const ColorJsonConverter().toJson(instance.nonToggledColor),
+      'icon': const ColorJsonConverter().toJson(instance.icon),
+      'card': const ColorJsonConverter().toJson(instance.card),
+      'cardAccent': const ColorJsonConverter().toJson(instance.cardAccent),
+      'button': const ColorJsonConverter().toJson(instance.button),
+      'toggle': const ColorJsonConverter().toJson(instance.toggle),
+      'toggleInactive':
+          const ColorJsonConverter().toJson(instance.toggleInactive),
     };
 
 T _$enumDecode<T>(

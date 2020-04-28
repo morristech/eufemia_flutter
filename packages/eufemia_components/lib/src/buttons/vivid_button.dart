@@ -28,6 +28,7 @@ class VividButton extends StatelessWidget {
       style: EufemiaButtonStyle.vivid(
         textStyle: getStyle(context, size),
         context: context,
+        size: size,
       ),
       focusNode: focusNode,
       autofocus: autofocus,

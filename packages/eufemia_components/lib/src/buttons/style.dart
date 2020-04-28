@@ -9,9 +9,11 @@ import 'theme.dart';
 
 part 'style.freezed.dart';
 
-const defaultEufemiaPrimaryDarkenFactor = 0.05;
-const defaultEufemiaSecondaryDarkenFactor = 0.075;
-const defaultEufemiaVividDarkenFactor = 0.16;
+const defaultEufemiaPrimaryDeltaFactor = 0.05;
+const defaultEufemiaSecondaryDeltaFactor = 0.075;
+const defaultEufemiaVividDeltaFactor = 0.16;
+const defaultEufemiaFabShadowDeltaFactor = 0.072;
+const defaultEufemiaFabDeltaFactor = 0.283;
 
 @freezed
 abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
@@ -59,12 +61,12 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
         ),
         hover: decoration.copyWith(
           color: backgroundColor.darken(
-            defaultEufemiaPrimaryDarkenFactor * 0.5,
+            defaultEufemiaPrimaryDeltaFactor * 0.5,
           ),
         ),
         active: decoration.copyWith(
           color: backgroundColor.darken(
-            defaultEufemiaPrimaryDarkenFactor,
+            defaultEufemiaPrimaryDeltaFactor,
           ),
         ),
       ),
@@ -79,6 +81,12 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
       ),
       iconTheme: EufemiaButtonState(
         enabled: iconTheme.copyWith(color: foregroundColor),
+        hover: iconTheme.copyWith(
+          color: foregroundColor.withOpacity(0.9),
+        ),
+        active: iconTheme.copyWith(
+          color: foregroundColor.withOpacity(0.8),
+        ),
       ),
     );
   }
@@ -113,10 +121,10 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
       decoration: EufemiaButtonState(
         enabled: decoration.copyWith(color: backgroundColor),
         hover: decoration.copyWith(
-          color: backgroundColor.darken(defaultEufemiaVividDarkenFactor * 0.5),
+          color: backgroundColor.darken(defaultEufemiaVividDeltaFactor * 0.5),
         ),
         active: decoration.copyWith(
-          color: backgroundColor.darken(defaultEufemiaVividDarkenFactor),
+          color: backgroundColor.darken(defaultEufemiaVividDeltaFactor),
         ),
       ),
       textStyle: EufemiaButtonState(
@@ -130,6 +138,12 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
       ),
       iconTheme: EufemiaButtonState(
         enabled: iconTheme.copyWith(color: foregroundColor),
+        hover: iconTheme.copyWith(
+          color: foregroundColor.withOpacity(0.9),
+        ),
+        active: iconTheme.copyWith(
+          color: foregroundColor.withOpacity(0.8),
+        ),
       ),
     );
   }
@@ -175,19 +189,18 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
         ),
         hover: decoration.copyWith(
           color: palette?.bright ?? true
-              ? mix.darken(defaultEufemiaSecondaryDarkenFactor * 0.5)
-              : mix.lighten(defaultEufemiaPrimaryDarkenFactor * 0.5),
+              ? mix.darken(defaultEufemiaSecondaryDeltaFactor * 0.5)
+              : mix.lighten(defaultEufemiaPrimaryDeltaFactor * 0.5),
           border: Border.all(
-            color:
-                borderColor.darken(defaultEufemiaSecondaryDarkenFactor * 0.5),
+            color: borderColor.darken(defaultEufemiaSecondaryDeltaFactor * 0.5),
           ),
         ),
         active: decoration.copyWith(
           color: palette?.bright ?? true
-              ? mix.darken(defaultEufemiaSecondaryDarkenFactor)
-              : mix.lighten(defaultEufemiaSecondaryDarkenFactor),
+              ? mix.darken(defaultEufemiaSecondaryDeltaFactor)
+              : mix.lighten(defaultEufemiaSecondaryDeltaFactor),
           border: Border.all(
-            color: borderColor.darken(defaultEufemiaSecondaryDarkenFactor),
+            color: borderColor.darken(defaultEufemiaSecondaryDeltaFactor),
           ),
         ),
       ),
@@ -202,6 +215,12 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
       ),
       iconTheme: EufemiaButtonState(
         enabled: iconTheme.copyWith(color: foregroundColor),
+        hover: iconTheme.copyWith(
+          color: foregroundColor.withOpacity(0.9),
+        ),
+        active: iconTheme.copyWith(
+          color: foregroundColor.withOpacity(0.8),
+        ),
       ),
     );
   }
@@ -226,7 +245,7 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
 
     var decoration = size.toDecoration(4.0);
 
-    final padding = size.toPadding(vertical: 4.0, horizontal: 4.0);
+    final padding = size.toPadding(all: 4.0);
 
     return EufemiaButtonStyle(
       padding: EufemiaButtonState(enabled: padding),
@@ -240,7 +259,7 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
         ),
         hover: decoration.copyWith(
           color:
-              Color.lerp(backgroundColor, foregroundColor, 0.05).lighten(.025),
+              Color.lerp(backgroundColor, foregroundColor, 0.05).lighten(.01),
         ),
         active: decoration.copyWith(
           color: Color.lerp(backgroundColor, foregroundColor, 0.05),
@@ -257,6 +276,90 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
       ),
       iconTheme: EufemiaButtonState(
         enabled: iconTheme.copyWith(color: foregroundColor),
+        hover: iconTheme.copyWith(
+          color: foregroundColor.withOpacity(0.9),
+        ),
+        active: iconTheme.copyWith(
+          color: foregroundColor.withOpacity(0.8),
+        ),
+      ),
+    );
+  }
+
+  factory EufemiaButtonStyle.fab({
+    Color backgroundColor = EufemiaColors.seaGreen,
+    Color foregroundColor = EufemiaColors.white,
+    EufemiaButtonSize size = EufemiaButtonSize.medium,
+    IconThemeData iconTheme,
+    TextStyle textStyle,
+    BuildContext context,
+  }) {
+    final buttonTheme = context != null ? EufemiaButtonTheme.of(context) : null;
+    foregroundColor ??= textStyle.color;
+    backgroundColor = backgroundColor ?? buttonTheme?.fill;
+    textStyle = size.toTextStyle(
+      textStyle ?? buttonTheme?.textStyle,
+    );
+    iconTheme = size.toIconTheme(
+      iconTheme ?? buttonTheme?.iconTheme,
+    );
+    var decoration = BoxDecoration();
+
+    final padding = size.toPadding();
+
+    final shadow = BoxShadow(
+      color: backgroundColor
+          .lighten(defaultEufemiaFabShadowDeltaFactor)
+          .withOpacity(0.3),
+      spreadRadius: 1.0,
+      blurRadius: 16.0,
+      offset: Offset(0, 8),
+    );
+
+    return EufemiaButtonStyle(
+      padding: EufemiaButtonState(enabled: padding),
+      opacity: EufemiaButtonState(
+        enabled: 1.0,
+        disabled: 0.5,
+      ),
+      decoration: EufemiaButtonState(
+        enabled: decoration.copyWith(
+          color: backgroundColor,
+          shape: BoxShape.circle,
+          boxShadow: [shadow],
+        ),
+        hover: decoration.copyWith(
+          color: backgroundColor.darken(
+            defaultEufemiaFabDeltaFactor * 0.5,
+          ),
+          shape: BoxShape.circle,
+          boxShadow: [shadow],
+        ),
+        active: decoration.copyWith(
+          color: backgroundColor.darken(
+            defaultEufemiaFabDeltaFactor,
+          ),
+          shape: BoxShape.circle,
+          boxShadow: [shadow],
+        ),
+      ),
+      textStyle: EufemiaButtonState(
+        enabled: textStyle.copyWith(color: foregroundColor),
+        hover: textStyle.copyWith(
+          color: foregroundColor.withOpacity(0.9),
+        ),
+        active: textStyle.copyWith(
+          color: foregroundColor.withOpacity(0.8),
+        ),
+      ),
+      iconTheme: EufemiaButtonState(
+        enabled: iconTheme.copyWith(color: foregroundColor),
+        hover: iconTheme.copyWith(
+          color: foregroundColor.withOpacity(0.9),
+        ),
+        active: iconTheme.copyWith(
+          color: foregroundColor.withOpacity(0.8),
+        ),
       ),
     );
   }
@@ -268,19 +371,22 @@ enum EufemiaButtonSize {
 }
 
 extension EufemiaButtonSizeExtensions on EufemiaButtonSize {
-  EdgeInsets toPadding({double vertical, double horizontal}) {
+  EdgeInsets toPadding({double vertical, double horizontal, double all}) {
     vertical ??= 14.5;
     horizontal ??= 24.0;
 
     switch (this) {
       case EufemiaButtonSize.small:
-        vertical = 7.5;
-        horizontal = 16.0;
+        vertical = vertical / 1.933;
+        horizontal = 16.0 / 1.5;
         break;
       default:
         break;
     }
 
+    if (all != null) {
+      return EdgeInsets.all(all);
+    }
     return EdgeInsets.symmetric(
       horizontal: horizontal,
       vertical: vertical,

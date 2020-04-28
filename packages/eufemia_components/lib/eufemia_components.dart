@@ -8,4 +8,6 @@ export 'src/buttons/theme.dart';
 // Variants
 export 'src/buttons/primary_button.dart';
 export 'src/buttons/secondary_button.dart';
+export 'src/buttons/vivid_button.dart';
 export 'src/buttons/text_button.dart';
+export 'src/buttons/fab.dart';
