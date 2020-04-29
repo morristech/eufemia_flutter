@@ -21,3 +21,13 @@ export 'src/icons/colored_icon.dart';
 
 // List
 export 'src/list/cell.dart';
+
+// Constrols
+export 'src/controls/switch.dart';
+export 'src/controls/tab.dart';
+export 'src/controls/checkmark.dart';
+export 'src/controls/slider.dart';
+export 'src/controls/tag.dart';
+export 'src/controls/toggle.dart';
+export 'src/controls/page_indicator.dart';
+export 'src/controls/segmented_control.dart';

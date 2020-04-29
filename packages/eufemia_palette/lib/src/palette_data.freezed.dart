@@ -39,14 +39,17 @@ class _$EufemiaPaletteDataTearOff {
       @required @ColorJsonConverter() Color white,
       @required @ColorJsonConverter() Color text,
       @required @ColorJsonConverter() Color textLight,
-      @required @ColorJsonConverter() Color buttonText,
+      @required @ColorJsonConverter() Color onButton,
       @required @ColorJsonConverter() Color icon,
       @required @ColorJsonConverter() Color card,
       @required @ColorJsonConverter() Color cardAccent,
       @required @ColorJsonConverter() Color button,
       @required @ColorJsonConverter() Color toggle,
       @required @ColorJsonConverter() Color toggleInactive,
-      @required @ColorJsonConverter() Color outline}) {
+      @required @ColorJsonConverter() Color onToggle,
+      @required @ColorJsonConverter() Color outline,
+      @required @ColorJsonConverter() Color tag,
+      @required @ColorJsonConverter() Color onTag}) {
     return _EufemiaPaletteData(
       brightness: brightness,
       primary: primary,
@@ -71,14 +74,17 @@ class _$EufemiaPaletteDataTearOff {
       white: white,
       text: text,
       textLight: textLight,
-      buttonText: buttonText,
+      onButton: onButton,
       icon: icon,
       card: card,
       cardAccent: cardAccent,
       button: button,
       toggle: toggle,
       toggleInactive: toggleInactive,
+      onToggle: onToggle,
       outline: outline,
+      tag: tag,
+      onTag: onTag,
     );
   }
 }
@@ -133,7 +139,7 @@ mixin _$EufemiaPaletteData {
   @ColorJsonConverter()
   Color get textLight;
   @ColorJsonConverter()
-  Color get buttonText;
+  Color get onButton;
   @ColorJsonConverter()
   Color get icon;
   @ColorJsonConverter()
@@ -147,7 +153,13 @@ mixin _$EufemiaPaletteData {
   @ColorJsonConverter()
   Color get toggleInactive;
   @ColorJsonConverter()
+  Color get onToggle;
+  @ColorJsonConverter()
   Color get outline;
+  @ColorJsonConverter()
+  Color get tag;
+  @ColorJsonConverter()
+  Color get onTag;
 
   Map<String, dynamic> toJson();
   $EufemiaPaletteDataCopyWith<EufemiaPaletteData> get copyWith;
@@ -181,14 +193,17 @@ abstract class $EufemiaPaletteDataCopyWith<$Res> {
       @ColorJsonConverter() Color white,
       @ColorJsonConverter() Color text,
       @ColorJsonConverter() Color textLight,
-      @ColorJsonConverter() Color buttonText,
+      @ColorJsonConverter() Color onButton,
       @ColorJsonConverter() Color icon,
       @ColorJsonConverter() Color card,
       @ColorJsonConverter() Color cardAccent,
       @ColorJsonConverter() Color button,
       @ColorJsonConverter() Color toggle,
       @ColorJsonConverter() Color toggleInactive,
-      @ColorJsonConverter() Color outline});
+      @ColorJsonConverter() Color onToggle,
+      @ColorJsonConverter() Color outline,
+      @ColorJsonConverter() Color tag,
+      @ColorJsonConverter() Color onTag});
 }
 
 class _$EufemiaPaletteDataCopyWithImpl<$Res>
@@ -224,14 +239,17 @@ class _$EufemiaPaletteDataCopyWithImpl<$Res>
     Object white = freezed,
     Object text = freezed,
     Object textLight = freezed,
-    Object buttonText = freezed,
+    Object onButton = freezed,
     Object icon = freezed,
     Object card = freezed,
     Object cardAccent = freezed,
     Object button = freezed,
     Object toggle = freezed,
     Object toggleInactive = freezed,
+    Object onToggle = freezed,
     Object outline = freezed,
+    Object tag = freezed,
+    Object onTag = freezed,
   }) {
     return _then(_value.copyWith(
       brightness:
@@ -266,8 +284,7 @@ class _$EufemiaPaletteDataCopyWithImpl<$Res>
       white: white == freezed ? _value.white : white as Color,
       text: text == freezed ? _value.text : text as Color,
       textLight: textLight == freezed ? _value.textLight : textLight as Color,
-      buttonText:
-          buttonText == freezed ? _value.buttonText : buttonText as Color,
+      onButton: onButton == freezed ? _value.onButton : onButton as Color,
       icon: icon == freezed ? _value.icon : icon as Color,
       card: card == freezed ? _value.card : card as Color,
       cardAccent:
@@ -277,7 +294,10 @@ class _$EufemiaPaletteDataCopyWithImpl<$Res>
       toggleInactive: toggleInactive == freezed
           ? _value.toggleInactive
           : toggleInactive as Color,
+      onToggle: onToggle == freezed ? _value.onToggle : onToggle as Color,
       outline: outline == freezed ? _value.outline : outline as Color,
+      tag: tag == freezed ? _value.tag : tag as Color,
+      onTag: onTag == freezed ? _value.onTag : onTag as Color,
     ));
   }
 }
@@ -312,14 +332,17 @@ abstract class _$EufemiaPaletteDataCopyWith<$Res>
       @ColorJsonConverter() Color white,
       @ColorJsonConverter() Color text,
       @ColorJsonConverter() Color textLight,
-      @ColorJsonConverter() Color buttonText,
+      @ColorJsonConverter() Color onButton,
       @ColorJsonConverter() Color icon,
       @ColorJsonConverter() Color card,
       @ColorJsonConverter() Color cardAccent,
       @ColorJsonConverter() Color button,
       @ColorJsonConverter() Color toggle,
       @ColorJsonConverter() Color toggleInactive,
-      @ColorJsonConverter() Color outline});
+      @ColorJsonConverter() Color onToggle,
+      @ColorJsonConverter() Color outline,
+      @ColorJsonConverter() Color tag,
+      @ColorJsonConverter() Color onTag});
 }
 
 class __$EufemiaPaletteDataCopyWithImpl<$Res>
@@ -357,14 +380,17 @@ class __$EufemiaPaletteDataCopyWithImpl<$Res>
     Object white = freezed,
     Object text = freezed,
     Object textLight = freezed,
-    Object buttonText = freezed,
+    Object onButton = freezed,
     Object icon = freezed,
     Object card = freezed,
     Object cardAccent = freezed,
     Object button = freezed,
     Object toggle = freezed,
     Object toggleInactive = freezed,
+    Object onToggle = freezed,
     Object outline = freezed,
+    Object tag = freezed,
+    Object onTag = freezed,
   }) {
     return _then(_EufemiaPaletteData(
       brightness:
@@ -399,8 +425,7 @@ class __$EufemiaPaletteDataCopyWithImpl<$Res>
       white: white == freezed ? _value.white : white as Color,
       text: text == freezed ? _value.text : text as Color,
       textLight: textLight == freezed ? _value.textLight : textLight as Color,
-      buttonText:
-          buttonText == freezed ? _value.buttonText : buttonText as Color,
+      onButton: onButton == freezed ? _value.onButton : onButton as Color,
       icon: icon == freezed ? _value.icon : icon as Color,
       card: card == freezed ? _value.card : card as Color,
       cardAccent:
@@ -410,7 +435,10 @@ class __$EufemiaPaletteDataCopyWithImpl<$Res>
       toggleInactive: toggleInactive == freezed
           ? _value.toggleInactive
           : toggleInactive as Color,
+      onToggle: onToggle == freezed ? _value.onToggle : onToggle as Color,
       outline: outline == freezed ? _value.outline : outline as Color,
+      tag: tag == freezed ? _value.tag : tag as Color,
+      onTag: onTag == freezed ? _value.onTag : onTag as Color,
     ));
   }
 }
@@ -443,14 +471,17 @@ class _$_EufemiaPaletteData
       @required @ColorJsonConverter() this.white,
       @required @ColorJsonConverter() this.text,
       @required @ColorJsonConverter() this.textLight,
-      @required @ColorJsonConverter() this.buttonText,
+      @required @ColorJsonConverter() this.onButton,
       @required @ColorJsonConverter() this.icon,
       @required @ColorJsonConverter() this.card,
       @required @ColorJsonConverter() this.cardAccent,
       @required @ColorJsonConverter() this.button,
       @required @ColorJsonConverter() this.toggle,
       @required @ColorJsonConverter() this.toggleInactive,
-      @required @ColorJsonConverter() this.outline})
+      @required @ColorJsonConverter() this.onToggle,
+      @required @ColorJsonConverter() this.outline,
+      @required @ColorJsonConverter() this.tag,
+      @required @ColorJsonConverter() this.onTag})
       : assert(brightness != null),
         assert(primary != null),
         assert(onPrimary != null),
@@ -474,14 +505,17 @@ class _$_EufemiaPaletteData
         assert(white != null),
         assert(text != null),
         assert(textLight != null),
-        assert(buttonText != null),
+        assert(onButton != null),
         assert(icon != null),
         assert(card != null),
         assert(cardAccent != null),
         assert(button != null),
         assert(toggle != null),
         assert(toggleInactive != null),
-        assert(outline != null);
+        assert(onToggle != null),
+        assert(outline != null),
+        assert(tag != null),
+        assert(onTag != null);
 
   factory _$_EufemiaPaletteData.fromJson(Map<String, dynamic> json) =>
       _$_$_EufemiaPaletteDataFromJson(json);
@@ -556,7 +590,7 @@ class _$_EufemiaPaletteData
   final Color textLight;
   @override
   @ColorJsonConverter()
-  final Color buttonText;
+  final Color onButton;
   @override
   @ColorJsonConverter()
   final Color icon;
@@ -577,11 +611,20 @@ class _$_EufemiaPaletteData
   final Color toggleInactive;
   @override
   @ColorJsonConverter()
+  final Color onToggle;
+  @override
+  @ColorJsonConverter()
   final Color outline;
+  @override
+  @ColorJsonConverter()
+  final Color tag;
+  @override
+  @ColorJsonConverter()
+  final Color onTag;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'EufemiaPaletteData(brightness: $brightness, primary: $primary, onPrimary: $onPrimary, secondary: $secondary, info: $info, onInfo: $onInfo, infoBackground: $infoBackground, success: $success, onSuccess: $onSuccess, successBackground: $successBackground, error: $error, onError: $onError, errorBackground: $errorBackground, warning: $warning, onWarning: $onWarning, warningBackground: $warningBackground, dark: $dark, light: $light, black: $black, grey: $grey, white: $white, text: $text, textLight: $textLight, buttonText: $buttonText, icon: $icon, card: $card, cardAccent: $cardAccent, button: $button, toggle: $toggle, toggleInactive: $toggleInactive, outline: $outline)';
+    return 'EufemiaPaletteData(brightness: $brightness, primary: $primary, onPrimary: $onPrimary, secondary: $secondary, info: $info, onInfo: $onInfo, infoBackground: $infoBackground, success: $success, onSuccess: $onSuccess, successBackground: $successBackground, error: $error, onError: $onError, errorBackground: $errorBackground, warning: $warning, onWarning: $onWarning, warningBackground: $warningBackground, dark: $dark, light: $light, black: $black, grey: $grey, white: $white, text: $text, textLight: $textLight, onButton: $onButton, icon: $icon, card: $card, cardAccent: $cardAccent, button: $button, toggle: $toggle, toggleInactive: $toggleInactive, onToggle: $onToggle, outline: $outline, tag: $tag, onTag: $onTag)';
   }
 
   @override
@@ -612,14 +655,17 @@ class _$_EufemiaPaletteData
       ..add(DiagnosticsProperty('white', white))
       ..add(DiagnosticsProperty('text', text))
       ..add(DiagnosticsProperty('textLight', textLight))
-      ..add(DiagnosticsProperty('buttonText', buttonText))
+      ..add(DiagnosticsProperty('onButton', onButton))
       ..add(DiagnosticsProperty('icon', icon))
       ..add(DiagnosticsProperty('card', card))
       ..add(DiagnosticsProperty('cardAccent', cardAccent))
       ..add(DiagnosticsProperty('button', button))
       ..add(DiagnosticsProperty('toggle', toggle))
       ..add(DiagnosticsProperty('toggleInactive', toggleInactive))
-      ..add(DiagnosticsProperty('outline', outline));
+      ..add(DiagnosticsProperty('onToggle', onToggle))
+      ..add(DiagnosticsProperty('outline', outline))
+      ..add(DiagnosticsProperty('tag', tag))
+      ..add(DiagnosticsProperty('onTag', onTag));
   }
 
   @override
@@ -686,9 +732,9 @@ class _$_EufemiaPaletteData
             (identical(other.textLight, textLight) ||
                 const DeepCollectionEquality()
                     .equals(other.textLight, textLight)) &&
-            (identical(other.buttonText, buttonText) ||
+            (identical(other.onButton, onButton) ||
                 const DeepCollectionEquality()
-                    .equals(other.buttonText, buttonText)) &&
+                    .equals(other.onButton, onButton)) &&
             (identical(other.icon, icon) ||
                 const DeepCollectionEquality().equals(other.icon, icon)) &&
             (identical(other.card, card) ||
@@ -699,7 +745,10 @@ class _$_EufemiaPaletteData
             (identical(other.button, button) || const DeepCollectionEquality().equals(other.button, button)) &&
             (identical(other.toggle, toggle) || const DeepCollectionEquality().equals(other.toggle, toggle)) &&
             (identical(other.toggleInactive, toggleInactive) || const DeepCollectionEquality().equals(other.toggleInactive, toggleInactive)) &&
-            (identical(other.outline, outline) || const DeepCollectionEquality().equals(other.outline, outline)));
+            (identical(other.onToggle, onToggle) || const DeepCollectionEquality().equals(other.onToggle, onToggle)) &&
+            (identical(other.outline, outline) || const DeepCollectionEquality().equals(other.outline, outline)) &&
+            (identical(other.tag, tag) || const DeepCollectionEquality().equals(other.tag, tag)) &&
+            (identical(other.onTag, onTag) || const DeepCollectionEquality().equals(other.onTag, onTag)));
   }
 
   @override
@@ -728,14 +777,17 @@ class _$_EufemiaPaletteData
       const DeepCollectionEquality().hash(white) ^
       const DeepCollectionEquality().hash(text) ^
       const DeepCollectionEquality().hash(textLight) ^
-      const DeepCollectionEquality().hash(buttonText) ^
+      const DeepCollectionEquality().hash(onButton) ^
       const DeepCollectionEquality().hash(icon) ^
       const DeepCollectionEquality().hash(card) ^
       const DeepCollectionEquality().hash(cardAccent) ^
       const DeepCollectionEquality().hash(button) ^
       const DeepCollectionEquality().hash(toggle) ^
       const DeepCollectionEquality().hash(toggleInactive) ^
-      const DeepCollectionEquality().hash(outline);
+      const DeepCollectionEquality().hash(onToggle) ^
+      const DeepCollectionEquality().hash(outline) ^
+      const DeepCollectionEquality().hash(tag) ^
+      const DeepCollectionEquality().hash(onTag);
 
   @override
   _$EufemiaPaletteDataCopyWith<_EufemiaPaletteData> get copyWith =>
@@ -772,14 +824,17 @@ abstract class _EufemiaPaletteData implements EufemiaPaletteData {
       @required @ColorJsonConverter() Color white,
       @required @ColorJsonConverter() Color text,
       @required @ColorJsonConverter() Color textLight,
-      @required @ColorJsonConverter() Color buttonText,
+      @required @ColorJsonConverter() Color onButton,
       @required @ColorJsonConverter() Color icon,
       @required @ColorJsonConverter() Color card,
       @required @ColorJsonConverter() Color cardAccent,
       @required @ColorJsonConverter() Color button,
       @required @ColorJsonConverter() Color toggle,
       @required @ColorJsonConverter() Color toggleInactive,
-      @required @ColorJsonConverter() Color outline}) = _$_EufemiaPaletteData;
+      @required @ColorJsonConverter() Color onToggle,
+      @required @ColorJsonConverter() Color outline,
+      @required @ColorJsonConverter() Color tag,
+      @required @ColorJsonConverter() Color onTag}) = _$_EufemiaPaletteData;
 
   factory _EufemiaPaletteData.fromJson(Map<String, dynamic> json) =
       _$_EufemiaPaletteData.fromJson;
@@ -854,7 +909,7 @@ abstract class _EufemiaPaletteData implements EufemiaPaletteData {
   Color get textLight;
   @override
   @ColorJsonConverter()
-  Color get buttonText;
+  Color get onButton;
   @override
   @ColorJsonConverter()
   Color get icon;
@@ -875,7 +930,16 @@ abstract class _EufemiaPaletteData implements EufemiaPaletteData {
   Color get toggleInactive;
   @override
   @ColorJsonConverter()
+  Color get onToggle;
+  @override
+  @ColorJsonConverter()
   Color get outline;
+  @override
+  @ColorJsonConverter()
+  Color get tag;
+  @override
+  @ColorJsonConverter()
+  Color get onTag;
   @override
   _$EufemiaPaletteDataCopyWith<_EufemiaPaletteData> get copyWith;
 }

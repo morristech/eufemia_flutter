@@ -31,9 +31,6 @@ class Cell extends StatelessWidget {
     final typography = EufemiaTypography.of(context);
     final palette = EufemiaPalette.of(context);
 
-    print(typography.styles.subhead.color);
-    print(palette.textLight);
-
     final cell = GestureDetector(
       onTap: onTap,
       child: EufemiaPadding.only(

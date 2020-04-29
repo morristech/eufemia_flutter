@@ -1,8 +1,6 @@
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as material;
-
-final Color _inactiveThumbColor = EufemiaColors.outlineGray;
+import 'package:flutter/widgets.dart';
 
 /// Switch from the Eufemia Design System
 class EufemiaSwitch extends StatelessWidget {
@@ -14,20 +12,23 @@ class EufemiaSwitch extends StatelessWidget {
   ///
   /// * [value]: The value of the switch
   /// * [onChanged]: Callback for when the value is changed
-  const EufemiaSwitch(
-      {Key key, this.value, this.onChanged, this.shrink = false})
-      : super(key: key);
+  const EufemiaSwitch({
+    Key key,
+    this.value,
+    this.onChanged,
+    this.shrink = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final palette = EufemiaPalette.of(context);
-    return material.Switch.adaptive(
+    return Switch.adaptive(
       value: value,
       onChanged: onChanged,
-      activeColor: palette.secondary,
-      activeTrackColor: palette.secondary.withOpacity(0.5),
+      activeColor: palette.toggle,
+      activeTrackColor: palette.toggle.withOpacity(0.5),
       inactiveTrackColor: palette.grey.withOpacity(0.3),
-      inactiveThumbColor: _inactiveThumbColor,
+      inactiveThumbColor: palette.outline,
       materialTapTargetSize: shrink ? MaterialTapTargetSize.shrinkWrap : null,
     );
   }

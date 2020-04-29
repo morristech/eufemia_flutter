@@ -24,6 +24,8 @@ class MessageBox extends StatelessWidget {
     this.type,
   }) : super(key: key);
 
+  bool get hasType => type != null;
+
   @override
   Widget build(BuildContext context) {
     final palette = EufemiaPalette.of(context);
@@ -46,6 +48,8 @@ class MessageBox extends StatelessWidget {
               style: EufemiaTypography.of(context)
                   .styles
                   .footnote
+                  .copyWith
+                  .call(color: hasType ? palette.black : null)
                   .toTextStyle(context),
               maxLines: 10,
               overflow: TextOverflow.fade,

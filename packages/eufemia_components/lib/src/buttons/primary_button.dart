@@ -30,7 +30,7 @@ class PrimaryButton extends StatelessWidget {
       onTap: onTap,
       style: EufemiaButtonStyle.primary(
         backgroundColor: palette.button,
-        foregroundColor: palette.buttonText,
+        foregroundColor: palette.onButton,
         textStyle: getStyle(context, size),
         context: context,
         size: size,

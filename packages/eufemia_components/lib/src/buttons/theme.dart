@@ -48,7 +48,7 @@ abstract class EufemiaButtonThemeData with _$EufemiaButtonThemeData {
     return EufemiaButtonThemeData(
       fill: palette.button,
       textStyle: typography.styles.button.copyWith
-          .call(color: palette.buttonText)
+          .call(color: palette.onButton)
           .toTextStyle(context),
       iconTheme: IconThemeData(
         color: palette.icon,

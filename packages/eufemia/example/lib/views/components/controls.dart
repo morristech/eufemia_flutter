@@ -35,14 +35,15 @@ class _ControlsViewState extends State<ControlsView> {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               EufemiaTab(
-                label: 'Tab',
+                label: 'Søknad',
                 active: _tabValue == 0,
                 onSelected: () => _setTab(0),
               ),
@@ -95,12 +96,12 @@ class _ControlsViewState extends State<ControlsView> {
           ),
           Row(
             children: [
-              ToggleLabel(
+              Toggle(
                 label: 'Toggle label',
                 selected: _firstToggleValue,
                 onChange: (value) => setState(() => _firstToggleValue = value),
               ),
-              ToggleLabel(
+              Toggle(
                 label: 'Toggle label',
                 selected: _secondToggleValue,
                 onChange: (value) => setState(() => _secondToggleValue = value),
@@ -125,9 +126,9 @@ class _ControlsViewState extends State<ControlsView> {
           ),
           SegmentedControl<int>(
             children: {
-              0: Text('Label'),
-              1: Text('Label'),
-              2: Text('Label'),
+              0: 'Label',
+              1: 'Label',
+              2: 'Label',
             },
             onValueChanged: (value) => setState(() => _tabValue = value),
             groupValue: _tabValue,

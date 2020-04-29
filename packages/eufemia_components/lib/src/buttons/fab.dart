@@ -30,7 +30,7 @@ class FAB extends StatelessWidget {
       onTap: onTap,
       style: EufemiaButtonStyle.fab(
         backgroundColor: palette.button,
-        foregroundColor: palette.buttonText,
+        foregroundColor: palette.onButton,
         textStyle: getStyle(context, size),
         iconTheme: getIconTheme(context, size),
         context: context,

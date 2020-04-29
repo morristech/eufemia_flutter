@@ -34,8 +34,7 @@ class EufemiaInsets {
   })  : top = top ?? (vertical ?? (all ?? EufemiaSpace.none)),
         bottom = bottom ?? (vertical ?? (all ?? EufemiaSpace.none)),
         left = left ?? (horizontal ?? (all ?? EufemiaSpace.none)),
-        right =
-            right != null ? bottom : (horizontal ?? (all ?? EufemiaSpace.none));
+        right = right ?? (horizontal ?? (all ?? EufemiaSpace.none));
 
   factory EufemiaInsets.only(EufemiaSpace space,
           [EufemiaSides sides = EufemiaSides.all]) =>

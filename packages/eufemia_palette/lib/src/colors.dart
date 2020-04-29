@@ -37,7 +37,7 @@ class EufemiaColors {
 
   // Theming
   static const gray1 = Color.fromRGBO(142, 142, 147, 1.0);
-  static const gray2 = Color.fromRGBO(99, 99, 192, 1.0);
+  static const gray2 = Color.fromRGBO(99, 99, 102, 1.0);
   static const gray3 = Color.fromRGBO(72, 72, 74, 1.0);
   static const gray4 = Color.fromRGBO(58, 58, 60, 1.0);
   static const gray5 = Color.fromRGBO(44, 44, 46, 1.0);
