@@ -10,7 +10,10 @@ class _InputFieldsViewState extends State<InputFieldsView> {
   TextEditingController _searchController;
   TextEditingController _inputController;
   TextEditingController _multilineController;
+  TextEditingController _multilineCounterController;
+
   TextEditingController _formController;
+  GlobalKey<FormState> _formKey;
 
   @override
   void initState() {
@@ -18,11 +21,15 @@ class _InputFieldsViewState extends State<InputFieldsView> {
     _searchController = TextEditingController();
     _inputController = TextEditingController();
     _multilineController = TextEditingController();
+    _multilineCounterController = TextEditingController();
     _formController = TextEditingController();
+    _formKey = GlobalKey<FormState>();
   }
 
   @override
   Widget build(BuildContext context) {
+    final palette = EufemiaPalette.of(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Input fields'),
@@ -32,63 +39,102 @@ class _InputFieldsViewState extends State<InputFieldsView> {
         ),
       ),
       body: SafeArea(
-        child: ScrollableList(
-          showBorders: false,
-          topPadding: true,
-          children: [
-            StaticList(
-              title: 'Search bar',
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: SearchBar(
-                    controller: _searchController,
+        child: Form(
+          key: _formKey,
+          child: ScrollableList(
+            showBorders: false,
+            topPadding: true,
+            children: [
+              StaticList(
+                title: 'Search bar',
+                children: [
+                  Material(
+                    color: palette.primary,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: SearchField(
+                        controller: _searchController,
+                      ),
+                    ),
                   ),
-                ),
-              ],
-            ),
-            StaticList(
-              topPadding: true,
-              title: 'Input field',
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: InputField(
-                    controller: _inputController,
+                ],
+              ),
+              StaticList(
+                topPadding: true,
+                title: 'Input field',
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: InputField(
+                      controller: _inputController,
+                      hintText: 'Input hint',
+                    ),
                   ),
-                ),
-              ],
-            ),
-            StaticList(
-              topPadding: true,
-              title: 'Multiline field',
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: InputField(
-                    controller: _multilineController,
-                    maxLines: 5,
-                    maxLength: 200,
+                ],
+              ),
+              StaticList(
+                topPadding: true,
+                title: 'Input field with validation',
+                children: [
+                  EufemiaRow(
+                    spaceBetween: EufemiaSpace.medium,
+                    padding: EufemiaInsets.medium(),
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: InputField(
+                          validator: (String value) => value.isEmpty
+                              ? 'Something didn\'t validate here'
+                              : null,
+                          controller: _formController,
+                          hintText: 'Input hint',
+                        ),
+                      ),
+                      PrimaryButton(
+                        child: Text('Validate'),
+                        onTap: () => _formKey.currentState.validate(),
+                      ),
+                    ],
                   ),
-                ),
-              ],
-            ),
-            StaticList(
-              topPadding: true,
-              title: 'Form field',
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: InputField(
-                    validator: (String value) {
-                      return 'Error';
-                    },
-                    controller: _formController,
+                ],
+              ),
+              StaticList(
+                topPadding: true,
+                title: 'Multiline field',
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: InputField(
+                      controller: _multilineController,
+                      maxLines: 5,
+                      maxLength: 200,
+                      multiline: true,
+                      counter: false,
+                      hintText:
+                          'Input hint for longer texts that may or may not contain a character count.',
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+              StaticList(
+                topPadding: true,
+                title: 'Multiline field with counter',
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: InputField(
+                      controller: _multilineCounterController,
+                      maxLines: 5,
+                      maxLength: 200,
+                      multiline: true,
+                      hintText:
+                          'Input hint for longer texts that may or may not contain a character count.',
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -117,7 +117,7 @@ class ContentCard extends StatelessWidget {
 
     return ContentCard(
       semanticLabel: semanticLabel,
-      color: palette.cardAccent,
+      color: palette.accent,
       labelColor: palette.card,
       background: background,
       separator: separator,

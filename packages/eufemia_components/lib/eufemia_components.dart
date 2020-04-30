@@ -34,3 +34,7 @@ export 'src/controls/segmented_control.dart';
 
 // Content card
 export 'src/content_card/content_card.dart';
+
+// Input
+export 'src/input/input_field.dart';
+export 'src/input/search_field.dart';

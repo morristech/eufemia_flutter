@@ -63,6 +63,14 @@ class EufemiaColors {
   static const darkShadow = Color.fromRGBO(255, 255, 255, .05);
   static const seaGreenAltShadow = Color.fromRGBO(0, 132, 132, .3);
 
+  // Fields
+  static const searchField = Color.fromRGBO(51, 51, 51, .08);
+  static const searchStandard = Color.fromRGBO(255, 255, 255, .88);
+  static const searchForms = Color.fromRGBO(51, 51, 51, .09);
+  static const searchPayments = Color.fromRGBO(255, 255, 255, .88);
+  static const searchDark = Color.fromRGBO(255, 255, 255, .12);
+  static const whiteLight = Color.fromRGBO(255, 255, 255, .8);
+
   static Map<Color, String> map = {
     seaGreen: 'Seagreen',
     seaGreenAlt: 'Seagreen Alt',

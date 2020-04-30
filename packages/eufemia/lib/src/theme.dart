@@ -26,6 +26,8 @@ class EufemiaThemeAdapter {
       accentColor: palette.secondary,
       fontFamily: typography.families.primary,
       canvasColor: palette.canvas,
+      cursorColor: palette.secondary,
+      textSelectionColor: palette.accent,
       iconTheme: IconThemeData(
         color: palette.icon,
         size: 24.0,

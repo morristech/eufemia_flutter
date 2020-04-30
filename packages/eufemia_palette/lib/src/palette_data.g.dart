@@ -39,7 +39,7 @@ _$_EufemiaPaletteData _$_$_EufemiaPaletteDataFromJson(
     icon: const ColorJsonConverter().fromJson(json['icon']),
     card: const ColorJsonConverter().fromJson(json['card']),
     cardLabel: const ColorJsonConverter().fromJson(json['cardLabel']),
-    cardAccent: const ColorJsonConverter().fromJson(json['cardAccent']),
+    accent: const ColorJsonConverter().fromJson(json['accent']),
     button: const ColorJsonConverter().fromJson(json['button']),
     toggle: const ColorJsonConverter().fromJson(json['toggle']),
     toggleInactive: const ColorJsonConverter().fromJson(json['toggleInactive']),
@@ -49,6 +49,10 @@ _$_EufemiaPaletteData _$_$_EufemiaPaletteDataFromJson(
     onTag: const ColorJsonConverter().fromJson(json['onTag']),
     shadow: const ColorJsonConverter().fromJson(json['shadow']),
     canvas: const ColorJsonConverter().fromJson(json['canvas']),
+    search: const ColorJsonConverter().fromJson(json['search']),
+    onSearch: const ColorJsonConverter().fromJson(json['onSearch']),
+    onSearchInactive:
+        const ColorJsonConverter().fromJson(json['onSearchInactive']),
   );
 }
 
@@ -86,7 +90,7 @@ Map<String, dynamic> _$_$_EufemiaPaletteDataToJson(
       'icon': const ColorJsonConverter().toJson(instance.icon),
       'card': const ColorJsonConverter().toJson(instance.card),
       'cardLabel': const ColorJsonConverter().toJson(instance.cardLabel),
-      'cardAccent': const ColorJsonConverter().toJson(instance.cardAccent),
+      'accent': const ColorJsonConverter().toJson(instance.accent),
       'button': const ColorJsonConverter().toJson(instance.button),
       'toggle': const ColorJsonConverter().toJson(instance.toggle),
       'toggleInactive':
@@ -97,6 +101,10 @@ Map<String, dynamic> _$_$_EufemiaPaletteDataToJson(
       'onTag': const ColorJsonConverter().toJson(instance.onTag),
       'shadow': const ColorJsonConverter().toJson(instance.shadow),
       'canvas': const ColorJsonConverter().toJson(instance.canvas),
+      'search': const ColorJsonConverter().toJson(instance.search),
+      'onSearch': const ColorJsonConverter().toJson(instance.onSearch),
+      'onSearchInactive':
+          const ColorJsonConverter().toJson(instance.onSearchInactive),
     };
 
 T _$enumDecode<T>(

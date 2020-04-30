@@ -43,7 +43,7 @@ class _$EufemiaPaletteDataTearOff {
       @required @ColorJsonConverter() Color icon,
       @required @ColorJsonConverter() Color card,
       @required @ColorJsonConverter() Color cardLabel,
-      @required @ColorJsonConverter() Color cardAccent,
+      @required @ColorJsonConverter() Color accent,
       @required @ColorJsonConverter() Color button,
       @required @ColorJsonConverter() Color toggle,
       @required @ColorJsonConverter() Color toggleInactive,
@@ -52,7 +52,10 @@ class _$EufemiaPaletteDataTearOff {
       @required @ColorJsonConverter() Color tag,
       @required @ColorJsonConverter() Color onTag,
       @required @ColorJsonConverter() Color shadow,
-      @required @ColorJsonConverter() Color canvas}) {
+      @required @ColorJsonConverter() Color canvas,
+      @required @ColorJsonConverter() Color search,
+      @required @ColorJsonConverter() Color onSearch,
+      @required @ColorJsonConverter() Color onSearchInactive}) {
     return _EufemiaPaletteData(
       brightness: brightness,
       primary: primary,
@@ -81,7 +84,7 @@ class _$EufemiaPaletteDataTearOff {
       icon: icon,
       card: card,
       cardLabel: cardLabel,
-      cardAccent: cardAccent,
+      accent: accent,
       button: button,
       toggle: toggle,
       toggleInactive: toggleInactive,
@@ -91,6 +94,9 @@ class _$EufemiaPaletteDataTearOff {
       onTag: onTag,
       shadow: shadow,
       canvas: canvas,
+      search: search,
+      onSearch: onSearch,
+      onSearchInactive: onSearchInactive,
     );
   }
 }
@@ -153,7 +159,7 @@ mixin _$EufemiaPaletteData {
   @ColorJsonConverter()
   Color get cardLabel;
   @ColorJsonConverter()
-  Color get cardAccent;
+  Color get accent;
   @ColorJsonConverter()
   Color get button;
   @ColorJsonConverter()
@@ -172,6 +178,12 @@ mixin _$EufemiaPaletteData {
   Color get shadow;
   @ColorJsonConverter()
   Color get canvas;
+  @ColorJsonConverter()
+  Color get search;
+  @ColorJsonConverter()
+  Color get onSearch;
+  @ColorJsonConverter()
+  Color get onSearchInactive;
 
   Map<String, dynamic> toJson();
   $EufemiaPaletteDataCopyWith<EufemiaPaletteData> get copyWith;
@@ -209,7 +221,7 @@ abstract class $EufemiaPaletteDataCopyWith<$Res> {
       @ColorJsonConverter() Color icon,
       @ColorJsonConverter() Color card,
       @ColorJsonConverter() Color cardLabel,
-      @ColorJsonConverter() Color cardAccent,
+      @ColorJsonConverter() Color accent,
       @ColorJsonConverter() Color button,
       @ColorJsonConverter() Color toggle,
       @ColorJsonConverter() Color toggleInactive,
@@ -218,7 +230,10 @@ abstract class $EufemiaPaletteDataCopyWith<$Res> {
       @ColorJsonConverter() Color tag,
       @ColorJsonConverter() Color onTag,
       @ColorJsonConverter() Color shadow,
-      @ColorJsonConverter() Color canvas});
+      @ColorJsonConverter() Color canvas,
+      @ColorJsonConverter() Color search,
+      @ColorJsonConverter() Color onSearch,
+      @ColorJsonConverter() Color onSearchInactive});
 }
 
 class _$EufemiaPaletteDataCopyWithImpl<$Res>
@@ -258,7 +273,7 @@ class _$EufemiaPaletteDataCopyWithImpl<$Res>
     Object icon = freezed,
     Object card = freezed,
     Object cardLabel = freezed,
-    Object cardAccent = freezed,
+    Object accent = freezed,
     Object button = freezed,
     Object toggle = freezed,
     Object toggleInactive = freezed,
@@ -268,6 +283,9 @@ class _$EufemiaPaletteDataCopyWithImpl<$Res>
     Object onTag = freezed,
     Object shadow = freezed,
     Object canvas = freezed,
+    Object search = freezed,
+    Object onSearch = freezed,
+    Object onSearchInactive = freezed,
   }) {
     return _then(_value.copyWith(
       brightness:
@@ -306,8 +324,7 @@ class _$EufemiaPaletteDataCopyWithImpl<$Res>
       icon: icon == freezed ? _value.icon : icon as Color,
       card: card == freezed ? _value.card : card as Color,
       cardLabel: cardLabel == freezed ? _value.cardLabel : cardLabel as Color,
-      cardAccent:
-          cardAccent == freezed ? _value.cardAccent : cardAccent as Color,
+      accent: accent == freezed ? _value.accent : accent as Color,
       button: button == freezed ? _value.button : button as Color,
       toggle: toggle == freezed ? _value.toggle : toggle as Color,
       toggleInactive: toggleInactive == freezed
@@ -319,6 +336,11 @@ class _$EufemiaPaletteDataCopyWithImpl<$Res>
       onTag: onTag == freezed ? _value.onTag : onTag as Color,
       shadow: shadow == freezed ? _value.shadow : shadow as Color,
       canvas: canvas == freezed ? _value.canvas : canvas as Color,
+      search: search == freezed ? _value.search : search as Color,
+      onSearch: onSearch == freezed ? _value.onSearch : onSearch as Color,
+      onSearchInactive: onSearchInactive == freezed
+          ? _value.onSearchInactive
+          : onSearchInactive as Color,
     ));
   }
 }
@@ -357,7 +379,7 @@ abstract class _$EufemiaPaletteDataCopyWith<$Res>
       @ColorJsonConverter() Color icon,
       @ColorJsonConverter() Color card,
       @ColorJsonConverter() Color cardLabel,
-      @ColorJsonConverter() Color cardAccent,
+      @ColorJsonConverter() Color accent,
       @ColorJsonConverter() Color button,
       @ColorJsonConverter() Color toggle,
       @ColorJsonConverter() Color toggleInactive,
@@ -366,7 +388,10 @@ abstract class _$EufemiaPaletteDataCopyWith<$Res>
       @ColorJsonConverter() Color tag,
       @ColorJsonConverter() Color onTag,
       @ColorJsonConverter() Color shadow,
-      @ColorJsonConverter() Color canvas});
+      @ColorJsonConverter() Color canvas,
+      @ColorJsonConverter() Color search,
+      @ColorJsonConverter() Color onSearch,
+      @ColorJsonConverter() Color onSearchInactive});
 }
 
 class __$EufemiaPaletteDataCopyWithImpl<$Res>
@@ -408,7 +433,7 @@ class __$EufemiaPaletteDataCopyWithImpl<$Res>
     Object icon = freezed,
     Object card = freezed,
     Object cardLabel = freezed,
-    Object cardAccent = freezed,
+    Object accent = freezed,
     Object button = freezed,
     Object toggle = freezed,
     Object toggleInactive = freezed,
@@ -418,6 +443,9 @@ class __$EufemiaPaletteDataCopyWithImpl<$Res>
     Object onTag = freezed,
     Object shadow = freezed,
     Object canvas = freezed,
+    Object search = freezed,
+    Object onSearch = freezed,
+    Object onSearchInactive = freezed,
   }) {
     return _then(_EufemiaPaletteData(
       brightness:
@@ -456,8 +484,7 @@ class __$EufemiaPaletteDataCopyWithImpl<$Res>
       icon: icon == freezed ? _value.icon : icon as Color,
       card: card == freezed ? _value.card : card as Color,
       cardLabel: cardLabel == freezed ? _value.cardLabel : cardLabel as Color,
-      cardAccent:
-          cardAccent == freezed ? _value.cardAccent : cardAccent as Color,
+      accent: accent == freezed ? _value.accent : accent as Color,
       button: button == freezed ? _value.button : button as Color,
       toggle: toggle == freezed ? _value.toggle : toggle as Color,
       toggleInactive: toggleInactive == freezed
@@ -469,6 +496,11 @@ class __$EufemiaPaletteDataCopyWithImpl<$Res>
       onTag: onTag == freezed ? _value.onTag : onTag as Color,
       shadow: shadow == freezed ? _value.shadow : shadow as Color,
       canvas: canvas == freezed ? _value.canvas : canvas as Color,
+      search: search == freezed ? _value.search : search as Color,
+      onSearch: onSearch == freezed ? _value.onSearch : onSearch as Color,
+      onSearchInactive: onSearchInactive == freezed
+          ? _value.onSearchInactive
+          : onSearchInactive as Color,
     ));
   }
 }
@@ -505,7 +537,7 @@ class _$_EufemiaPaletteData
       @required @ColorJsonConverter() this.icon,
       @required @ColorJsonConverter() this.card,
       @required @ColorJsonConverter() this.cardLabel,
-      @required @ColorJsonConverter() this.cardAccent,
+      @required @ColorJsonConverter() this.accent,
       @required @ColorJsonConverter() this.button,
       @required @ColorJsonConverter() this.toggle,
       @required @ColorJsonConverter() this.toggleInactive,
@@ -514,7 +546,10 @@ class _$_EufemiaPaletteData
       @required @ColorJsonConverter() this.tag,
       @required @ColorJsonConverter() this.onTag,
       @required @ColorJsonConverter() this.shadow,
-      @required @ColorJsonConverter() this.canvas})
+      @required @ColorJsonConverter() this.canvas,
+      @required @ColorJsonConverter() this.search,
+      @required @ColorJsonConverter() this.onSearch,
+      @required @ColorJsonConverter() this.onSearchInactive})
       : assert(brightness != null),
         assert(primary != null),
         assert(onPrimary != null),
@@ -542,7 +577,7 @@ class _$_EufemiaPaletteData
         assert(icon != null),
         assert(card != null),
         assert(cardLabel != null),
-        assert(cardAccent != null),
+        assert(accent != null),
         assert(button != null),
         assert(toggle != null),
         assert(toggleInactive != null),
@@ -551,7 +586,10 @@ class _$_EufemiaPaletteData
         assert(tag != null),
         assert(onTag != null),
         assert(shadow != null),
-        assert(canvas != null);
+        assert(canvas != null),
+        assert(search != null),
+        assert(onSearch != null),
+        assert(onSearchInactive != null);
 
   factory _$_EufemiaPaletteData.fromJson(Map<String, dynamic> json) =>
       _$_$_EufemiaPaletteDataFromJson(json);
@@ -638,7 +676,7 @@ class _$_EufemiaPaletteData
   final Color cardLabel;
   @override
   @ColorJsonConverter()
-  final Color cardAccent;
+  final Color accent;
   @override
   @ColorJsonConverter()
   final Color button;
@@ -666,10 +704,19 @@ class _$_EufemiaPaletteData
   @override
   @ColorJsonConverter()
   final Color canvas;
+  @override
+  @ColorJsonConverter()
+  final Color search;
+  @override
+  @ColorJsonConverter()
+  final Color onSearch;
+  @override
+  @ColorJsonConverter()
+  final Color onSearchInactive;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'EufemiaPaletteData(brightness: $brightness, primary: $primary, onPrimary: $onPrimary, secondary: $secondary, info: $info, onInfo: $onInfo, infoBackground: $infoBackground, success: $success, onSuccess: $onSuccess, successBackground: $successBackground, error: $error, onError: $onError, errorBackground: $errorBackground, warning: $warning, onWarning: $onWarning, warningBackground: $warningBackground, dark: $dark, light: $light, black: $black, grey: $grey, white: $white, text: $text, textLight: $textLight, onButton: $onButton, icon: $icon, card: $card, cardLabel: $cardLabel, cardAccent: $cardAccent, button: $button, toggle: $toggle, toggleInactive: $toggleInactive, onToggle: $onToggle, outline: $outline, tag: $tag, onTag: $onTag, shadow: $shadow, canvas: $canvas)';
+    return 'EufemiaPaletteData(brightness: $brightness, primary: $primary, onPrimary: $onPrimary, secondary: $secondary, info: $info, onInfo: $onInfo, infoBackground: $infoBackground, success: $success, onSuccess: $onSuccess, successBackground: $successBackground, error: $error, onError: $onError, errorBackground: $errorBackground, warning: $warning, onWarning: $onWarning, warningBackground: $warningBackground, dark: $dark, light: $light, black: $black, grey: $grey, white: $white, text: $text, textLight: $textLight, onButton: $onButton, icon: $icon, card: $card, cardLabel: $cardLabel, accent: $accent, button: $button, toggle: $toggle, toggleInactive: $toggleInactive, onToggle: $onToggle, outline: $outline, tag: $tag, onTag: $onTag, shadow: $shadow, canvas: $canvas, search: $search, onSearch: $onSearch, onSearchInactive: $onSearchInactive)';
   }
 
   @override
@@ -704,7 +751,7 @@ class _$_EufemiaPaletteData
       ..add(DiagnosticsProperty('icon', icon))
       ..add(DiagnosticsProperty('card', card))
       ..add(DiagnosticsProperty('cardLabel', cardLabel))
-      ..add(DiagnosticsProperty('cardAccent', cardAccent))
+      ..add(DiagnosticsProperty('accent', accent))
       ..add(DiagnosticsProperty('button', button))
       ..add(DiagnosticsProperty('toggle', toggle))
       ..add(DiagnosticsProperty('toggleInactive', toggleInactive))
@@ -713,7 +760,10 @@ class _$_EufemiaPaletteData
       ..add(DiagnosticsProperty('tag', tag))
       ..add(DiagnosticsProperty('onTag', onTag))
       ..add(DiagnosticsProperty('shadow', shadow))
-      ..add(DiagnosticsProperty('canvas', canvas));
+      ..add(DiagnosticsProperty('canvas', canvas))
+      ..add(DiagnosticsProperty('search', search))
+      ..add(DiagnosticsProperty('onSearch', onSearch))
+      ..add(DiagnosticsProperty('onSearchInactive', onSearchInactive));
   }
 
   @override
@@ -790,7 +840,7 @@ class _$_EufemiaPaletteData
             (identical(other.cardLabel, cardLabel) ||
                 const DeepCollectionEquality()
                     .equals(other.cardLabel, cardLabel)) &&
-            (identical(other.cardAccent, cardAccent) || const DeepCollectionEquality().equals(other.cardAccent, cardAccent)) &&
+            (identical(other.accent, accent) || const DeepCollectionEquality().equals(other.accent, accent)) &&
             (identical(other.button, button) || const DeepCollectionEquality().equals(other.button, button)) &&
             (identical(other.toggle, toggle) || const DeepCollectionEquality().equals(other.toggle, toggle)) &&
             (identical(other.toggleInactive, toggleInactive) || const DeepCollectionEquality().equals(other.toggleInactive, toggleInactive)) &&
@@ -799,7 +849,10 @@ class _$_EufemiaPaletteData
             (identical(other.tag, tag) || const DeepCollectionEquality().equals(other.tag, tag)) &&
             (identical(other.onTag, onTag) || const DeepCollectionEquality().equals(other.onTag, onTag)) &&
             (identical(other.shadow, shadow) || const DeepCollectionEquality().equals(other.shadow, shadow)) &&
-            (identical(other.canvas, canvas) || const DeepCollectionEquality().equals(other.canvas, canvas)));
+            (identical(other.canvas, canvas) || const DeepCollectionEquality().equals(other.canvas, canvas)) &&
+            (identical(other.search, search) || const DeepCollectionEquality().equals(other.search, search)) &&
+            (identical(other.onSearch, onSearch) || const DeepCollectionEquality().equals(other.onSearch, onSearch)) &&
+            (identical(other.onSearchInactive, onSearchInactive) || const DeepCollectionEquality().equals(other.onSearchInactive, onSearchInactive)));
   }
 
   @override
@@ -832,7 +885,7 @@ class _$_EufemiaPaletteData
       const DeepCollectionEquality().hash(icon) ^
       const DeepCollectionEquality().hash(card) ^
       const DeepCollectionEquality().hash(cardLabel) ^
-      const DeepCollectionEquality().hash(cardAccent) ^
+      const DeepCollectionEquality().hash(accent) ^
       const DeepCollectionEquality().hash(button) ^
       const DeepCollectionEquality().hash(toggle) ^
       const DeepCollectionEquality().hash(toggleInactive) ^
@@ -841,7 +894,10 @@ class _$_EufemiaPaletteData
       const DeepCollectionEquality().hash(tag) ^
       const DeepCollectionEquality().hash(onTag) ^
       const DeepCollectionEquality().hash(shadow) ^
-      const DeepCollectionEquality().hash(canvas);
+      const DeepCollectionEquality().hash(canvas) ^
+      const DeepCollectionEquality().hash(search) ^
+      const DeepCollectionEquality().hash(onSearch) ^
+      const DeepCollectionEquality().hash(onSearchInactive);
 
   @override
   _$EufemiaPaletteDataCopyWith<_EufemiaPaletteData> get copyWith =>
@@ -855,43 +911,47 @@ class _$_EufemiaPaletteData
 
 abstract class _EufemiaPaletteData implements EufemiaPaletteData {
   const factory _EufemiaPaletteData(
-      {@required Brightness brightness,
-      @required @ColorJsonConverter() Color primary,
-      @required @ColorJsonConverter() Color onPrimary,
-      @required @ColorJsonConverter() Color secondary,
-      @required @ColorJsonConverter() Color info,
-      @required @ColorJsonConverter() Color onInfo,
-      @required @ColorJsonConverter() Color infoBackground,
-      @required @ColorJsonConverter() Color success,
-      @required @ColorJsonConverter() Color onSuccess,
-      @required @ColorJsonConverter() Color successBackground,
-      @required @ColorJsonConverter() Color error,
-      @required @ColorJsonConverter() Color onError,
-      @required @ColorJsonConverter() Color errorBackground,
-      @required @ColorJsonConverter() Color warning,
-      @required @ColorJsonConverter() Color onWarning,
-      @required @ColorJsonConverter() Color warningBackground,
-      @required @ColorJsonConverter() Color dark,
-      @required @ColorJsonConverter() Color light,
-      @required @ColorJsonConverter() Color black,
-      @required @ColorJsonConverter() Color grey,
-      @required @ColorJsonConverter() Color white,
-      @required @ColorJsonConverter() Color text,
-      @required @ColorJsonConverter() Color textLight,
-      @required @ColorJsonConverter() Color onButton,
-      @required @ColorJsonConverter() Color icon,
-      @required @ColorJsonConverter() Color card,
-      @required @ColorJsonConverter() Color cardLabel,
-      @required @ColorJsonConverter() Color cardAccent,
-      @required @ColorJsonConverter() Color button,
-      @required @ColorJsonConverter() Color toggle,
-      @required @ColorJsonConverter() Color toggleInactive,
-      @required @ColorJsonConverter() Color onToggle,
-      @required @ColorJsonConverter() Color outline,
-      @required @ColorJsonConverter() Color tag,
-      @required @ColorJsonConverter() Color onTag,
-      @required @ColorJsonConverter() Color shadow,
-      @required @ColorJsonConverter() Color canvas}) = _$_EufemiaPaletteData;
+          {@required Brightness brightness,
+          @required @ColorJsonConverter() Color primary,
+          @required @ColorJsonConverter() Color onPrimary,
+          @required @ColorJsonConverter() Color secondary,
+          @required @ColorJsonConverter() Color info,
+          @required @ColorJsonConverter() Color onInfo,
+          @required @ColorJsonConverter() Color infoBackground,
+          @required @ColorJsonConverter() Color success,
+          @required @ColorJsonConverter() Color onSuccess,
+          @required @ColorJsonConverter() Color successBackground,
+          @required @ColorJsonConverter() Color error,
+          @required @ColorJsonConverter() Color onError,
+          @required @ColorJsonConverter() Color errorBackground,
+          @required @ColorJsonConverter() Color warning,
+          @required @ColorJsonConverter() Color onWarning,
+          @required @ColorJsonConverter() Color warningBackground,
+          @required @ColorJsonConverter() Color dark,
+          @required @ColorJsonConverter() Color light,
+          @required @ColorJsonConverter() Color black,
+          @required @ColorJsonConverter() Color grey,
+          @required @ColorJsonConverter() Color white,
+          @required @ColorJsonConverter() Color text,
+          @required @ColorJsonConverter() Color textLight,
+          @required @ColorJsonConverter() Color onButton,
+          @required @ColorJsonConverter() Color icon,
+          @required @ColorJsonConverter() Color card,
+          @required @ColorJsonConverter() Color cardLabel,
+          @required @ColorJsonConverter() Color accent,
+          @required @ColorJsonConverter() Color button,
+          @required @ColorJsonConverter() Color toggle,
+          @required @ColorJsonConverter() Color toggleInactive,
+          @required @ColorJsonConverter() Color onToggle,
+          @required @ColorJsonConverter() Color outline,
+          @required @ColorJsonConverter() Color tag,
+          @required @ColorJsonConverter() Color onTag,
+          @required @ColorJsonConverter() Color shadow,
+          @required @ColorJsonConverter() Color canvas,
+          @required @ColorJsonConverter() Color search,
+          @required @ColorJsonConverter() Color onSearch,
+          @required @ColorJsonConverter() Color onSearchInactive}) =
+      _$_EufemiaPaletteData;
 
   factory _EufemiaPaletteData.fromJson(Map<String, dynamic> json) =
       _$_EufemiaPaletteData.fromJson;
@@ -978,7 +1038,7 @@ abstract class _EufemiaPaletteData implements EufemiaPaletteData {
   Color get cardLabel;
   @override
   @ColorJsonConverter()
-  Color get cardAccent;
+  Color get accent;
   @override
   @ColorJsonConverter()
   Color get button;
@@ -1006,6 +1066,15 @@ abstract class _EufemiaPaletteData implements EufemiaPaletteData {
   @override
   @ColorJsonConverter()
   Color get canvas;
+  @override
+  @ColorJsonConverter()
+  Color get search;
+  @override
+  @ColorJsonConverter()
+  Color get onSearch;
+  @override
+  @ColorJsonConverter()
+  Color get onSearchInactive;
   @override
   _$EufemiaPaletteDataCopyWith<_EufemiaPaletteData> get copyWith;
 }
