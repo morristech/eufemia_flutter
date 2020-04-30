@@ -9,11 +9,11 @@ import 'theme.dart';
 
 part 'style.freezed.dart';
 
-const defaultEufemiaPrimaryDeltaFactor = 0.05;
-const defaultEufemiaSecondaryDeltaFactor = 0.075;
-const defaultEufemiaVividDeltaFactor = 0.16;
-const defaultEufemiaFabShadowDeltaFactor = 0.072;
-const defaultEufemiaFabDeltaFactor = 0.283;
+const defaultEufemiaPrimaryDeltaFactor = .05;
+const defaultEufemiaSecondaryDeltaFactor = .075;
+const defaultEufemiaVividDeltaFactor = .16;
+const defaultEufemiaFabShadowDeltaFactor = .072;
+const defaultEufemiaFabDeltaFactor = .283;
 
 @freezed
 abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
@@ -53,7 +53,7 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
       padding: EufemiaButtonState(enabled: padding),
       opacity: EufemiaButtonState(
         enabled: 1.0,
-        disabled: 0.5,
+        disabled: .5,
       ),
       decoration: EufemiaButtonState(
         enabled: decoration.copyWith(
@@ -61,7 +61,7 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
         ),
         hover: decoration.copyWith(
           color: backgroundColor.darken(
-            defaultEufemiaPrimaryDeltaFactor * 0.5,
+            defaultEufemiaPrimaryDeltaFactor * .5,
           ),
         ),
         active: decoration.copyWith(
@@ -73,19 +73,19 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
       textStyle: EufemiaButtonState(
         enabled: textStyle.copyWith(color: foregroundColor),
         hover: textStyle.copyWith(
-          color: foregroundColor.withOpacity(0.9),
+          color: foregroundColor.withOpacity(.9),
         ),
         active: textStyle.copyWith(
-          color: foregroundColor.withOpacity(0.8),
+          color: foregroundColor.withOpacity(.8),
         ),
       ),
       iconTheme: EufemiaButtonState(
         enabled: iconTheme.copyWith(color: foregroundColor),
         hover: iconTheme.copyWith(
-          color: foregroundColor.withOpacity(0.9),
+          color: foregroundColor.withOpacity(.9),
         ),
         active: iconTheme.copyWith(
-          color: foregroundColor.withOpacity(0.8),
+          color: foregroundColor.withOpacity(.8),
         ),
       ),
     );
@@ -116,12 +116,12 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
       padding: EufemiaButtonState(enabled: padding),
       opacity: EufemiaButtonState(
         enabled: 1.0,
-        disabled: 0.5,
+        disabled: .5,
       ),
       decoration: EufemiaButtonState(
         enabled: decoration.copyWith(color: backgroundColor),
         hover: decoration.copyWith(
-          color: backgroundColor.darken(defaultEufemiaVividDeltaFactor * 0.5),
+          color: backgroundColor.darken(defaultEufemiaVividDeltaFactor * .5),
         ),
         active: decoration.copyWith(
           color: backgroundColor.darken(defaultEufemiaVividDeltaFactor),
@@ -130,19 +130,19 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
       textStyle: EufemiaButtonState(
         enabled: textStyle.copyWith(color: foregroundColor),
         hover: textStyle.copyWith(
-          color: foregroundColor.withOpacity(0.9),
+          color: foregroundColor.withOpacity(.9),
         ),
         active: textStyle.copyWith(
-          color: foregroundColor.withOpacity(0.8),
+          color: foregroundColor.withOpacity(.8),
         ),
       ),
       iconTheme: EufemiaButtonState(
         enabled: iconTheme.copyWith(color: foregroundColor),
         hover: iconTheme.copyWith(
-          color: foregroundColor.withOpacity(0.9),
+          color: foregroundColor.withOpacity(.9),
         ),
         active: iconTheme.copyWith(
-          color: foregroundColor.withOpacity(0.8),
+          color: foregroundColor.withOpacity(.8),
         ),
       ),
     );
@@ -172,13 +172,13 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
 
     final padding = size.toPadding();
 
-    final mix = Color.lerp(foregroundColor, backgroundColor, 0.99);
+    final mix = Color.lerp(foregroundColor, backgroundColor, .99);
 
     return EufemiaButtonStyle(
       padding: EufemiaButtonState(enabled: padding),
       opacity: EufemiaButtonState(
         enabled: 1.0,
-        disabled: 0.5,
+        disabled: .5,
       ),
       decoration: EufemiaButtonState(
         enabled: decoration.copyWith(
@@ -189,10 +189,10 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
         ),
         hover: decoration.copyWith(
           color: palette?.bright ?? true
-              ? mix.darken(defaultEufemiaSecondaryDeltaFactor * 0.5)
-              : mix.lighten(defaultEufemiaPrimaryDeltaFactor * 0.5),
+              ? mix.darken(defaultEufemiaSecondaryDeltaFactor * .5)
+              : mix.lighten(defaultEufemiaPrimaryDeltaFactor * .5),
           border: Border.all(
-            color: borderColor.darken(defaultEufemiaSecondaryDeltaFactor * 0.5),
+            color: borderColor.darken(defaultEufemiaSecondaryDeltaFactor * .5),
           ),
         ),
         active: decoration.copyWith(
@@ -207,19 +207,19 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
       textStyle: EufemiaButtonState(
         enabled: textStyle.copyWith(color: foregroundColor),
         hover: textStyle.copyWith(
-          color: foregroundColor.withOpacity(0.9),
+          color: foregroundColor.withOpacity(.9),
         ),
         active: textStyle.copyWith(
-          color: foregroundColor.withOpacity(0.8),
+          color: foregroundColor.withOpacity(.8),
         ),
       ),
       iconTheme: EufemiaButtonState(
         enabled: iconTheme.copyWith(color: foregroundColor),
         hover: iconTheme.copyWith(
-          color: foregroundColor.withOpacity(0.9),
+          color: foregroundColor.withOpacity(.9),
         ),
         active: iconTheme.copyWith(
-          color: foregroundColor.withOpacity(0.8),
+          color: foregroundColor.withOpacity(.8),
         ),
       ),
     );
@@ -251,36 +251,35 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
       padding: EufemiaButtonState(enabled: padding),
       opacity: EufemiaButtonState(
         enabled: 1.0,
-        disabled: 0.5,
+        disabled: .5,
       ),
       decoration: EufemiaButtonState(
         enabled: decoration.copyWith(
           color: backgroundColor.withOpacity(0),
         ),
         hover: decoration.copyWith(
-          color:
-              Color.lerp(backgroundColor, foregroundColor, 0.05).lighten(.01),
+          color: Color.lerp(backgroundColor, foregroundColor, .05).darken(.02),
         ),
         active: decoration.copyWith(
-          color: Color.lerp(backgroundColor, foregroundColor, 0.05),
+          color: Color.lerp(backgroundColor, foregroundColor, .05).darken(.05),
         ),
       ),
       textStyle: EufemiaButtonState(
         enabled: textStyle.copyWith(color: foregroundColor),
         hover: textStyle.copyWith(
-          color: foregroundColor.withOpacity(0.9),
+          color: foregroundColor.withOpacity(.9),
         ),
         active: textStyle.copyWith(
-          color: foregroundColor.withOpacity(0.8),
+          color: foregroundColor.withOpacity(.8),
         ),
       ),
       iconTheme: EufemiaButtonState(
         enabled: iconTheme.copyWith(color: foregroundColor),
         hover: iconTheme.copyWith(
-          color: foregroundColor.withOpacity(0.9),
+          color: foregroundColor.withOpacity(.9),
         ),
         active: iconTheme.copyWith(
-          color: foregroundColor.withOpacity(0.8),
+          color: foregroundColor.withOpacity(.8),
         ),
       ),
     );
@@ -310,7 +309,7 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
     final shadow = BoxShadow(
       color: backgroundColor
           .lighten(defaultEufemiaFabShadowDeltaFactor)
-          .withOpacity(0.3),
+          .withOpacity(.3),
       spreadRadius: 1.0,
       blurRadius: 16.0,
       offset: Offset(0, 8),
@@ -320,7 +319,7 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
       padding: EufemiaButtonState(enabled: padding),
       opacity: EufemiaButtonState(
         enabled: 1.0,
-        disabled: 0.5,
+        disabled: .5,
       ),
       decoration: EufemiaButtonState(
         enabled: decoration.copyWith(
@@ -330,7 +329,7 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
         ),
         hover: decoration.copyWith(
           color: backgroundColor.darken(
-            defaultEufemiaFabDeltaFactor * 0.5,
+            defaultEufemiaFabDeltaFactor * .5,
           ),
           shape: BoxShape.circle,
           boxShadow: [shadow],
@@ -346,19 +345,19 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
       textStyle: EufemiaButtonState(
         enabled: textStyle.copyWith(color: foregroundColor),
         hover: textStyle.copyWith(
-          color: foregroundColor.withOpacity(0.9),
+          color: foregroundColor.withOpacity(.9),
         ),
         active: textStyle.copyWith(
-          color: foregroundColor.withOpacity(0.8),
+          color: foregroundColor.withOpacity(.8),
         ),
       ),
       iconTheme: EufemiaButtonState(
         enabled: iconTheme.copyWith(color: foregroundColor),
         hover: iconTheme.copyWith(
-          color: foregroundColor.withOpacity(0.9),
+          color: foregroundColor.withOpacity(.9),
         ),
         active: iconTheme.copyWith(
-          color: foregroundColor.withOpacity(0.8),
+          color: foregroundColor.withOpacity(.8),
         ),
       ),
     );
@@ -393,8 +392,8 @@ extension EufemiaButtonSizeExtensions on EufemiaButtonSize {
     );
   }
 
-  BoxDecoration toDecoration([double baseRadius = 100.0]) {
-    baseRadius ??= 100.0;
+  BoxDecoration toDecoration([double baseRadius = 10.0]) {
+    baseRadius ??= 10.0;
 
     return BoxDecoration(borderRadius: BorderRadius.circular(baseRadius));
   }
@@ -403,7 +402,7 @@ extension EufemiaButtonSizeExtensions on EufemiaButtonSize {
     base ??= TextStyle(fontSize: 16.0);
     switch (this) {
       case EufemiaButtonSize.small:
-        return base.copyWith(fontSize: base.fontSize * 0.875);
+        return base.copyWith(fontSize: base.fontSize * .875);
       case EufemiaButtonSize.medium:
         return base.copyWith(fontSize: base.fontSize);
       default:
@@ -415,7 +414,7 @@ extension EufemiaButtonSizeExtensions on EufemiaButtonSize {
     base ??= IconThemeData(size: 16.0);
     switch (this) {
       case EufemiaButtonSize.small:
-        return base.copyWith(size: base.size * 0.5);
+        return base.copyWith(size: base.size * .5);
       case EufemiaButtonSize.medium:
         return base.copyWith(size: base.size);
       default:

@@ -37,6 +37,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
     @required @ColorJsonConverter() Color onButton,
     @required @ColorJsonConverter() Color icon,
     @required @ColorJsonConverter() Color card,
+    @required @ColorJsonConverter() Color cardLabel,
     @required @ColorJsonConverter() Color cardAccent,
     @required @ColorJsonConverter() Color button,
     @required @ColorJsonConverter() Color toggle,
@@ -45,6 +46,8 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
     @required @ColorJsonConverter() Color outline,
     @required @ColorJsonConverter() Color tag,
     @required @ColorJsonConverter() Color onTag,
+    @required @ColorJsonConverter() Color shadow,
+    @required @ColorJsonConverter() Color canvas,
   }) = _EufemiaPaletteData;
 
   factory EufemiaPaletteData.fallback() => const EufemiaPaletteData(
@@ -74,7 +77,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         onButton: EufemiaColors.white,
         icon: EufemiaColors.emeraldGreen,
         card: EufemiaColors.white,
-        cardAccent: EufemiaColors.mintGreen,
+        cardAccent: EufemiaColors.mintGreenAlt,
         button: EufemiaColors.seaGreen,
         toggle: EufemiaColors.subtleGray,
         toggleInactive: EufemiaColors.white,
@@ -82,6 +85,9 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         outline: EufemiaColors.outlineGray,
         tag: EufemiaColors.outlineGray,
         onTag: EufemiaColors.coal,
+        cardLabel: EufemiaColors.subtleGray,
+        shadow: EufemiaColors.lightShadow,
+        canvas: EufemiaColors.lightGray,
       );
 
   factory EufemiaPaletteData.regular() => const EufemiaPaletteData(
@@ -111,7 +117,8 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         onButton: EufemiaColors.white,
         icon: EufemiaColors.emeraldGreen,
         card: EufemiaColors.white,
-        cardAccent: EufemiaColors.mintGreen,
+        cardAccent: EufemiaColors.mintGreenAlt,
+        cardLabel: EufemiaColors.subtleGray,
         button: EufemiaColors.seaGreen,
         toggle: EufemiaColors.emeraldGreen,
         toggleInactive: EufemiaColors.white,
@@ -119,6 +126,8 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         outline: EufemiaColors.outlineGray,
         tag: EufemiaColors.outlineGray,
         onTag: EufemiaColors.coal,
+        shadow: EufemiaColors.lightShadow,
+        canvas: EufemiaColors.lightGray,
       );
 
   factory EufemiaPaletteData.saga() => const EufemiaPaletteData(
@@ -149,6 +158,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         icon: EufemiaColors.sagaContrast,
         card: EufemiaColors.white,
         cardAccent: EufemiaColors.sandYellow,
+        cardLabel: EufemiaColors.subtleGray,
         button: EufemiaColors.saga,
         toggle: EufemiaColors.sagaContrast,
         toggleInactive: EufemiaColors.white,
@@ -156,9 +166,11 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         outline: EufemiaColors.outlineGray,
         tag: EufemiaColors.outlineGray,
         onTag: EufemiaColors.coal,
+        shadow: EufemiaColors.lightShadow,
+        canvas: EufemiaColors.lightGray,
       );
 
-  factory EufemiaPaletteData.dark() => const EufemiaPaletteData(
+  factory EufemiaPaletteData.dark() => EufemiaPaletteData(
         brightness: Brightness.dark,
         primary: EufemiaColors.gray6,
         onPrimary: EufemiaColors.mintGreen,
@@ -168,9 +180,9 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         onError: EufemiaColors.white,
         onWarning: EufemiaColors.coal,
         onSuccess: EufemiaColors.white,
-        infoBackground: EufemiaColors.pistachio,
-        errorBackground: EufemiaColors.emberRed,
-        warningBackground: EufemiaColors.sandYellow,
+        infoBackground: EufemiaColors.mintGreen.withOpacity(0.4),
+        errorBackground: EufemiaColors.fireRed.withOpacity(0.4),
+        warningBackground: EufemiaColors.accentYellow.withOpacity(0.4),
         successBackground: EufemiaColors.pistachio,
         error: EufemiaColors.fireRed,
         success: EufemiaColors.successGreen,
@@ -186,6 +198,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         icon: EufemiaColors.mintGreen,
         card: EufemiaColors.gray6,
         cardAccent: EufemiaColors.gray5,
+        cardLabel: EufemiaColors.gray5,
         button: EufemiaColors.mintGreen,
         toggle: EufemiaColors.mintGreen,
         toggleInactive: EufemiaColors.gray6,
@@ -193,6 +206,8 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         outline: EufemiaColors.gray3,
         tag: EufemiaColors.outlineGray,
         onTag: EufemiaColors.coal,
+        shadow: EufemiaColors.darkShadow,
+        canvas: EufemiaColors.black,
       );
 
   factory EufemiaPaletteData.privateBanking() => const EufemiaPaletteData(
@@ -223,6 +238,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         icon: EufemiaColors.oceanGreen,
         card: EufemiaColors.white,
         cardAccent: EufemiaColors.outlineGray,
+        cardLabel: EufemiaColors.subtleGray,
         button: EufemiaColors.pbButton,
         toggle: EufemiaColors.oceanGreen,
         toggleInactive: EufemiaColors.white,
@@ -230,6 +246,8 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         outline: EufemiaColors.outlineGray,
         tag: EufemiaColors.outlineGray,
         onTag: EufemiaColors.coal,
+        shadow: EufemiaColors.lightShadow,
+        canvas: EufemiaColors.lightGray,
       );
 
   factory EufemiaPaletteData.fromJson(Map<String, dynamic> json) =>

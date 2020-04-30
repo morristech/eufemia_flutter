@@ -164,7 +164,12 @@ class _EufemiaPaletteState extends State<EufemiaPalette> {
       value: (_data ?? EufemiaPaletteData.fallback()).copyWith.call(
             brightness: MediaQuery.of(context).platformBrightness,
           ),
-      child: widget.child,
+      child: IconTheme(
+        data: IconThemeData(
+          color: _data?.icon ?? EufemiaPaletteData.fallback().icon,
+        ),
+        child: widget.child,
+      ),
     );
   }
 }

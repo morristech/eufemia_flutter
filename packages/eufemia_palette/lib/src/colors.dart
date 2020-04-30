@@ -22,6 +22,7 @@ class EufemiaColors {
   static const sandYellow = Color.fromRGBO(251, 246, 236, 1.0);
   static const pistachio = Color.fromRGBO(242, 244, 236, 1.0);
   static const emberRed = Color.fromRGBO(252, 238, 238, 1.0);
+
   // Grayscale
   static const coal = Color.fromRGBO(51, 51, 51, 1.0);
   static const darkGray = Color.fromRGBO(117, 117, 117, 1.0);
@@ -29,6 +30,7 @@ class EufemiaColors {
   static const outlineGray = Color.fromRGBO(235, 235, 235, 1.0);
   static const subtleGray = Color.fromRGBO(248, 248, 248, 1.0);
   static const white = Color.fromRGBO(255, 255, 255, 1.0);
+  static const black = Color.fromRGBO(0, 0, 0, 1.0);
 
   // Tertiary
   static const indigo = Color.fromRGBO(35, 25, 90, 1.0);
@@ -57,8 +59,9 @@ class EufemiaColors {
   static const pbButton = Color.fromRGBO(144, 144, 144, 1.0);
 
   // Shadows
-  static const lightShadow = Color.fromRGBO(51, 51, 51, 0.08);
-  static const seaGreenAltShadow = Color.fromRGBO(0, 132, 132, 0.3);
+  static const lightShadow = Color.fromRGBO(51, 51, 51, .08);
+  static const darkShadow = Color.fromRGBO(255, 255, 255, .05);
+  static const seaGreenAltShadow = Color.fromRGBO(0, 132, 132, .3);
 
   static Map<Color, String> map = {
     seaGreen: 'Seagreen',

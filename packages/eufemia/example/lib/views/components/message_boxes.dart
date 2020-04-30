@@ -12,7 +12,9 @@ class MessageBoxesView extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: ListView(
+      body: EufemiaColumn(
+        spaceBetween: EufemiaSpace.small,
+        padding: EufemiaInsets.allSmall,
         children: [
           MessageBox.info(
             'Visste du at du kan sveipe på en transaksjon og utføre visse handlinger?',
@@ -23,16 +25,19 @@ class MessageBoxesView extends StatelessWidget {
           MessageBox.error(
             'Kunne ikke gjennomføre betalingen fordi DNBs kjernesystemer står i brann.',
           ),
-        ]
-            .map((e) => Padding(
-                  padding: const EdgeInsets.only(
-                    left: 8.0,
-                    right: 8.0,
-                    top: 8.0,
-                  ),
-                  child: e,
-                ))
-            .toList(),
+          MessageBox.info(
+            'Visste du at du kan sveipe på en transaksjon og utføre visse handlinger?',
+            onTap: () {},
+          ),
+          MessageBox.warning(
+            'Betalingen ble stoppet. Det var ikke nok penger på kontoen.',
+            onTap: () {},
+          ),
+          MessageBox.error(
+            'Kunne ikke gjennomføre betalingen fordi DNBs kjernesystemer står i brann.',
+            onTap: () {},
+          ),
+        ],
       ),
     );
   }

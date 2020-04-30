@@ -168,15 +168,24 @@ class IconsView extends StatelessWidget {
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               ColoredIcon(
-                icon: Icon(EufemiaIcons.loan),
+                icon: Icon(
+                  EufemiaIcons.loan,
+                  color: EufemiaColors.white,
+                ),
                 backgroundColor: Colors.green,
               ),
               ColoredIcon(
-                icon: Icon(EufemiaIcons.card),
+                icon: Icon(
+                  EufemiaIcons.card,
+                  color: EufemiaColors.white,
+                ),
                 backgroundColor: Colors.pink,
               ),
               ColoredIcon(
-                icon: Icon(EufemiaIcons.cog),
+                icon: Icon(
+                  EufemiaIcons.cog,
+                  color: EufemiaColors.white,
+                ),
                 backgroundColor: Colors.blue,
               ),
             ]

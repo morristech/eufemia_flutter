@@ -31,3 +31,6 @@ export 'src/controls/tag.dart';
 export 'src/controls/toggle.dart';
 export 'src/controls/page_indicator.dart';
 export 'src/controls/segmented_control.dart';
+
+// Content card
+export 'src/content_card/content_card.dart';

@@ -31,7 +31,7 @@ class TextButton extends StatelessWidget {
       child: child,
       onTap: onTap,
       style: EufemiaButtonStyle.text(
-        backgroundColor: palette.toggle,
+        backgroundColor: palette.toggleInactive,
         foregroundColor: palette.button,
         textStyle: getStyle(context, size, emphasized),
         context: context,

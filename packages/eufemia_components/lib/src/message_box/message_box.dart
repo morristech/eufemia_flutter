@@ -10,10 +10,11 @@ enum _MessageType {
   error,
 }
 
-class MessageBox extends StatelessWidget {
+class MessageBox extends StatefulWidget {
   final Widget icon;
   final Color color;
   final String label;
+  final VoidCallback onTap;
   final _MessageType type;
 
   const MessageBox({
@@ -22,42 +23,103 @@ class MessageBox extends StatelessWidget {
     this.color,
     @required this.label,
     this.type,
+    this.onTap,
   }) : super(key: key);
 
-  bool get hasType => type != null;
+  @override
+  _MessageBoxState createState() => _MessageBoxState();
+
+  factory MessageBox.info(String label, {VoidCallback onTap}) {
+    return MessageBox(
+      label: label,
+      type: _MessageType.info,
+      onTap: onTap,
+    );
+  }
+
+  factory MessageBox.warning(String label, {VoidCallback onTap}) {
+    return MessageBox(
+      label: label,
+      type: _MessageType.warning,
+      onTap: onTap,
+    );
+  }
+
+  factory MessageBox.error(String label, {VoidCallback onTap}) {
+    return MessageBox(
+      label: label,
+      type: _MessageType.error,
+      onTap: onTap,
+    );
+  }
+}
+
+class _MessageBoxState extends State<MessageBox> {
+  bool get hasType => widget.type != null;
+  bool get tappable => widget.onTap != null;
+
+  bool isActive = false;
+  bool isHover = false;
+  bool isFocused = false;
 
   @override
   Widget build(BuildContext context) {
     final palette = EufemiaPalette.of(context);
     final spacing = EufemiaSpacing.of(context);
 
-    return Container(
-      padding: EdgeInsets.all(spacing.medium),
-      decoration: BoxDecoration(
-        color: color ?? typeToBoxColor(type, palette) ?? palette.info,
-        borderRadius: BorderRadius.circular(4.0),
-      ),
-      child: EufemiaFlex(
-        direction: Axis.horizontal,
-        children: [
-          typeToIcon(type, palette) ?? icon,
-          SizedBox(width: spacing.medium),
-          Flexible(
-            child: Text(
-              label,
-              style: EufemiaTypography.of(context)
-                  .styles
-                  .footnote
-                  .copyWith
-                  .call(color: hasType ? palette.black : null)
-                  .toTextStyle(context),
-              maxLines: 10,
-              overflow: TextOverflow.fade,
-            ),
+    return MouseRegion(
+      onEnter: (_) => setState(() => isHover = true),
+      onExit: (_) => setState(() => isHover = false),
+      child: GestureDetector(
+        onTapDown: (_) => setState(() => isActive = true),
+        onTapUp: (_) => setState(() => isActive = false),
+        onTapCancel: () => setState(() => isActive = false),
+        onTap: widget.onTap,
+        behavior: HitTestBehavior.opaque,
+        child: AnimatedContainer(
+          duration: Duration(milliseconds: 80),
+          padding: EdgeInsets.all(spacing.medium),
+          decoration: BoxDecoration(
+            color: boxColor(context),
+            borderRadius: BorderRadius.circular(4.0),
           ),
-        ],
+          child: EufemiaFlex(
+            direction: Axis.horizontal,
+            children: [
+              typeToIcon(widget.type, palette) ?? widget.icon,
+              SizedBox(width: spacing.medium),
+              Flexible(
+                child: Text(
+                  widget.label,
+                  style: EufemiaTypography.of(context)
+                      .styles
+                      .footnote
+                      .toTextStyle(context),
+                  maxLines: 10,
+                  overflow: TextOverflow.fade,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
+  }
+
+  Color boxColor(BuildContext context) {
+    final palette = EufemiaPalette.of(context);
+    var color =
+        widget.color ?? typeToBoxColor(widget.type, palette) ?? palette.info;
+    if (isActive && tappable) {
+      color = palette.bright
+          ? Color.lerp(color, palette.black, .2)
+          : color.withOpacity(.24);
+    } else if (isHover && tappable) {
+      color = palette.bright
+          ? Color.lerp(color, palette.black, .1)
+          : color.withOpacity(.32);
+    }
+    return color;
   }
 
   Widget typeToIcon(_MessageType type, EufemiaPaletteData palette) {
@@ -112,26 +174,5 @@ class MessageBox extends StatelessWidget {
       default:
         return null;
     }
-  }
-
-  factory MessageBox.info(String label) {
-    return MessageBox(
-      label: label,
-      type: _MessageType.info,
-    );
-  }
-
-  factory MessageBox.warning(String label) {
-    return MessageBox(
-      label: label,
-      type: _MessageType.warning,
-    );
-  }
-
-  factory MessageBox.error(String label) {
-    return MessageBox(
-      label: label,
-      type: _MessageType.error,
-    );
   }
 }

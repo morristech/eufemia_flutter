@@ -63,9 +63,6 @@ class _InputFieldState extends State<InputField> {
         ),
         decoration: InputDecoration(
           hintText: widget.hint,
-          enabledBorder: widget.controller.text.isEmpty
-              ? context.theme.inputDecorationTheme.enabledBorder
-              : EufemiaTheme.unfocusedWithTextBorder(context),
         ),
       ),
     );

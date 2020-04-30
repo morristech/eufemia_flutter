@@ -34,6 +34,8 @@ class StaticList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final typography = EufemiaTypography.of(context);
+
     return Container(
       padding: customPadding ??
           EdgeInsets.only(
@@ -56,9 +58,8 @@ class StaticList extends StatelessWidget {
                   ),
                   child: Text(
                     title,
-                    style: EufemiaTheme.subheadEmphasized.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: typography.styles.subheadEmphasized
+                        .toTextStyle(context),
                   ),
                 ),
               ),

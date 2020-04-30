@@ -33,6 +33,7 @@ class BottomSheetService {
     @required ModalAction cancel,
     @required List<ModalAction> actions,
   }) {
+    final typography = EufemiaTypography.of(context);
     if (context.cupertino) {
       showNativeBottomSheet(
         context,
@@ -46,14 +47,15 @@ class BottomSheetService {
                   isDestructiveAction: action.isDestructive,
                   child: Text(
                     action.label,
-                    style: EufemiaTheme.buttonLarge.copyWith(
-                      color: action.enabled
-                          ? (action.isDestructive
-                              ? Color(0xFFFF3B30)
-                              : EufemiaColors.seaGreenAlt)
-                          : EufemiaColors.darkGray,
-                      fontFamily: 'SF Pro Text',
-                    ),
+                    style:
+                        typography.styles.button.toTextStyle(context).copyWith(
+                              color: action.enabled
+                                  ? (action.isDestructive
+                                      ? Color(0xFFFF3B30)
+                                      : EufemiaColors.seaGreenAlt)
+                                  : EufemiaColors.darkGray,
+                              fontFamily: 'SF Pro Text',
+                            ),
                   ),
                 );
               },
@@ -66,11 +68,11 @@ class BottomSheetService {
               isDestructiveAction: cancel.isDestructive,
               child: Text(
                 cancel.label,
-                style: EufemiaTheme.buttonLarge.copyWith(
-                  color: EufemiaColors.seaGreenAlt,
-                  fontFamily: 'SF Pro Text',
-                  fontWeight: FontWeight.bold,
-                ),
+                style: typography.styles.button.toTextStyle(context).copyWith(
+                      color: EufemiaColors.seaGreenAlt,
+                      fontFamily: 'SF Pro Text',
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
             ),
           );

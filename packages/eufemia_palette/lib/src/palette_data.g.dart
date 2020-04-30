@@ -38,6 +38,7 @@ _$_EufemiaPaletteData _$_$_EufemiaPaletteDataFromJson(
     onButton: const ColorJsonConverter().fromJson(json['onButton']),
     icon: const ColorJsonConverter().fromJson(json['icon']),
     card: const ColorJsonConverter().fromJson(json['card']),
+    cardLabel: const ColorJsonConverter().fromJson(json['cardLabel']),
     cardAccent: const ColorJsonConverter().fromJson(json['cardAccent']),
     button: const ColorJsonConverter().fromJson(json['button']),
     toggle: const ColorJsonConverter().fromJson(json['toggle']),
@@ -46,6 +47,8 @@ _$_EufemiaPaletteData _$_$_EufemiaPaletteDataFromJson(
     outline: const ColorJsonConverter().fromJson(json['outline']),
     tag: const ColorJsonConverter().fromJson(json['tag']),
     onTag: const ColorJsonConverter().fromJson(json['onTag']),
+    shadow: const ColorJsonConverter().fromJson(json['shadow']),
+    canvas: const ColorJsonConverter().fromJson(json['canvas']),
   );
 }
 
@@ -82,6 +85,7 @@ Map<String, dynamic> _$_$_EufemiaPaletteDataToJson(
       'onButton': const ColorJsonConverter().toJson(instance.onButton),
       'icon': const ColorJsonConverter().toJson(instance.icon),
       'card': const ColorJsonConverter().toJson(instance.card),
+      'cardLabel': const ColorJsonConverter().toJson(instance.cardLabel),
       'cardAccent': const ColorJsonConverter().toJson(instance.cardAccent),
       'button': const ColorJsonConverter().toJson(instance.button),
       'toggle': const ColorJsonConverter().toJson(instance.toggle),
@@ -91,6 +95,8 @@ Map<String, dynamic> _$_$_EufemiaPaletteDataToJson(
       'outline': const ColorJsonConverter().toJson(instance.outline),
       'tag': const ColorJsonConverter().toJson(instance.tag),
       'onTag': const ColorJsonConverter().toJson(instance.onTag),
+      'shadow': const ColorJsonConverter().toJson(instance.shadow),
+      'canvas': const ColorJsonConverter().toJson(instance.canvas),
     };
 
 T _$enumDecode<T>(
