@@ -54,5 +54,8 @@ export 'src/bars/toolbar.dart';
 // Spinner
 export 'src/spinner/spinner.dart';
 
+// Shimmer
+export 'src/shimmer/shimmer.dart';
+
 // Graphics
 export 'src/graphics/graphics.dart';

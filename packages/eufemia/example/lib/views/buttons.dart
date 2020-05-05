@@ -14,6 +14,7 @@ class ButtonsView extends StatelessWidget {
       ),
       body: SafeArea(
         child: ScrollableList(
+          spaceBetween: EufemiaSpace.medium,
           showBorders: false,
           children: [
             PrimaryButton(
@@ -107,16 +108,7 @@ class ButtonsView extends StatelessWidget {
             FAB(
               child: Icon(EufemiaIcons.close),
             ),
-          ]
-              .map<Widget>(
-                (widget) => Center(
-                  child: Padding(
-                    child: widget,
-                    padding: const EdgeInsets.all(8.0),
-                  ),
-                ),
-              )
-              .toList(),
+          ],
         ),
       ),
     );

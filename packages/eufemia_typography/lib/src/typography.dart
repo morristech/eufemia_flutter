@@ -70,7 +70,8 @@ class _EufemiaTypographyState extends State<EufemiaTypography> {
     final value = _data ?? EufemiaTypographyData.fallback();
     return EufemiaTypographyProvider(
       value: value,
-      child: DefaultTextStyle(
+      child: AnimatedDefaultTextStyle(
+        duration: Duration(milliseconds: 160),
         style: value.styles.body.toTextStyle(context, typography: value),
         child: widget.child,
       ),

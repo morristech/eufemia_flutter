@@ -88,7 +88,8 @@ class ContentCard extends StatelessWidget {
                     bottomRight: Radius.circular(4.0),
                   ),
                 ),
-                child: DefaultTextStyle(
+                child: AnimatedDefaultTextStyle(
+                  duration: Duration(milliseconds: 160),
                   child: Center(child: label),
                   style: typography.styles.footnote.toTextStyle(context),
                 ),

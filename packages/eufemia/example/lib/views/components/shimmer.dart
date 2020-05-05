@@ -12,30 +12,25 @@ class ShimmerView extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: EufemiaColumn(
+      body: ScrollableList(
+        topPadding: true,
+        showBorders: false,
         spaceBetween: EufemiaSpace.small,
-        padding: EufemiaInsets.allSmall,
         children: [
-          MessageBox.info(
-            'Visste du at du kan sveipe på en transaksjon og utføre visse handlinger?',
+          Shimmer(
+            child: Logo(
+              LogoData.dnb,
+              height: 50,
+            ),
           ),
-          MessageBox.warning(
-            'Betalingen ble stoppet. Det var ikke nok penger på kontoen.',
-          ),
-          MessageBox.error(
-            'Kunne ikke gjennomføre betalingen fordi DNBs kjernesystemer står i brann.',
-          ),
-          MessageBox.info(
-            'Visste du at du kan sveipe på en transaksjon og utføre visse handlinger?',
-            onTap: () {},
-          ),
-          MessageBox.warning(
-            'Betalingen ble stoppet. Det var ikke nok penger på kontoen.',
-            onTap: () {},
-          ),
-          MessageBox.error(
-            'Kunne ikke gjennomføre betalingen fordi DNBs kjernesystemer står i brann.',
-            onTap: () {},
+          EufemiaRow(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spaceBetween: EufemiaSpace.small,
+            children: [
+              Shimmer(width: 24, height: 24),
+              Shimmer(height: 24, width: 200),
+            ],
           ),
         ],
       ),

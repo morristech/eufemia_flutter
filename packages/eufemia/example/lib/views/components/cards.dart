@@ -15,11 +15,11 @@ class CardsView extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: EufemiaColumn(
+        child: ScrollableList(
+          showBorders: false,
           spaceBetween: EufemiaSpace.small,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            EufemiaPadding.medium(
               child: ContentCard(
                 child: Container(
                   width: 80.0,
@@ -27,8 +27,7 @@ class CardsView extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            EufemiaPadding.medium(
               child: ContentCard(
                 child: Container(
                   width: 80.0,
@@ -44,16 +43,14 @@ class CardsView extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            EufemiaPadding.medium(
               child: ContentCard.accent(
                 context: context,
                 child: Container(
                   width: 80.0,
                   height: 80.0,
                 ),
-                label: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                label: EufemiaPadding.small(
                   child: Center(
                     child: EufemiaColumn(
                       spaceBetween: EufemiaSpace.extraSmall,

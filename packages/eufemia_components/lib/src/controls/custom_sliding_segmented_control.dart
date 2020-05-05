@@ -429,7 +429,8 @@ class _SegmentedControlState<T> extends State<CustomSlidingSegmentedControl<T>>
                 height: 1.23,
               );
 
-          final Widget child = DefaultTextStyle(
+          final Widget child = AnimatedDefaultTextStyle(
+            duration: Duration(milliseconds: 160),
             style: textStyle,
             child: Semantics(
               button: true,

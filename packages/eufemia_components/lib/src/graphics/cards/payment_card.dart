@@ -1,5 +1,6 @@
 import 'package:eufemia_components/eufemia_components.dart';
 import 'package:eufemia_palette/eufemia_palette.dart';
+import 'package:eufemia_spacing/eufemia_spacing.dart';
 import 'package:eufemia_typography/eufemia_typography.dart';
 import 'package:flippable_box/flippable_box.dart';
 import 'package:flutter/material.dart';
@@ -187,13 +188,14 @@ class PaymentCardBack extends StatelessWidget {
   ) {
     final typography = EufemiaTypography.of(context);
 
-    return DefaultTextStyle(
+    return AnimatedDefaultTextStyle(
+      duration: Duration(milliseconds: 160),
       style: TextStyle(
         color: getTextColor(widget.design),
       ),
       child: Align(
         alignment: Alignment(-0.75, 0.25),
-        child: Column(
+        child: EufemiaColumn(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
@@ -286,7 +288,8 @@ class PaymentCardBack extends StatelessWidget {
           vertical: 4.0,
           horizontal: 8.0,
         ),
-        child: DefaultTextStyle(
+        child: AnimatedDefaultTextStyle(
+          duration: Duration(milliseconds: 160),
           style: typography.styles.subhead.toTextStyle(context).copyWith(
                 color: getTextColor(widget.design),
                 fontSize: 8.0,
@@ -386,7 +389,7 @@ class PaymentCardDigits extends StatelessWidget {
                     ? Colors.white
                     : EufemiaColors.coal,
               ),
-              child: Column(
+              child: EufemiaColumn(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

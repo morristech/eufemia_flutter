@@ -52,7 +52,8 @@ class Cell extends StatelessWidget {
                       EufemiaRow(
                         children: [
                           if (hasLeading) ...{
-                            DefaultTextStyle(
+                            AnimatedDefaultTextStyle(
+                              duration: Duration(milliseconds: 160),
                               style: typography.styles.titleDemi.toTextStyle(
                                 context,
                               ),
@@ -65,7 +66,8 @@ class Cell extends StatelessWidget {
                                   ? EufemiaSpace.medium
                                   : EufemiaSpace.none,
                               sides: EufemiaSides.left,
-                              child: DefaultTextStyle(
+                              child: AnimatedDefaultTextStyle(
+                                duration: Duration(milliseconds: 160),
                                 style: typography.styles.body.toTextStyle(
                                   context,
                                 ),
@@ -79,7 +81,8 @@ class Cell extends StatelessWidget {
                         EufemiaPadding.only(
                           hasLeading ? EufemiaSpace.medium : EufemiaSpace.none,
                           sides: EufemiaSides.left,
-                          child: DefaultTextStyle(
+                          child: AnimatedDefaultTextStyle(
+                            duration: Duration(milliseconds: 160),
                             style: typography.styles.subhead.toTextStyle(
                               context,
                             ),
@@ -93,7 +96,8 @@ class Cell extends StatelessWidget {
                 if (hasTrailing) ...{
                   EufemiaRow(
                     children: [
-                      DefaultTextStyle(
+                      AnimatedDefaultTextStyle(
+                        duration: Duration(milliseconds: 160),
                         style: typography.styles.body.toTextStyle(context),
                         child: trailing,
                       ),

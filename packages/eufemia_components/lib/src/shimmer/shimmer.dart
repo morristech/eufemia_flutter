@@ -13,11 +13,14 @@ class Shimmer extends StatelessWidget {
   /// The shape of the Shimmer
   final BoxShape shape;
 
+  final Widget child;
+
   const Shimmer({
     Key key,
     this.height = 16 * 1.33,
     this.width = 128,
     this.shape = BoxShape.rectangle,
+    this.child,
   }) : super(key: key);
 
   factory Shimmer.circular(double size) {
@@ -33,17 +36,19 @@ class Shimmer extends StatelessWidget {
     final palette = EufemiaPalette.of(context);
 
     return shimmer.Shimmer.fromColors(
+      period: Duration(milliseconds: 2500),
       baseColor: palette.shimmerBase,
       highlightColor: palette.shimmerHighlight,
-      child: Container(
-        decoration: BoxDecoration(
-          shape: shape,
-          borderRadius: shape != null ? null : BorderRadius.circular(2.0),
-          color: palette.white,
-        ),
-        height: height,
-        width: width,
-      ),
+      child: child ??
+          Container(
+            decoration: BoxDecoration(
+              shape: shape,
+              borderRadius: shape != null ? null : BorderRadius.circular(2.0),
+              color: palette.white,
+            ),
+            height: height,
+            width: width,
+          ),
     );
   }
 }

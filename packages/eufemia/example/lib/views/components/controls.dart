@@ -35,8 +35,9 @@ class _ControlsViewState extends State<ControlsView> {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ScrollableList(
+        spaceBetween: EufemiaSpace.medium,
+        showBorders: false,
         children: [
           Row(
             mainAxisSize: MainAxisSize.min,

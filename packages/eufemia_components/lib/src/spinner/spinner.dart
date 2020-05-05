@@ -48,7 +48,7 @@ class _SpinnerState extends State<Spinner> with TickerProviderStateMixin {
       child: SvgPicture.asset(
         'lib/assets/icons/spinner.svg',
         package: 'eufemia',
-        color: widget.color ?? palette.secondary,
+        color: widget.color ?? palette.button,
       ),
     );
   }

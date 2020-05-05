@@ -101,7 +101,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         snack: EufemiaColors.coal,
         onSnack: EufemiaColors.white,
         shimmerBase: EufemiaColors.coal.withOpacity(.08),
-        shimmerHighlight: EufemiaColors.white.withOpacity(.8175),
+        shimmerHighlight: EufemiaColors.white.withOpacity(.18),
       );
 
   factory EufemiaPaletteData.regular() => EufemiaPaletteData(
@@ -148,7 +148,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         snack: EufemiaColors.coal,
         onSnack: EufemiaColors.mintGreen,
         shimmerBase: EufemiaColors.coal.withOpacity(.08),
-        shimmerHighlight: EufemiaColors.white.withOpacity(.8175),
+        shimmerHighlight: EufemiaColors.white.withOpacity(.18),
       );
 
   factory EufemiaPaletteData.saga() => EufemiaPaletteData(
@@ -195,7 +195,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         snack: EufemiaColors.coal,
         onSnack: EufemiaColors.saga,
         shimmerBase: EufemiaColors.coal.withOpacity(.08),
-        shimmerHighlight: EufemiaColors.white.withOpacity(.8175),
+        shimmerHighlight: EufemiaColors.white.withOpacity(.18),
       );
 
   factory EufemiaPaletteData.dark() => EufemiaPaletteData(
@@ -242,7 +242,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         snack: EufemiaColors.coal,
         onSnack: EufemiaColors.mintGreen,
         shimmerBase: EufemiaColors.white.withOpacity(.16),
-        shimmerHighlight: EufemiaColors.white.withOpacity(.8175),
+        shimmerHighlight: EufemiaColors.white.withOpacity(.18),
       );
 
   factory EufemiaPaletteData.privateBanking() => EufemiaPaletteData(
@@ -289,7 +289,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         snack: EufemiaColors.coal,
         onSnack: EufemiaColors.subtleGray,
         shimmerBase: EufemiaColors.coal.withOpacity(.08),
-        shimmerHighlight: EufemiaColors.white.withOpacity(.8175),
+        shimmerHighlight: EufemiaColors.white.withOpacity(.18),
       );
 
   factory EufemiaPaletteData.fromJson(Map<String, dynamic> json) =>

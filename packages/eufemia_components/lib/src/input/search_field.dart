@@ -176,11 +176,12 @@ class _SearchFieldState extends State<SearchField> {
                           color: palette.grey,
                         ),
                       ),
+                      contentPadding: EdgeInsets.zero,
                     ),
                   ),
                 ),
                 Expanded(
-                  flex: animation.toInt(),
+                  flex: animation.toInt() + 8,
                   child: AnimatedSwitcher(
                     duration: Duration(milliseconds: 80),
                     transitionBuilder: (child, animation) => FadeTransition(

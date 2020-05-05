@@ -23,7 +23,8 @@ class SegmentedControl<T> extends StatelessWidget {
 
     final style = typography.styles.footnoteEmphasized.toTextStyle(context);
 
-    return DefaultTextStyle(
+    return AnimatedDefaultTextStyle(
+      duration: Duration(milliseconds: 160),
       style: style,
       child: CustomSlidingSegmentedControl(
         children: addPadding(context, children, style),

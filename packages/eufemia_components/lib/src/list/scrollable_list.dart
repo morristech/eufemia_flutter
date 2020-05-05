@@ -21,6 +21,7 @@ class ScrollableList extends StatelessWidget {
   final ScrollController controller;
   final int crossAxisCount;
   final double gridChildAspectRatio;
+  final EufemiaSpace spaceBetween;
 
   const ScrollableList({
     Key key,
@@ -38,6 +39,7 @@ class ScrollableList extends StatelessWidget {
     this.adaptive = false,
     this.crossAxisCount = 2,
     this.gridChildAspectRatio,
+    this.spaceBetween,
   }) : super(key: key);
 
   @override
@@ -105,12 +107,14 @@ class ScrollableList extends StatelessWidget {
                     ),
                   ),
                 ),
-                child: Column(
+                child: EufemiaColumn(
+                  spaceBetween: spaceBetween,
                   children: children,
                 ),
               );
             } else {
-              return Column(
+              return EufemiaColumn(
+                spaceBetween: spaceBetween,
                 children: children,
               );
             }

@@ -17,6 +17,7 @@ class StaticList extends StatelessWidget {
   final bool adaptive;
   final EdgeInsets customPadding;
   final Color backgroundColor;
+  final EufemiaSpace spaceBetween;
 
   const StaticList({
     Key key,
@@ -30,6 +31,7 @@ class StaticList extends StatelessWidget {
     this.addBottomBorder = true,
     this.title,
     this.adaptive = false,
+    this.spaceBetween,
   }) : super(key: key);
 
   @override
@@ -43,7 +45,7 @@ class StaticList extends StatelessWidget {
             right: horizontalPadding ? _horizontalPadding : 0.0,
             top: topPadding ? _topPadding : 0.0,
           ),
-      child: Column(
+      child: EufemiaColumn(
         mainAxisSize: MainAxisSize.min,
         children: [
           if (title != null) ...{
@@ -94,14 +96,23 @@ class StaticList extends StatelessWidget {
 
   Widget buildList(BuildContext context) {
     if (adaptive && context.mediaQuery.size.aspectRatio > 1) {
+      final spacedChildren =
+          spaceBetween != null && spaceBetween != EufemiaSpace.none
+              ? children.spaced(spaceBetween)
+              : children;
+
       return GridView.builder(
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 3,
         ),
-        itemBuilder: (context, index) => children[index],
+        itemBuilder: (context, index) => spacedChildren[index],
       );
     } else {
-      return Column(children: children, mainAxisSize: MainAxisSize.min);
+      return EufemiaColumn(
+        children: children,
+        spaceBetween: spaceBetween,
+        mainAxisSize: MainAxisSize.min,
+      );
     }
   }
 }
