@@ -12,16 +12,12 @@ export 'package:eufemia_typography/eufemia_typography.dart';
 
 // Theme and styles
 export 'src/theme.dart';
-export 'src/utils/utils.dart';
 
-// Components
-export 'src/components/components.dart';
+// Utils
+export 'src/utils/language.dart';
 
 // Icons
 export 'src/icons/icons.dart';
-
-// Graphics
-export 'src/graphics/graphics.dart';
 
 // System
 export 'src/system/system.dart';

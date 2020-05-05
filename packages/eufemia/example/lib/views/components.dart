@@ -55,6 +55,11 @@ class ComponentView extends StatelessWidget {
             onTap: () => Navigator.pushNamed(context, Routes.messageBoxes),
             implyNavigation: true,
           ),
+          Cell(
+            title: Text('Shimmer'),
+            onTap: () => Navigator.pushNamed(context, Routes.shimmer),
+            implyNavigation: true,
+          ),
         ],
       ),
     );

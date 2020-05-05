@@ -51,9 +51,13 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
     @required @ColorJsonConverter() Color search,
     @required @ColorJsonConverter() Color onSearch,
     @required @ColorJsonConverter() Color onSearchInactive,
+    @required @ColorJsonConverter() Color snack,
+    @required @ColorJsonConverter() Color onSnack,
+    @required @ColorJsonConverter() Color shimmerBase,
+    @required @ColorJsonConverter() Color shimmerHighlight,
   }) = _EufemiaPaletteData;
 
-  factory EufemiaPaletteData.fallback() => const EufemiaPaletteData(
+  factory EufemiaPaletteData.fallback() => EufemiaPaletteData(
         brightness: Brightness.light,
         primary: EufemiaColors.white,
         onPrimary: EufemiaColors.seaGreen,
@@ -94,9 +98,13 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         search: EufemiaColors.searchField,
         onSearch: EufemiaColors.coal,
         onSearchInactive: EufemiaColors.darkGray,
+        snack: EufemiaColors.coal,
+        onSnack: EufemiaColors.white,
+        shimmerBase: EufemiaColors.coal.withOpacity(.08),
+        shimmerHighlight: EufemiaColors.white.withOpacity(.8175),
       );
 
-  factory EufemiaPaletteData.regular() => const EufemiaPaletteData(
+  factory EufemiaPaletteData.regular() => EufemiaPaletteData(
         brightness: Brightness.light,
         primary: EufemiaColors.mintGreen,
         onPrimary: EufemiaColors.seaGreen,
@@ -137,9 +145,13 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         search: EufemiaColors.searchField,
         onSearch: EufemiaColors.coal,
         onSearchInactive: EufemiaColors.darkGray,
+        snack: EufemiaColors.coal,
+        onSnack: EufemiaColors.mintGreen,
+        shimmerBase: EufemiaColors.coal.withOpacity(.08),
+        shimmerHighlight: EufemiaColors.white.withOpacity(.8175),
       );
 
-  factory EufemiaPaletteData.saga() => const EufemiaPaletteData(
+  factory EufemiaPaletteData.saga() => EufemiaPaletteData(
         brightness: Brightness.light,
         primary: EufemiaColors.sagaBackground,
         onPrimary: EufemiaColors.saga,
@@ -180,6 +192,10 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         search: EufemiaColors.searchDark,
         onSearch: EufemiaColors.white,
         onSearchInactive: EufemiaColors.whiteLight,
+        snack: EufemiaColors.coal,
+        onSnack: EufemiaColors.saga,
+        shimmerBase: EufemiaColors.coal.withOpacity(.08),
+        shimmerHighlight: EufemiaColors.white.withOpacity(.8175),
       );
 
   factory EufemiaPaletteData.dark() => EufemiaPaletteData(
@@ -223,13 +239,17 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         search: EufemiaColors.searchDark,
         onSearch: EufemiaColors.white,
         onSearchInactive: EufemiaColors.whiteLight,
+        snack: EufemiaColors.coal,
+        onSnack: EufemiaColors.mintGreen,
+        shimmerBase: EufemiaColors.white.withOpacity(.16),
+        shimmerHighlight: EufemiaColors.white.withOpacity(.8175),
       );
 
-  factory EufemiaPaletteData.privateBanking() => const EufemiaPaletteData(
+  factory EufemiaPaletteData.privateBanking() => EufemiaPaletteData(
         brightness: Brightness.light,
         primary: EufemiaColors.pbBackground,
-        secondary: EufemiaColors.lightGray,
-        onPrimary: EufemiaColors.outlineGray,
+        secondary: EufemiaColors.subtleGray,
+        onPrimary: EufemiaColors.subtleGray,
         info: EufemiaColors.seaGreen,
         onInfo: EufemiaColors.mintGreenAlt,
         onError: EufemiaColors.white,
@@ -266,6 +286,10 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         search: EufemiaColors.searchDark,
         onSearch: EufemiaColors.white,
         onSearchInactive: EufemiaColors.whiteLight,
+        snack: EufemiaColors.coal,
+        onSnack: EufemiaColors.subtleGray,
+        shimmerBase: EufemiaColors.coal.withOpacity(.08),
+        shimmerHighlight: EufemiaColors.white.withOpacity(.8175),
       );
 
   factory EufemiaPaletteData.fromJson(Map<String, dynamic> json) =>

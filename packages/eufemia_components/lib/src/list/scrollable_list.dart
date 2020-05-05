@@ -84,12 +84,7 @@ class ScrollableList extends StatelessWidget {
                   left: 16.0,
                   bottom: 8.0,
                 ),
-                child: Text(
-                  title,
-                  style: context.textTheme.subtitle1.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                child: Text(title),
               ),
             ),
           )

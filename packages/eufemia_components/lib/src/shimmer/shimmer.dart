@@ -1,5 +1,5 @@
 import 'package:eufemia/eufemia.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:shimmer/shimmer.dart' as shimmer;
 
 /// A shimmer/skeleton placeholder component
@@ -10,13 +10,15 @@ class Shimmer extends StatelessWidget {
   /// Shimmer width
   final double width;
 
-  /// The shape
+  /// The shape of the Shimmer
   final BoxShape shape;
 
-  /// Constructs a [PulsShimmer] object
-  const Shimmer(
-      {Key key, this.height = 16 * 1.33, this.width = 128, this.shape})
-      : super(key: key);
+  const Shimmer({
+    Key key,
+    this.height = 16 * 1.33,
+    this.width = 128,
+    this.shape = BoxShape.rectangle,
+  }) : super(key: key);
 
   factory Shimmer.circular(double size) {
     return Shimmer(
@@ -28,18 +30,16 @@ class Shimmer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = EufemiaPalette.of(context);
+
     return shimmer.Shimmer.fromColors(
-      baseColor: context.bright
-          ? EufemiaColors.outlineGray
-          : Colors.white.withOpacity(0.16),
-      highlightColor: context.bright
-          ? Colors.white.withOpacity(0.72)
-          : Colors.white.withOpacity(0.64),
+      baseColor: palette.shimmerBase,
+      highlightColor: palette.shimmerHighlight,
       child: Container(
         decoration: BoxDecoration(
-          shape: shape ?? BoxShape.rectangle,
+          shape: shape,
           borderRadius: shape != null ? null : BorderRadius.circular(2.0),
-          color: Colors.white,
+          color: palette.white,
         ),
         height: height,
         width: width,

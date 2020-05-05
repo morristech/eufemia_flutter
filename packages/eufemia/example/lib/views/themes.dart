@@ -49,8 +49,7 @@ class ThemesView extends StatelessWidget {
               style: EufemiaTypography.of(context)
                   .styles
                   .footnote
-                  .copyWith
-                  .call(
+                  .copyWith(
                     color: EufemiaPalette.of(context).grey,
                   )
                   .toTextStyle(context),

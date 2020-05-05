@@ -19,32 +19,49 @@ class SnackbarsView extends StatelessWidget {
             children: [
               Cell(
                 title: Text('Empty snackbar'),
-                onTap: () => Snacks.bar(title: '').show(context),
+                onTap: () => Snacks.bar(
+                  title: SizedBox(
+                    height: 16.0,
+                  ),
+                ).show(context),
               ),
               Cell(
                 title: Text('With message'),
-                onTap: () => Snacks.bar(title: 'Message').show(context),
+                onTap: () => Snacks.bar(
+                  title: Text('Message'),
+                ).show(context),
               ),
               Cell(
                 title: Text('Persistent'),
                 onTap: () => Snacks.bar(
-                  title: 'Persistent',
-                  duration: Duration(days: 365),
+                  title: Text('Persistent'),
+                  duration: Duration(days: 1),
                 ).show(context),
               ),
               Cell(
-                title: Text('With loading indicator'),
-                onTap: () =>
-                    Snacks.bar(title: 'Loading indicator', leading: Spinner())
-                        .show(context),
+                title: Text('With spinner'),
+                onTap: () => Snacks.bar(
+                  title: Text('Loading indicator'),
+                  leading: Spinner(),
+                ).show(context),
               ),
               Cell(
                 title: Text('With action'),
                 onTap: () => Snacks.bar(
-                  title: 'With action',
+                  title: Text('With action'),
                   actionLabel: 'Hide',
-                  onPressed: () => context.hideSnack(),
+                  onTap: () => context.hideSnack(),
                   duration: Duration(days: 1),
+                ).show(context),
+              ),
+              Cell(
+                title: Text('With action and spinner'),
+                onTap: () => Snacks.bar(
+                  title: Text('With action and spinner'),
+                  actionLabel: 'Hide',
+                  onTap: () => context.hideSnack(),
+                  duration: Duration(days: 1),
+                  leading: Spinner(),
                 ).show(context),
               )
             ],

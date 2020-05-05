@@ -17,6 +17,8 @@ class _CellsViewState extends State<CellsView> {
 
   @override
   Widget build(BuildContext context) {
+    final palette = EufemiaPalette.of(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Cells'),
@@ -35,10 +37,10 @@ class _CellsViewState extends State<CellsView> {
               CellAction(
                 label: 'Label',
                 icon: Icon(
-                  Icons.delete,
-                  color: Colors.white,
+                  EufemiaIcons.review_warning,
+                  color: palette.onError,
                 ),
-                color: Colors.red,
+                color: palette.error,
                 onTap: () => Scaffold.of(context).showSnackBar(
                   SnackBar(
                     content: Text('Tapped'),
@@ -76,10 +78,10 @@ class _CellsViewState extends State<CellsView> {
               CellAction(
                 label: 'Label',
                 icon: Icon(
-                  Icons.delete,
-                  color: Colors.white,
+                  EufemiaIcons.remove,
+                  color: palette.onInfo,
                 ),
-                color: EufemiaColors.seaGreenAlt,
+                color: palette.info,
                 onTap: () => Scaffold.of(context).showSnackBar(
                   SnackBar(
                     content: Text('Tapped'),
@@ -89,10 +91,10 @@ class _CellsViewState extends State<CellsView> {
               CellAction(
                 label: 'Label 2',
                 icon: Icon(
-                  Icons.add,
-                  color: Colors.white,
+                  EufemiaIcons.add,
+                  color: palette.onWarning,
                 ),
-                color: EufemiaColors.emeraldGreen,
+                color: palette.warning,
                 onTap: () => Scaffold.of(context).showSnackBar(
                   SnackBar(
                     content: Text('Tapped'),
@@ -114,6 +116,7 @@ class _CellsViewState extends State<CellsView> {
             trailing: EufemiaSwitch(
               value: value,
               onChanged: (value) => setState(() => this.value = value),
+              shrink: true,
             ),
           ),
           Material(

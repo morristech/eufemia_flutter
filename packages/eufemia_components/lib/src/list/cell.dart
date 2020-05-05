@@ -38,89 +38,85 @@ class Cell extends StatelessWidget {
         sides: EufemiaSides.left,
         child: Container(
           decoration: cellDecoration(palette),
-          child: EufemiaPadding.medium(
-            child: SafeArea(
-              bottom: false,
-              top: false,
-              child: EufemiaRow(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Flexible(
-                    child: EufemiaColumn(
-                      children: [
-                        EufemiaRow(
-                          children: [
-                            if (hasLeading) ...{
-                              DefaultTextStyle(
-                                style: typography.styles.titleDemi.toTextStyle(
-                                  context,
-                                ),
-                                child: leading,
-                              ),
-                            },
-                            Flexible(
-                              child: EufemiaPadding.only(
-                                hasLeading
-                                    ? EufemiaSpace.medium
-                                    : EufemiaSpace.none,
-                                sides: EufemiaSides.left,
-                                child: DefaultTextStyle(
-                                  style: typography.styles.body.toTextStyle(
-                                    context,
-                                  ),
-                                  child: title,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        if (hasSubtitle) ...{
-                          EufemiaPadding.only(
-                            hasLeading
-                                ? EufemiaSpace.medium
-                                : EufemiaSpace.none,
-                            sides: EufemiaSides.left,
-                            child: DefaultTextStyle(
-                              style: typography.styles.subhead.toTextStyle(
+          child: SafeArea(
+            bottom: false,
+            top: false,
+            child: EufemiaRow(
+              padding: EufemiaInsets.allMedium,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  child: EufemiaColumn(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      EufemiaRow(
+                        children: [
+                          if (hasLeading) ...{
+                            DefaultTextStyle(
+                              style: typography.styles.titleDemi.toTextStyle(
                                 context,
                               ),
-                              child: subtitle,
+                              child: leading,
+                            ),
+                          },
+                          Flexible(
+                            child: EufemiaPadding.only(
+                              hasLeading
+                                  ? EufemiaSpace.medium
+                                  : EufemiaSpace.none,
+                              sides: EufemiaSides.left,
+                              child: DefaultTextStyle(
+                                style: typography.styles.body.toTextStyle(
+                                  context,
+                                ),
+                                child: title,
+                              ),
                             ),
                           ),
-                        }
-                      ],
-                    ),
-                  ),
-                  if (hasTrailing) ...{
-                    EufemiaRow(
-                      children: [
-                        DefaultTextStyle(
-                          style: typography.styles.body.toTextStyle(
-                            context,
+                        ],
+                      ),
+                      if (hasSubtitle) ...{
+                        EufemiaPadding.only(
+                          hasLeading ? EufemiaSpace.medium : EufemiaSpace.none,
+                          sides: EufemiaSides.left,
+                          child: DefaultTextStyle(
+                            style: typography.styles.subhead.toTextStyle(
+                              context,
+                            ),
+                            child: subtitle,
                           ),
-                          child: trailing,
                         ),
-                        if (trailingIsText) ...{
-                          EufemiaPadding.small(),
-                        },
-                        if (implyNavigation) ...{
-                          Icon(
-                            EufemiaIcons.chevron,
-                            size: 12.0,
-                            color: palette.grey,
-                          ),
-                        }
-                      ],
-                    ),
-                  } else if (implyNavigation) ...{
-                    Icon(
-                      EufemiaIcons.chevron,
-                      size: 12.0,
-                      color: palette.light,
-                    ),
-                  }
-                ],
-              ),
+                      }
+                    ],
+                  ),
+                ),
+                if (hasTrailing) ...{
+                  EufemiaRow(
+                    children: [
+                      DefaultTextStyle(
+                        style: typography.styles.body.toTextStyle(context),
+                        child: trailing,
+                      ),
+                      if (trailingIsText) ...{
+                        EufemiaPadding.small(),
+                      },
+                      if (implyNavigation) ...{
+                        Icon(
+                          EufemiaIcons.chevron,
+                          size: 12.0,
+                          color: palette.grey,
+                        ),
+                      }
+                    ],
+                  ),
+                } else if (implyNavigation) ...{
+                  Icon(
+                    EufemiaIcons.chevron,
+                    size: 12.0,
+                    color: palette.light,
+                  ),
+                }
+              ],
             ),
           ),
         ),

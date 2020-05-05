@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:eufemia/eufemia.dart';
-
-const double _logoHeight = 24.0;
 
 /// Contains asset paths to logo data
 class LogoData {
@@ -30,18 +28,26 @@ class Logo extends StatelessWidget {
   final double height;
   final BoxFit fit;
   final Color color;
+  final bool themed;
 
   const Logo(
     this.logo, {
     Key key,
     this.width,
-    this.height = _logoHeight,
+    this.height = 24.0,
     this.fit = BoxFit.contain,
     this.color,
+    this.themed = false,
   }) : super(key: key);
+
+  factory Logo.themed(String logo) {
+    return Logo(logo, themed: true);
+  }
 
   @override
   Widget build(BuildContext context) {
+    final palette = EufemiaPalette.of(context);
+
     return SvgPicture.asset(
       logo,
       width: width,
@@ -49,7 +55,7 @@ class Logo extends StatelessWidget {
       fit: fit,
       alignment: Alignment.center,
       package: 'eufemia',
-      color: color ?? (context.bright ? null : Colors.white),
+      color: themed ? palette.icon : color,
     );
   }
 }

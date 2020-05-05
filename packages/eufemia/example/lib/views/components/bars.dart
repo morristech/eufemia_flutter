@@ -7,18 +7,27 @@ class BarsView extends StatefulWidget {
 }
 
 class _BarsViewState extends State<BarsView> with TickerProviderStateMixin {
-  TabController _tabController1;
-  TabController _tabController2;
-  TabController _tabController3;
-  TabController _tabController4;
+  TabController tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController1 = TabController(vsync: this, length: 4);
-    _tabController2 = TabController(vsync: this, length: 4);
-    _tabController3 = TabController(vsync: this, length: 4);
-    _tabController4 = TabController(vsync: this, length: 4);
+    tabController = TabController(vsync: this, length: 4);
+  }
+
+  List<Widget> get tabs {
+    final typography = EufemiaTypography.of(context);
+
+    return List.generate(4, (index) {
+      return EufemiaPadding.medium(
+        child: Center(
+          child: EufemiaText(
+            'Tab ${index + 1}',
+            style: typography.styles.titleMediumEmphasized,
+          ),
+        ),
+      );
+    });
   }
 
   @override
@@ -34,6 +43,38 @@ class _BarsViewState extends State<BarsView> with TickerProviderStateMixin {
       body: ScrollableList(
         showBorders: false,
         children: [
+          Container(
+            height: 100,
+            child: TabBarView(
+              children: tabs,
+              controller: tabController,
+            ),
+          ),
+          BottomBar(
+            controller: tabController,
+            inactive: [
+              Icon(EufemiaIcons.p2p),
+              Icon(EufemiaIcons.p2p),
+              Icon(EufemiaIcons.p2p),
+              Icon(EufemiaIcons.p2p),
+            ],
+            active: [
+              Icon(EufemiaIcons.p2p),
+              Icon(EufemiaIcons.p2p),
+              Icon(EufemiaIcons.p2p),
+              Icon(EufemiaIcons.p2p),
+            ],
+            labels: [
+              Text('Label'),
+              Text('Label'),
+              Text('Label'),
+              Text('Label'),
+            ],
+            onSelected: (index) {
+              tabController.animateTo(index);
+              setState(() {});
+            },
+          ),
           Toolbar(
             children: [
               Icon(EufemiaIcons.pencil),
@@ -67,42 +108,6 @@ class _BarsViewState extends State<BarsView> with TickerProviderStateMixin {
               Icon(EufemiaIcons.filter),
               Icon(EufemiaIcons.download),
               Icon(EufemiaIcons.pencil),
-            ],
-          ),
-          _createBottomBar(_tabController1, TabTheme.light),
-          _createBottomBar(_tabController2, TabTheme.dark),
-          _createBottomBar(_tabController3, TabTheme.privateBanking),
-          _createBottomBar(_tabController4, TabTheme.saga),
-        ],
-      ),
-    );
-  }
-
-  Widget _createBottomBar(TabController controller, TabTheme theme) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 16.0),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 50,
-            child: TabBarView(
-              controller: controller,
-              children: [1, 2, 3, 4]
-                  .map((i) => Center(
-                        child: Text('Tab $i'),
-                      ))
-                  .toList(),
-            ),
-          ),
-          BottomTabBar(
-            controller: controller,
-            bottomSafeArea: false,
-            theme: theme,
-            items: [
-              TabItemData(icon: TabIcon.house, label: 'Home'),
-              TabItemData(icon: TabIcon.wallet, label: 'Payments'),
-              TabItemData(icon: TabIcon.coins, label: 'Funds'),
-              TabItemData(icon: TabIcon.person, label: 'Me'),
             ],
           ),
         ],

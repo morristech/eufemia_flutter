@@ -45,9 +45,7 @@ class EufemiaTab extends StatelessWidget {
           child: Center(
             child: DefaultTextStyle(
               child: Text(label),
-              style: style.copyWith
-                  .call(color: palette.toggle)
-                  .toTextStyle(context),
+              style: style.copyWith(color: palette.toggle).toTextStyle(context),
             ),
           ),
         ),

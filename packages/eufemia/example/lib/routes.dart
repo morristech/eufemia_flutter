@@ -18,4 +18,5 @@ class Routes {
   static const graphics_cards = '/graphics/cards';
   static const system = '/system';
   static const messageBoxes = '/components/messageBoxes';
+  static const shimmer = '/components/shimmer';
 }

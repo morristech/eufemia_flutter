@@ -53,6 +53,11 @@ _$_EufemiaPaletteData _$_$_EufemiaPaletteDataFromJson(
     onSearch: const ColorJsonConverter().fromJson(json['onSearch']),
     onSearchInactive:
         const ColorJsonConverter().fromJson(json['onSearchInactive']),
+    snack: const ColorJsonConverter().fromJson(json['snack']),
+    onSnack: const ColorJsonConverter().fromJson(json['onSnack']),
+    shimmerBase: const ColorJsonConverter().fromJson(json['shimmerBase']),
+    shimmerHighlight:
+        const ColorJsonConverter().fromJson(json['shimmerHighlight']),
   );
 }
 
@@ -105,6 +110,11 @@ Map<String, dynamic> _$_$_EufemiaPaletteDataToJson(
       'onSearch': const ColorJsonConverter().toJson(instance.onSearch),
       'onSearchInactive':
           const ColorJsonConverter().toJson(instance.onSearchInactive),
+      'snack': const ColorJsonConverter().toJson(instance.snack),
+      'onSnack': const ColorJsonConverter().toJson(instance.onSnack),
+      'shimmerBase': const ColorJsonConverter().toJson(instance.shimmerBase),
+      'shimmerHighlight':
+          const ColorJsonConverter().toJson(instance.shimmerHighlight),
     };
 
 T _$enumDecode<T>(

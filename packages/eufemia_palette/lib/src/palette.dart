@@ -161,9 +161,9 @@ class _EufemiaPaletteState extends State<EufemiaPalette> {
   @override
   Widget build(BuildContext context) {
     return EufemiaPaletteProvider(
-      value: (_data ?? EufemiaPaletteData.fallback()).copyWith.call(
-            brightness: MediaQuery.of(context).platformBrightness,
-          ),
+      value: (_data ?? EufemiaPaletteData.fallback()).copyWith(
+        brightness: MediaQuery.of(context).platformBrightness,
+      ),
       child: IconTheme(
         data: IconThemeData(
           color: _data?.icon ?? EufemiaPaletteData.fallback().icon,

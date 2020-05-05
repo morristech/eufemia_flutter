@@ -15,8 +15,8 @@ class Tag extends StatelessWidget {
   Widget build(BuildContext context) {
     final palette = EufemiaPalette.of(context);
     final typography = EufemiaTypography.of(context);
-    final style = typography.styles.footnote.copyWith
-        .call(color: palette.onTag)
+    final style = typography.styles.footnote
+        .copyWith(color: palette.onTag)
         .toTextStyle(context);
 
     return Container(

@@ -94,8 +94,8 @@ class _InputFieldState extends State<InputField> {
         hintText: widget.hintText,
         hintStyle: style.copyWith(color: palette.grey),
         errorText: widget.errorText,
-        errorStyle: typography.styles.subhead.copyWith
-            .call(color: palette.error)
+        errorStyle: typography.styles.subhead
+            .copyWith(color: palette.error)
             .toTextStyle(context),
         suffixIcon: GestureDetector(
           onTap: widget.controller.clear,
@@ -126,8 +126,8 @@ class _InputFieldState extends State<InputField> {
     if (maxLength != null && widget.counter) {
       return Text(
         '$currentLength/$maxLength',
-        style: typography.styles.footnote.copyWith
-            .call(color: palette.grey)
+        style: typography.styles.footnote
+            .copyWith(color: palette.grey)
             .toTextStyle(context),
       );
     }

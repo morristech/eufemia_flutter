@@ -6,47 +6,49 @@ class Spinner extends StatefulWidget {
   final Color color;
 
   const Spinner({Key key, this.color}) : super(key: key);
+
   @override
   _SpinnerState createState() => _SpinnerState();
 }
 
 class _SpinnerState extends State<Spinner> with TickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<double> _animation;
+  AnimationController controller;
+  Animation<double> animation;
 
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
+    controller = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 1250),
     );
 
-    _animation = Tween<double>(begin: 0, end: 1).animate(_controller);
+    animation = Tween<double>(begin: 0, end: 1).animate(controller);
 
-    _controller.forward();
+    controller.forward();
 
-    _controller.addStatusListener((status) {
+    controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        _controller.repeat();
+        controller.repeat();
       }
     });
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final palette = EufemiaPalette.of(context);
     return RotationTransition(
-      turns: _animation,
+      turns: animation,
       child: SvgPicture.asset(
         'lib/assets/icons/spinner.svg',
         package: 'eufemia',
-        color: widget.color ?? context.theme.accentColor,
+        color: widget.color ?? palette.secondary,
       ),
     );
   }

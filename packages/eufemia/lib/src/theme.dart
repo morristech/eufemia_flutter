@@ -1,4 +1,5 @@
 import 'package:eufemia/eufemia.dart';
+import 'package:eufemia/src/splash_factory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -28,12 +29,25 @@ class EufemiaThemeAdapter {
       canvasColor: palette.canvas,
       cursorColor: palette.secondary,
       textSelectionColor: palette.accent,
+      snackBarTheme: SnackBarThemeData(
+        elevation: 1,
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(2.0),
+        ),
+        backgroundColor: palette.snack,
+        actionTextColor: palette.onSnack,
+        contentTextStyle: typography.styles.subhead
+            .copyWith(color: palette.white)
+            .toTextStyle(context),
+      ),
       iconTheme: IconThemeData(
         color: palette.icon,
         size: 24.0,
       ),
       appBarTheme: AppBarTheme(
         color: palette.primary,
+        elevation: 0,
         iconTheme: IconThemeData(
           color: palette.onPrimary,
         ),
@@ -41,6 +55,7 @@ class EufemiaThemeAdapter {
           color: palette.onPrimary,
         ),
       ),
+      splashFactory: NoSplashFactory(),
     );
   }
 

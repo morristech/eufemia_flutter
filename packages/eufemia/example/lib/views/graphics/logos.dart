@@ -15,31 +15,49 @@ class LogosView extends StatelessWidget {
       body: ScrollableList(
         showBorders: false,
         children: [
-          Wrap(
-            direction: Axis.horizontal,
+          EufemiaColumn(
             children: [
-              Logo(LogoData.dnb),
-              Logo(LogoData.visa),
-              Logo(LogoData.mastercard),
-              Logo(LogoData.hbo),
-              Logo(LogoData.netflix),
-              Logo(LogoData.ruter),
-              Logo(LogoData.spotify),
-              Logo(LogoData.face_id),
-              Logo(LogoData.touch_id),
-              Logo(LogoData.bank_id_mobile),
-              Logo(LogoData.bank_id),
-              Logo(LogoData.digipass),
-              Logo(LogoData.pin),
-              Logo(LogoData.skyss),
-            ]
-                .map(
-                  (i) => Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: i,
-                  ),
-                )
-                .toList(),
+              EufemiaRow(
+                padding: EufemiaInsets.allMedium,
+                spaceBetween: EufemiaSpace.medium,
+                children: [
+                  Logo(LogoData.dnb),
+                  Logo(LogoData.visa),
+                  Logo(LogoData.mastercard),
+                  Logo(LogoData.hbo),
+                  Logo(LogoData.netflix),
+                  Logo(LogoData.ruter),
+                  Logo(LogoData.spotify),
+                  Logo(LogoData.face_id),
+                  Logo(LogoData.touch_id),
+                  Logo(LogoData.bank_id_mobile),
+                  Logo(LogoData.bank_id),
+                  Logo(LogoData.digipass),
+                  Logo(LogoData.pin),
+                  Logo(LogoData.skyss),
+                ],
+              ),
+              EufemiaRow(
+                padding: EufemiaInsets.allMedium,
+                spaceBetween: EufemiaSpace.medium,
+                children: [
+                  Logo.themed(LogoData.dnb),
+                  Logo.themed(LogoData.visa),
+                  Logo.themed(LogoData.mastercard),
+                  Logo.themed(LogoData.hbo),
+                  Logo.themed(LogoData.netflix),
+                  Logo.themed(LogoData.ruter),
+                  Logo.themed(LogoData.spotify),
+                  Logo.themed(LogoData.face_id),
+                  Logo.themed(LogoData.touch_id),
+                  Logo.themed(LogoData.bank_id_mobile),
+                  Logo.themed(LogoData.bank_id),
+                  Logo.themed(LogoData.digipass),
+                  Logo.themed(LogoData.pin),
+                  Logo.themed(LogoData.skyss),
+                ],
+              ),
+            ],
           )
         ],
       ),

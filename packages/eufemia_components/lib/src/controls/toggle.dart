@@ -24,8 +24,8 @@ class Toggle extends StatelessWidget {
     final palette = EufemiaPalette.of(context);
     final typography = EufemiaTypography.of(context);
 
-    final style = typography.styles.button.copyWith
-        .call(color: selected ? palette.onToggle : palette.toggle)
+    final style = typography.styles.button
+        .copyWith(color: selected ? palette.onToggle : palette.toggle)
         .toTextStyle(context);
 
     return GestureDetector(

@@ -119,8 +119,8 @@ class _SearchFieldState extends State<SearchField> {
     final typography = EufemiaTypography.of(context);
     final spacing = EufemiaSpacing.of(context);
 
-    final style = typography.styles.body.copyWith
-        .call(color: widget.textColor ?? palette.onSearch)
+    final style = typography.styles.body
+        .copyWith(color: widget.textColor ?? palette.onSearch)
         .toTextStyle(context);
 
     final hintStyle = style.copyWith(
@@ -206,8 +206,8 @@ class _SearchFieldState extends State<SearchField> {
       return GestureDetector(
         child: Text(
           widget.cancelText,
-          style: typography.styles.button.copyWith
-              .call(
+          style: typography.styles.button
+              .copyWith(
                 color: widget.buttonColor ??
                     widget.accentColor ??
                     palette.secondary,

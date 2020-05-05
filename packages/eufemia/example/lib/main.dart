@@ -9,6 +9,7 @@ import 'package:eufemia_example/views/components/cells.dart';
 import 'package:eufemia_example/views/components/input_fields.dart';
 import 'package:eufemia_example/views/components/controls.dart';
 import 'package:eufemia_example/views/components/message_boxes.dart';
+import 'package:eufemia_example/views/components/shimmer.dart';
 import 'package:eufemia_example/views/components/snackbars.dart';
 import 'package:eufemia_example/views/components/spinner.dart';
 import 'package:eufemia_example/views/graphics/flags.dart';
@@ -38,7 +39,6 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Eufemia',
           theme: adapter.theme,
-          darkTheme: adapter.theme,
           home: HomeView(),
           routes: {
             Routes.components: (context) => ComponentView(),
@@ -58,6 +58,7 @@ class MyApp extends StatelessWidget {
             Routes.spinner: (context) => SpinnerView(),
             Routes.messageBoxes: (context) => MessageBoxesView(),
             Routes.themes: (context) => ThemesView(),
+            Routes.shimmer: (context) => ShimmerView(),
           },
         );
       }),

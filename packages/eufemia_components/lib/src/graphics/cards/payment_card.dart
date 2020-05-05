@@ -1,13 +1,9 @@
-import 'package:eufemia/eufemia.dart';
-import 'package:eufemia/src/graphics/cards/card_base.dart';
-import 'package:eufemia/src/graphics/cards/card_design.dart';
-import 'package:eufemia/src/graphics/cards/card_logo.dart';
-import 'package:eufemia/src/graphics/cards/card_preset.dart';
-import 'package:eufemia/src/graphics/cards/card_program.dart';
-import 'package:eufemia/src/graphics/cards/card_type.dart';
+import 'package:eufemia_components/eufemia_components.dart';
+import 'package:eufemia_palette/eufemia_palette.dart';
+import 'package:eufemia_typography/eufemia_typography.dart';
 import 'package:flippable_box/flippable_box.dart';
-
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 const designBase = 'lib/assets/graphics/cards';
@@ -31,7 +27,7 @@ class PaymentCardFrontContent {
     this.program,
     this.type,
     this.preset,
-    this.logoColor = Colors.white,
+    this.logoColor = EufemiaColors.white,
     this.digits = 1358,
     this.digitsText = 'KORTNUMMER',
     this.logoAlignment = Alignment.topLeft,
@@ -139,13 +135,14 @@ class _PaymentCardState extends State<PaymentCard> {
   }
 
   BoxDecoration buildBoxDecoration() {
+    final palette = EufemiaPalette.of(context);
     return BoxDecoration(
       boxShadow: widget.shadow
           ? [
               BoxShadow(
-                color: context.bright
+                color: palette.bright
                     ? Color.fromRGBO(51, 51, 51, 0.08).withOpacity(0.08)
-                    : Colors.white.withOpacity(0.1),
+                    : palette.white.withOpacity(0.1),
                 blurRadius: 16.0,
                 spreadRadius: 2.0,
               ),
@@ -188,6 +185,8 @@ class PaymentCardBack extends StatelessWidget {
     PaymentCardBackContent content,
     BoxConstraints constraints,
   ) {
+    final typography = EufemiaTypography.of(context);
+
     return DefaultTextStyle(
       style: TextStyle(
         color: getTextColor(widget.design),
@@ -233,9 +232,9 @@ class PaymentCardBack extends StatelessWidget {
                   children: [
                     Text(
                       'Kontonavn',
-                      style: context.textTheme.bodyText1.copyWith(
-                        color: getTextColor(widget.design),
-                      ),
+                      style: typography.styles.body
+                          .copyWith(color: getTextColor(widget.design))
+                          .toTextStyle(context),
                     ),
                     Text(content?.accountName ?? 'Brukskonto'),
                   ],
@@ -247,9 +246,9 @@ class PaymentCardBack extends StatelessWidget {
                   children: [
                     Text(
                       'Kontonr.',
-                      style: context.textTheme.bodyText1.copyWith(
-                        color: getTextColor(widget.design),
-                      ),
+                      style: typography.styles.body
+                          .copyWith(color: getTextColor(widget.design))
+                          .toTextStyle(context),
                     ),
                     Text(content?.accountNumber ?? '1214 49 49534'),
                   ],
@@ -279,6 +278,7 @@ class PaymentCardBack extends StatelessWidget {
   }
 
   Align buildBackSupportDetails(BuildContext context) {
+    final typography = EufemiaTypography.of(context);
     return Align(
       alignment: Alignment.topCenter,
       child: Padding(
@@ -287,11 +287,11 @@ class PaymentCardBack extends StatelessWidget {
           horizontal: 8.0,
         ),
         child: DefaultTextStyle(
-          style: context.textTheme.overline.copyWith(
-            color: getTextColor(widget.design),
-            fontSize: 8.0,
-            fontWeight: FontWeight.w300,
-          ),
+          style: typography.styles.subhead.toTextStyle(context).copyWith(
+                color: getTextColor(widget.design),
+                fontSize: 8.0,
+                fontWeight: FontWeight.w300,
+              ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[

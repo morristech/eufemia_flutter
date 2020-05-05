@@ -17,10 +17,7 @@ class IconsView extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
-            child: Text(
-              'Icons',
-              style: context.textTheme.bodyText1,
-            ),
+            child: Text('Icons'),
           ),
           Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
@@ -159,10 +156,7 @@ class IconsView extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
-            child: Text(
-              'Icons w/ color',
-              style: context.textTheme.bodyText1,
-            ),
+            child: Text('Icons w/ color'),
           ),
           Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
@@ -195,10 +189,7 @@ class IconsView extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
-            child: Text(
-              'Other',
-              style: context.textTheme.bodyText1,
-            ),
+            child: Text('Other'),
           ),
           Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,

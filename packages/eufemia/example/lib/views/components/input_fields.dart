@@ -74,7 +74,7 @@ class _InputFieldsViewState extends State<InputFieldsView> {
               ),
               StaticList(
                 topPadding: true,
-                title: 'Input field with validation',
+                title: 'Input field with validation (empty)',
                 children: [
                   EufemiaRow(
                     spaceBetween: EufemiaSpace.medium,
