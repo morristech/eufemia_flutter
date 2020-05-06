@@ -180,17 +180,19 @@ class _SearchFieldState extends State<SearchField> {
                     ),
                   ),
                 ),
-                Expanded(
-                  flex: animation.toInt() + 8,
-                  child: AnimatedSwitcher(
-                    duration: Duration(milliseconds: 80),
-                    transitionBuilder: (child, animation) => FadeTransition(
-                      opacity: animation,
-                      child: child,
+                if (context.cupertino && focusNode.hasFocus) ...{
+                  Expanded(
+                    flex: animation.toInt() + 8,
+                    child: AnimatedSwitcher(
+                      duration: Duration(milliseconds: 80),
+                      transitionBuilder: (child, animation) => FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      ),
+                      child: cancelButton,
                     ),
-                    child: cancelButton,
                   ),
-                ),
+                },
               ],
             );
           },
@@ -223,7 +225,7 @@ class _SearchFieldState extends State<SearchField> {
         },
       );
     }
-    return Container();
+    return null;
   }
 
   bool get showCancelButton => context.cupertino && focusNode.hasFocus;
@@ -241,18 +243,30 @@ class _SearchFieldState extends State<SearchField> {
     var icon;
     if (context.cupertino) {
       if (focusNode.hasFocus) {
-        icon = Icon(EufemiaIcons.loupe,
-            color: widget.accentColor ?? palette.secondary);
+        icon = Icon(
+          EufemiaIcons.loupe,
+          color: widget.accentColor ?? palette.secondary,
+        );
       } else {
-        icon = Icon(EufemiaIcons.loupe, color: palette.grey);
+        icon = Icon(
+          EufemiaIcons.loupe,
+          color: palette.grey,
+        );
       }
     } else {
       if (focusNode.hasFocus) {
-        icon = Icon(EufemiaIcons.back_arrow,
-            color: widget.accentColor ?? palette.secondary);
+        icon = GestureDetector(
+          onTap: focusNode.unfocus,
+          child: Icon(
+            EufemiaIcons.back_arrow,
+            color: widget.accentColor ?? palette.secondary,
+          ),
+        );
       } else {
-        icon = Icon(EufemiaIcons.loupe,
-            color: widget.accentColor ?? palette.secondary);
+        icon = Icon(
+          EufemiaIcons.loupe,
+          color: widget.accentColor ?? palette.secondary,
+        );
       }
     }
 

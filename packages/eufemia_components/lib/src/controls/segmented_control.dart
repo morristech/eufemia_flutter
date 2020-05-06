@@ -30,10 +30,6 @@ class SegmentedControl<T> extends StatelessWidget {
         children: addPadding(context, children, style),
         onValueChanged: onValueChanged,
         groupValue: groupValue,
-        padding: EdgeInsets.symmetric(
-          vertical: 2.0,
-          horizontal: 3.0,
-        ),
         backgroundColor: palette.outline,
         thumbColor: palette.card,
         thumbRadius: context.cupertino ? 6.93 : 100.0,
@@ -60,7 +56,7 @@ class SegmentedControl<T> extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(
               vertical: context.cupertino ? 6 : 8.0,
-              horizontal: 32.0 + (context.cupertino ? 8.0 : 16.0),
+              horizontal: context.cupertino ? 8 : 16,
             ),
             child: Container(
               width: size.width,

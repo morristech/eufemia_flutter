@@ -7,22 +7,24 @@ class ControlsView extends StatefulWidget {
 }
 
 class _ControlsViewState extends State<ControlsView> {
-  int _tabValue;
-  bool _firstSwitchValue;
-  bool _secondSwitchValue;
-  double _sliderValue;
-  bool _firstToggleValue;
-  bool _secondToggleValue;
+  int firstTabValue;
+  int secondTabValue;
+  bool firstSwitchValue;
+  bool secondSwitchValue;
+  double sliderValue;
+  bool firstToggleValue;
+  bool secondToggleValue;
 
   @override
   void initState() {
     super.initState();
-    _tabValue = 0;
-    _firstSwitchValue = true;
-    _secondSwitchValue = false;
-    _sliderValue = 0.5;
-    _firstToggleValue = true;
-    _secondToggleValue = false;
+    firstTabValue = 0;
+    secondTabValue = 0;
+    firstSwitchValue = true;
+    secondSwitchValue = false;
+    sliderValue = 0.5;
+    firstToggleValue = true;
+    secondToggleValue = false;
   }
 
   @override
@@ -36,87 +38,79 @@ class _ControlsViewState extends State<ControlsView> {
         ),
       ),
       body: ScrollableList(
+        padding: EufemiaInsets.allMedium,
         spaceBetween: EufemiaSpace.medium,
         showBorders: false,
         children: [
-          Row(
+          EufemiaRow(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               EufemiaTab(
                 label: 'Søknad',
-                active: _tabValue == 0,
-                onSelected: () => _setTab(0),
+                active: firstTabValue == 0,
+                onSelected: () => setTab(0),
               ),
               EufemiaTab(
                 label: 'Tab',
-                active: _tabValue == 1,
-                onSelected: () => _setTab(1),
+                active: firstTabValue == 1,
+                onSelected: () => setTab(1),
               ),
               EufemiaTab(
                 label: 'Tab',
-                active: _tabValue == 2,
-                onSelected: () => _setTab(2),
+                active: firstTabValue == 2,
+                onSelected: () => setTab(2),
               )
             ],
           ),
-          Row(
+          EufemiaRow(
             children: [
               EufemiaSwitch(
-                value: _firstSwitchValue,
-                onChanged: (value) => setState(() => _firstSwitchValue = value),
+                value: firstSwitchValue,
+                onChanged: (value) => setState(() => firstSwitchValue = value),
               ),
               EufemiaSwitch(
-                value: _secondSwitchValue,
-                onChanged: (value) =>
-                    setState(() => _secondSwitchValue = value),
+                value: secondSwitchValue,
+                onChanged: (value) => setState(() => secondSwitchValue = value),
               ),
             ],
           ),
-          Row(
+          EufemiaRow(
             children: [
               Checkmark(
-                value: _firstToggleValue,
-                onChanged: (value) => setState(() => _firstToggleValue = value),
+                value: firstToggleValue,
+                onChanged: (value) => setState(() => firstToggleValue = value),
               ),
               SizedBox(width: 8),
               Checkmark(
-                value: _secondToggleValue,
-                onChanged: (value) =>
-                    setState(() => _secondToggleValue = value),
+                value: secondToggleValue,
+                onChanged: (value) => setState(() => secondToggleValue = value),
               ),
             ],
           ),
           EufemiaSlider(
-            value: _sliderValue,
-            onChanged: (value) => setState(() => _sliderValue = value),
+            value: sliderValue,
+            onChanged: (value) => setState(() => sliderValue = value),
           ),
           Tag(
             label: '#tagname',
             onDelete: () {},
           ),
-          Row(
+          EufemiaRow(
             children: [
               Toggle(
                 label: 'Toggle label',
-                selected: _firstToggleValue,
-                onChange: (value) => setState(() => _firstToggleValue = value),
+                selected: firstToggleValue,
+                onChange: (value) => setState(() => firstToggleValue = value),
               ),
               Toggle(
                 label: 'Toggle label',
-                selected: _secondToggleValue,
-                onChange: (value) => setState(() => _secondToggleValue = value),
+                selected: secondToggleValue,
+                onChange: (value) => setState(() => secondToggleValue = value),
               )
-            ]
-                .map(
-                  (i) => Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: i,
-                  ),
-                )
-                .toList(),
+            ],
           ),
-          Row(
+          EufemiaRow(
             children: [
               PageIndicator(selected: false),
               SizedBox(width: 4),
@@ -131,17 +125,23 @@ class _ControlsViewState extends State<ControlsView> {
               1: 'Label',
               2: 'Label',
             },
-            onValueChanged: (value) => setState(() => _tabValue = value),
-            groupValue: _tabValue,
+            onValueChanged: (value) => setState(() => firstTabValue = value),
+            groupValue: firstTabValue,
           ),
-        ]
-            .map((i) => Padding(padding: const EdgeInsets.all(8.0), child: i))
-            .toList(),
+          SegmentedControl<int>(
+            children: {
+              0: 'Label',
+              1: 'Label',
+            },
+            onValueChanged: (value) => setState(() => secondTabValue = value),
+            groupValue: secondTabValue,
+          ),
+        ],
       ),
     );
   }
 
-  void _setTab(int index) {
-    setState(() => _tabValue = index);
+  void setTab(int index) {
+    setState(() => firstTabValue = index);
   }
 }

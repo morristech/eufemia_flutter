@@ -18,6 +18,7 @@ class StaticList extends StatelessWidget {
   final EdgeInsets customPadding;
   final Color backgroundColor;
   final EufemiaSpace spaceBetween;
+  final EufemiaInsets padding;
 
   const StaticList({
     Key key,
@@ -32,6 +33,7 @@ class StaticList extends StatelessWidget {
     this.title,
     this.adaptive = false,
     this.spaceBetween,
+    this.padding,
   }) : super(key: key);
 
   @override
@@ -111,6 +113,7 @@ class StaticList extends StatelessWidget {
       return EufemiaColumn(
         children: children,
         spaceBetween: spaceBetween,
+        padding: padding,
         mainAxisSize: MainAxisSize.min,
       );
     }
