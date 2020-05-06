@@ -28,7 +28,6 @@ class _CellsViewState extends State<CellsView> {
         ),
       ),
       body: ScrollableList(
-        topPadding: false,
         children: [
           Cell(
             title: Text('Master cell'),

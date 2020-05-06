@@ -15,6 +15,7 @@ class ButtonsView extends StatelessWidget {
       body: SafeArea(
         child: ScrollableList(
           spaceBetween: EufemiaSpace.medium,
+          padding: EufemiaInsets.allMedium,
           showBorders: false,
           children: [
             PrimaryButton(

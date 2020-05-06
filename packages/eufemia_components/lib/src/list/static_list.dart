@@ -1,17 +1,9 @@
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
-const double _borderWidth = 0.5;
-const double _horizontalPadding = 16.0;
-const double _topPadding = 32.0;
-final Color _borderColor = EufemiaColors.softGray;
-
 class StaticList extends StatelessWidget {
   final String title;
   final List<Widget> children;
-  final bool topPadding;
-  final bool bottomPadding;
-  final bool horizontalPadding;
   final bool showBorders;
   final bool addBottomBorder;
   final bool adaptive;
@@ -23,9 +15,6 @@ class StaticList extends StatelessWidget {
   const StaticList({
     Key key,
     this.children,
-    this.topPadding = false,
-    this.bottomPadding = false,
-    this.horizontalPadding = false,
     this.customPadding,
     this.showBorders = true,
     this.backgroundColor,
@@ -39,60 +28,50 @@ class StaticList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final typography = EufemiaTypography.of(context);
+    final palette = EufemiaPalette.of(context);
 
-    return Container(
-      padding: customPadding ??
-          EdgeInsets.only(
-            left: horizontalPadding ? _horizontalPadding : 0.0,
-            right: horizontalPadding ? _horizontalPadding : 0.0,
-            top: topPadding ? _topPadding : 0.0,
+    return EufemiaColumn(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        if (title != null) ...{
+          SafeArea(
+            bottom: false,
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 16.0,
+                  bottom: 8.0,
+                ),
+                child: Text(
+                  title,
+                  style:
+                      typography.styles.subheadEmphasized.toTextStyle(context),
+                ),
+              ),
+            ),
           ),
-      child: EufemiaColumn(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (title != null) ...{
-            SafeArea(
-              bottom: false,
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 16.0,
-                    bottom: 8.0,
-                  ),
-                  child: Text(
-                    title,
-                    style: typography.styles.subheadEmphasized
-                        .toTextStyle(context),
-                  ),
-                ),
-              ),
-            ),
-          },
-          if (showBorders) ...{
-            Container(
-              margin: EdgeInsets.only(
-                bottom: bottomPadding ? 16.0 : 0.0,
-              ),
-              decoration: BoxDecoration(
-                color: backgroundColor ?? context.theme.cardColor,
-                border: Border(
-                  top: BorderSide(
-                    width: _borderWidth,
-                    color: _borderColor,
-                  ),
-                ),
-              ),
-              child: buildList(context),
-            )
-          } else ...{
-            Container(
+        },
+        if (showBorders) ...{
+          Container(
+            decoration: BoxDecoration(
               color: backgroundColor ?? context.theme.cardColor,
-              child: buildList(context),
+              border: Border(
+                top: BorderSide(
+                  width: 0.5,
+                  color: palette.outline,
+                ),
+              ),
             ),
-          },
-        ],
-      ),
+            child: buildList(context),
+          )
+        } else ...{
+          Container(
+            color: backgroundColor ?? context.theme.cardColor,
+            child: buildList(context),
+          ),
+        },
+      ],
     );
   }
 

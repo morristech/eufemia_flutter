@@ -129,9 +129,7 @@ class Cell extends StatelessWidget {
 
     return Slidable(
       key: UniqueKey(),
-      actionPane: context.cupertino
-          ? SlidableDrawerActionPane()
-          : SlidableDrawerDismissal(),
+      actionPane: SlidableDrawerActionPane(),
       dismissal: SlidableDismissal(
         child: SlidableDrawerDismissal(),
       ),

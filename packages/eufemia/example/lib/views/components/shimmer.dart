@@ -13,8 +13,8 @@ class ShimmerView extends StatelessWidget {
         ),
       ),
       body: ScrollableList(
-        topPadding: true,
         showBorders: false,
+        padding: EufemiaInsets.medium(EufemiaSides.top),
         spaceBetween: EufemiaSpace.small,
         children: [
           Shimmer(
