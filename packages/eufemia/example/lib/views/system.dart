@@ -1,7 +1,20 @@
 import 'package:eufemia/eufemia.dart';
 import 'package:flutter/material.dart';
 
-class SystemView extends StatelessWidget {
+class SystemView extends StatefulWidget {
+  @override
+  _SystemViewState createState() => _SystemViewState();
+}
+
+class _SystemViewState extends State<SystemView> {
+  int selectedPickerItem;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedPickerItem = 0;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,10 +42,13 @@ class SystemView extends StatelessWidget {
             ),
             Cell(
               title: Text('Show bottom sheet'),
+              subtitle: Text('To be implemented'),
               onTap: () => _showBottomSheet(context),
             ),
             Cell(
               title: Text('Show picker'),
+              subtitle: Text('Cupertino only'),
+              trailing: Text('Selected: ${selectedPickerItem + 1}'),
               onTap: () => _showPicker(context),
             ),
           ],
@@ -44,16 +60,15 @@ class SystemView extends StatelessWidget {
   void _showPicker(BuildContext context) {
     PickerService.showPicker(
       context,
-      onValueChanged: (index) => print(index),
-      actions: [
-        PickerAction(label: 'Option 1'),
-        PickerAction(label: 'Option 2'),
-        PickerAction(label: 'Option 3'),
-        PickerAction(label: 'Option 4', selected: true),
-        PickerAction(label: 'Option 5'),
-        PickerAction(label: 'Option 6'),
-        PickerAction(label: 'Option 7'),
-      ],
+      onValueChanged: (index) => setState(() => selectedPickerItem = index),
+      controller: FixedExtentScrollController(initialItem: selectedPickerItem),
+      actions: List.generate(
+        8,
+        (index) => PickerAction(
+          label: 'Option ${index + 1}',
+          selected: selectedPickerItem == index,
+        ),
+      ),
     );
   }
 

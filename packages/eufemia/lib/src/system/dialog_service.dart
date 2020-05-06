@@ -9,40 +9,49 @@ class DialogService {
     Widget content,
     List<DialogAction> actions,
   }) {
+    final typography = EufemiaTypography.of(context);
+    final palette = EufemiaPalette.of(context);
+
     if (context.cupertino) {
       showCupertinoDialog(
         context: context,
         builder: (context) => CupertinoAlertDialog(
           title: Text(
             title,
-            style: TextStyle(
-              fontFamily: 'SF Pro Text',
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          content: AnimatedDefaultTextStyle(
-            duration: Duration(milliseconds: 250),
-            child: content,
-            style: TextStyle(
-              fontFamily: 'SF Pro Text',
-            ),
-          ),
-          actions: actions?.map((action) {
-                return CupertinoDialogAction(
-                  child: Text(
-                    action.label,
-                    style: TextStyle(
+            style:
+                typography.styles.bodyEmphasized.toTextStyle(context).copyWith(
                       fontFamily: 'SF Pro Text',
-                      color: context.bright
-                          ? EufemiaColors.seaGreenAlt
-                          : EufemiaColors.mintGreen,
+                      letterSpacing: -.408,
                     ),
-                  ),
-                  onPressed: action.onPressed,
-                  isDefaultAction: action.isDefaultAction,
-                  isDestructiveAction: action.isDestructiveAction,
-                );
-              })?.toList() ??
+          ),
+          content: DefaultTextStyle(
+            child: content,
+            textAlign: TextAlign.center,
+            style: typography.styles.body.toTextStyle(context).copyWith(
+                  fontFamily: 'SF Pro Text',
+                  letterSpacing: -.078,
+                ),
+          ),
+          actions: actions?.map(
+                (action) {
+                  final style = action.isDefaultAction
+                      ? typography.styles.buttonEmphasized
+                      : typography.styles.button;
+
+                  return CupertinoDialogAction(
+                    child: Text(
+                      action.label,
+                      style: style.toTextStyle(context).copyWith(
+                            fontFamily: 'SF Pro Text',
+                            color: palette.button,
+                          ),
+                    ),
+                    onPressed: action.onPressed,
+                    isDefaultAction: action.isDefaultAction,
+                    isDestructiveAction: action.isDestructiveAction,
+                  );
+                },
+              )?.toList() ??
               [],
         ),
       );

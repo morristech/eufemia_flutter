@@ -34,6 +34,7 @@ class BottomSheetService {
     @required List<ModalAction> actions,
   }) {
     final typography = EufemiaTypography.of(context);
+    final palette = EufemiaPalette.of(context);
     if (context.cupertino) {
       showNativeBottomSheet(
         context,
@@ -51,9 +52,9 @@ class BottomSheetService {
                         typography.styles.button.toTextStyle(context).copyWith(
                               color: action.enabled
                                   ? (action.isDestructive
-                                      ? Color(0xFFFF3B30)
-                                      : EufemiaColors.seaGreenAlt)
-                                  : EufemiaColors.darkGray,
+                                      ? palette.error
+                                      : palette.secondary)
+                                  : palette.grey,
                               fontFamily: 'SF Pro Text',
                             ),
                   ),
@@ -68,10 +69,11 @@ class BottomSheetService {
               isDestructiveAction: cancel.isDestructive,
               child: Text(
                 cancel.label,
-                style: typography.styles.button.toTextStyle(context).copyWith(
-                      color: EufemiaColors.seaGreenAlt,
+                style: typography.styles.buttonEmphasized
+                    .toTextStyle(context)
+                    .copyWith(
+                      color: palette.secondary,
                       fontFamily: 'SF Pro Text',
-                      fontWeight: FontWeight.bold,
                     ),
               ),
             ),
@@ -105,15 +107,15 @@ class BottomSheetService {
                               action.icon,
                               color: action.enabled
                                   ? (action.isDestructive
-                                      ? Color(0xFFFF3B30)
-                                      : EufemiaColors.seaGreenAlt)
-                                  : EufemiaColors.darkGray,
+                                      ? palette.error
+                                      : palette.secondary)
+                                  : palette.grey,
                             )
                           : null,
                       title: Text(
                         action.label,
                         style: TextStyle(
-                          color: EufemiaColors.seaGreenAlt,
+                          color: palette.secondary,
                           fontFamily: 'Roboto',
                         ),
                       ),
