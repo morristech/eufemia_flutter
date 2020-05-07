@@ -1,10 +1,11 @@
 name: eufemia_palette
-description: A new Flutter package project.
-version: 0.0.1
+description: A palette provider from DNB's design system, providing colors and pre-defined palettes
+version: 1.1.0+1
 homepage: https://github.com/dnb-asa/eufemia_flutter
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
@@ -14,7 +15,7 @@ dependencies:
   shared_preferences: ^0.5.7
   json_annotation: ^3.0.1
   freezed_annotation: ^0.7.1
-  provider: ^4.0.5
+  provider: ^4.1.0
   derived_colors: ^0.2.4
 
 dev_dependencies:

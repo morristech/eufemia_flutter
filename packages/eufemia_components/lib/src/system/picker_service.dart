@@ -1,5 +1,5 @@
-import 'package:eufemia/eufemia.dart';
-import 'package:eufemia/src/system/picker_action.dart';
+import 'package:eufemia_components/eufemia_components.dart';
+import 'package:eufemia_palette/eufemia_palette.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

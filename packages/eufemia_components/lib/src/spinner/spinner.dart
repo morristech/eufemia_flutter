@@ -1,6 +1,6 @@
+import 'package:eufemia_palette/eufemia_palette.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:eufemia/eufemia.dart';
 
 class Spinner extends StatefulWidget {
   final Color color;
@@ -47,7 +47,7 @@ class _SpinnerState extends State<Spinner> with TickerProviderStateMixin {
       turns: animation,
       child: SvgPicture.asset(
         'lib/assets/icons/spinner.svg',
-        package: 'eufemia',
+        package: 'eufemia_components',
         color: widget.color ?? palette.button,
       ),
     );

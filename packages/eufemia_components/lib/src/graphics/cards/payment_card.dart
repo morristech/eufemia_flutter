@@ -442,7 +442,7 @@ class PaymentCardType extends StatelessWidget {
                 child: SvgPicture.asset(
                   getCardTypeAsset(type),
                   width: constraints.maxWidth / 5.5,
-                  package: 'eufemia',
+                  package: 'eufemia_components',
                 ),
               );
             },
@@ -492,7 +492,7 @@ class PaymentCardProgram extends StatelessWidget {
             child: SvgPicture.asset(
               getCardProgramAsset(program),
               width: constraints.maxWidth / 5,
-              package: 'eufemia',
+              package: 'eufemia_components',
             ),
           );
         },
@@ -550,7 +550,7 @@ class PaymentCardLogo extends StatelessWidget {
               getCardLogoAsset(logo),
               width: constraints.maxWidth / 7.5,
               color: logo == CardLogo.matte ? color : null,
-              package: 'eufemia',
+              package: 'eufemia_components',
             ),
           );
         },

@@ -162,34 +162,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.4"
-  eufemia:
-    dependency: "direct main"
-    description:
-      path: "../eufemia"
-      relative: true
-    source: path
-    version: "0.6.0+1"
   eufemia_palette:
     dependency: "direct main"
     description:
-      path: "../eufemia_palette"
-      relative: true
-    source: path
-    version: "0.0.1"
+      name: eufemia_palette
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
   eufemia_spacing:
     dependency: "direct main"
     description:
-      path: "../eufemia_spacing"
-      relative: true
-    source: path
-    version: "0.0.1"
+      name: eufemia_spacing
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
   eufemia_typography:
     dependency: "direct main"
     description:
-      path: "../eufemia_typography"
-      relative: true
-    source: path
-    version: "0.0.1"
+      name: eufemia_typography
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.1"
   fake_async:
     dependency: transitive
     description:
@@ -428,7 +421,7 @@ packages:
       name: provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.5+1"
+    version: "4.1.0"
   pub_semver:
     dependency: transitive
     description:
@@ -451,7 +444,7 @@ packages:
     source: hosted
     version: "2.1.3"
   recase:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: recase
       url: "https://pub.dartlang.org"
@@ -463,14 +456,14 @@ packages:
       name: shared_preferences
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.7"
+    version: "0.5.7+1"
   shared_preferences_macos:
     dependency: transitive
     description:
       name: shared_preferences_macos
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.1+7"
+    version: "0.0.1+8"
   shared_preferences_platform_interface:
     dependency: transitive
     description:
@@ -484,7 +477,7 @@ packages:
       name: shared_preferences_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.2+4"
+    version: "0.1.2+5"
   shelf:
     dependency: transitive
     description:
@@ -512,7 +505,7 @@ packages:
     source: sdk
     version: "0.0.99"
   snack:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: snack
       url: "https://pub.dartlang.org"
@@ -539,13 +532,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.9.3"
-  sticky_headers:
-    dependency: transitive
-    description:
-      name: sticky_headers
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.8+1"
   stream_channel:
     dependency: transitive
     description:
@@ -632,4 +618,4 @@ packages:
     version: "2.2.1"
 sdks:
   dart: ">=2.7.0 <3.0.0"
-  flutter: ">=1.12.13+hotfix.5 <2.0.0"
+  flutter: ">=1.17.0 <2.0.0"

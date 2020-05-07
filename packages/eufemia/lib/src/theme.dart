@@ -7,7 +7,7 @@ class EufemiaThemeAdapter {
   final BuildContext context;
   final Color statusBarColor;
 
-  EufemiaThemeAdapter({@required this.context, this.statusBarColor});
+  EufemiaThemeAdapter(this.context, [this.statusBarColor]);
 
   ThemeData get theme {
     final eufemia = Eufemia.of(context);

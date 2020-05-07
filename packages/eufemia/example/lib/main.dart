@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         darkPalette: EufemiaPaletteData.dark(),
       ),
       child: Builder(builder: (context) {
-        final adapter = EufemiaThemeAdapter(context: context);
+        final adapter = EufemiaThemeAdapter(context);
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Eufemia',

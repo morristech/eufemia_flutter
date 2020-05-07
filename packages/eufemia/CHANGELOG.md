@@ -1,4 +1,8 @@
-# Changelog
+## [1.0.0]
+
+- Add theme providers
+- Refactor components to make use of theme providers
+- Split project into separate packages
 
 ## 0.6.0+1
 

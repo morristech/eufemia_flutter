@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:eufemia/eufemia.dart';
+import 'package:eufemia_components/eufemia_components.dart';
 
 class UpdateIcon extends StatelessWidget {
   final double width;
@@ -21,7 +21,7 @@ class UpdateIcon extends StatelessWidget {
     if (context.cupertino && platform == TargetPlatform.iOS) {
       return SvgPicture.asset(
         'lib/assets/graphics/other/app_store_update.svg',
-        package: 'eufemia',
+        package: 'eufemia_components',
         width: width,
         height: height,
         fit: fit,
@@ -29,7 +29,7 @@ class UpdateIcon extends StatelessWidget {
     } else {
       return SvgPicture.asset(
         'lib/assets/graphics/other/play_store_update.svg',
-        package: 'eufemia',
+        package: 'eufemia_components',
         width: width,
         height: height,
         fit: fit,

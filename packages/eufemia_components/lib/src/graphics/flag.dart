@@ -94,7 +94,7 @@ class Flag extends StatelessWidget {
         width: width,
         height: height,
         fit: fit,
-        package: 'eufemia',
+        package: 'eufemia_components',
       ),
     );
   }

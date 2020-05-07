@@ -1,6 +1,6 @@
+import 'package:eufemia_palette/eufemia_palette.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:eufemia/eufemia.dart';
 
 /// Contains asset paths to logo data
 class LogoData {
@@ -54,7 +54,7 @@ class Logo extends StatelessWidget {
       height: height,
       fit: fit,
       alignment: Alignment.center,
-      package: 'eufemia',
+      package: 'eufemia_components',
       color: themed ? palette.icon : color,
     );
   }

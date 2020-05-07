@@ -1,5 +1,6 @@
+import 'package:eufemia_palette/eufemia_palette.dart';
 import 'package:flutter/widgets.dart';
-import 'package:eufemia/eufemia.dart';
+import 'package:eufemia_components/eufemia_components.dart';
 
 /// A wrapper for custom SVG icons
 class ColoredIcon extends StatelessWidget {

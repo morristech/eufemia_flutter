@@ -19,6 +19,8 @@ export 'src/message_box/message_box.dart';
 // Icons
 export 'src/icons/colored_icon.dart';
 export 'src/icons/update_icon.dart';
+export 'src/icons/eufemia_icons.dart';
+export 'src/icons/icon_data.dart';
 
 // List
 export 'src/list/cell.dart';
@@ -59,3 +61,14 @@ export 'src/shimmer/shimmer.dart';
 
 // Graphics
 export 'src/graphics/graphics.dart';
+
+// Extensions
+export 'src/extensions/context.dart';
+
+// System
+export 'src/system/bottom_sheet_service.dart';
+export 'src/system/dialog_action.dart';
+export 'src/system/dialog_service.dart';
+export 'src/system/modal_action.dart';
+export 'src/system/picker_action.dart';
+export 'src/system/picker_service.dart';

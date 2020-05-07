@@ -1,8 +1,10 @@
 import 'package:eufemia_components/src/controls/custom_sliding_segmented_control.dart';
 import 'package:eufemia_components/src/utils/calculate_size.dart';
+import 'package:eufemia_components/eufemia_components.dart';
+import 'package:eufemia_palette/eufemia_palette.dart';
+import 'package:eufemia_typography/eufemia_typography.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:eufemia/eufemia.dart';
 
 class SegmentedControl<T> extends StatelessWidget {
   final Map<T, String> children;

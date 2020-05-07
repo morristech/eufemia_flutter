@@ -1,10 +1,11 @@
 name: eufemia
-description: A set of Flutter widgets and components adhering to to DNB's Eufemia design system
-version: 0.6.0+1
+description: A set of Flutter widgets and reusable UI components from DNB's design system
+version: 1.0.0
 homepage: https://dnb.no
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
@@ -19,14 +20,10 @@ dependencies:
   sticky_headers: ^0.1.8+1
 
   # Eufemia dependencies
-  eufemia_palette:
-    path: ../eufemia_palette
-  eufemia_components:
-    path: ../eufemia_components
-  eufemia_spacing:
-    path: ../eufemia_spacing
-  eufemia_typography:
-    path: ../eufemia_typography
+  eufemia_palette: ^1.1.0
+  eufemia_components: ^1.1.1
+  eufemia_spacing: ^1.1.0
+  eufemia_typography: ^1.1.1
 
 dev_dependencies:
   flutter_test:
@@ -34,64 +31,3 @@ dev_dependencies:
   pedantic: ^1.9.0
 
 flutter:
-  assets:
-    - lib/assets/icons/
-    - lib/assets/icons/tabbar/
-    - lib/assets/graphics/other/
-    - lib/assets/graphics/logos/
-    - lib/assets/graphics/flags/
-    - lib/assets/graphics/cards/
-    - lib/assets/graphics/cards/programs/
-    - lib/assets/graphics/cards/types/
-    - lib/assets/graphics/cards/logos/
-
-  fonts:
-    - family: EufemiaIcons
-      fonts:
-        - asset: lib/assets/fonts/EufemiaIcons.ttf
-
-    - family: DNB Sans
-      fonts:
-        - asset: lib/assets/fonts/DNB-Light.otf
-          weight: 300
-        - asset: lib/assets/fonts/DNB-Regular.otf
-          weight: 400
-        - asset: lib/assets/fonts/DNB-Medium.otf
-          weight: 500
-        - asset: lib/assets/fonts/DNB-Bold.otf
-          weight: 600
-        - asset: lib/assets/fonts/DNB-LightItalic.otf
-          weight: 300
-          style: italic
-        - asset: lib/assets/fonts/DNB-RegularItalic.otf
-          weight: 400
-          style: italic
-        - asset: lib/assets/fonts/DNB-MediumItalic.otf
-          weight: 500
-          style: italic
-        - asset: lib/assets/fonts/DNB-BoldItalic.otf
-          weight: 600
-          style: italic
-
-    - family: DNB Mono
-      fonts:
-        - asset: lib/assets/fonts/DNBMono-Light.otf
-          weight: 300
-        - asset: lib/assets/fonts/DNBMono-Regular.otf
-          weight: 400
-        - asset: lib/assets/fonts/DNBMono-Medium.otf
-          weight: 500
-        - asset: lib/assets/fonts/DNBMono-Bold.otf
-          weight: 600
-        - asset: lib/assets/fonts/DNBMono-LightItalic.otf
-          weight: 300
-          style: italic
-        - asset: lib/assets/fonts/DNBMono-RegularItalic.otf
-          weight: 400
-          style: italic
-        - asset: lib/assets/fonts/DNBMono-MediumItalic.otf
-          weight: 500
-          style: italic
-        - asset: lib/assets/fonts/DNBMono-BoldItalic.otf
-          weight: 600
-          style: italic

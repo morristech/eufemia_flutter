@@ -1,18 +1,18 @@
 name: eufemia_typography
-description: A new Flutter package project.
-version: 0.0.1
+description: A provider of typography and text-related utilities and components from DNB's design system
+version: 1.1.1+1
 homepage: https://github.com/dnb-asa/eufemia_flutter
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
 
 dependencies:
   freezed_annotation: ^0.7.1
   derived_colors: ^0.2.4
 
   # Eufemia
-  eufemia_palette:
-    path: ../eufemia_palette
+  eufemia_palette: ^1.1.0
 
   flutter:
     sdk: flutter
@@ -26,3 +26,49 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
+  fonts:
+    - family: DNB Sans
+      fonts:
+        - asset: lib/fonts/DNB-Light.otf
+          weight: 300
+        - asset: lib/fonts/DNB-Regular.otf
+          weight: 400
+        - asset: lib/fonts/DNB-Medium.otf
+          weight: 500
+        - asset: lib/fonts/DNB-Bold.otf
+          weight: 600
+        - asset: lib/fonts/DNB-LightItalic.otf
+          weight: 300
+          style: italic
+        - asset: lib/fonts/DNB-RegularItalic.otf
+          weight: 400
+          style: italic
+        - asset: lib/fonts/DNB-MediumItalic.otf
+          weight: 500
+          style: italic
+        - asset: lib/fonts/DNB-BoldItalic.otf
+          weight: 600
+          style: italic
+
+    - family: DNB Mono
+      fonts:
+        - asset: lib/fonts/DNBMono-Light.otf
+          weight: 300
+        - asset: lib/fonts/DNBMono-Regular.otf
+          weight: 400
+        - asset: lib/fonts/DNBMono-Medium.otf
+          weight: 500
+        - asset: lib/fonts/DNBMono-Bold.otf
+          weight: 600
+        - asset: lib/fonts/DNBMono-LightItalic.otf
+          weight: 300
+          style: italic
+        - asset: lib/fonts/DNBMono-RegularItalic.otf
+          weight: 400
+          style: italic
+        - asset: lib/fonts/DNBMono-MediumItalic.otf
+          weight: 500
+          style: italic
+        - asset: lib/fonts/DNBMono-BoldItalic.otf
+          weight: 600
+          style: italic

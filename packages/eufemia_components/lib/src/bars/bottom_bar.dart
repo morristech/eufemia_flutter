@@ -1,4 +1,6 @@
-import 'package:eufemia/eufemia.dart';
+import 'package:eufemia_palette/eufemia_palette.dart';
+import 'package:eufemia_spacing/eufemia_spacing.dart';
+import 'package:eufemia_typography/eufemia_typography.dart';
 import 'package:flutter/material.dart';
 
 import 'bar.dart';

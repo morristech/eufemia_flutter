@@ -1,14 +1,110 @@
-# eufemia_spacing
+# DNB Design System 👨‍🎨
 
-A new Flutter package project.
+![eufemia_flutter](https://github.com/dnb-asa/eufemia_flutter/workflows/Dart%20CI/badge.svg) ![pub](https://img.shields.io/pub/v/eufemia?logo=flutter) [![style: pedantic](https://img.shields.io/badge/style-pedantic-9cf)](https://github.com/dart-lang/pedantic)
 
-## Getting Started
+![preview](https://github.com/dnb-asa/eufemia_flutter/blob/master/assets/preview.png?raw=true)
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+> **DISCLAIMER**: This package is in an early stage
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## Eufemia
+
+![pub](https://img.shields.io/pub/v/eufemia?logo=flutter)
+
+### How to use
+
+Wrap your app in an `Eufemia` widget, and provide the `EufemiaData` with the `palette`, `spacing`, `button` and optionally `darkPalette` parameters:
+
+```dart
+Eufemia(
+  data: EufemiaData(
+    palette: EufemiaPaletteData.standard(),
+    spacing: EufemiaSpacingData.fallback(),
+    button: EufemiaButtonThemeData.fallback(),
+    darkPalette: EufemiaPaletteData.dark(),
+  ),
+),
+```
+
+To use Material widgets, e.g. in a `MaterialApp` tree, use the provided adapter to provide a Material Theme:
+
+```dart
+final adapter = EufemiaThemeAdapter(context);
+
+return MaterialApp(
+  theme: adapter.theme,
+  ...
+);
+```
+
+The Eufemia provider with all the theming data can be accessed using
+
+```dart
+final eufemia = Eufemia.of(context)
+```
+
+## Components
+
+![pub](https://img.shields.io/pub/v/eufemia_components?logo=flutter)
+
+There are multiple UI components
+
+## Palette
+
+![pub](https://img.shields.io/pub/v/eufemia_palette?logo=flutter)
+
+**This API is subject to change**
+
+The `EufemiaPaletteData` class is a collection of colors that are used throughout the library of components. You can create your own, or use several presets, like the `saga`, `standard`, `dark` and `privateBanking` factories.
+
+The palette provider can be accessed using
+
+```dart
+final palette = EufemiaPalette.of(context)
+```
+
+## Typography
+
+![pub](https://img.shields.io/pub/v/eufemia_typography?logo=flutter)
+
+If using the included themes, fonts are automatically set up. Otherwise, specify the `fontFamily` and `package` properties:
+
+```dart
+TextStyle(
+  fontFamily: 'DNB Sans',
+  package: 'eufemia_typography',
+)
+```
+
+The typography provider can be accessed using
+
+```dart
+final typography = EufemiaTypography.of(context)
+```
+
+## Spacing
+
+![pub](https://img.shields.io/pub/v/eufemia_spacing?logo=flutter)
+
+The `EufemiaSpacingData` class defines the different kinds of spacing used throughout the app. By default, it provides the standard spacings defined by the Eufemia design system:
+
+- `extraSmall: 4.0`
+- `small: 8.0`
+- `medium : 16.0`
+- `large: 24.0`
+- `extraLarge: 32.0`
+- `extraExtraLarge: 40.0`
+
+The spacing provider can be accessed using
+
+```dart
+final spacing = EufemiaSpacing.of(context)
+```
+
+## Desktop
+
+Desktop targets are supported but not currently tested extensively, but may be prioritized in the future.
+a
+
+## Web
+
+Web targets are supported, but the Web APIs are unstable, and the target is not tested at all. If building a web application, check out [eufemia for web](https://github.com/dnbexperience/eufemia) for a web native version.

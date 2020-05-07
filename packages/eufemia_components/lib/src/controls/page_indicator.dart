@@ -1,4 +1,4 @@
-import 'package:eufemia/eufemia.dart';
+import 'package:eufemia_palette/eufemia_palette.dart';
 import 'package:flutter/widgets.dart';
 
 /// Page indicator from the Eufemia Design System

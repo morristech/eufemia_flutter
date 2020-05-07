@@ -24,3 +24,4 @@ analyzer:
   exclude:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
+    - "**/eufemia_icons.dart"
