@@ -4,6 +4,7 @@ import 'package:eufemia_typography/eufemia_typography.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// TODO (@arnemolland): Refactor to a more simplistic API
 class DialogService {
   static void showAlertDialog(
     BuildContext context, {

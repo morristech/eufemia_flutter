@@ -3,6 +3,7 @@ import 'package:eufemia_spacing/eufemia_spacing.dart';
 import 'package:eufemia_components/eufemia_components.dart';
 import 'package:flutter/material.dart';
 
+// TODO (@arnemolland): Refactor to a more simplistic API
 class ScrollableList extends StatelessWidget {
   final String title;
   final List<Widget> children;

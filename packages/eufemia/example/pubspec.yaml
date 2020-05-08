@@ -35,51 +35,51 @@ flutter:
   fonts:
     - family: EufemiaIcons
       fonts:
-        - asset: packages/eufemia/assets/fonts/EufemiaIcons.ttf
+        - asset: packages/eufemia_components/assets/EufemiaIcons.ttf
 
     - family: DNB Sans
       fonts:
-        - asset: packages/eufemia/assets/fonts/DNB-Light.otf
+        - asset: packages/eufemia_typography/fonts/DNB-Light.otf
           weight: 300
-        - asset: packages/eufemia/assets/fonts/DNB-Regular.otf
+        - asset: packages/eufemia_typography/fonts/DNB-Regular.otf
           weight: 400
-        - asset: packages/eufemia/assets/fonts/DNB-Medium.otf
+        - asset: packages/eufemia_typography/fonts/DNB-Medium.otf
           weight: 500
-        - asset: packages/eufemia/assets/fonts/DNB-Bold.otf
+        - asset: packages/eufemia_typography/fonts/DNB-Bold.otf
           weight: 600
-        - asset: packages/eufemia/assets/fonts/DNB-LightItalic.otf
+        - asset: packages/eufemia_typography/fonts/DNB-LightItalic.otf
           weight: 300
           style: italic
-        - asset: packages/eufemia/assets/fonts/DNB-RegularItalic.otf
+        - asset: packages/eufemia_typography/fonts/DNB-RegularItalic.otf
           weight: 400
           style: italic
-        - asset: packages/eufemia/assets/fonts/DNB-MediumItalic.otf
+        - asset: packages/eufemia_typography/fonts/DNB-MediumItalic.otf
           weight: 500
           style: italic
-        - asset: packages/eufemia/assets/fonts/DNB-BoldItalic.otf
+        - asset: packages/eufemia_typography/fonts/DNB-BoldItalic.otf
           weight: 600
           style: italic
 
     - family: DNB Mono
       fonts:
-        - asset: packages/eufemia/assets/fonts/DNBMono-Light.otf
+        - asset: packages/eufemia_typography/fonts/DNBMono-Light.otf
           weight: 300
-        - asset: packages/eufemia/assets/fonts/DNBMono-Regular.otf
+        - asset: packages/eufemia_typography/fonts/DNBMono-Regular.otf
           weight: 400
-        - asset: packages/eufemia/assets/fonts/DNBMono-Medium.otf
+        - asset: packages/eufemia_typography/fonts/DNBMono-Medium.otf
           weight: 500
-        - asset: packages/eufemia/assets/fonts/DNBMono-Bold.otf
+        - asset: packages/eufemia_typography/fonts/DNBMono-Bold.otf
           weight: 600
-        - asset: packages/eufemia/assets/fonts/DNBMono-LightItalic.otf
+        - asset: packages/eufemia_typography/fonts/DNBMono-LightItalic.otf
           weight: 300
           style: italic
-        - asset: packages/eufemia/assets/fonts/DNBMono-RegularItalic.otf
+        - asset: packages/eufemia_typography/fonts/DNBMono-RegularItalic.otf
           weight: 400
           style: italic
-        - asset: packages/eufemia/assets/fonts/DNBMono-MediumItalic.otf
+        - asset: packages/eufemia_typography/fonts/DNBMono-MediumItalic.otf
           weight: 500
           style: italic
-        - asset: packages/eufemia/assets/fonts/DNBMono-BoldItalic.otf
+        - asset: packages/eufemia_typography/fonts/DNBMono-BoldItalic.otf
           weight: 600
           style: italic
 
