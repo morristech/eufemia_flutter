@@ -6,8 +6,6 @@ import 'package:flutter/widgets.dart';
 class EufemiaSlider extends StatelessWidget {
   final double value;
   final int divisions;
-  final bool autofocus;
-  final FocusNode focusNode;
   final Function(double) onChanged;
   final Function(double) onChangeStart;
   final Function(double) onChangeEnd;
@@ -25,8 +23,6 @@ class EufemiaSlider extends StatelessWidget {
     this.onChangeStart,
     this.onChangeEnd,
     this.divisions,
-    this.autofocus = false,
-    this.focusNode,
   }) : super(key: key);
 
   @override
@@ -41,8 +37,6 @@ class EufemiaSlider extends StatelessWidget {
       activeColor: palette.toggle,
       inactiveColor: palette.outline,
       divisions: divisions,
-      autofocus: autofocus,
-      focusNode: focusNode,
     );
   }
 }
