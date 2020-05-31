@@ -74,25 +74,27 @@ class Cell extends StatelessWidget {
                                 style: typography.styles.body.toTextStyle(
                                   context,
                                 ),
-                                child: title,
+                                child: EufemiaColumn(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    title,
+                                    if (hasSubtitle) ...{
+                                      AnimatedDefaultTextStyle(
+                                        duration: Duration(milliseconds: 160),
+                                        style: typography.styles.subhead
+                                            .toTextStyle(
+                                          context,
+                                        ),
+                                        child: subtitle,
+                                      ),
+                                    }
+                                  ],
+                                ),
                               ),
                             ),
                           ),
                         ],
                       ),
-                      if (hasSubtitle) ...{
-                        EufemiaPadding.only(
-                          hasLeading ? EufemiaSpace.medium : EufemiaSpace.none,
-                          sides: EufemiaSides.left,
-                          child: AnimatedDefaultTextStyle(
-                            duration: Duration(milliseconds: 160),
-                            style: typography.styles.subhead.toTextStyle(
-                              context,
-                            ),
-                            child: subtitle,
-                          ),
-                        ),
-                      }
                     ],
                   ),
                 ),
