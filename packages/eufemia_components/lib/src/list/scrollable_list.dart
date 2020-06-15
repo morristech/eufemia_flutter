@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 // TODO (@arnemolland): Refactor to a more simplistic API
 class ScrollableList extends StatelessWidget {
-  final String title;
+  final Widget title;
   final List<Widget> children;
   final bool shrinkWrap;
   final bool showBorders;
@@ -68,12 +68,12 @@ class ScrollableList extends StatelessWidget {
             bottom: false,
             child: Align(
               alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 16.0,
-                  bottom: 8.0,
+              child: EufemiaPadding(
+                padding: EufemiaInsets(
+                  left: EufemiaSpace.medium,
+                  bottom: EufemiaSpace.small,
                 ),
-                child: Text(title),
+                child: title,
               ),
             ),
           )
