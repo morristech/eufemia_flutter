@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 // TODO (@arnemolland): Refactor to a more simplistic API
 class StaticList extends StatelessWidget {
-  final String title;
+  final Widget title;
   final List<Widget> children;
   final bool showBorders;
   final bool addBottomBorder;
@@ -42,15 +42,15 @@ class StaticList extends StatelessWidget {
             bottom: false,
             child: Align(
               alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 16.0,
-                  bottom: 8.0,
+              child: EufemiaPadding(
+                padding: EufemiaInsets(
+                  left: EufemiaSpace.medium,
+                  bottom: EufemiaSpace.small,
                 ),
-                child: Text(
-                  title,
+                child: DefaultTextStyle(
                   style:
                       typography.styles.subheadEmphasized.toTextStyle(context),
+                  child: title,
                 ),
               ),
             ),
