@@ -1,3 +1,8 @@
+## 1.1.2
+
+- Allow non-text list titles
+- Update version constraints
+
 ## [1.1.1+1]
 
 - Update README

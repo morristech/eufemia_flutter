@@ -1,3 +1,8 @@
+## ## 1.1.1
+
+- Allow for non-text titles on list components
+- Update version constraints
+
 ## [1.1.0+1]
 
 - Update README

@@ -1,4 +1,10 @@
-## [1.0.0]
+## 1.0.2
+
+- Allow for non-text titles on list components
+- Update version constraints
+-
+
+## 1.0.0
 
 - Add theme providers
 - Refactor components to make use of theme providers
