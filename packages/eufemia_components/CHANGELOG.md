@@ -3,6 +3,10 @@
 - Allow for non-text titles on list components
 - Update version constraints
 
+## 1.1.1+3
+
+- Fix incorrect subtitle alignment relative to `leading` widget in `Cell` component
+
 ## 1.1.1+2
 
 - Remove non-stable API references
