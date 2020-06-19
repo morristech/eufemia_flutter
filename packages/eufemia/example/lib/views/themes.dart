@@ -57,10 +57,7 @@ class ThemesView extends StatelessWidget {
           ]
               .map<Widget>(
                 (widget) => Center(
-                  child: Padding(
-                    child: widget,
-                    padding: const EdgeInsets.all(8.0),
-                  ),
+                  child: EufemiaPadding.small(child: widget),
                 ),
               )
               .toList(),

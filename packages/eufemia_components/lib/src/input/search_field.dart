@@ -179,7 +179,8 @@ class _SearchFieldState extends State<SearchField> {
                           color: palette.grey,
                         ),
                       ),
-                      contentPadding: EdgeInsets.zero,
+                      contentPadding:
+                          EufemiaInsets.none.toEdgeInsets(context: context),
                     ),
                   ),
                 ),

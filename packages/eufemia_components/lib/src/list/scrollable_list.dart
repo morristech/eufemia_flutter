@@ -45,7 +45,7 @@ class ScrollableList extends StatelessWidget {
 
   Widget buildGridView(BuildContext context) {
     return GridView(
-      padding: const EdgeInsets.all(16.0),
+      padding: EufemiaInsets.allMedium.toEdgeInsets(context: context),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
         childAspectRatio: gridChildAspectRatio,

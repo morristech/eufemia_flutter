@@ -11,7 +11,6 @@ class StaticList extends StatelessWidget {
   final bool showBorders;
   final bool addBottomBorder;
   final bool adaptive;
-  final EdgeInsets customPadding;
   final Color backgroundColor;
   final EufemiaSpace spaceBetween;
   final EufemiaInsets padding;
@@ -19,7 +18,6 @@ class StaticList extends StatelessWidget {
   const StaticList({
     Key key,
     this.children,
-    this.customPadding,
     this.showBorders = true,
     this.backgroundColor,
     this.addBottomBorder = true,

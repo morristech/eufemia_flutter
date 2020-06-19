@@ -48,12 +48,11 @@ class _InputFieldsViewState extends State<InputFieldsView> {
               spaceBetween: EufemiaSpace.medium,
               children: [
                 StaticList(
-                  title: 'Search bar',
+                  title: Text('Search bar'),
                   children: [
                     Material(
                       color: palette.primary,
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
+                      child: EufemiaPadding.medium(
                         child: SearchField(
                           controller: _searchController,
                         ),
@@ -62,10 +61,9 @@ class _InputFieldsViewState extends State<InputFieldsView> {
                   ],
                 ),
                 StaticList(
-                  title: 'Input field',
+                  title: Text('Input field'),
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
+                    EufemiaPadding.medium(
                       child: InputField(
                         controller: _inputController,
                         hintText: 'Input hint',
@@ -74,7 +72,7 @@ class _InputFieldsViewState extends State<InputFieldsView> {
                   ],
                 ),
                 StaticList(
-                  title: 'Input field with validation (empty)',
+                  title: Text('Input field with validation (empty)'),
                   children: [
                     EufemiaRow(
                       spaceBetween: EufemiaSpace.medium,
@@ -99,10 +97,9 @@ class _InputFieldsViewState extends State<InputFieldsView> {
                   ],
                 ),
                 StaticList(
-                  title: 'Multiline field',
+                  title: Text('Multiline field'),
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
+                    EufemiaPadding.medium(
                       child: InputField(
                         controller: _multilineController,
                         maxLines: 5,
@@ -116,10 +113,9 @@ class _InputFieldsViewState extends State<InputFieldsView> {
                   ],
                 ),
                 StaticList(
-                  title: 'Multiline field with counter',
+                  title: Text('Multiline field with counter'),
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
+                    EufemiaPadding.medium(
                       child: InputField(
                         controller: _multilineCounterController,
                         maxLines: 5,

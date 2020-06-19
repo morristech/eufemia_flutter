@@ -97,8 +97,8 @@ class PaymentCardsView extends StatelessWidget {
       softLight: false,
     ),
   ]
-      .map((i) => Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
+      .map((i) => EufemiaPadding(
+            padding: EufemiaInsets.small(EufemiaSides.vertical),
             child: i,
           ))
       .toList();

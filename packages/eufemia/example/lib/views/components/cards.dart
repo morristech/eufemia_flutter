@@ -33,8 +33,7 @@ class CardsView extends StatelessWidget {
                   width: 80.0,
                   height: 80.0,
                 ),
-                label: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                label: EufemiaPadding.small(
                   child: Center(
                     child: Text(
                       'Label',

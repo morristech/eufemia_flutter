@@ -210,8 +210,8 @@ class PaymentCardBack extends StatelessWidget {
                     height: constraints.maxHeight / 6,
                     color: Colors.grey[200],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
+                  EufemiaPadding(
+                    padding: EufemiaInsets.small(EufemiaSides.left),
                     child: Text(
                       content?.cardholder ?? 'Ola Nordmann',
                       style: TextStyle(
@@ -283,24 +283,24 @@ class PaymentCardBack extends StatelessWidget {
     final typography = EufemiaTypography.of(context);
     return Align(
       alignment: Alignment.topCenter,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 4.0,
-          horizontal: 8.0,
-        ),
-        child: AnimatedDefaultTextStyle(
-          duration: Duration(milliseconds: 160),
-          style: typography.styles.subhead.toTextStyle(context).copyWith(
-                color: getTextColor(widget.design),
-                fontSize: 8.0,
-                fontWeight: FontWeight.w300,
-              ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              const Text('DNB Kundeservice +47 915 04800'),
-              const Text('www.dnb.no'),
-            ],
+      child: EufemiaPadding(
+        padding: EufemiaInsets.small(EufemiaSides.horizontal),
+        child: EufemiaPadding(
+          padding: EufemiaInsets.extraSmall(EufemiaSides.vertical),
+          child: AnimatedDefaultTextStyle(
+            duration: Duration(milliseconds: 160),
+            style: typography.styles.subhead.toTextStyle(context).copyWith(
+                  color: getTextColor(widget.design),
+                  fontSize: 8.0,
+                  fontWeight: FontWeight.w300,
+                ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                const Text('DNB Kundeservice +47 915 04800'),
+                const Text('www.dnb.no'),
+              ],
+            ),
           ),
         ),
       ),

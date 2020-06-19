@@ -12,14 +12,11 @@ class IconsView extends StatelessWidget {
         ),
         title: Text('Icons'),
       ),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
+      body: ScrollableList(
+        spaceBetween: EufemiaSpace.medium,
+        padding: EufemiaInsets.small(EufemiaSides.horizontal),
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
-            child: Text('Icons'),
-          ),
-          Wrap(
+          EufemiaWrap(
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               Icon(EufemiaIcons.add),
@@ -149,16 +146,9 @@ class IconsView extends StatelessWidget {
               Icon(EufemiaIcons.vehicle),
               Icon(EufemiaIcons.web),
               Icon(EufemiaIcons.widget_android),
-            ]
-                .map((i) =>
-                    Padding(padding: const EdgeInsets.all(8.0), child: i))
-                .toList(),
+            ].map((i) => EufemiaPadding.small(child: i)).toList(),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
-            child: Text('Icons w/ color'),
-          ),
-          Wrap(
+          EufemiaWrap(
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               ColoredIcon(
@@ -182,24 +172,14 @@ class IconsView extends StatelessWidget {
                 ),
                 backgroundColor: Colors.blue,
               ),
-            ]
-                .map((i) =>
-                    Padding(padding: const EdgeInsets.all(8.0), child: i))
-                .toList(),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
-            child: Text('Other'),
+            ],
           ),
           Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               UpdateIcon(),
               UpdateIcon(platform: TargetPlatform.android),
-            ]
-                .map((i) =>
-                    Padding(padding: const EdgeInsets.all(8.0), child: i))
-                .toList(),
+            ].map((i) => EufemiaPadding.small(child: i)).toList(),
           ),
         ],
       ),

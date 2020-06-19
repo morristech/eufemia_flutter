@@ -64,8 +64,8 @@ class _CellsViewState extends State<CellsView> {
             title: Text('Recipient/Sender'),
             trailing: Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 8.0),
+                EufemiaPadding(
+                  padding: EufemiaInsets.small(EufemiaSides.right),
                   child: Text(
                     '-888,00',
                   ),

@@ -12,10 +12,10 @@ class FlagsView extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 16.0),
+      body: ScrollableList(
+        padding: EufemiaInsets.medium(EufemiaSides.vertical),
         children: [
-          Wrap(
+          EufemiaWrap(
             direction: Axis.horizontal,
             children: [
               Flag(FlagData.ae),
@@ -80,10 +80,7 @@ class FlagsView extends StatelessWidget {
               Flag(FlagData.za),
             ]
                 .map(
-                  (i) => Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: i,
-                  ),
+                  (i) => EufemiaPadding.small(child: i),
                 )
                 .toList(),
           )
