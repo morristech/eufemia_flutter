@@ -5,11 +5,7 @@ class IconsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(EufemiaIcons.back_arrow),
-          onPressed: () => Navigator.pop(context),
-        ),
+      appBar: Navbar(
         title: Text('Icons'),
       ),
       body: ScrollableList(

@@ -6,7 +6,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: Navbar(
         title: Text(
           'Eufemia',
         ),

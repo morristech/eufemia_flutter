@@ -1,3 +1,7 @@
+## 1.1.3
+
+- Add Navbar component
+
 ## 1.1.2
 
 - Allow for non-text titles on list components

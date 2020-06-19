@@ -6,12 +6,8 @@ class ComponentView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: Navbar(
         title: Text('Components'),
-        leading: IconButton(
-          icon: Icon(EufemiaIcons.back_arrow),
-          onPressed: () => Navigator.pop(context),
-        ),
       ),
       body: ScrollableList(
         children: [

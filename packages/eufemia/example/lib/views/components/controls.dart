@@ -30,12 +30,8 @@ class _ControlsViewState extends State<ControlsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: Navbar(
         title: Text('Controls'),
-        leading: IconButton(
-          icon: Icon(EufemiaIcons.back_arrow),
-          onPressed: () => Navigator.pop(context),
-        ),
       ),
       body: ScrollableList(
         padding: EufemiaInsets.allMedium,

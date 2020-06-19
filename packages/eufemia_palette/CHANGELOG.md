@@ -1,4 +1,8 @@
-## ## 1.1.1
+## 1.1.2
+
+- Add navbarTitle palette property
+
+## 1.1.1
 
 - Allow for non-text titles on list components
 - Update version constraints

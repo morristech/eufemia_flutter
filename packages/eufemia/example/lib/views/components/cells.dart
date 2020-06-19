@@ -20,12 +20,8 @@ class _CellsViewState extends State<CellsView> {
     final palette = EufemiaPalette.of(context);
 
     return Scaffold(
-      appBar: AppBar(
+      appBar: Navbar(
         title: Text('Cells'),
-        leading: IconButton(
-          icon: Icon(EufemiaIcons.back_arrow),
-          onPressed: () => Navigator.pop(context),
-        ),
       ),
       body: ScrollableList(
         children: [
@@ -49,7 +45,7 @@ class _CellsViewState extends State<CellsView> {
             ],
           ),
           Cell(
-            leading: Column(
+            leading: EufemiaColumn(
               children: [
                 Text(
                   'Man',
@@ -62,7 +58,7 @@ class _CellsViewState extends State<CellsView> {
               ],
             ),
             title: Text('Recipient/Sender'),
-            trailing: Row(
+            trailing: EufemiaRow(
               children: [
                 EufemiaPadding(
                   padding: EufemiaInsets.small(EufemiaSides.right),

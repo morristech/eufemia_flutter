@@ -1,8 +1,12 @@
+## 1.0.3
+
+- Update example
+- Rename theme.dart to adapter.dart
+
 ## 1.0.2
 
 - Allow for non-text titles on list components
 - Update version constraints
--
 
 ## 1.0.0
 

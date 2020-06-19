@@ -43,13 +43,14 @@ class EufemiaThemeAdapter {
       ),
       iconTheme: IconThemeData(
         color: palette.icon,
-        size: 24.0,
+        size: 22.0,
       ),
       appBarTheme: AppBarTheme(
         color: palette.primary,
         elevation: 0,
         iconTheme: IconThemeData(
           color: palette.onPrimary,
+          size: 22.0,
         ),
         actionsIconTheme: IconThemeData(
           color: palette.onPrimary,

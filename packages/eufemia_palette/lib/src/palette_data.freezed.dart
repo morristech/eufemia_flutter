@@ -59,7 +59,8 @@ class _$EufemiaPaletteDataTearOff {
       @required @ColorJsonConverter() Color snack,
       @required @ColorJsonConverter() Color onSnack,
       @required @ColorJsonConverter() Color shimmerBase,
-      @required @ColorJsonConverter() Color shimmerHighlight}) {
+      @required @ColorJsonConverter() Color shimmerHighlight,
+      @required @ColorJsonConverter() Color navbarTitle}) {
     return _EufemiaPaletteData(
       brightness: brightness,
       primary: primary,
@@ -105,6 +106,7 @@ class _$EufemiaPaletteDataTearOff {
       onSnack: onSnack,
       shimmerBase: shimmerBase,
       shimmerHighlight: shimmerHighlight,
+      navbarTitle: navbarTitle,
     );
   }
 }
@@ -200,6 +202,8 @@ mixin _$EufemiaPaletteData {
   Color get shimmerBase;
   @ColorJsonConverter()
   Color get shimmerHighlight;
+  @ColorJsonConverter()
+  Color get navbarTitle;
 
   Map<String, dynamic> toJson();
   $EufemiaPaletteDataCopyWith<EufemiaPaletteData> get copyWith;
@@ -253,7 +257,8 @@ abstract class $EufemiaPaletteDataCopyWith<$Res> {
       @ColorJsonConverter() Color snack,
       @ColorJsonConverter() Color onSnack,
       @ColorJsonConverter() Color shimmerBase,
-      @ColorJsonConverter() Color shimmerHighlight});
+      @ColorJsonConverter() Color shimmerHighlight,
+      @ColorJsonConverter() Color navbarTitle});
 }
 
 class _$EufemiaPaletteDataCopyWithImpl<$Res>
@@ -310,6 +315,7 @@ class _$EufemiaPaletteDataCopyWithImpl<$Res>
     Object onSnack = freezed,
     Object shimmerBase = freezed,
     Object shimmerHighlight = freezed,
+    Object navbarTitle = freezed,
   }) {
     return _then(_value.copyWith(
       brightness:
@@ -372,6 +378,8 @@ class _$EufemiaPaletteDataCopyWithImpl<$Res>
       shimmerHighlight: shimmerHighlight == freezed
           ? _value.shimmerHighlight
           : shimmerHighlight as Color,
+      navbarTitle:
+          navbarTitle == freezed ? _value.navbarTitle : navbarTitle as Color,
     ));
   }
 }
@@ -426,7 +434,8 @@ abstract class _$EufemiaPaletteDataCopyWith<$Res>
       @ColorJsonConverter() Color snack,
       @ColorJsonConverter() Color onSnack,
       @ColorJsonConverter() Color shimmerBase,
-      @ColorJsonConverter() Color shimmerHighlight});
+      @ColorJsonConverter() Color shimmerHighlight,
+      @ColorJsonConverter() Color navbarTitle});
 }
 
 class __$EufemiaPaletteDataCopyWithImpl<$Res>
@@ -485,6 +494,7 @@ class __$EufemiaPaletteDataCopyWithImpl<$Res>
     Object onSnack = freezed,
     Object shimmerBase = freezed,
     Object shimmerHighlight = freezed,
+    Object navbarTitle = freezed,
   }) {
     return _then(_EufemiaPaletteData(
       brightness:
@@ -547,6 +557,8 @@ class __$EufemiaPaletteDataCopyWithImpl<$Res>
       shimmerHighlight: shimmerHighlight == freezed
           ? _value.shimmerHighlight
           : shimmerHighlight as Color,
+      navbarTitle:
+          navbarTitle == freezed ? _value.navbarTitle : navbarTitle as Color,
     ));
   }
 }
@@ -599,7 +611,8 @@ class _$_EufemiaPaletteData
       @required @ColorJsonConverter() this.snack,
       @required @ColorJsonConverter() this.onSnack,
       @required @ColorJsonConverter() this.shimmerBase,
-      @required @ColorJsonConverter() this.shimmerHighlight})
+      @required @ColorJsonConverter() this.shimmerHighlight,
+      @required @ColorJsonConverter() this.navbarTitle})
       : assert(brightness != null),
         assert(primary != null),
         assert(onPrimary != null),
@@ -643,7 +656,8 @@ class _$_EufemiaPaletteData
         assert(snack != null),
         assert(onSnack != null),
         assert(shimmerBase != null),
-        assert(shimmerHighlight != null);
+        assert(shimmerHighlight != null),
+        assert(navbarTitle != null);
 
   factory _$_EufemiaPaletteData.fromJson(Map<String, dynamic> json) =>
       _$_$_EufemiaPaletteDataFromJson(json);
@@ -779,10 +793,13 @@ class _$_EufemiaPaletteData
   @override
   @ColorJsonConverter()
   final Color shimmerHighlight;
+  @override
+  @ColorJsonConverter()
+  final Color navbarTitle;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'EufemiaPaletteData(brightness: $brightness, primary: $primary, onPrimary: $onPrimary, secondary: $secondary, info: $info, onInfo: $onInfo, infoBackground: $infoBackground, success: $success, onSuccess: $onSuccess, successBackground: $successBackground, error: $error, onError: $onError, errorBackground: $errorBackground, warning: $warning, onWarning: $onWarning, warningBackground: $warningBackground, dark: $dark, light: $light, black: $black, grey: $grey, white: $white, text: $text, textLight: $textLight, onButton: $onButton, icon: $icon, card: $card, cardLabel: $cardLabel, accent: $accent, button: $button, toggle: $toggle, toggleInactive: $toggleInactive, onToggle: $onToggle, outline: $outline, tag: $tag, onTag: $onTag, shadow: $shadow, canvas: $canvas, search: $search, onSearch: $onSearch, onSearchInactive: $onSearchInactive, snack: $snack, onSnack: $onSnack, shimmerBase: $shimmerBase, shimmerHighlight: $shimmerHighlight)';
+    return 'EufemiaPaletteData(brightness: $brightness, primary: $primary, onPrimary: $onPrimary, secondary: $secondary, info: $info, onInfo: $onInfo, infoBackground: $infoBackground, success: $success, onSuccess: $onSuccess, successBackground: $successBackground, error: $error, onError: $onError, errorBackground: $errorBackground, warning: $warning, onWarning: $onWarning, warningBackground: $warningBackground, dark: $dark, light: $light, black: $black, grey: $grey, white: $white, text: $text, textLight: $textLight, onButton: $onButton, icon: $icon, card: $card, cardLabel: $cardLabel, accent: $accent, button: $button, toggle: $toggle, toggleInactive: $toggleInactive, onToggle: $onToggle, outline: $outline, tag: $tag, onTag: $onTag, shadow: $shadow, canvas: $canvas, search: $search, onSearch: $onSearch, onSearchInactive: $onSearchInactive, snack: $snack, onSnack: $onSnack, shimmerBase: $shimmerBase, shimmerHighlight: $shimmerHighlight, navbarTitle: $navbarTitle)';
   }
 
   @override
@@ -833,7 +850,8 @@ class _$_EufemiaPaletteData
       ..add(DiagnosticsProperty('snack', snack))
       ..add(DiagnosticsProperty('onSnack', onSnack))
       ..add(DiagnosticsProperty('shimmerBase', shimmerBase))
-      ..add(DiagnosticsProperty('shimmerHighlight', shimmerHighlight));
+      ..add(DiagnosticsProperty('shimmerHighlight', shimmerHighlight))
+      ..add(DiagnosticsProperty('navbarTitle', navbarTitle));
   }
 
   @override
@@ -926,7 +944,8 @@ class _$_EufemiaPaletteData
             (identical(other.snack, snack) || const DeepCollectionEquality().equals(other.snack, snack)) &&
             (identical(other.onSnack, onSnack) || const DeepCollectionEquality().equals(other.onSnack, onSnack)) &&
             (identical(other.shimmerBase, shimmerBase) || const DeepCollectionEquality().equals(other.shimmerBase, shimmerBase)) &&
-            (identical(other.shimmerHighlight, shimmerHighlight) || const DeepCollectionEquality().equals(other.shimmerHighlight, shimmerHighlight)));
+            (identical(other.shimmerHighlight, shimmerHighlight) || const DeepCollectionEquality().equals(other.shimmerHighlight, shimmerHighlight)) &&
+            (identical(other.navbarTitle, navbarTitle) || const DeepCollectionEquality().equals(other.navbarTitle, navbarTitle)));
   }
 
   @override
@@ -975,7 +994,8 @@ class _$_EufemiaPaletteData
       const DeepCollectionEquality().hash(snack) ^
       const DeepCollectionEquality().hash(onSnack) ^
       const DeepCollectionEquality().hash(shimmerBase) ^
-      const DeepCollectionEquality().hash(shimmerHighlight);
+      const DeepCollectionEquality().hash(shimmerHighlight) ^
+      const DeepCollectionEquality().hash(navbarTitle);
 
   @override
   _$EufemiaPaletteDataCopyWith<_EufemiaPaletteData> get copyWith =>
@@ -1032,7 +1052,8 @@ abstract class _EufemiaPaletteData implements EufemiaPaletteData {
           @required @ColorJsonConverter() Color snack,
           @required @ColorJsonConverter() Color onSnack,
           @required @ColorJsonConverter() Color shimmerBase,
-          @required @ColorJsonConverter() Color shimmerHighlight}) =
+          @required @ColorJsonConverter() Color shimmerHighlight,
+          @required @ColorJsonConverter() Color navbarTitle}) =
       _$_EufemiaPaletteData;
 
   factory _EufemiaPaletteData.fromJson(Map<String, dynamic> json) =
@@ -1169,6 +1190,9 @@ abstract class _EufemiaPaletteData implements EufemiaPaletteData {
   @override
   @ColorJsonConverter()
   Color get shimmerHighlight;
+  @override
+  @ColorJsonConverter()
+  Color get navbarTitle;
   @override
   _$EufemiaPaletteDataCopyWith<_EufemiaPaletteData> get copyWith;
 }

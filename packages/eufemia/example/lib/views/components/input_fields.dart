@@ -31,12 +31,8 @@ class _InputFieldsViewState extends State<InputFieldsView> {
     final palette = EufemiaPalette.of(context);
 
     return Scaffold(
-      appBar: AppBar(
+      appBar: Navbar(
         title: Text('Input fields'),
-        leading: IconButton(
-          icon: Icon(EufemiaIcons.back_arrow),
-          onPressed: () => Navigator.pop(context),
-        ),
       ),
       body: SafeArea(
         child: Form(

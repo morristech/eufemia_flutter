@@ -5,7 +5,7 @@ export 'src/eufemia_data.dart';
 export 'src/eufemia.dart';
 
 // Theme and styles
-export 'src/theme.dart';
+export 'src/adapter.dart';
 
 // Utils
 export 'src/utils/language.dart';

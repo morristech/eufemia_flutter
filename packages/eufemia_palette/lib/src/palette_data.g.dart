@@ -58,6 +58,7 @@ _$_EufemiaPaletteData _$_$_EufemiaPaletteDataFromJson(
     shimmerBase: const ColorJsonConverter().fromJson(json['shimmerBase']),
     shimmerHighlight:
         const ColorJsonConverter().fromJson(json['shimmerHighlight']),
+    navbarTitle: const ColorJsonConverter().fromJson(json['navbarTitle']),
   );
 }
 
@@ -115,6 +116,7 @@ Map<String, dynamic> _$_$_EufemiaPaletteDataToJson(
       'shimmerBase': const ColorJsonConverter().toJson(instance.shimmerBase),
       'shimmerHighlight':
           const ColorJsonConverter().toJson(instance.shimmerHighlight),
+      'navbarTitle': const ColorJsonConverter().toJson(instance.navbarTitle),
     };
 
 T _$enumDecode<T>(

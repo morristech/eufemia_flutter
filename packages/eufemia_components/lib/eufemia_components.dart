@@ -52,6 +52,7 @@ export 'src/snack_bar/snack_bar.dart';
 export 'src/bars/bar.dart';
 export 'src/bars/bottom_bar.dart';
 export 'src/bars/toolbar.dart';
+export 'src/bars/navbar.dart';
 
 // Spinner
 export 'src/spinner/spinner.dart';

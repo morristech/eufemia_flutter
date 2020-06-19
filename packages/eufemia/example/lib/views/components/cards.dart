@@ -7,12 +7,8 @@ class CardsView extends StatelessWidget {
     final typography = EufemiaTypography.of(context);
 
     return Scaffold(
-      appBar: AppBar(
+      appBar: Navbar(
         title: Text('Cards'),
-        leading: IconButton(
-          icon: Icon(EufemiaIcons.back_arrow),
-          onPressed: () => Navigator.pop(context),
-        ),
       ),
       body: SafeArea(
         child: ScrollableList(

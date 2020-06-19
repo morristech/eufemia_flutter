@@ -198,7 +198,8 @@ class PaymentCardBack extends StatelessWidget {
         child: EufemiaColumn(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
+          spaceBetween: EufemiaSpace.small,
+          children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(2.5),
               child: Stack(
@@ -224,11 +225,11 @@ class PaymentCardBack extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 8.0),
-            Row(
+            EufemiaRow(
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Column(
+              spaceBetween: EufemiaSpace.medium,
+              children: [
+                EufemiaColumn(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -241,8 +242,7 @@ class PaymentCardBack extends StatelessWidget {
                     Text(content?.accountName ?? 'Brukskonto'),
                   ],
                 ),
-                SizedBox(width: 16.0),
-                Column(
+                EufemiaColumn(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -294,7 +294,7 @@ class PaymentCardBack extends StatelessWidget {
                   fontSize: 8.0,
                   fontWeight: FontWeight.w300,
                 ),
-            child: Row(
+            child: EufemiaRow(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 const Text('DNB Kundeservice +47 915 04800'),
@@ -401,8 +401,8 @@ class PaymentCardDigits extends StatelessWidget {
                           TextStyle(fontSize: constraints.maxWidth * 0.02332),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 4.0),
+                  EufemiaPadding(
+                    padding: EufemiaInsets.extraSmall(EufemiaSides.top),
                     child: Text(
                       '**** $digits',
                       style: TextStyle(fontSize: constraints.maxWidth * 0.0583),

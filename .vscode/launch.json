@@ -12,118 +12,135 @@
 			"name": "Current Device Profile",
 			"request": "launch",
 			"type": "dart",
-			"flutterMode": "profile"
+			"flutterMode": "profile",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "Current Device Release",
 			"request": "launch",
 			"type": "dart",
-			"flutterMode": "release"
+			"flutterMode": "release",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "Android Debug",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "android",
-			"flutterMode": "debug"
+			"flutterMode": "debug",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "Android Profile",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "android",
-			"flutterMode": "profile"
+			"flutterMode": "profile",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "Android Release",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "android",
-			"flutterMode": "release"
+			"flutterMode": "release",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "macOS Debug",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "macOS",
-			"flutterMode": "debug"
+			"flutterMode": "debug",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "macOS Profile",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "macOS",
-			"flutterMode": "profile"
+			"flutterMode": "profile",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "macOS Release",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "macOS",
-			"flutterMode": "release"
+			"flutterMode": "release",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "iPhone Debug",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "iphone",
-			"flutterMode": "debug"
+			"flutterMode": "debug",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "iPhone Profile",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "iphone",
-			"flutterMode": "profile"
+			"flutterMode": "profile",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "iPhone Release",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "iphone",
-			"flutterMode": "release"
+			"flutterMode": "release",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "iPad Debug",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "ipad",
-			"flutterMode": "debug"
+			"flutterMode": "debug",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "iPad Profile",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "ipad",
-			"flutterMode": "profile"
+			"flutterMode": "profile",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "iPad Release",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "ipad",
-			"flutterMode": "release"
+			"flutterMode": "release",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "Chrome Debug",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "chrome",
-			"flutterMode": "debug"
+			"flutterMode": "debug",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "Chrome Profile",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "chrome",
-			"flutterMode": "profile"
+			"flutterMode": "profile",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 		{
 			"name": "Chrome Release",
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "chrome",
-			"flutterMode": "release"
+			"flutterMode": "release",
+			"program": "packages/eufemia/example/lib/main.dart"
 		},
 	],
 	"compounds": [

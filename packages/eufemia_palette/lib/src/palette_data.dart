@@ -55,6 +55,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
     @required @ColorJsonConverter() Color onSnack,
     @required @ColorJsonConverter() Color shimmerBase,
     @required @ColorJsonConverter() Color shimmerHighlight,
+    @required @ColorJsonConverter() Color navbarTitle,
   }) = _EufemiaPaletteData;
 
   factory EufemiaPaletteData.fallback() => EufemiaPaletteData(
@@ -102,6 +103,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         onSnack: EufemiaColors.white,
         shimmerBase: EufemiaColors.coal.withOpacity(.08),
         shimmerHighlight: EufemiaColors.white.withOpacity(.18),
+        navbarTitle: EufemiaColors.emeraldGreen,
       );
 
   factory EufemiaPaletteData.regular() => EufemiaPaletteData(
@@ -149,6 +151,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         onSnack: EufemiaColors.mintGreen,
         shimmerBase: EufemiaColors.coal.withOpacity(.08),
         shimmerHighlight: EufemiaColors.white.withOpacity(.18),
+        navbarTitle: EufemiaColors.emeraldGreen,
       );
 
   factory EufemiaPaletteData.saga() => EufemiaPaletteData(
@@ -196,6 +199,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         onSnack: EufemiaColors.saga,
         shimmerBase: EufemiaColors.coal.withOpacity(.08),
         shimmerHighlight: EufemiaColors.white.withOpacity(.18),
+        navbarTitle: EufemiaColors.white,
       );
 
   factory EufemiaPaletteData.dark() => EufemiaPaletteData(
@@ -243,6 +247,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         onSnack: EufemiaColors.mintGreen,
         shimmerBase: EufemiaColors.white.withOpacity(.16),
         shimmerHighlight: EufemiaColors.white.withOpacity(.18),
+        navbarTitle: EufemiaColors.white,
       );
 
   factory EufemiaPaletteData.privateBanking() => EufemiaPaletteData(
@@ -290,6 +295,7 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
         onSnack: EufemiaColors.subtleGray,
         shimmerBase: EufemiaColors.coal.withOpacity(.08),
         shimmerHighlight: EufemiaColors.white.withOpacity(.18),
+        navbarTitle: EufemiaColors.white,
       );
 
   factory EufemiaPaletteData.fromJson(Map<String, dynamic> json) =>
