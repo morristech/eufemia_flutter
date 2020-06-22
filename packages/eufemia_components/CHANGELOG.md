@@ -1,3 +1,7 @@
+## 1.1.3+2
+
+- Navbar: fix leading button hidden when systemNavigation is set to true
+
 ## 1.1.3+1
 
 - Update eufemia_palette constraint

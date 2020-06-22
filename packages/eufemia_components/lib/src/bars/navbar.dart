@@ -30,7 +30,7 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final palette = EufemiaPalette.of(context);
     final parentRoute = ModalRoute.of(context);
-    final canPop = parentRoute?.canPop ?? false;
+    final canPop = systemNavigation || (parentRoute?.canPop ?? false);
 
     final style = getPlatformDefaultStyle(context).copyWith(
       color: palette.navbarTitle,
