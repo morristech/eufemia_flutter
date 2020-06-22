@@ -2,6 +2,7 @@
 
 - Update example
 - Rename theme.dart to adapter.dart
+- Update eufemia_palette and eufemia_components constraint
 
 ## 1.0.2
 

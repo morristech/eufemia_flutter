@@ -1,3 +1,7 @@
+## 1.1.3+1
+
+- Update eufemia_palette constraint
+
 ## 1.1.3
 
 - Add Navbar component
