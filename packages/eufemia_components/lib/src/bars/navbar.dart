@@ -36,23 +36,36 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
       color: palette.navbarTitle,
     );
 
+    var icon = leading;
+
+    if (icon == null) {
+      if (automaticallyImplyLeading && canPop) {
+        icon = GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          child: Icon(EufemiaIcons.back_arrow, size: 16.0),
+          onTap: () => systemNavigation
+              ? SystemNavigator.pop()
+              : Navigator.of(context).pop(),
+        );
+      }
+    }
+
     return AppBar(
       title: DefaultTextStyle(
-        child: title,
+        child: AnimatedSwitcher(
+          duration: Duration(milliseconds: 80),
+          transitionBuilder: (child, animation) => FadeTransition(
+            opacity: animation,
+            child: child,
+          ),
+          child: title,
+        ),
         style: style,
       ),
       actions: actions,
       centerTitle: centerTitle,
-      leading: leading ?? automaticallyImplyLeading
-          ? canPop
-              ? GestureDetector(
-                  child: Icon(EufemiaIcons.back_arrow, size: 16.0),
-                  onTap: () => systemNavigation
-                      ? SystemNavigator.pop()
-                      : Navigator.of(context).pop(),
-                )
-              : null
-          : null,
+      leading: icon,
+      titleSpacing: 0.0,
     );
   }
 

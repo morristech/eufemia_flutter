@@ -53,6 +53,7 @@ class Cell extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       EufemiaRow(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           if (hasLeading) ...{
                             AnimatedDefaultTextStyle(

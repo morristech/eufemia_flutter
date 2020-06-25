@@ -33,6 +33,7 @@ class StaticList extends StatelessWidget {
     final palette = EufemiaPalette.of(context);
 
     return EufemiaColumn(
+      padding: padding,
       mainAxisSize: MainAxisSize.min,
       children: [
         if (title != null) ...{
@@ -57,7 +58,7 @@ class StaticList extends StatelessWidget {
         if (showBorders) ...{
           Container(
             decoration: BoxDecoration(
-              color: backgroundColor ?? context.theme.cardColor,
+              color: backgroundColor ?? palette.card,
               border: Border(
                 top: BorderSide(
                   width: 0.5,
@@ -69,7 +70,7 @@ class StaticList extends StatelessWidget {
           )
         } else ...{
           Container(
-            color: backgroundColor ?? context.theme.cardColor,
+            color: backgroundColor ?? palette.card,
             child: buildList(context),
           ),
         },
@@ -94,7 +95,6 @@ class StaticList extends StatelessWidget {
       return EufemiaColumn(
         children: children,
         spaceBetween: spaceBetween,
-        padding: padding,
         mainAxisSize: MainAxisSize.min,
       );
     }

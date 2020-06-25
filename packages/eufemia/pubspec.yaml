@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^0.17.4
+  flutter_svg: ^0.18.0
   flutter_slidable: ^0.5.4
   meta: ^1.1.8
   shimmer: ^1.1.1
@@ -21,7 +21,8 @@ dependencies:
 
   # Eufemia dependencies
   eufemia_palette: ">=1.1.2 <2.0.0"
-  eufemia_components: ">=1.1.3 <2.0.0"
+  eufemia_components: # ">=1.1.3 <2.0.0"
+    path: ../eufemia_components
   eufemia_spacing: ">=1.0.0 <2.0.0"
   eufemia_typography: ">=1.0.0 <2.0.0"
 
