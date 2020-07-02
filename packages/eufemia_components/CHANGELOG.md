@@ -1,3 +1,10 @@
+## 1.1.4
+
+- Add new PageIndicator
+- Fix Navbar bugs
+- Set EufemiaTab active parameter to default false
+- Add EufemiaTabBar
+
 ## 1.1.3+2
 
 - Navbar: fix leading button hidden when systemNavigation is set to true

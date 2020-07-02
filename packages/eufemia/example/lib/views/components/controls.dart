@@ -108,11 +108,10 @@ class _ControlsViewState extends State<ControlsView> {
           ),
           EufemiaRow(
             children: [
-              PageIndicator(selected: false),
-              SizedBox(width: 4),
-              PageIndicator(selected: true),
-              SizedBox(width: 4),
-              PageIndicator(selected: false),
+              PageIndicator(
+                count: 3,
+                controller: PageController(),
+              ),
             ],
           ),
           SegmentedControl<int>(

@@ -12,7 +12,7 @@ class EufemiaTab extends StatelessWidget {
   const EufemiaTab({
     Key key,
     @required this.label,
-    @required this.active,
+    this.active = false,
     this.onSelected,
   }) : super(key: key);
 
