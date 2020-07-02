@@ -1,30 +1,29 @@
 import 'package:eufemia_palette/eufemia_palette.dart';
 import 'package:flutter/widgets.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 /// Page indicator from the Eufemia Design System
 class PageIndicator extends StatelessWidget {
-  final bool selected;
+  final PageController controller;
+  final int count;
 
   /// Page indicator from the Eufemia Design System
   ///
   /// * [selected]: Whether the indicator is selected or not
-  const PageIndicator({Key key, @required this.selected}) : super(key: key);
+  const PageIndicator({Key key, this.controller, this.count}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final palette = EufemiaPalette.of(context);
 
-    return AnimatedContainer(
-      width: 8,
-      height: 8,
-      duration: Duration(milliseconds: 50),
-      decoration: BoxDecoration(
-        color: selected ? palette.toggle : Color(0x00),
-        shape: BoxShape.circle,
-        border: Border.all(
-          width: 0.5,
-          color: palette.toggle,
-        ),
+    return SmoothPageIndicator(
+      controller: controller,
+      count: count,
+      effect: WormEffect(
+        dotColor: palette.toggle.withOpacity(0.5),
+        activeDotColor: palette.toggle,
+        dotHeight: 8.0,
+        dotWidth: 8.0,
       ),
     );
   }

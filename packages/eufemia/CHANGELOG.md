@@ -1,3 +1,11 @@
+## 1.0.4
+
+- Add new PageIndicator
+- Fix Navbar bugs
+- Set EufemiaTab active parameter to default false
+- Update example app
+- Add EufemiaTabBar
+
 ## 1.0.3
 
 - Update example

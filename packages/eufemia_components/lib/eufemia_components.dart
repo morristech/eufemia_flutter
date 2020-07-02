@@ -53,6 +53,7 @@ export 'src/bars/bar.dart';
 export 'src/bars/bottom_bar.dart';
 export 'src/bars/toolbar.dart';
 export 'src/bars/navbar.dart';
+export 'src/bars/tab_bar.dart';
 
 // Spinner
 export 'src/spinner/spinner.dart';
