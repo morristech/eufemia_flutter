@@ -1,5 +1,6 @@
 import 'package:eufemia_components/src/icons/eufemia_icons.dart';
 import 'package:eufemia_palette/eufemia_palette.dart';
+import 'package:eufemia_spacing/eufemia_spacing.dart';
 import 'package:eufemia_typography/eufemia_typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/widgets.dart';
 
 class Navbar extends StatelessWidget implements PreferredSizeWidget {
   Navbar({
+    Key key,
     this.title,
     this.actions,
     this.leading,
@@ -14,9 +16,10 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
     this.centerTitle,
     this.automaticallyImplyLeading = true,
     this.systemNavigation = false,
-  }) : preferredSize = Size.fromHeight(
+  })  : preferredSize = Size.fromHeight(
           bottom?.preferredSize?.height ?? 0.0 + kToolbarHeight,
-        );
+        ),
+        super(key: key);
 
   final Widget title;
   final List<Widget> actions;
@@ -62,10 +65,19 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
         ),
         style: style,
       ),
-      actions: actions,
+      actions: [
+        if (actions?.isNotEmpty ?? false) ...{
+          EufemiaRow(
+            padding: EufemiaInsets.medium(EufemiaSides.right),
+            children: actions,
+          ),
+        },
+      ],
+      bottom: bottom,
       centerTitle: centerTitle,
       leading: icon,
-      titleSpacing: 0.0,
+      titleSpacing:
+          icon == null ? EufemiaSpace.medium.toPoints(context: context) : 0.0,
     );
   }
 

@@ -54,6 +54,7 @@ class EufemiaThemeAdapter {
         ),
         actionsIconTheme: IconThemeData(
           color: palette.onPrimary,
+          size: 22.0,
         ),
       ),
       splashFactory: NoSplashFactory(),
