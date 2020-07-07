@@ -1,3 +1,7 @@
+## 1.1.3
+
+- Export `height.dart` for `EufemiaLineHeight` extensions
+
 ## 1.1.2
 
 - Allow non-text list titles

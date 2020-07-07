@@ -1,3 +1,8 @@
+## 1.0.5
+
+- Add `fromTextStyle` factory on `Shimmer` component
+- Fix sync issues with `EufemiaTabBar` component
+
 ## 1.0.4
 
 - Add new PageIndicator

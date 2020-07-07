@@ -1,6 +1,6 @@
 name: eufemia
 description: A set of Flutter widgets and reusable UI components from DNB's design system
-version: 1.0.4
+version: 1.0.5
 homepage: https://dnb.no
 
 environment:
@@ -21,10 +21,9 @@ dependencies:
 
   # Eufemia dependencies
   eufemia_palette: ">=1.1.2 <2.0.0"
-  eufemia_components: # ">=1.1.3 <2.0.0"
-    path: ../eufemia_components
-  eufemia_spacing: ">=1.0.0 <2.0.0"
-  eufemia_typography: ">=1.0.0 <2.0.0"
+  eufemia_components: ">=1.1.5 <2.0.0"
+  eufemia_spacing: ">=1.1.1 <2.0.0"
+  eufemia_typography: ">=1.1.3 <2.0.0"
 
 dev_dependencies:
   flutter_test:
