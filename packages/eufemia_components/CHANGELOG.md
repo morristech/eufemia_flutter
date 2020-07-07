@@ -1,3 +1,8 @@
+## 1.1.5
+
+- Add Shimmer factory `fromTextStyle`
+- Fix sync issue with EufemiaTabBar not updating tabs on swipe
+
 ## 1.1.4
 
 - Add new PageIndicator

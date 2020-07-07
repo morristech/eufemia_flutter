@@ -1,4 +1,5 @@
 import 'package:eufemia_palette/eufemia_palette.dart';
+import 'package:eufemia_typography/eufemia_typography.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shimmer/shimmer.dart' as shimmer;
 
@@ -28,6 +29,17 @@ class Shimmer extends StatelessWidget {
       height: size,
       width: size,
       shape: BoxShape.circle,
+    );
+  }
+
+  factory Shimmer.fromTextStyle(
+    BuildContext context,
+    EufemiaTextStyle style, {
+    double width,
+  }) {
+    return Shimmer(
+      height: style.height.toPoints(context: context),
+      width: width,
     );
   }
 

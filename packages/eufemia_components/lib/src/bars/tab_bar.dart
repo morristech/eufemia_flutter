@@ -21,14 +21,26 @@ class EufemiaTabBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _EufemiaTabBarState extends State<EufemiaTabBar> {
+  TabController controller;
+  int index;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    controller = widget.controller ?? DefaultTabController.of(context)
+      ..addListener(() {
+        if (controller.indexIsChanging) {
+          setState(() {});
+        }
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
-    final controller = widget.controller ?? DefaultTabController.of(context);
-
     final adjustedTabs = widget.tabs
         .map((tab) => EufemiaTab(
               label: tab.label,
-              active: controller.index == widget.tabs.indexOf(tab),
+              active: index == widget.tabs.indexOf(tab),
               onSelected: () {
                 tab.onSelected?.call();
                 controller.animateTo(widget.tabs.indexOf(tab));
