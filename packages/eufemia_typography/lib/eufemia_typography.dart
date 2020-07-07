@@ -9,3 +9,4 @@ export 'src/typography_data_fallback.dart';
 export 'src/typography_data.dart';
 export 'src/typography.dart';
 export 'src/weight.dart';
+export 'src/height.dart';
