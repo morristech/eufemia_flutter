@@ -38,7 +38,8 @@ class Shimmer extends StatelessWidget {
     double width,
   }) {
     return Shimmer(
-      height: style.height.toPoints(context: context),
+      height: style.height.toPoints(context: context) *
+          style.size.toPoints(context: context),
       width: width,
     );
   }

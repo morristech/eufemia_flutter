@@ -1,3 +1,7 @@
+## 1.1.5+1
+
+- Use font size \* line height for shimmer height calculation
+
 ## 1.1.5
 
 - Add Shimmer factory `fromTextStyle`
