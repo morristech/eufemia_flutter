@@ -1,3 +1,7 @@
+## 1.1.5+2
+
+- Update `EufemiaTabBar` controller on dependency change
+
 ## 1.1.5+1
 
 - Use font size \* line height for shimmer height calculation

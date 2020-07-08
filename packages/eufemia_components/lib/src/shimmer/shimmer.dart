@@ -19,7 +19,7 @@ class Shimmer extends StatelessWidget {
   const Shimmer({
     Key key,
     this.height = 16 * 1.33,
-    this.width = 128,
+    this.width = 128.0,
     this.shape = BoxShape.rectangle,
     this.child,
   }) : super(key: key);
@@ -40,7 +40,7 @@ class Shimmer extends StatelessWidget {
     return Shimmer(
       height: style.height.toPoints(context: context) *
           style.size.toPoints(context: context),
-      width: width,
+      width: width ?? 128.0,
     );
   }
 
