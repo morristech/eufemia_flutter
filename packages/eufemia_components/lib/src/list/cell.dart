@@ -29,6 +29,14 @@ class Cell extends StatelessWidget {
     this.contentPadding,
   }) : super(key: key);
 
+  factory Cell.shimmer({bool leading = false, bool trailing = false}) {
+    return Cell(
+      leading: leading ? Shimmer.circular(24.0) : null,
+      title: Shimmer(),
+      trailing: trailing ? Shimmer(width: 48.0) : null,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final typography = EufemiaTypography.of(context);
