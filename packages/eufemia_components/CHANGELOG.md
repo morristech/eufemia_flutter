@@ -1,3 +1,7 @@
+## 1.1.6
+
+- Add `shimmer` factory on `Cell`
+
 ## 1.1.5+2
 
 - Update `EufemiaTabBar` controller on dependency change
