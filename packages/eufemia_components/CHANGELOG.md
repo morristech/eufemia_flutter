@@ -1,3 +1,7 @@
+## 1.1.7
+
+- Add `label` property on `InputField` component
+
 ## 1.1.6
 
 - Add `shimmer` factory on `Cell`

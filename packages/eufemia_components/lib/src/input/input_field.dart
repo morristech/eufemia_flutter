@@ -1,5 +1,6 @@
 import 'package:eufemia_components/eufemia_components.dart';
 import 'package:eufemia_palette/eufemia_palette.dart';
+import 'package:eufemia_spacing/eufemia_spacing.dart';
 import 'package:eufemia_typography/eufemia_typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -20,6 +21,7 @@ class InputField extends StatefulWidget {
   final bool counter;
   final String errorText;
   final String hintText;
+  final String label;
   final VoidCallback onEditingComplete;
   final TextEditingController controller;
   final TextInputType keyboardType;
@@ -42,6 +44,7 @@ class InputField extends StatefulWidget {
     this.expands = false,
     this.counter = true,
     this.hintText,
+    this.label,
   }) : super(key: key);
 
   @override
@@ -72,41 +75,52 @@ class _InputFieldState extends State<InputField> {
     final typography = EufemiaTypography.of(context);
     final style = typography.styles.body.toTextStyle(context);
 
-    return TextFormField(
-      key: fieldKey,
-      onEditingComplete: widget.onEditingComplete,
-      cursorColor: palette.secondary,
-      controller: widget.controller,
-      validator: widget.validator,
-      maxLength: widget.maxLength,
-      maxLines: widget.maxLines,
-      onChanged: widget.onChanged,
-      expands: widget.expands,
-      autocorrect: widget.autocorrect,
-      readOnly: widget.readOnly,
-      style: style,
-      keyboardType: widget.keyboardType ?? defaultKeyboard,
-      buildCounter: buildCounter,
-      decoration: InputDecoration(
-        enabledBorder: buildBorder(context, InputState.empty),
-        focusedBorder: buildBorder(context, InputState.active),
-        errorBorder: buildBorder(context, InputState.error),
-        focusedErrorBorder: buildBorder(context, InputState.error),
-        hintText: widget.hintText,
-        hintStyle: style.copyWith(color: palette.grey),
-        errorText: widget.errorText,
-        errorStyle: typography.styles.subhead
-            .copyWith(color: palette.error)
-            .toTextStyle(context),
-        suffixIcon: GestureDetector(
-          onTap: widget.controller.clear,
-          child: Icon(
-            showIcon ? EufemiaIcons.clear : null,
-            color: palette.grey,
-            size: 16.0,
+    return EufemiaColumn(
+      children: <Widget>[
+        if (widget.label != null) ...{
+          Text(
+            widget.label,
+            style: typography.styles.bodyEmphasized.toTextStyle(context),
+          ),
+          EufemiaGap(EufemiaSpace.small),
+        },
+        TextFormField(
+          key: fieldKey,
+          onEditingComplete: widget.onEditingComplete,
+          cursorColor: palette.secondary,
+          controller: widget.controller,
+          validator: widget.validator,
+          maxLength: widget.maxLength,
+          maxLines: widget.maxLines,
+          onChanged: widget.onChanged,
+          expands: widget.expands,
+          autocorrect: widget.autocorrect,
+          readOnly: widget.readOnly,
+          style: style,
+          keyboardType: widget.keyboardType ?? defaultKeyboard,
+          buildCounter: buildCounter,
+          decoration: InputDecoration(
+            enabledBorder: buildBorder(context, InputState.empty),
+            focusedBorder: buildBorder(context, InputState.active),
+            errorBorder: buildBorder(context, InputState.error),
+            focusedErrorBorder: buildBorder(context, InputState.error),
+            hintText: widget.hintText,
+            hintStyle: style.copyWith(color: palette.grey),
+            errorText: widget.errorText,
+            errorStyle: typography.styles.subhead
+                .copyWith(color: palette.error)
+                .toTextStyle(context),
+            suffixIcon: GestureDetector(
+              onTap: widget.controller.clear,
+              child: Icon(
+                showIcon ? EufemiaIcons.clear : null,
+                color: palette.grey,
+                size: 16.0,
+              ),
+            ),
           ),
         ),
-      ),
+      ],
     );
   }
 
