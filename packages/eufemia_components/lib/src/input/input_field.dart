@@ -19,6 +19,7 @@ class InputField extends StatefulWidget {
   final bool readOnly;
   final bool expands;
   final bool counter;
+  final bool obscureText;
   final String errorText;
   final String hintText;
   final String label;
@@ -45,6 +46,7 @@ class InputField extends StatefulWidget {
     this.counter = true,
     this.hintText,
     this.label,
+    this.obscureText = false,
   }) : super(key: key);
 
   @override
@@ -98,6 +100,7 @@ class _InputFieldState extends State<InputField> {
           autocorrect: widget.autocorrect,
           readOnly: widget.readOnly,
           style: style,
+          obscureText: widget.obscureText,
           keyboardType: widget.keyboardType ?? defaultKeyboard,
           buildCounter: buildCounter,
           decoration: InputDecoration(

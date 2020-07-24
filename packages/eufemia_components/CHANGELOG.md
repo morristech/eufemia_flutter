@@ -1,3 +1,7 @@
+## 1.1.8
+
+- Add `obscureText` on `InputField` component
+
 ## 1.1.7+1
 
 - Fix alignment for `InputField` label
