@@ -76,6 +76,7 @@ class _InputFieldState extends State<InputField> {
     final style = typography.styles.body.toTextStyle(context);
 
     return EufemiaColumn(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         if (widget.label != null) ...{
           Text(

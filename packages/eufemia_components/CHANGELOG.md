@@ -1,3 +1,7 @@
+## 1.1.7+1
+
+- Fix alignment for `InputField` label
+
 ## 1.1.7
 
 - Add `label` property on `InputField` component
