@@ -1,3 +1,7 @@
+## 1.1.3+1
+
+- Update readme
+
 ## 1.1.3
 
 - Export `height.dart` for `EufemiaLineHeight` extensions

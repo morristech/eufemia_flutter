@@ -1,3 +1,7 @@
+## 1.1.2+1
+
+- Update readme
+
 ## 1.1.2
 
 - Add navbarTitle palette property
