@@ -12,28 +12,28 @@ class ThemesView extends StatelessWidget {
         child: ScrollableList(
           showBorders: false,
           children: [
-            PrimaryButton(
+            EufemiaPrimaryButton(
               child: Text('Regular'),
               onTap: () => EufemiaPalette.update(
                 context,
                 EufemiaPaletteData.regular(),
               ),
             ),
-            PrimaryButton(
+            EufemiaPrimaryButton(
               child: Text('Saga'),
               onTap: () => EufemiaPalette.update(
                 context,
                 EufemiaPaletteData.saga(),
               ),
             ),
-            PrimaryButton(
+            EufemiaPrimaryButton(
               child: Text('Private Banking'),
               onTap: () => EufemiaPalette.update(
                 context,
                 EufemiaPaletteData.privateBanking(),
               ),
             ),
-            PrimaryButton(
+            EufemiaPrimaryButton(
               child: Text('Dark'),
               onTap: () => EufemiaPalette.update(
                 context,

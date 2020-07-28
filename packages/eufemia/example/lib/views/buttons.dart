@@ -14,95 +14,95 @@ class ButtonsView extends StatelessWidget {
           padding: EufemiaInsets.allMedium,
           showBorders: false,
           children: [
-            PrimaryButton(
+            EufemiaPrimaryButton(
               child: Text('Primary'),
               onTap: () {},
             ),
-            PrimaryButton(
+            EufemiaPrimaryButton(
               child: Text('Primary disabled'),
             ),
-            PrimaryButton(
+            EufemiaPrimaryButton(
               child: Text('Primary small'),
               size: EufemiaButtonSize.small,
               onTap: () {},
             ),
-            PrimaryButton(
+            EufemiaPrimaryButton(
               child: Text('Primary small disabled'),
               size: EufemiaButtonSize.small,
             ),
-            SecondaryButton(
+            EufemiaSecondaryButton(
               child: Text('Secondary'),
               onTap: () {},
             ),
-            SecondaryButton(
+            EufemiaSecondaryButton(
               child: Text('Secondary disabled'),
             ),
-            SecondaryButton(
+            EufemiaSecondaryButton(
               child: Text('Secondary small'),
               onTap: () {},
               size: EufemiaButtonSize.small,
             ),
-            SecondaryButton(
+            EufemiaSecondaryButton(
               child: Text('Secondary small disabled'),
               size: EufemiaButtonSize.small,
             ),
-            VividButton(
+            EufemiaVividButton(
               child: Text('Vivid'),
               onTap: () {},
             ),
-            VividButton(
+            EufemiaVividButton(
               child: Text('Vivid disabled'),
             ),
-            VividButton(
+            EufemiaVividButton(
               child: Text('Vivid small'),
               size: EufemiaButtonSize.small,
               onTap: () {},
             ),
-            VividButton(
+            EufemiaVividButton(
               child: Text('Vivid small disabled'),
               size: EufemiaButtonSize.small,
             ),
-            TextButton(
+            EufemiaTextButton(
               child: Text('Large emphasized'),
               onTap: () => {},
               emphasized: true,
             ),
-            TextButton(
+            EufemiaTextButton(
               child: Text('Large emphasized disabled'),
               emphasized: true,
             ),
-            TextButton(
+            EufemiaTextButton(
               child: Text('Large'),
               onTap: () => {},
             ),
-            TextButton(
+            EufemiaTextButton(
               child: Text('Large disabled'),
             ),
-            TextButton(
+            EufemiaTextButton(
               child: Text('Small emphasized'),
               size: EufemiaButtonSize.small,
               onTap: () => {},
               emphasized: true,
             ),
-            TextButton(
+            EufemiaTextButton(
               child: Text('Small emphasized disabled'),
               size: EufemiaButtonSize.small,
               emphasized: true,
             ),
-            TextButton(
+            EufemiaTextButton(
               child: Text('Small'),
               size: EufemiaButtonSize.small,
               onTap: () => {},
             ),
-            TextButton(
+            EufemiaTextButton(
               child: Text('Small disabled'),
               size: EufemiaButtonSize.small,
             ),
-            FAB(
+            EufemiaFloatingActionButton(
               child: Icon(EufemiaIcons.close),
               onTap: () {},
             ),
-            FAB(
+            EufemiaFloatingActionButton(
               child: Icon(EufemiaIcons.close),
             ),
           ],

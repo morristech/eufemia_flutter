@@ -84,7 +84,7 @@ class _InputFieldsViewState extends State<InputFieldsView> {
                             hintText: 'Input hint',
                           ),
                         ),
-                        PrimaryButton(
+                        EufemiaPrimaryButton(
                           child: Text('Validate'),
                           onTap: () => _formKey.currentState.validate(),
                         ),
