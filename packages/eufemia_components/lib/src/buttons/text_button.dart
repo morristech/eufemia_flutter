@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'button.dart';
 import 'style.dart';
 
-class TextButton extends StatelessWidget {
+class EufemiaTextButton extends StatelessWidget {
   final Widget child;
   final bool emphasized;
   final VoidCallback onTap;
@@ -13,7 +13,7 @@ class TextButton extends StatelessWidget {
   final FocusNode focusNode;
   final EufemiaButtonSize size;
 
-  const TextButton({
+  const EufemiaTextButton({
     Key key,
     this.onTap,
     this.child,

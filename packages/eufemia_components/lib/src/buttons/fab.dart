@@ -5,14 +5,14 @@ import 'package:flutter/widgets.dart';
 import 'button.dart';
 import 'style.dart';
 
-class FAB extends StatelessWidget {
+class EufemiaFloatingActionButton extends StatelessWidget {
   final Widget child;
   final VoidCallback onTap;
   final bool autofocus;
   final FocusNode focusNode;
   final EufemiaButtonSize size;
 
-  const FAB({
+  const EufemiaFloatingActionButton({
     Key key,
     this.onTap,
     this.child,

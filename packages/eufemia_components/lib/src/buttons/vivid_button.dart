@@ -4,14 +4,14 @@ import 'package:flutter/widgets.dart';
 import 'button.dart';
 import 'style.dart';
 
-class VividButton extends StatelessWidget {
+class EufemiaVividButton extends StatelessWidget {
   final Widget child;
   final VoidCallback onTap;
   final bool autofocus;
   final FocusNode focusNode;
   final EufemiaButtonSize size;
 
-  const VividButton({
+  const EufemiaVividButton({
     Key key,
     this.onTap,
     this.child,

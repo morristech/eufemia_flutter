@@ -1,3 +1,14 @@
+## 2.0.0
+
+**Breaking changes**
+
+Rename button namespace to avoid conflict with new Material buttons:
+
+- `PrimaryButton` → `EufemiaPrimaryButton`
+- `SecondaryButton` → `EufemiaSecondaryButton`
+- `TextButton` → `EufemiaTextButton`
+- `VividButton` → `EufemiaVividButton`
+
 ## 1.1.8+1
 
 - Update readme

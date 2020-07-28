@@ -5,14 +5,14 @@ import 'package:flutter/widgets.dart';
 import 'button.dart';
 import 'style.dart';
 
-class SecondaryButton extends StatelessWidget {
+class EufemiaSecondaryButton extends StatelessWidget {
   final Widget child;
   final VoidCallback onTap;
   final bool autofocus;
   final FocusNode focusNode;
   final EufemiaButtonSize size;
 
-  const SecondaryButton({
+  const EufemiaSecondaryButton({
     Key key,
     this.onTap,
     this.child,

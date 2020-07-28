@@ -5,14 +5,14 @@ import 'package:flutter/widgets.dart';
 import 'button.dart';
 import 'style.dart';
 
-class PrimaryButton extends StatelessWidget {
+class EufemiaPrimaryButton extends StatelessWidget {
   final Widget child;
   final VoidCallback onTap;
   final bool autofocus;
   final FocusNode focusNode;
   final EufemiaButtonSize size;
 
-  const PrimaryButton({
+  const EufemiaPrimaryButton({
     Key key,
     this.onTap,
     this.child,
