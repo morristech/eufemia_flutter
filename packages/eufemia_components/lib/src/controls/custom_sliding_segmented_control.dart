@@ -53,7 +53,7 @@ const double _kTouchYDistanceThreshold = 50.0 * 50.0;
 
 // The spring animation used when the thumb changes its rect.
 final SpringSimulation _kThumbSpringAnimationSimulation = SpringSimulation(
-  const SpringDescription(mass: 1, stiffness: 503.551, damping: 44.8799),
+  const SpringDescription(mass: 1.0, stiffness: 503.551, damping: 44.8799),
   0,
   1,
   0, // Everytime a new spring animation starts the previous animation stops.

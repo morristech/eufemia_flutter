@@ -28,6 +28,7 @@ class InputField extends StatefulWidget {
   final TextInputType keyboardType;
   final Function(String) validator;
   final Function(String) onChanged;
+  final FocusNode focusNode;
 
   const InputField({
     Key key,
@@ -47,6 +48,7 @@ class InputField extends StatefulWidget {
     this.hintText,
     this.label,
     this.obscureText = false,
+    this.focusNode,
   }) : super(key: key);
 
   @override
@@ -103,6 +105,7 @@ class _InputFieldState extends State<InputField> {
           obscureText: widget.obscureText,
           keyboardType: widget.keyboardType ?? defaultKeyboard,
           buildCounter: buildCounter,
+          focusNode: widget.focusNode,
           decoration: InputDecoration(
             enabledBorder: buildBorder(context, InputState.empty),
             focusedBorder: buildBorder(context, InputState.active),

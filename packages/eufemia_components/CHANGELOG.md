@@ -1,3 +1,8 @@
+## 2.0.1
+
+- Bump dependencies
+- Add `focusNode` property to `InputField` component
+
 ## 2.0.0
 
 **Breaking changes**

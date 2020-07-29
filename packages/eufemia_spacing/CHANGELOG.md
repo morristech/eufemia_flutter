@@ -1,3 +1,7 @@
+## 1.1.2
+
+- Bump dependencies
+
 ## 1.1.1+1
 
 - Update readme

@@ -1,6 +1,6 @@
 name: eufemia_components
 description: A collection of commonly used UI components from DNB's design system
-version: 2.0.0
+version: 2.0.1
 homepage: https://github.com/dnb-asa/eufemia_flutter
 
 environment:
@@ -10,20 +10,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_slidable: ^0.5.4
+  flutter_slidable: ^0.5.5
   flutter_svg: ^0.17.4
   path_drawing: ^0.4.1
   shimmer: ^1.1.1
   flippable_box: ^1.0.6
   recase: ^3.0.0
   snack: ^1.0.4
-  smooth_page_indicator: ^0.1.5
+  smooth_page_indicator: ^0.2.0
 
-  http: ^0.12.1
-  shared_preferences: ^0.5.7
+  http: ^0.12.2
+  shared_preferences: ^0.5.8
   json_annotation: ^3.0.1
-  freezed_annotation: ^0.7.1
-  provider: ^4.1.0
+  freezed_annotation: ^0.11.0
+  provider: ^4.3.1
   derived_colors: ^0.2.4
 
   eufemia_palette: ">=1.1.2 <2.0.0"
@@ -34,8 +34,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   json_serializable: ^3.3.0
-  build_runner: ^1.9.0
-  freezed: ^0.10.7
+  build_runner: ^1.10.0
+  freezed: ^0.11.4
   pedantic: ^1.9.0
 
 flutter:
