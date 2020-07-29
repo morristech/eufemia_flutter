@@ -20,10 +20,14 @@ class InputField extends StatefulWidget {
   final bool expands;
   final bool counter;
   final bool obscureText;
+  final bool autovalidate;
+  final bool autofocus;
+  final bool enableSuggestions;
   final String errorText;
   final String hintText;
   final String label;
   final VoidCallback onEditingComplete;
+  final VoidCallback onTap;
   final TextEditingController controller;
   final TextInputType keyboardType;
   final Function(String) validator;
@@ -45,10 +49,14 @@ class InputField extends StatefulWidget {
     this.multiline = false,
     this.expands = false,
     this.counter = true,
+    this.autovalidate = false,
+    this.autofocus = false,
     this.hintText,
     this.label,
     this.obscureText = false,
     this.focusNode,
+    this.enableSuggestions = true,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -101,11 +109,15 @@ class _InputFieldState extends State<InputField> {
           expands: widget.expands,
           autocorrect: widget.autocorrect,
           readOnly: widget.readOnly,
+          autofocus: widget.autofocus,
+          autovalidate: widget.autovalidate,
           style: style,
           obscureText: widget.obscureText,
           keyboardType: widget.keyboardType ?? defaultKeyboard,
           buildCounter: buildCounter,
           focusNode: widget.focusNode,
+          enableSuggestions: widget.enableSuggestions,
+          onTap: widget.onTap,
           decoration: InputDecoration(
             enabledBorder: buildBorder(context, InputState.empty),
             focusedBorder: buildBorder(context, InputState.active),

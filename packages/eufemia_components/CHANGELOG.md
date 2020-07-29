@@ -1,3 +1,7 @@
+## 2.0.2
+
+- Enrich `InputField` API with new properties
+
 ## 2.0.1
 
 - Bump dependencies
