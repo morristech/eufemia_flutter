@@ -1,3 +1,7 @@
+## 2.0.3
+
+- Add `textInputAction` and `onFieldSubmitted` to `InputField` component
+
 ## 2.0.2
 
 - Enrich `InputField` API with new properties

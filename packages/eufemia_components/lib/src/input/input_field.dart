@@ -30,8 +30,10 @@ class InputField extends StatefulWidget {
   final VoidCallback onTap;
   final TextEditingController controller;
   final TextInputType keyboardType;
+  final TextInputAction textInputAction;
   final Function(String) validator;
   final Function(String) onChanged;
+  final Function(String) onFieldSubmitted;
   final FocusNode focusNode;
 
   const InputField({
@@ -57,6 +59,8 @@ class InputField extends StatefulWidget {
     this.focusNode,
     this.enableSuggestions = true,
     this.onTap,
+    this.textInputAction,
+    this.onFieldSubmitted,
   }) : super(key: key);
 
   @override
@@ -118,6 +122,8 @@ class _InputFieldState extends State<InputField> {
           focusNode: widget.focusNode,
           enableSuggestions: widget.enableSuggestions,
           onTap: widget.onTap,
+          textInputAction: widget.textInputAction,
+          onFieldSubmitted: widget.onFieldSubmitted,
           decoration: InputDecoration(
             enabledBorder: buildBorder(context, InputState.empty),
             focusedBorder: buildBorder(context, InputState.active),
