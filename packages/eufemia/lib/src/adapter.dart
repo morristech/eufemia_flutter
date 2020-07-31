@@ -29,6 +29,7 @@ class EufemiaThemeAdapter {
       canvasColor: palette.canvas,
       cursorColor: palette.secondary,
       textSelectionColor: palette.accent,
+      textSelectionHandleColor: palette.accent,
       snackBarTheme: SnackBarThemeData(
         elevation: 1,
         behavior: SnackBarBehavior.floating,
