@@ -39,7 +39,7 @@ class InputField extends StatefulWidget {
   const InputField({
     Key key,
     this.controller,
-    this.maxLines,
+    this.maxLines = 1,
     this.maxLength,
     this.validator,
     this.onChanged,

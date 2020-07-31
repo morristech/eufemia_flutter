@@ -1,5 +1,9 @@
 ## 2.0.3
 
+- Default `maxLines` to 1 to allow for `obscureText` on `InputField`
+
+## 2.0.3
+
 - Add `textInputAction` and `onFieldSubmitted` to `InputField` component
 
 ## 2.0.2
