@@ -1,3 +1,7 @@
+##
+
+- Add `isStandaloneApp` property to `EufemiaData` to allow for add-to-app modules
+
 ## 2.0.2
 
 - Add `textSelectionHandleColor` to `EufemiaAdapter`
