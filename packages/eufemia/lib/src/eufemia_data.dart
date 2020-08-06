@@ -12,6 +12,7 @@ class EufemiaData {
   final EufemiaPaletteData darkPalette;
   final EufemiaSpacingData spacing;
   final EufemiaButtonThemeData button;
+  final bool isStandaloneApp;
 
   EufemiaData({
     this.typography,
@@ -19,6 +20,7 @@ class EufemiaData {
     this.darkPalette,
     this.spacing,
     this.button,
+    this.isStandaloneApp = true,
   });
 
   void updateStatusBarColor(Color color, [Brightness brightness]) {
