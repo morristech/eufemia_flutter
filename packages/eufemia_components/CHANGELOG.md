@@ -1,3 +1,7 @@
+## 2.0.4
+
+- Bump dependencies to be compatible with flutter > 1.20.0
+
 ## 2.0.3
 
 - Default `maxLines` to 1 to allow for `obscureText` on `InputField`
