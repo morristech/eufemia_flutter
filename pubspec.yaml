@@ -1,0 +1,96 @@
+name: eufemia
+description: A set of Flutter widgets and reusable UI components from DNB's design system
+version: 3.0.0
+homepage: https://dnb.no
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.12.2
+  shared_preferences: ^0.5.8
+  json_annotation: ^3.0.1
+  freezed_annotation: ^0.11.0+1
+  provider: ^4.3.2
+  derived_colors: ^0.2.4
+  flutter_slidable: ^0.5.5
+  flutter_svg: ^0.18.0
+  path_drawing: ^0.4.1
+  shimmer: ^1.1.1
+  flippable_box: ^1.0.6
+  recase: ^3.0.0
+  snack: ^1.0.4
+  smooth_page_indicator: ^0.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  pedantic: ^1.9.0
+  json_serializable: ^3.4.0
+  build_runner: ^1.10.0
+  freezed: ^0.11.5
+
+flutter:
+  assets:
+    - lib/assets/icons/
+    - lib/assets/icons/tabbar/
+    - lib/assets/graphics/other/
+    - lib/assets/graphics/logos/
+    - lib/assets/graphics/flags/
+    - lib/assets/graphics/cards/
+    - lib/assets/graphics/cards/programs/
+    - lib/assets/graphics/cards/types/
+    - lib/assets/graphics/cards/logos/
+
+  fonts:
+    - family: EufemiaIcons
+      fonts:
+        - asset: lib/assets/EufemiaIcons.ttf
+    - family: DNB Sans
+      fonts:
+        - asset: lib/fonts/DNB-Light.otf
+          weight: 300
+        - asset: lib/fonts/DNB-Regular.otf
+          weight: 400
+        - asset: lib/fonts/DNB-Medium.otf
+          weight: 500
+        - asset: lib/fonts/DNB-Bold.otf
+          weight: 600
+        - asset: lib/fonts/DNB-LightItalic.otf
+          weight: 300
+          style: italic
+        - asset: lib/fonts/DNB-RegularItalic.otf
+          weight: 400
+          style: italic
+        - asset: lib/fonts/DNB-MediumItalic.otf
+          weight: 500
+          style: italic
+        - asset: lib/fonts/DNB-BoldItalic.otf
+          weight: 600
+          style: italic
+
+    - family: DNB Mono
+      fonts:
+        - asset: lib/fonts/DNBMono-Light.otf
+          weight: 300
+        - asset: lib/fonts/DNBMono-Regular.otf
+          weight: 400
+        - asset: lib/fonts/DNBMono-Medium.otf
+          weight: 500
+        - asset: lib/fonts/DNBMono-Bold.otf
+          weight: 600
+        - asset: lib/fonts/DNBMono-LightItalic.otf
+          weight: 300
+          style: italic
+        - asset: lib/fonts/DNBMono-RegularItalic.otf
+          weight: 400
+          style: italic
+        - asset: lib/fonts/DNBMono-MediumItalic.otf
+          weight: 500
+          style: italic
+        - asset: lib/fonts/DNBMono-BoldItalic.otf
+          weight: 600
+          style: italic

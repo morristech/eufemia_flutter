@@ -11,9 +11,9 @@ jobs:
         with:
           channel: "stable"
       - name: Install dependencies
-        run: ./scripts/packages.sh
+        run: flutter packages get
       - name: Analyze
-        run: ./scripts/analyze.sh
+        run: flutter analyze
 
   deploy_packages:
     runs-on: ubuntu-latest
@@ -36,4 +36,4 @@ jobs:
           }
           EOF
       - name: Publish packages
-        run: ./scripts/deploy.sh
+        run: pub publish -f
