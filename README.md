@@ -10,6 +10,66 @@
 
 ![pub](https://img.shields.io/pub/v/eufemia?logo=flutter)
 
+### Setup
+
+Fonts and icons needs to be bundled with your app. Add the following to your `pubspec.yaml`:
+
+```yaml
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: EufemiaIcons
+      fonts:
+        - asset: packages/eufemia/fonts/EufemiaIcons.ttf
+
+    - family: DNB Sans
+      fonts:
+        - asset: packages/eufemia/fonts/DNB-Light.otf
+          weight: 300
+        - asset: packages/eufemia/fonts/DNB-Regular.otf
+          weight: 400
+        - asset: packages/eufemia/fonts/DNB-Medium.otf
+          weight: 500
+        - asset: packages/eufemia/fonts/DNB-Bold.otf
+          weight: 600
+        - asset: packages/eufemia/fonts/DNB-LightItalic.otf
+          weight: 300
+          style: italic
+        - asset: packages/eufemia/fonts/DNB-RegularItalic.otf
+          weight: 400
+          style: italic
+        - asset: packages/eufemia/fonts/DNB-MediumItalic.otf
+          weight: 500
+          style: italic
+        - asset: packages/eufemia/fonts/DNB-BoldItalic.otf
+          weight: 600
+          style: italic
+
+    - family: DNB Mono
+      fonts:
+        - asset: packages/eufemia/fonts/DNBMono-Light.otf
+          weight: 300
+        - asset: packages/eufemia/fonts/DNBMono-Regular.otf
+          weight: 400
+        - asset: packages/eufemia/fonts/DNBMono-Medium.otf
+          weight: 500
+        - asset: packages/eufemia/fonts/DNBMono-Bold.otf
+          weight: 600
+        - asset: packages/eufemia/fonts/DNBMono-LightItalic.otf
+          weight: 300
+          style: italic
+        - asset: packages/eufemia/fonts/DNBMono-RegularItalic.otf
+          weight: 400
+          style: italic
+        - asset: packages/eufemia/fonts/DNBMono-MediumItalic.otf
+          weight: 500
+          style: italic
+        - asset: packages/eufemia/fonts/DNBMono-BoldItalic.otf
+          weight: 600
+          style: italic
+```
+
 ### How to use
 
 Wrap your app in an `Eufemia` widget, and provide the `EufemiaData` with the `palette`, `spacing`, `button` and optionally `darkPalette` parameters:
@@ -44,13 +104,9 @@ final eufemia = Eufemia.of(context)
 
 ## Components
 
-![pub](https://img.shields.io/pub/v/eufemia_components?logo=flutter)
-
 There are multiple UI components
 
 ## Palette
-
-![pub](https://img.shields.io/pub/v/eufemia_palette?logo=flutter)
 
 **This API is subject to change**
 
@@ -64,14 +120,12 @@ final palette = EufemiaPalette.of(context)
 
 ## Typography
 
-![pub](https://img.shields.io/pub/v/eufemia_typography?logo=flutter)
-
 If using the included themes, fonts are automatically set up. Otherwise, specify the `fontFamily` and `package` properties:
 
 ```dart
 TextStyle(
   fontFamily: 'DNB Sans',
-  package: 'eufemia_typography',
+  package: 'eufemia',
 )
 ```
 
@@ -82,8 +136,6 @@ final typography = EufemiaTypography.of(context)
 ```
 
 ## Spacing
-
-![pub](https://img.shields.io/pub/v/eufemia_spacing?logo=flutter)
 
 The `EufemiaSpacingData` class defines the different kinds of spacing used throughout the app. By default, it provides the standard spacings defined by the Eufemia design system:
 
