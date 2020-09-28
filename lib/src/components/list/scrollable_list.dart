@@ -17,6 +17,7 @@ class ScrollableList extends StatelessWidget {
   final double gridChildAspectRatio;
   final EufemiaSpace spaceBetween;
   final EufemiaInsets padding;
+  final Axis scrollDirection;
 
   const ScrollableList({
     Key key,
@@ -32,6 +33,7 @@ class ScrollableList extends StatelessWidget {
     this.gridChildAspectRatio,
     this.spaceBetween,
     this.padding,
+    this.scrollDirection = Axis.vertical,
   }) : super(key: key);
 
   @override
@@ -53,6 +55,7 @@ class ScrollableList extends StatelessWidget {
         mainAxisSpacing: 8.0,
       ),
       children: children,
+      scrollDirection: scrollDirection,
     );
   }
 
@@ -62,6 +65,7 @@ class ScrollableList extends StatelessWidget {
       controller: controller,
       physics: physics,
       shrinkWrap: shrinkWrap,
+      scrollDirection: scrollDirection,
       children: [
         if (title != null) ...{
           SafeArea(

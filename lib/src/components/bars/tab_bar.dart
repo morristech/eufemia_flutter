@@ -6,11 +6,25 @@ import 'package:flutter/widgets.dart';
 const double _kTabHeight = 81.0;
 
 class EufemiaTabBar extends StatefulWidget implements PreferredSizeWidget {
+  /// The list of [EufemiaTab] to display.
   final List<EufemiaTab> tabs;
+
+  /// Optional [TabController], uses the context's [DefaultTabController] if not set.
   final TabController controller;
 
-  EufemiaTabBar({Key key, this.tabs, this.controller})
-      : preferredSize = Size.fromHeight(_kTabHeight),
+  /// The padding around the [EufemiaTabBar].
+  final EufemiaInsets padding;
+
+  /// If the tab bar is scrollable or not. Defaults to [true].
+  final bool isScrollable;
+
+  EufemiaTabBar({
+    Key key,
+    this.tabs,
+    this.controller,
+    this.isScrollable = true,
+  })  : preferredSize = Size.fromHeight(_kTabHeight),
+        padding = EufemiaInsets.medium(EufemiaSides.horizontal),
         super(key: key);
 
   @override
@@ -28,7 +42,9 @@ class _EufemiaTabBarState extends State<EufemiaTabBar> {
     super.didChangeDependencies();
     controller = (widget.controller ?? DefaultTabController.of(context))
       ..addListener(() {
-        setState(() {});
+        if (mounted) {
+          setState(() {});
+        }
       });
   }
 
@@ -38,7 +54,7 @@ class _EufemiaTabBarState extends State<EufemiaTabBar> {
         .map((tab) => EufemiaTab(
               key: tab.key,
               label: tab.label,
-              active: controller.index == widget.tabs.indexOf(tab),
+              index: widget.tabs.indexOf(tab),
               onSelected: () {
                 tab.onSelected?.call();
                 controller.animateTo(widget.tabs.indexOf(tab));
@@ -47,11 +63,20 @@ class _EufemiaTabBarState extends State<EufemiaTabBar> {
             ))
         .toList();
 
-    return EufemiaRow(
-      padding: EufemiaInsets.medium(EufemiaSides.left),
+    Widget bar = EufemiaRow(
+      padding: widget.padding,
       mainAxisAlignment: MainAxisAlignment.start,
       spaceBetween: EufemiaSpace.small,
       children: adjustedTabs,
     );
+
+    if (widget.isScrollable) {
+      bar = SingleChildScrollView(
+        child: bar,
+        scrollDirection: Axis.horizontal,
+      );
+    }
+
+    return bar;
   }
 }

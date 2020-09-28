@@ -2,25 +2,39 @@ import 'package:eufemia/palette.dart';
 import 'package:eufemia/spacing.dart';
 import 'package:eufemia/src/components/utils/calculate_size.dart';
 import 'package:eufemia/typography.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class EufemiaTab extends StatelessWidget {
+  /// The text to display for the tab
   final String label;
+
+  /// Explicit status of the tab. Can't be used if [index] is set.
   final bool active;
+
+  /// Callback for tap interaction
   final Function() onSelected;
+
+  /// Index of the tab that sets the [active] status from the context's [DefaultTabController]. Can't be used if
+  /// [active] is set.
+  final int index;
 
   const EufemiaTab({
     Key key,
     @required this.label,
-    this.active = false,
+    this.active,
     this.onSelected,
+    this.index,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final palette = EufemiaPalette.of(context);
     final typography = EufemiaTypography.of(context);
-    var style = active
+
+    final _active = active ?? DefaultTabController.of(context).index == index;
+
+    var style = _active
         ? typography.styles.buttonSmallEmphasized
         : typography.styles.buttonSmall;
 
@@ -38,7 +52,7 @@ class EufemiaTab extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border(
             bottom: BorderSide(
-              color: active ? palette.toggle : Color(0x00),
+              color: _active ? palette.toggle : Color(0x00),
               width: 2.0,
             ),
           ),

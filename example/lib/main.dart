@@ -28,40 +28,42 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Eufemia(
       data: EufemiaData(
-        palette: EufemiaPaletteData.saga(),
+        palette: EufemiaPaletteData.fallback(),
         spacing: EufemiaSpacingData.fallback(),
         button: EufemiaButtonThemeData.fallback(),
         darkPalette: EufemiaPaletteData.dark(),
       ),
-      child: Builder(builder: (context) {
-        final adapter = EufemiaThemeAdapter(context);
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Eufemia',
-          theme: adapter.theme,
-          home: HomeView(),
-          routes: {
-            Routes.components: (context) => ComponentView(),
-            Routes.buttons: (context) => ButtonsView(),
-            Routes.input_fields: (context) => InputFieldsView(),
-            Routes.cards: (context) => CardsView(),
-            Routes.controls: (context) => ControlsView(),
-            Routes.snackbars: (context) => SnackbarsView(),
-            Routes.cells: (context) => CellsView(),
-            Routes.graphics: (context) => GraphicsView(),
-            Routes.logos: (context) => LogosView(),
-            Routes.flags: (context) => FlagsView(),
-            Routes.graphics_cards: (context) => PaymentCardsView(),
-            Routes.bars: (context) => BarsView(),
-            Routes.icons: (context) => IconsView(),
-            Routes.system: (context) => SystemView(),
-            Routes.spinner: (context) => SpinnerView(),
-            Routes.messageBoxes: (context) => MessageBoxesView(),
-            Routes.themes: (context) => ThemesView(),
-            Routes.shimmer: (context) => ShimmerView(),
-          },
-        );
-      }),
+      child: Builder(
+        builder: (context) {
+          final adapter = EufemiaThemeAdapter(context);
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Eufemia',
+            theme: adapter.theme,
+            routes: {
+              Routes.home: (context) => HomeView(),
+              Routes.components: (context) => ComponentView(),
+              Routes.buttons: (context) => ButtonsView(),
+              Routes.input_fields: (context) => InputFieldsView(),
+              Routes.cards: (context) => CardsView(),
+              Routes.controls: (context) => ControlsView(),
+              Routes.snackbars: (context) => SnackbarsView(),
+              Routes.cells: (context) => CellsView(),
+              Routes.graphics: (context) => GraphicsView(),
+              Routes.logos: (context) => LogosView(),
+              Routes.flags: (context) => FlagsView(),
+              Routes.graphics_cards: (context) => PaymentCardsView(),
+              Routes.bars: (context) => BarsView(),
+              Routes.icons: (context) => IconsView(),
+              Routes.system: (context) => SystemView(),
+              Routes.spinner: (context) => SpinnerView(),
+              Routes.messageBoxes: (context) => MessageBoxesView(),
+              Routes.themes: (context) => ThemesView(),
+              Routes.shimmer: (context) => ShimmerView(),
+            },
+          );
+        },
+      ),
     );
   }
 }
