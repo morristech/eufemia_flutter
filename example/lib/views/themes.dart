@@ -13,32 +13,50 @@ class ThemesView extends StatelessWidget {
           showBorders: false,
           children: [
             EufemiaPrimaryButton(
+              child: Text('Fallback'),
+              onTap: EufemiaPalette.of(context) == EufemiaPaletteData.fallback()
+                  ? null
+                  : () => EufemiaPalette.update(
+                        context,
+                        EufemiaPaletteData.fallback(),
+                      ),
+            ),
+            EufemiaPrimaryButton(
               child: Text('Regular'),
-              onTap: () => EufemiaPalette.update(
-                context,
-                EufemiaPaletteData.regular(),
-              ),
+              onTap: EufemiaPalette.of(context) == EufemiaPaletteData.regular()
+                  ? null
+                  : () => EufemiaPalette.update(
+                        context,
+                        EufemiaPaletteData.regular(),
+                      ),
             ),
             EufemiaPrimaryButton(
               child: Text('Saga'),
-              onTap: () => EufemiaPalette.update(
-                context,
-                EufemiaPaletteData.saga(),
-              ),
+              onTap: EufemiaPalette.of(context) == EufemiaPaletteData.saga()
+                  ? null
+                  : () => EufemiaPalette.update(
+                        context,
+                        EufemiaPaletteData.saga(),
+                      ),
             ),
             EufemiaPrimaryButton(
               child: Text('Private Banking'),
-              onTap: () => EufemiaPalette.update(
-                context,
-                EufemiaPaletteData.privateBanking(),
-              ),
+              onTap: EufemiaPalette.of(context) ==
+                      EufemiaPaletteData.privateBanking()
+                  ? null
+                  : () => EufemiaPalette.update(
+                        context,
+                        EufemiaPaletteData.privateBanking(),
+                      ),
             ),
             EufemiaPrimaryButton(
               child: Text('Dark'),
-              onTap: () => EufemiaPalette.update(
-                context,
-                EufemiaPaletteData.dark(),
-              ),
+              onTap: EufemiaPalette.of(context) == EufemiaPaletteData.dark()
+                  ? null
+                  : () => EufemiaPalette.update(
+                        context,
+                        EufemiaPaletteData.dark(),
+                      ),
             ),
             Text(
               'Dark mode has to be enabled on a system level',

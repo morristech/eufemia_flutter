@@ -41,7 +41,8 @@ class EufemiaPalette extends StatefulWidget {
   static EufemiaPaletteData of(BuildContext context) {
     final provider =
         context.dependOnInheritedWidgetOfExactType<EufemiaPaletteProvider>();
-    if (provider == null) return EufemiaPaletteData.fallback();
+    if (provider == null)
+      throw Exception('No EufemiaPaletteData found in the widget tree');
     return provider.value;
   }
 
@@ -95,22 +96,6 @@ class _EufemiaPaletteState extends State<EufemiaPalette> {
 
     _initAsync();
     super.initState();
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    if (widget.data != null) {
-      setState(() => _data = widget.data);
-    }
-  }
-
-  @override
-  void didUpdateWidget(EufemiaPalette oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (widget.data != null) {
-      setState(() => _data = widget.data);
-    }
   }
 
   Future<void> _initAsync() async {
