@@ -45,10 +45,12 @@ class FloatingActionButtonList extends StatelessWidget {
       children: [
         EufemiaFloatingActionButton(
           child: Icon(EufemiaIcons.close),
+          semanticsLabel: 'Close button',
           onTap: () {},
         ),
         EufemiaFloatingActionButton(
           child: Icon(EufemiaIcons.close),
+          semanticsLabel: 'Close button',
         ),
       ],
     );

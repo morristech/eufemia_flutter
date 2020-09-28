@@ -21,6 +21,9 @@ class EufemiaButton extends StatefulWidget {
   /// {@macro flutter.widgets.Focus.focusNode}
   final FocusNode focusNode;
 
+  /// {@macro flutter.widgets.Focus}
+  final String semanticsLabel;
+
   const EufemiaButton({
     Key key,
     this.style,
@@ -28,6 +31,7 @@ class EufemiaButton extends StatefulWidget {
     this.onTap,
     this.autofocus = false,
     this.focusNode,
+    this.semanticsLabel,
   })  : assert(autofocus != null),
         super(key: key);
 
@@ -62,6 +66,7 @@ class _EufemiaButtonState extends State<EufemiaButton> {
       container: true,
       button: true,
       enabled: !isDisabled,
+      label: widget.semanticsLabel,
       child: Focus(
         focusNode: widget.focusNode,
         canRequestFocus: !isDisabled,

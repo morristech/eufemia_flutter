@@ -11,6 +11,7 @@ class EufemiaPrimaryButton extends StatelessWidget {
   final bool autofocus;
   final FocusNode focusNode;
   final EufemiaButtonSize size;
+  final String semanticsLabel;
 
   const EufemiaPrimaryButton({
     Key key,
@@ -19,6 +20,7 @@ class EufemiaPrimaryButton extends StatelessWidget {
     this.autofocus = false,
     this.focusNode,
     this.size = EufemiaButtonSize.medium,
+    this.semanticsLabel,
   }) : super(key: key);
 
   @override
@@ -26,6 +28,7 @@ class EufemiaPrimaryButton extends StatelessWidget {
     final palette = EufemiaPalette.of(context);
 
     return EufemiaButton(
+      semanticsLabel: semanticsLabel,
       child: child,
       onTap: onTap,
       style: EufemiaButtonStyle.primary(

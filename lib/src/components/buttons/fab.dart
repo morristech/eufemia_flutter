@@ -6,6 +6,7 @@ import 'button.dart';
 import 'style.dart';
 
 class EufemiaFloatingActionButton extends StatelessWidget {
+  final String semanticsLabel;
   final Widget child;
   final VoidCallback onTap;
   final bool autofocus;
@@ -19,6 +20,7 @@ class EufemiaFloatingActionButton extends StatelessWidget {
     this.autofocus = false,
     this.focusNode,
     this.size = EufemiaButtonSize.medium,
+    this.semanticsLabel,
   }) : super(key: key);
 
   @override
@@ -26,6 +28,7 @@ class EufemiaFloatingActionButton extends StatelessWidget {
     final palette = EufemiaPalette.of(context);
 
     return EufemiaButton(
+      semanticsLabel: semanticsLabel,
       child: child,
       onTap: onTap,
       style: EufemiaButtonStyle.fab(

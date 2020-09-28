@@ -10,6 +10,7 @@ class EufemiaVividButton extends StatelessWidget {
   final bool autofocus;
   final FocusNode focusNode;
   final EufemiaButtonSize size;
+  final String semanticsLabel;
 
   const EufemiaVividButton({
     Key key,
@@ -18,11 +19,13 @@ class EufemiaVividButton extends StatelessWidget {
     this.autofocus = false,
     this.focusNode,
     this.size = EufemiaButtonSize.medium,
+    this.semanticsLabel,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return EufemiaButton(
+      semanticsLabel: semanticsLabel,
       child: child,
       onTap: onTap,
       style: EufemiaButtonStyle.vivid(
