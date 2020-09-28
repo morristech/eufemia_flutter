@@ -1,5 +1,6 @@
 import 'package:eufemia/palette.dart';
 import 'package:eufemia/typography.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import 'button.dart';
@@ -27,19 +28,22 @@ class EufemiaFloatingActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final palette = EufemiaPalette.of(context);
 
-    return EufemiaButton(
-      semanticsLabel: semanticsLabel,
-      child: child,
-      onTap: onTap,
-      style: EufemiaButtonStyle.fab(
-        backgroundColor: palette.button,
-        foregroundColor: palette.onButton,
-        textStyle: getStyle(context, size),
-        iconTheme: getIconTheme(context, size),
-        context: context,
+    return Tooltip(
+      message: semanticsLabel,
+      child: EufemiaButton(
+        semanticsLabel: semanticsLabel,
+        child: child,
+        onTap: onTap,
+        style: EufemiaButtonStyle.fab(
+          backgroundColor: palette.button,
+          foregroundColor: palette.onButton,
+          textStyle: getStyle(context, size),
+          iconTheme: getIconTheme(context, size),
+          context: context,
+        ),
+        focusNode: focusNode,
+        autofocus: autofocus,
       ),
-      focusNode: focusNode,
-      autofocus: autofocus,
     );
   }
 

@@ -18,11 +18,15 @@ class EufemiaTabBar extends StatefulWidget implements PreferredSizeWidget {
   /// If the tab bar is scrollable or not. Defaults to [true].
   final bool isScrollable;
 
+  /// The semantic label to expose to accessibility utilities
+  final String semanticsLabel;
+
   EufemiaTabBar({
     Key key,
     this.tabs,
     this.controller,
     this.isScrollable = true,
+    this.semanticsLabel = 'Tab bar',
   })  : preferredSize = Size.fromHeight(_kTabHeight),
         padding = EufemiaInsets.medium(EufemiaSides.horizontal),
         super(key: key);
@@ -77,6 +81,9 @@ class _EufemiaTabBarState extends State<EufemiaTabBar> {
       );
     }
 
-    return bar;
+    return Semantics(
+      label: widget.semanticsLabel,
+      child: bar,
+    );
   }
 }

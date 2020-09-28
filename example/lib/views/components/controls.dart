@@ -33,105 +33,103 @@ class _ControlsViewState extends State<ControlsView> {
       appBar: Navbar(
         title: Text('Controls'),
       ),
-      body: ScrollableList(
-        padding: EufemiaInsets.allMedium,
-        spaceBetween: EufemiaSpace.medium,
-        showBorders: false,
-        children: [
-          EufemiaRow(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              EufemiaTab(
-                label: 'Søknad',
-                active: firstTabValue == 0,
-                onSelected: () => setTab(0),
-              ),
-              EufemiaTab(
-                label: 'Tab',
-                active: firstTabValue == 1,
-                onSelected: () => setTab(1),
-              ),
-              EufemiaTab(
-                label: 'Tab',
-                active: firstTabValue == 2,
-                onSelected: () => setTab(2),
-              )
-            ],
-          ),
-          EufemiaRow(
-            children: [
-              EufemiaSwitch(
-                value: firstSwitchValue,
-                onChanged: (value) => setState(() => firstSwitchValue = value),
-              ),
-              EufemiaSwitch(
-                value: secondSwitchValue,
-                onChanged: (value) => setState(() => secondSwitchValue = value),
-              ),
-            ],
-          ),
-          EufemiaRow(
-            children: [
-              Checkmark(
-                value: firstToggleValue,
-                onChanged: (value) => setState(() => firstToggleValue = value),
-              ),
-              SizedBox(width: 8),
-              Checkmark(
-                value: secondToggleValue,
-                onChanged: (value) => setState(() => secondToggleValue = value),
-              ),
-            ],
-          ),
-          EufemiaSlider(
-            value: sliderValue,
-            onChanged: (value) => setState(() => sliderValue = value),
-          ),
-          Tag(
-            label: '#tagname',
-            onDelete: () {},
-          ),
-          EufemiaRow(
-            children: [
-              Toggle(
-                label: 'Toggle label',
-                selected: firstToggleValue,
-                onChange: (value) => setState(() => firstToggleValue = value),
-              ),
-              Toggle(
-                label: 'Toggle label',
-                selected: secondToggleValue,
-                onChange: (value) => setState(() => secondToggleValue = value),
-              )
-            ],
-          ),
-          EufemiaRow(
-            children: [
-              PageIndicator(
-                count: 3,
-                controller: PageController(),
-              ),
-            ],
-          ),
-          SegmentedControl<int>(
-            children: {
-              0: 'Label',
-              1: 'Label',
-              2: 'Label',
-            },
-            onValueChanged: (value) => setState(() => firstTabValue = value),
-            groupValue: firstTabValue,
-          ),
-          SegmentedControl<int>(
-            children: {
-              0: 'Label',
-              1: 'Label',
-            },
-            onValueChanged: (value) => setState(() => secondTabValue = value),
-            groupValue: secondTabValue,
-          ),
-        ],
+      body: DefaultTabController(
+        length: 3,
+        child: ScrollableList(
+          padding: EufemiaInsets.allMedium,
+          spaceBetween: EufemiaSpace.medium,
+          showBorders: false,
+          children: [
+            EufemiaTabBar(
+              tabs: [
+                EufemiaTab(
+                  label: 'Søknad',
+                  index: 0,
+                ),
+                EufemiaTab(
+                  label: 'Tab',
+                  index: 1,
+                ),
+                EufemiaTab(
+                  label: 'Tab',
+                  index: 2,
+                )
+              ],
+            ),
+            EufemiaRow(
+              children: [
+                EufemiaSwitch(
+                  value: firstSwitchValue,
+                  onChanged: (value) => setState(() => firstSwitchValue = value),
+                ),
+                EufemiaSwitch(
+                  value: secondSwitchValue,
+                  onChanged: (value) => setState(() => secondSwitchValue = value),
+                ),
+              ],
+            ),
+            EufemiaRow(
+              children: [
+                Checkmark(
+                  value: firstToggleValue,
+                  onChanged: (value) => setState(() => firstToggleValue = value),
+                ),
+                SizedBox(width: 8),
+                Checkmark(
+                  value: secondToggleValue,
+                  onChanged: (value) => setState(() => secondToggleValue = value),
+                ),
+              ],
+            ),
+            EufemiaSlider(
+              value: sliderValue,
+              onChanged: (value) => setState(() => sliderValue = value),
+            ),
+            Tag(
+              label: '#tagname',
+              onDelete: () {},
+            ),
+            EufemiaRow(
+              children: [
+                Toggle(
+                  label: 'Toggle label',
+                  selected: firstToggleValue,
+                  onChange: (value) => setState(() => firstToggleValue = value),
+                ),
+                Toggle(
+                  label: 'Toggle label',
+                  selected: secondToggleValue,
+                  onChange: (value) => setState(() => secondToggleValue = value),
+                )
+              ],
+            ),
+            EufemiaRow(
+              children: [
+                PageIndicator(
+                  count: 3,
+                  controller: PageController(),
+                ),
+              ],
+            ),
+            SegmentedControl<int>(
+              children: {
+                0: 'Label',
+                1: 'Label',
+                2: 'Label',
+              },
+              onValueChanged: (value) => setState(() => firstTabValue = value),
+              groupValue: firstTabValue,
+            ),
+            SegmentedControl<int>(
+              children: {
+                0: 'Label',
+                1: 'Label',
+              },
+              onValueChanged: (value) => setState(() => secondTabValue = value),
+              groupValue: secondTabValue,
+            ),
+          ],
+        ),
       ),
     );
   }
