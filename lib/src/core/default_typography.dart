@@ -2,7 +2,8 @@ import 'package:flutter/widgets.dart';
 import 'package:eufemia/palette.dart';
 import 'package:eufemia/typography.dart';
 
-/// A default [EufemiaTypography] theme
+/// {@category Core}
+/// A default [EufemiaTypography] theme.
 class EufemiaDefaultTypography extends StatefulWidget {
   final Widget child;
   final EufemiaTypographyData data;

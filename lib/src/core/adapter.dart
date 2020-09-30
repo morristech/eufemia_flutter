@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 
 import 'splash_factory.dart';
 
+/// {@category Core}
 /// An adapter bridging [Eufemia] and [ThemeData].
 class EufemiaThemeAdapter {
   /// The current context.

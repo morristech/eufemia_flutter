@@ -9,6 +9,7 @@ import 'default_button.dart';
 import 'default_typography.dart';
 import 'eufemia_data.dart';
 
+/// {@category Core}
 /// A widget wrapping its child with [EufemiaData] and providing an accessor to
 /// a context's nearest [EufemiaData] parent.
 class Eufemia extends StatelessWidget {

@@ -1,5 +1,6 @@
 import 'package:recase/recase.dart';
 
+/// {@category Core}
 /// Different casing types for a string
 enum CaseType {
   /// PascalCase

@@ -6,6 +6,7 @@ import 'package:eufemia/typography.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
+/// {@category Core}
 /// A bundle of all [Eufemia] theme components.
 class EufemiaData {
   /// The current [EufemiaTypographyData].
