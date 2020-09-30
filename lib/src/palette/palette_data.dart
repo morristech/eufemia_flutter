@@ -3,19 +3,32 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'util/color_json_converter.dart';
+import 'utils/color_json_converter.dart';
 
 part 'palette_data.freezed.dart';
 part 'palette_data.g.dart';
 
+/// {@category Palette}
+/// A class containing the entire color scheme used by the Eufemia design system.
 @freezed
 abstract class EufemiaPaletteData with _$EufemiaPaletteData {
   const factory EufemiaPaletteData({
+    /// The [Brightness] of the palette.
     @required Brightness brightness,
+
+    /// The primary [Color] of the palette.
     @required @ColorJsonConverter() Color primary,
+
+    /// The [Color] to be used on [primary], should be in contrast.
     @required @ColorJsonConverter() Color onPrimary,
+
+    /// The secondary [Color] of the palette.
     @required @ColorJsonConverter() Color secondary,
+
+    /// The [Color] to be used for information elements.
     @required @ColorJsonConverter() Color info,
+
+    /// The [Color] to be used on [info], should be in contrast.
     @required @ColorJsonConverter() Color onInfo,
     @required @ColorJsonConverter() Color infoBackground,
     @required @ColorJsonConverter() Color success,
@@ -302,7 +315,11 @@ abstract class EufemiaPaletteData with _$EufemiaPaletteData {
       _$EufemiaPaletteDataFromJson(json);
 }
 
+/// Extensions on [EufemiaPaletteData] for easier access to properties
 extension EufemiaPaletteDataExtension on EufemiaPaletteData {
+  /// If this [EufemiaPaletteData] brightness is [Brightness.light]
   bool get bright => brightness == Brightness.light;
+
+  /// If this [EufemiaPaletteData] brightness is [Brightness.dark]
   bool get dark => !bright;
 }

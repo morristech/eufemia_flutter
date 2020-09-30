@@ -6,29 +6,40 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'palette_data.dart';
 import 'loaders.dart';
 
+/// Widget providing its children with [EufemiaPaletteData] as well as
+/// methods for loading and updating the palette during runtime.
 class EufemiaPalette extends StatefulWidget {
+  /// The [EufemiaPaletteData] data to be provided.
   final EufemiaPaletteData data;
+
+  /// {@macro flutter.widgets.child}
   final Widget child;
+
+  /// A loader if the data is coming from an external source.
   final EufemiaPaletteLoader loader;
+
+  /// A preference key used to identify saved palettes in shared preferences.
   final String preferenceKey;
 
-  static const defaultPreferenceKey = 'eufemia_palette';
+  static const _defaultPreferenceKey = 'eufemia_palette';
 
   const EufemiaPalette({
     Key key,
     this.data,
     this.loader,
-    this.preferenceKey = defaultPreferenceKey,
+    this.preferenceKey = _defaultPreferenceKey,
     @required this.child,
   })  : assert(preferenceKey != null),
         super(key: key);
 
+  /// Creates an [EufemiaPalette] instance with a loader using the provided [url]
+  /// to fetch [EufemiaPaletteData] from an external source over HTTP.
   EufemiaPalette.fromUrl({
     Key key,
     EufemiaPaletteData data,
     @required String url,
     Map<String, String> headers,
-    String preferenceKey = defaultPreferenceKey,
+    String preferenceKey = _defaultPreferenceKey,
     @required Widget child,
   }) : this(
           key: key,
@@ -38,6 +49,7 @@ class EufemiaPalette extends StatefulWidget {
           loader: () => paletteUrlLoader(url, headers: headers),
         );
 
+  /// Retrieves the nearest instance of [EufemiaPaletteData] in the tree.
   static EufemiaPaletteData of(BuildContext context) {
     final provider =
         context.dependOnInheritedWidgetOfExactType<EufemiaPaletteProvider>();
@@ -55,6 +67,7 @@ class EufemiaPalette extends StatefulWidget {
     return state;
   }
 
+  /// Updates the [data] from an external HTTP resource.
   static Future<void> updateFromUrl(
     BuildContext context,
     String url, {
@@ -67,10 +80,12 @@ class EufemiaPalette extends StatefulWidget {
     );
   }
 
+  /// Updates the [data] from shared preferences.
   static Future<void> updateFromPreferences(BuildContext context) {
     return _findState(context).updateFromPreferences();
   }
 
+  /// Updates the [data] with the given [palette].
   static Future<void> update(
     BuildContext context,
     EufemiaPaletteData palette, {
@@ -160,6 +175,8 @@ class _EufemiaPaletteState extends State<EufemiaPalette> {
   }
 }
 
+/// A provider wrapper around [EufemiaPaletteData] allowing its children
+/// to be notified and rebuilt when the palette changes.
 class EufemiaPaletteProvider extends InheritedWidget {
   final EufemiaPaletteData value;
 

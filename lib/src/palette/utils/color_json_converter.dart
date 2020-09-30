@@ -1,6 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+/// {@category Palette}
+/// {@subCategory utils}
+/// A converter class for converting [Color] to JSON and vice versa
 class ColorJsonConverter implements JsonConverter<Color, Object> {
   const ColorJsonConverter();
 
