@@ -9,6 +9,7 @@ part of 'style.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$EufemiaButtonStyleTearOff {
   const _$EufemiaButtonStyleTearOff();
 
@@ -31,9 +32,11 @@ class _$EufemiaButtonStyleTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $EufemiaButtonStyle = _$EufemiaButtonStyleTearOff();
 
+/// @nodoc
 mixin _$EufemiaButtonStyle {
   Duration get duration;
   EufemiaButtonState<double> get opacity;
@@ -45,6 +48,7 @@ mixin _$EufemiaButtonStyle {
   $EufemiaButtonStyleCopyWith<EufemiaButtonStyle> get copyWith;
 }
 
+/// @nodoc
 abstract class $EufemiaButtonStyleCopyWith<$Res> {
   factory $EufemiaButtonStyleCopyWith(
           EufemiaButtonStyle value, $Res Function(EufemiaButtonStyle) then) =
@@ -58,6 +62,7 @@ abstract class $EufemiaButtonStyleCopyWith<$Res> {
       EufemiaButtonState<BoxDecoration> decoration});
 }
 
+/// @nodoc
 class _$EufemiaButtonStyleCopyWithImpl<$Res>
     implements $EufemiaButtonStyleCopyWith<$Res> {
   _$EufemiaButtonStyleCopyWithImpl(this._value, this._then);
@@ -96,6 +101,7 @@ class _$EufemiaButtonStyleCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$EufemiaButtonStyleCopyWith<$Res>
     implements $EufemiaButtonStyleCopyWith<$Res> {
   factory _$EufemiaButtonStyleCopyWith(
@@ -111,6 +117,7 @@ abstract class _$EufemiaButtonStyleCopyWith<$Res>
       EufemiaButtonState<BoxDecoration> decoration});
 }
 
+/// @nodoc
 class __$EufemiaButtonStyleCopyWithImpl<$Res>
     extends _$EufemiaButtonStyleCopyWithImpl<$Res>
     implements _$EufemiaButtonStyleCopyWith<$Res> {
@@ -151,6 +158,7 @@ class __$EufemiaButtonStyleCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_EufemiaButtonStyle
     with DiagnosticableTreeMixin
     implements _EufemiaButtonStyle {

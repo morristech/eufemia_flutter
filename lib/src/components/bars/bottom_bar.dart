@@ -5,13 +5,36 @@ import 'package:flutter/material.dart';
 
 import 'bar.dart';
 
+/// {@category Components}
+/// {@subCategory Bars}
+/// A bottom app bar from the Eufemia design system.
 class BottomBar extends StatefulWidget {
+  /// {@macro flutter.widgets.TabController}
   final TabController controller;
+
+  /// The children in their `active` state.
+  ///
+  /// {@macro flutter.widgets.children}
   final List<Widget> active;
+
+  /// The children in their `inactive` state.
+  ///
+  /// {@macro flutter.widgets.children}
   final List<Widget> inactive;
+
+  /// The labels for the tabs, indexed in the same order.
+  ///
+  /// {@macro flutter.widgets.children}
   final List<Widget> labels;
+
+  /// {@macro eufemia.gestures.onLongPress}
   final Function(int) onLongPress;
+
+  /// {@macro eufemia.gestures.onSelected}
   final Function(int) onSelected;
+
+  /// The builder that defines the transition between a tab's `active`
+  /// and `inactive` state.
   final TransitionBuilder transitionBuilder;
 
   const BottomBar({
@@ -42,7 +65,6 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return Bar(
-      controller: widget.controller,
       children: list,
       onSelected: widget.onSelected,
       onLongPress: widget.onLongPress,

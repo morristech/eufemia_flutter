@@ -5,23 +5,41 @@ import 'package:eufemia/src/components/utils/calculate_size.dart';
 import 'package:eufemia/typography.dart';
 import 'package:flutter/material.dart';
 
-/// Search bar from the Eufemia Design System
+/// {@category Components}
+/// {@subCategory Input}
+/// Search bar from the Eufemia design system.
 class SearchField extends StatefulWidget {
+  /// {@macro eufemia.components.input.controller}
   final TextEditingController controller;
+
+  /// {@macro eufemia.gestures.onChanged}
   final Function(String) onChanged;
+
+  /// {@macro flutter.widgets.Focus.focusNode}
   final FocusNode focusNode;
+
+  /// {@macro eufemia.components.input.hintText}
   final String hintText;
+
+  /// The text to display on the right-hand side once this field has focus.
   final String cancelText;
+
+  /// The [Color] or this field.
   final Color color;
+
+  /// The [Color] to use as an accent to the [color] of this field. Applies to
+  /// the search icon and text.
   final Color accentColor;
+
+  /// The [Color] to use for the input text.
   final Color textColor;
+
+  /// The [Color] to use for the [hintText] text.
   final Color hintColor;
+
+  /// The [Color] to use for this field's cancel button.
   final Color buttonColor;
 
-  /// Search bar from the Eufemia Design System
-  ///
-  /// * [controller]: The [TextEditingController] to use
-  /// * [onChanged]: Callback for when the given [controller] changes
   const SearchField({
     Key key,
     this.controller,

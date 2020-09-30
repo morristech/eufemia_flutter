@@ -2,13 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'dart:math' as math;
-
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/physics.dart';
-import 'package:flutter/rendering.dart';
+part of 'segmented_control.dart';
 
 // Extracted from https://developer.apple.com/design/resources/.
 
@@ -111,10 +105,10 @@ class _FontWeightTween extends Tween<FontWeight> {
 ///
 /// See also:
 ///
-///  * [CustomSlidingSegmentedControl], a segmented control widget in the
+///  * [_CustomSlidingSegmentedControl], a segmented control widget in the
 ///    style introduced in iOS 13.
 ///  * <https://developer.apple.com/design/human-interface-guidelines/ios/controls/segmented-controls/>
-class CustomSlidingSegmentedControl<T> extends StatefulWidget {
+class _CustomSlidingSegmentedControl<T> extends StatefulWidget {
   /// Creates an iOS-style segmented control bar.
   ///
   /// The [children] and [onValueChanged] arguments must not be null. The
@@ -130,7 +124,7 @@ class CustomSlidingSegmentedControl<T> extends StatefulWidget {
   /// If no [groupValue] is provided, or the [groupValue] is null, no widget will
   /// appear as selected. The [groupValue] must be either null or one of the keys
   /// in the [children] map.
-  CustomSlidingSegmentedControl({
+  _CustomSlidingSegmentedControl({
     Key key,
     @required this.children,
     @required this.onValueChanged,
@@ -239,8 +233,8 @@ class CustomSlidingSegmentedControl<T> extends StatefulWidget {
   _SegmentedControlState<T> createState() => _SegmentedControlState<T>();
 }
 
-class _SegmentedControlState<T> extends State<CustomSlidingSegmentedControl<T>>
-    with TickerProviderStateMixin<CustomSlidingSegmentedControl<T>> {
+class _SegmentedControlState<T> extends State<_CustomSlidingSegmentedControl<T>>
+    with TickerProviderStateMixin<_CustomSlidingSegmentedControl<T>> {
   final Map<T, AnimationController> _highlightControllers =
       <T, AnimationController>{};
   final Tween<FontWeight> _highlightTween =
@@ -319,7 +313,7 @@ class _SegmentedControlState<T> extends State<CustomSlidingSegmentedControl<T>>
   }
 
   @override
-  void didUpdateWidget(CustomSlidingSegmentedControl<T> oldWidget) {
+  void didUpdateWidget(_CustomSlidingSegmentedControl<T> oldWidget) {
     super.didUpdateWidget(oldWidget);
 
     // Update animation controllers.

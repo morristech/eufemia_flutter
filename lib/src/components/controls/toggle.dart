@@ -2,22 +2,24 @@ import 'package:eufemia/palette.dart';
 import 'package:eufemia/typography.dart';
 import 'package:flutter/widgets.dart';
 
+/// {@category Components}
+/// {@subCategory Controls}
 /// Toggle label from the Eufemia Design System
 class Toggle extends StatelessWidget {
+  /// {@macro eufemia.components.controls.value}
   final bool selected;
-  final String label;
-  final Function(bool) onChange;
 
-  /// Toggle label from the Eufemia Design System
-  ///
-  /// * [selected]: If the label is toggled or not
-  /// * [label]: The label
-  /// * [onChange]: Callback for when the the label is pressed
+  /// {@macro eufemia.components.label}
+  final String label;
+
+  /// {@macro eufemia.gestures.onChanged}
+  final Function(bool) onChanged;
+
   const Toggle({
     Key key,
     this.selected,
     this.label,
-    this.onChange,
+    this.onChanged,
   }) : super(key: key);
 
   @override
@@ -48,7 +50,7 @@ class Toggle extends StatelessWidget {
           ),
         ),
       ),
-      onTap: () => onChange?.call(!selected),
+      onTap: () => onChanged?.call(!selected),
     );
   }
 }

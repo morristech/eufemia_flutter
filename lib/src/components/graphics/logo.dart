@@ -2,7 +2,9 @@ import 'package:eufemia/palette.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
-/// Contains asset paths to logo data
+/// {@category Components}
+/// {@subCategory Graphics}
+/// Static class wrapping asset paths for logo data
 class LogoData {
   static const base = 'lib/assets/graphics/logos';
   static const dnb = '$base/dnb.svg';
@@ -21,13 +23,27 @@ class LogoData {
   static const skyss = '$base/skyss.svg';
 }
 
-/// Logos from the Eufemia Design System
+/// {@category Components}
+/// {@subCategory Graphics}
+/// A logo from the Eufemia design system.
 class Logo extends StatelessWidget {
+  /// The logo asset to use (use [LogoData] for static assets).
   final String logo;
+
+  /// The width of the logo.
   final double width;
+
+  /// The height of the logo.
   final double height;
+
+  /// The [BoxFit] of the logo.
   final BoxFit fit;
+
+  /// The [Color] to override the logo with.
   final Color color;
+
+  /// If true, the logo is colored according to the [EufemiaPalette]'s icon
+  /// color
   final bool themed;
 
   const Logo(
@@ -40,6 +56,8 @@ class Logo extends StatelessWidget {
     this.themed = false,
   }) : super(key: key);
 
+  /// Creates a logo with a color matching the current [EufemiaPalette]'s icon
+  /// color
   factory Logo.themed(String logo) {
     return Logo(logo, themed: true);
   }

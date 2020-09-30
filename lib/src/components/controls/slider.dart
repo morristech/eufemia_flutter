@@ -2,20 +2,32 @@ import 'package:eufemia/palette.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-/// Slider from the Eufemia Design System
+/// {@category Components}
+/// {@subCategory Controls}
+/// Adaptive slider from the Eufemia Design System
 class EufemiaSlider extends StatelessWidget {
+  /// {@macro eufemia.components.controls.value}
   final double value;
+
+  /// The amount of divisions to split the slider into.
   final int divisions;
+
+  /// {@macro eufemia.gestures.onChanged}
   final Function(double) onChanged;
+
+  /// {@template eufemia.gestures.onChangeStart}
+  /// The callback function that is called whenever a change starts. Passes the
+  /// value from when the change started.
+  /// {@endtemplate}
   final Function(double) onChangeStart;
+
+  /// {@template eufemia.gestures.onChangeEnd}
+  /// The callback function that is called whenever a change ends. Passes the
+  /// value from when the change ended.
+  /// {@endtemplate}
   final Function(double) onChangeEnd;
 
-  /// Slider from the Eufemia Design System
-  ///
-  /// * [value]: The current value of the slider
-  /// * [onChanged]: Callback for when the value changes
-  /// * [onChangeStart]: Callback for when a change starts
-  /// * [onChangeEnd]: Callback for when a change ends
+  /// Adaptive slider from the Eufemia Design System
   const EufemiaSlider({
     Key key,
     @required this.value,

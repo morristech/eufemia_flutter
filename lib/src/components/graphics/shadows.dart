@@ -1,6 +1,9 @@
 import 'package:eufemia/palette.dart';
 import 'package:flutter/widgets.dart';
 
+/// {@category Components}
+/// {@subCategory Graphics}
+/// Creates a shadow based on the current [EufemiaPalette]'s shadow colors.
 List<BoxShadow> adaptiveShadows(
   BuildContext context, {
   double spreadRadius,

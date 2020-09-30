@@ -97,12 +97,12 @@ class _ControlsViewState extends State<ControlsView> {
               Toggle(
                 label: 'Toggle label',
                 selected: firstToggleValue,
-                onChange: (value) => setState(() => firstToggleValue = value),
+                onChanged: (value) => setState(() => firstToggleValue = value),
               ),
               Toggle(
                 label: 'Toggle label',
                 selected: secondToggleValue,
-                onChange: (value) => setState(() => secondToggleValue = value),
+                onChanged: (value) => setState(() => secondToggleValue = value),
               )
             ],
           ),
@@ -120,7 +120,7 @@ class _ControlsViewState extends State<ControlsView> {
               1: 'Label',
               2: 'Label',
             },
-            onValueChanged: (value) => setState(() => firstTabValue = value),
+            onChanged: (value) => setState(() => firstTabValue = value),
             groupValue: firstTabValue,
           ),
           SegmentedControl<int>(
@@ -128,7 +128,7 @@ class _ControlsViewState extends State<ControlsView> {
               0: 'Label',
               1: 'Label',
             },
-            onValueChanged: (value) => setState(() => secondTabValue = value),
+            onChanged: (value) => setState(() => secondTabValue = value),
             groupValue: secondTabValue,
           ),
         ],

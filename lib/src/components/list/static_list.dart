@@ -5,14 +5,32 @@ import 'package:eufemia/typography.dart';
 import 'package:flutter/material.dart';
 
 // TODO (@arnemolland): Refactor to a more simplistic API
+/// {@category Components}
+/// {@subCategory List}
+/// A static (non-scrollable) list from the Eufemia design system.
 class StaticList extends StatelessWidget {
+  /// A label to display above the list.
   final Widget title;
+
+  /// {@macro flutter.widgets.children}
   final List<Widget> children;
+
+  /// If the [children] should have borders between them.
   final bool showBorders;
+
+  /// If a bottom border should be added to the end of the list.
   final bool addBottomBorder;
+
+  /// If the list should become a grid on wider devices.
   final bool adaptive;
+
+  /// A background color, if any.
   final Color backgroundColor;
+
+  /// [EufemiaSpace] to insert between each child.
   final EufemiaSpace spaceBetween;
+
+  /// {@macro eufemia.spacing.insets}
   final EufemiaInsets padding;
 
   const StaticList({

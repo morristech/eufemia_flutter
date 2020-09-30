@@ -3,16 +3,24 @@ import 'package:flutter/widgets.dart';
 
 import 'style.dart';
 
+/// {@category Components}
+/// {@subCategory Buttons}
+/// A generic button from the Eufemia design system used as a base for all
+/// buttons.
 class EufemiaButton extends StatefulWidget {
   // The visual style of the button.
   final EufemiaButtonStyle style;
 
+  /// {@template eufemia.components.EufemiaButton.child}
   /// The widget below this widget in the tree.
   ///
   /// {@macro flutter.widgets.child}
+  /// {@endtemplate}
   final Widget child;
 
-  /// Called when the user taps this button.
+  /// {@template eufemia.gestures.onTap}
+  /// Callback function called when the component has been tapped
+  /// {@endtemplate}
   final GestureTapCallback onTap;
 
   /// {@macro flutter.widgets.Focus.autofocus}

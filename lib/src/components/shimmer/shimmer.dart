@@ -3,17 +3,19 @@ import 'package:eufemia/typography.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shimmer/shimmer.dart' as shimmer;
 
-/// A shimmer/skeleton placeholder component
+/// {@category Components}
+/// A shimmer/skeleton placeholder component from the Eufemia design system.
 class Shimmer extends StatelessWidget {
-  /// Shimmer height
+  /// Shimmer height.
   final double height;
 
-  /// Shimmer width
+  /// Shimmer width.
   final double width;
 
-  /// The shape of the Shimmer
+  /// The [BoxShape] of the Shimmer
   final BoxShape shape;
 
+  /// {@macro flutter.widgets.child}
   final Widget child;
 
   const Shimmer({
@@ -24,6 +26,7 @@ class Shimmer extends StatelessWidget {
     this.child,
   }) : super(key: key);
 
+  /// Creates a circular [Shimmer] with diameter [size].
   factory Shimmer.circular(double size) {
     return Shimmer(
       height: size,
@@ -32,6 +35,7 @@ class Shimmer extends StatelessWidget {
     );
   }
 
+  /// Creates a [Shimmer] fitted to a certain [EufemiaTextStyle].
   factory Shimmer.fromTextStyle(
     BuildContext context,
     EufemiaTextStyle style, {

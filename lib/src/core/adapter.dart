@@ -4,12 +4,18 @@ import 'package:flutter/services.dart';
 
 import 'splash_factory.dart';
 
+/// An adapter bridging [Eufemia] and [ThemeData].
 class EufemiaThemeAdapter {
+  /// The current context.
   final BuildContext context;
+
+  /// The [Color] to set the system status bar to.
   final Color statusBarColor;
 
   EufemiaThemeAdapter(this.context, [this.statusBarColor]);
 
+  /// Returns a [ThemeData] instance created from the context's current
+  /// [Eufemia] theme.
   ThemeData get theme {
     final eufemia = Eufemia.of(context);
     final typography = eufemia.typography;
@@ -92,6 +98,7 @@ class EufemiaThemeAdapter {
     }
   }
 
+  /// Sets the system's status bar color.
   /// [statusBarColor]: Sets the status bar color. Defaults to [Colors.transparent]
   static void setStatusBarColor({Color statusBarColor, Brightness brightness}) {
     SystemChrome.setSystemUIOverlayStyle(

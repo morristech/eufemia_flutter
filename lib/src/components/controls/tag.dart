@@ -4,8 +4,16 @@ import 'package:eufemia/spacing.dart';
 import 'package:eufemia/typography.dart';
 import 'package:flutter/widgets.dart';
 
+/// {@category Components}
+/// {@subCategory Controls}
+/// Tag from the Eufemia design system
 class Tag extends StatelessWidget {
+  /// {@macro eufemia.components.label}
   final String label;
+
+  /// {@template eufemia.gestures.onDelete}
+  /// The callback function that is called when component has been deleted.
+  /// {@endtemplate}
   final VoidCallback onDelete;
 
   const Tag({

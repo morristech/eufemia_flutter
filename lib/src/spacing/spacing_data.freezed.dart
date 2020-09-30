@@ -9,6 +9,7 @@ part of 'spacing_data.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$EufemiaSpacingDataTearOff {
   const _$EufemiaSpacingDataTearOff();
 
@@ -31,9 +32,11 @@ class _$EufemiaSpacingDataTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $EufemiaSpacingData = _$EufemiaSpacingDataTearOff();
 
+/// @nodoc
 mixin _$EufemiaSpacingData {
   double get extraSmall;
   double get small;
@@ -45,6 +48,7 @@ mixin _$EufemiaSpacingData {
   $EufemiaSpacingDataCopyWith<EufemiaSpacingData> get copyWith;
 }
 
+/// @nodoc
 abstract class $EufemiaSpacingDataCopyWith<$Res> {
   factory $EufemiaSpacingDataCopyWith(
           EufemiaSpacingData value, $Res Function(EufemiaSpacingData) then) =
@@ -58,6 +62,7 @@ abstract class $EufemiaSpacingDataCopyWith<$Res> {
       double extraExtraLarge});
 }
 
+/// @nodoc
 class _$EufemiaSpacingDataCopyWithImpl<$Res>
     implements $EufemiaSpacingDataCopyWith<$Res> {
   _$EufemiaSpacingDataCopyWithImpl(this._value, this._then);
@@ -90,6 +95,7 @@ class _$EufemiaSpacingDataCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$EufemiaSpacingDataCopyWith<$Res>
     implements $EufemiaSpacingDataCopyWith<$Res> {
   factory _$EufemiaSpacingDataCopyWith(
@@ -105,6 +111,7 @@ abstract class _$EufemiaSpacingDataCopyWith<$Res>
       double extraExtraLarge});
 }
 
+/// @nodoc
 class __$EufemiaSpacingDataCopyWithImpl<$Res>
     extends _$EufemiaSpacingDataCopyWithImpl<$Res>
     implements _$EufemiaSpacingDataCopyWith<$Res> {
@@ -139,6 +146,7 @@ class __$EufemiaSpacingDataCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_EufemiaSpacingData implements _EufemiaSpacingData {
   const _$_EufemiaSpacingData(
       {@required this.extraSmall,

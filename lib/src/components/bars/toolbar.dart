@@ -3,8 +3,14 @@ import 'package:flutter/widgets.dart';
 
 import 'bar.dart';
 
+/// {@category Components}
+/// {@subCategory Bars}
+/// A toolbar from the Eufemia design system.
 class Toolbar extends StatelessWidget {
+  /// {@macro flutter.widgets.children}
   final List<Widget> children;
+
+  /// {@macro flutter.rendering.MainAxisAlignment}
   final MainAxisAlignment mainAxisAlignment;
 
   const Toolbar({

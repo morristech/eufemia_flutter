@@ -7,20 +7,41 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
-const designBase = 'lib/assets/graphics/cards';
-const logoBase = 'lib/assets/graphics/cards/logos';
-const presetBase = 'lib/assets/graphics/cards/presets';
-const programBase = 'lib/assets/graphics/cards/programs';
-const typeBase = 'lib/assets/graphics/cards/types';
+/// Assets path to the card logos
+const _logoBase = 'lib/assets/graphics/cards/logos';
 
+/// Assets path to the card program illustrations
+const _programBase = 'lib/assets/graphics/cards/programs';
+
+/// Assets path to the card type illustrations
+const _typeBase = 'lib/assets/graphics/cards/types';
+
+/// {@category Components}
+/// {@subCategory Graphics}
+/// A configuration class that defines the front side of a [PaymentCard].
 class PaymentCardFrontContent {
+  /// The logo to display.
   final CardLogo logo;
+
+  /// The program print to display.
   final CardProgram program;
+
+  /// The issuer/type to display.
   final CardType type;
+
+  /// The pre-defined preset to use for the widget.
   final CardPreset preset;
+
+  /// The color of the DNB logo.
   final Color logoColor;
+
+  /// The 4 last un-masked digits to display (masked PAN).
   final int digits;
+
+  /// The text to display above the masked digits.
   final String digitsText;
+
+  /// The alignment of the logo on the card.
   final Alignment logoAlignment;
 
   PaymentCardFrontContent({
@@ -35,10 +56,20 @@ class PaymentCardFrontContent {
   });
 }
 
+/// {@category Components}
+/// {@subCategory Graphics}
+/// A configuration class that defines the back side of a [PaymentCard].
 class PaymentCardBackContent {
+  /// The account number to display on the back.
   final String accountNumber;
+
+  /// The account name to display on the back.
   final String accountName;
+
+  /// The name of the cardholder to display on the back.
   final String cardholder;
+
+  /// The card type text to display on the back.
   final String type;
 
   PaymentCardBackContent({
@@ -49,15 +80,29 @@ class PaymentCardBackContent {
   });
 }
 
+/// {@category Components}
+/// {@subCategory Graphics}
+/// A payment card widget from the Eufemia design system
 class PaymentCard extends StatefulWidget {
+  /// The [CardDesign] design to use.
   final CardDesign design;
-  final double width;
-  final bool shadow;
-  final bool flippable;
-  final bool softLight;
-  final String accountNumber;
 
+  /// Width of the card.
+  final double width;
+
+  /// If the card should have a drop-shadow or not.
+  final bool shadow;
+
+  /// If the card is flippable. If true, [backContent] must be set.
+  final bool flippable;
+
+  /// If the card should be lit by a soft, white light.
+  final bool softLight;
+
+  /// Configuration for the card front.
   final PaymentCardFrontContent frontContent;
+
+  /// Configuration for the card back.
   final PaymentCardBackContent backContent;
 
   const PaymentCard({
@@ -65,7 +110,6 @@ class PaymentCard extends StatefulWidget {
     this.width = 343,
     this.shadow = true,
     this.flippable = true,
-    this.accountNumber,
     this.softLight = true,
     this.backContent,
     @required this.frontContent,
@@ -108,7 +152,7 @@ class _PaymentCardState extends State<PaymentCard> {
                         front: Container(
                           width: constraints.maxWidth,
                           height: constraints.maxHeight,
-                          child: PaymentCardFront(
+                          child: _PaymentCardFront(
                             widget: widget,
                             softLight: widget.softLight,
                           ),
@@ -116,14 +160,14 @@ class _PaymentCardState extends State<PaymentCard> {
                         back: Container(
                           width: constraints.maxWidth,
                           height: constraints.maxHeight,
-                          child: PaymentCardBack(
+                          child: _PaymentCardBack(
                             widget: widget,
                             softLight: widget.softLight,
                           ),
                         ),
                         isFlipped: isFlipped,
                       )
-                    : PaymentCardFront(
+                    : _PaymentCardFront(
                         widget: widget,
                         softLight: widget.softLight,
                       ),
@@ -156,14 +200,18 @@ class _PaymentCardState extends State<PaymentCard> {
   double get height => widget.width / goldenRatio;
 }
 
-class PaymentCardBack extends StatelessWidget {
-  const PaymentCardBack({
+/// The back of a [PaymentCard].
+class _PaymentCardBack extends StatelessWidget {
+  const _PaymentCardBack({
     Key key,
     @required this.widget,
     @required this.softLight,
   }) : super(key: key);
 
+  /// The [PaymentCard] to add a backside to.
   final PaymentCard widget;
+
+  /// If the back should be lit by a white, soft light.
   final bool softLight;
 
   @override
@@ -308,14 +356,18 @@ class PaymentCardBack extends StatelessWidget {
   }
 }
 
-class PaymentCardFront extends StatelessWidget {
-  const PaymentCardFront({
+/// The front for a [PaymentCard] widget.
+class _PaymentCardFront extends StatelessWidget {
+  const _PaymentCardFront({
     Key key,
     @required this.widget,
     @required this.softLight,
   }) : super(key: key);
 
+  /// The [PaymentCard] to add a front to.
   final PaymentCard widget;
+
+  /// If the front should be lit by a soft white light.
   final bool softLight;
 
   @override
@@ -327,23 +379,23 @@ class PaymentCardFront extends StatelessWidget {
         children: [
           getCardBase(widget.design, softLight),
           if (widget.frontContent.logo != null) ...{
-            PaymentCardLogo(
+            _PaymentCardLogo(
               alignment: widget.frontContent.logoAlignment,
               logo: widget.frontContent.logo,
               color: widget.frontContent.logoColor,
             ),
           },
           if (widget.frontContent.program != null) ...{
-            PaymentCardProgram(
+            _PaymentCardProgram(
               program: widget.frontContent.program,
             ),
           },
           if (widget.frontContent.type != null) ...{
-            PaymentCardType(
+            _PaymentCardType(
               type: widget.frontContent.type,
             ),
           },
-          PaymentCardDigits(
+          _PaymentCardDigits(
             design: widget.design,
             digitsText: widget.frontContent.digitsText,
             digits: widget.frontContent.digits,
@@ -354,16 +406,22 @@ class PaymentCardFront extends StatelessWidget {
   }
 }
 
-class PaymentCardDigits extends StatelessWidget {
-  const PaymentCardDigits({
+/// The masked digits for a [PaymentCard] widget.
+class _PaymentCardDigits extends StatelessWidget {
+  const _PaymentCardDigits({
     Key key,
     @required this.design,
     this.digitsText,
     this.digits,
   }) : super(key: key);
 
+  /// The design to use for displaying the digits.
   final CardDesign design;
+
+  /// The text displayed over the digits.
   final String digitsText;
+
+  /// The last 4 digits (masked PAN).
   final int digits;
 
   Brightness get _cardBrightness =>
@@ -418,12 +476,14 @@ class PaymentCardDigits extends StatelessWidget {
   }
 }
 
-class PaymentCardType extends StatelessWidget {
-  const PaymentCardType({
+/// The card type for a [PaymentCard] widget.
+class _PaymentCardType extends StatelessWidget {
+  const _PaymentCardType({
     Key key,
     @required this.type,
   }) : super(key: key);
 
+  /// The type to display an illustration for.
   final CardType type;
 
   @override
@@ -455,27 +515,29 @@ class PaymentCardType extends StatelessWidget {
   String getCardTypeAsset(CardType type) {
     switch (type) {
       case CardType.masterCard:
-        return '$typeBase/mastercard.svg';
+        return '$_typeBase/mastercard.svg';
       case CardType.masterCardSilver:
-        return '$typeBase/mastercard_metallic.svg';
+        return '$_typeBase/mastercard_metallic.svg';
       case CardType.visaDebit:
-        return '$typeBase/visa.svg';
+        return '$_typeBase/visa.svg';
       case CardType.visaDebitSilver:
-        return '$typeBase/visa_metallic.svg';
+        return '$_typeBase/visa_metallic.svg';
       case CardType.visaDebitWhite:
-        return '$typeBase/visa_white.svg';
+        return '$_typeBase/visa_white.svg';
       default:
-        return '$typeBase/visa.svg';
+        return '$_typeBase/visa.svg';
     }
   }
 }
 
-class PaymentCardProgram extends StatelessWidget {
-  const PaymentCardProgram({
+/// The program logo/illustration for a [PaymentCard] widget
+class _PaymentCardProgram extends StatelessWidget {
+  const _PaymentCardProgram({
     Key key,
     @required this.program,
   }) : super(key: key);
 
+  /// The program to display the illustration for.
   final CardProgram program;
 
   @override
@@ -503,31 +565,37 @@ class PaymentCardProgram extends StatelessWidget {
   String getCardProgramAsset(CardProgram program) {
     switch (program) {
       case CardProgram.privateBanking:
-        return '$programBase/private_banking.svg';
+        return '$_programBase/private_banking.svg';
       case CardProgram.privateBankingVisaPlatinum:
-        return '$programBase/private_banking_visa_platinum.svg';
+        return '$_programBase/private_banking_visa_platinum.svg';
       case CardProgram.sagaGold:
-        return '$programBase/saga_gold.svg';
+        return '$_programBase/saga_gold.svg';
       case CardProgram.sagaPlatinum:
-        return '$programBase/saga_platinum.svg';
+        return '$_programBase/saga_platinum.svg';
       case CardProgram.sagaVisaPlatinum:
-        return '$programBase/saga_visa_platinum.svg';
+        return '$_programBase/saga_visa_platinum.svg';
       default:
-        return '$programBase/private_banking.svg';
+        return '$_programBase/private_banking.svg';
     }
   }
 }
 
-class PaymentCardLogo extends StatelessWidget {
-  const PaymentCardLogo({
+/// A card issuer logo for a [PaymentCard] widget.
+class _PaymentCardLogo extends StatelessWidget {
+  const _PaymentCardLogo({
     Key key,
     @required this.logo,
     @required this.color,
     this.alignment = Alignment.topLeft,
   }) : super(key: key);
 
+  /// The logo to display.
   final CardLogo logo;
+
+  /// The color of the logo.
   final Color color;
+
+  /// The alignment of the logo on the card.
   final Alignment alignment;
 
   @override
@@ -561,11 +629,11 @@ class PaymentCardLogo extends StatelessWidget {
   String getCardLogoAsset(CardLogo logo) {
     switch (logo) {
       case CardLogo.metallic:
-        return '$logoBase/dnb_metallic.svg';
+        return '$_logoBase/dnb_metallic.svg';
       case CardLogo.matte:
-        return '$logoBase/dnb.svg';
+        return '$_logoBase/dnb.svg';
       default:
-        return '$logoBase/dnb.svg';
+        return '$_logoBase/dnb.svg';
     }
   }
 }

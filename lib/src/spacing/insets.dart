@@ -5,6 +5,47 @@ import 'sides.dart';
 import 'spacing.dart';
 import 'spacing_data.dart';
 
+/// {@template eufemia.spacing.insets}
+/// An immutable set of offsets in each of the four cardinal directions.
+///
+/// Typically used for an offset from each of the four sides of a box. For
+/// example, the padding inside a box can be represented using this class.
+///
+/// The [EufemiaInsets] class specifies offsets in terms of visual edges, left,
+/// top, right, and bottom. These values are not affected by the
+/// [TextDirection].
+///
+/// {@tool snippet}
+///
+/// Here are some examples of how to create [EdgeInsets] instances:
+///
+/// Typical eight-pixel margin on all sides:
+///
+/// ```dart
+/// const EufemiaInsets.small()
+/// ```
+/// {@end-tool}
+/// {@tool snippet}
+///
+/// Eight pixel margin above and below, no horizontal margins:
+///
+/// ```dart
+/// const EufemiaInsets.small(EufemiaSides.vertical)
+/// ```
+/// {@end-tool}
+/// {@tool snippet}
+///
+/// Left margin indent of 16 pixels:
+///
+/// ```dart
+/// const EufemiaInsets.only(EufemiaSpace.medium, EufemiaSides.left)
+/// ```
+/// {@end-tool}
+///
+/// See also:
+///
+///  * [EufemiaPadding], a widget that accepts [EufemiaInsets] to describe its margins.
+/// {@endtemplate}
 class EufemiaInsets {
   final EufemiaSpace top;
   final EufemiaSpace bottom;

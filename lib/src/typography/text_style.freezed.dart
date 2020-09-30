@@ -9,6 +9,7 @@ part of 'text_style.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$EufemiaTextStyleTearOff {
   const _$EufemiaTextStyleTearOff();
 
@@ -47,9 +48,11 @@ class _$EufemiaTextStyleTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $EufemiaTextStyle = _$EufemiaTextStyleTearOff();
 
+/// @nodoc
 mixin _$EufemiaTextStyle {
   @nullable
   Color get color;
@@ -83,6 +86,7 @@ mixin _$EufemiaTextStyle {
   $EufemiaTextStyleCopyWith<EufemiaTextStyle> get copyWith;
 }
 
+/// @nodoc
 abstract class $EufemiaTextStyleCopyWith<$Res> {
   factory $EufemiaTextStyleCopyWith(
           EufemiaTextStyle value, $Res Function(EufemiaTextStyle) then) =
@@ -104,6 +108,7 @@ abstract class $EufemiaTextStyleCopyWith<$Res> {
       @nullable Widget Function(BuildContext, Widget) builder});
 }
 
+/// @nodoc
 class _$EufemiaTextStyleCopyWithImpl<$Res>
     implements $EufemiaTextStyleCopyWith<$Res> {
   _$EufemiaTextStyleCopyWithImpl(this._value, this._then);
@@ -165,6 +170,7 @@ class _$EufemiaTextStyleCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$EufemiaTextStyleCopyWith<$Res>
     implements $EufemiaTextStyleCopyWith<$Res> {
   factory _$EufemiaTextStyleCopyWith(
@@ -188,6 +194,7 @@ abstract class _$EufemiaTextStyleCopyWith<$Res>
       @nullable Widget Function(BuildContext, Widget) builder});
 }
 
+/// @nodoc
 class __$EufemiaTextStyleCopyWithImpl<$Res>
     extends _$EufemiaTextStyleCopyWithImpl<$Res>
     implements _$EufemiaTextStyleCopyWith<$Res> {
@@ -251,6 +258,7 @@ class __$EufemiaTextStyleCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_EufemiaTextStyle
     with DiagnosticableTreeMixin
     implements _EufemiaTextStyle {

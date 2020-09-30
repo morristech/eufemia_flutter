@@ -5,11 +5,23 @@ import 'package:flutter/widgets.dart';
 import 'button.dart';
 import 'style.dart';
 
+/// {@category Components}
+/// {@subCategory Buttons}
+/// A secondary button from the Eufemia design system.
 class EufemiaSecondaryButton extends StatelessWidget {
+  /// {@macro eufemia.components.EufemiaButton.child}
   final Widget child;
-  final VoidCallback onTap;
+
+  /// {@macro eufemia.gestures.onTap}
+  final GestureTapCallback onTap;
+
+  /// {@macro flutter.widgets.Focus.autofocus}
   final bool autofocus;
+
+  /// {@macro flutter.widgets.Focus.focusNode}
   final FocusNode focusNode;
+
+  /// {@macro eufemia.components.EufemiaButtonSize}
   final EufemiaButtonSize size;
 
   const EufemiaSecondaryButton({

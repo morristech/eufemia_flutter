@@ -25,6 +25,7 @@ class NoSplashFactory extends InteractiveInkFeatureFactory {
   }
 }
 
+/// A splash effect that disables all ripple effects
 class NoSplash extends InteractiveInkFeature {
   NoSplash({
     @required MaterialInkController controller,

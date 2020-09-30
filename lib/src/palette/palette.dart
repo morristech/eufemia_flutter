@@ -39,7 +39,8 @@ class EufemiaPalette extends StatefulWidget {
         );
 
   static EufemiaPaletteData of(BuildContext context) {
-    final provider = context.dependOnInheritedWidgetOfExactType<EufemiaPaletteProvider>();
+    final provider =
+        context.dependOnInheritedWidgetOfExactType<EufemiaPaletteProvider>();
     if (provider == null) {
       throw Exception('No EufemiaPaletteData found in the widget tree');
     }

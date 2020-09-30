@@ -3,8 +3,12 @@ import 'package:flutter_svg/svg.dart';
 
 const double _borderRadius = 100.0;
 
+/// {@category Components}
+/// {@subCategory Graphics}
+/// Wrapper for flag illustrations
 class FlagData {
   String fromCountryCode(String countryCode) {
+    countryCode = countryCode.toLowerCase();
     return '$base/$countryCode.svg';
   }
 
@@ -71,10 +75,20 @@ class FlagData {
   static const za = '$base/za.svg';
 }
 
+/// {@category Components}
+/// {@subCategory Graphics}
+/// A flag illustration widget from the Eufemia design system.
 class Flag extends StatelessWidget {
+  /// The country code (ISO)
   final String country;
+
+  /// The width of the flag
   final double width;
+
+  /// The height of the flag
   final double height;
+
+  /// The [BoxFit] of the flag
   final BoxFit fit;
 
   const Flag(

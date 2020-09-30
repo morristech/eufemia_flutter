@@ -3,6 +3,7 @@ import 'package:eufemia/palette.dart';
 import 'package:eufemia/typography.dart';
 import 'package:flutter/widgets.dart';
 
+/// A default [EufemiaButton] theme
 class EufemiaDefaultButtonTheme extends StatelessWidget {
   final Widget child;
   final EufemiaButtonThemeData data;

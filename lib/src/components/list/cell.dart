@@ -5,15 +5,37 @@ import 'package:eufemia/typography.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
+/// {@category Components}
+/// {@subCategory List}
+/// A list cell from the Eufemia design system.
 class Cell extends StatelessWidget {
+  /// A widget on the left-hand side of this [Cell]'s title.
   final Widget leading;
+
+  /// The "main" widget to display in this [Cell]. Should be the relevant
+  /// information this cell is supposed to convey.
   final Widget title;
+
+  /// A trailing widget on the right-hand side of this [Cell]'s title.
   final Widget trailing;
+
+  /// A subtitle for this [Cell] that is display beneath the [title].
   final Widget subtitle;
+
+  /// {@macro eufemia.gestures.onTap}
   final VoidCallback onTap;
+
+  /// If this [Cell] should display an arrow implying navigation on tap.
   final bool implyNavigation;
+
+  /// If this [Cell] should have borders around it.
   final bool borders;
+
+  /// A list of actions that will be visible on certain platform-specific
+  /// gestures, e.g. swipe in iOS or long-press on Android.
   final List<CellAction> actions;
+
+  /// Padding to wrap the [Cell]'s contents in.
   final EufemiaSpacing contentPadding;
 
   const Cell({
@@ -29,6 +51,7 @@ class Cell extends StatelessWidget {
     this.contentPadding,
   }) : super(key: key);
 
+  /// Creates a [Cell] with its contents being shimmer skeleton loaders.
   factory Cell.shimmer({bool leading = false, bool trailing = false}) {
     return Cell(
       leading: leading ? Shimmer.circular(24.0) : null,
@@ -186,10 +209,20 @@ class Cell extends StatelessWidget {
       ?.toList();
 }
 
+/// {@category Components}
+/// {@subCategory List}
+/// An action to display as a result of platform gestures on a [Cell].
 class CellAction {
+  /// The label text to display for the action.
   final String label;
+
+  /// The background color for this action (iOS).
   final Color color;
+
+  /// The icon to display for this action.
   final Widget icon;
+
+  /// {@macro eufemia.gestures.onTap}
   final VoidCallback onTap;
 
   CellAction({

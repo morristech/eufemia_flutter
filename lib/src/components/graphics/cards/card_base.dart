@@ -1,19 +1,39 @@
 import 'package:flutter/material.dart';
 
+/// {@category Components}
+/// {@subCategory Graphics}
+/// The golden ratio. In mathematics, two quantities are in the golden ratio if
+/// their ratio is the same as the ratio of their sum to the larger of the two
+/// quantities.
+const goldenRatio = 1.618;
+
+/// {@category Components}
+/// {@subCategory List}
+/// A plain base/background for a [PaymentCard]
 class CardBase extends StatelessWidget {
+  /// If the base should be lit up by a soft light.
   final bool softLight;
+
+  /// The gradient's starting color.
   final Color startColor;
+
+  /// The gradient's ending color.
   final Color endColor;
+
+  /// The gradient for the card. Overrides the [startColor], [endColor] and
+  /// [stops] values.
+  final LinearGradient gradient;
+
+  /// The gradient's stops
   final List<double> stops;
-  final double width;
 
   const CardBase({
     Key key,
     this.softLight = true,
     this.startColor,
     this.endColor,
-    this.width,
     this.stops,
+    this.gradient,
   }) : super(key: key);
 
   @override
@@ -25,15 +45,16 @@ class CardBase extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.centerRight,
-                end: Alignment.centerLeft,
-                colors: [
-                  startColor,
-                  endColor,
-                ],
-                stops: stops ?? [0.0631, 0.8266],
-              ),
+              gradient: gradient ??
+                  LinearGradient(
+                    begin: Alignment.centerRight,
+                    end: Alignment.centerLeft,
+                    colors: [
+                      startColor,
+                      endColor,
+                    ],
+                    stops: stops ?? [0.0631, 0.8266],
+                  ),
               borderRadius: BorderRadius.circular(12.0),
             ),
           ),
@@ -63,6 +84,3 @@ class CardBase extends StatelessWidget {
     });
   }
 }
-
-const goldenRatio =
-    1.61803398874989484820458683436563811772030917980576286213544862270526046281890244970720720418939113748475408807538689175212663386222353693179318006076672635443338908659593958290563832266131992829026788067520876689250171169620703222104321626954862629631361443814975870122034080588795445474924618569536486444924104432077134494704956584678850987433944221254487706647809158846074998871240076521705751797883416625624940758906970400028121042762177111777805315317141011704666599146697987317613560067087480710131795236894275219484353056783002287856997829778347845878228911097625003026961561700250464338243776486102838312683303724292675263116533924731671112115881863851331620384005222165791286675294654906811317159934323597349498509040947621322298101726107059611645629909816290555208524790352406020172799747175342777592778625619432082750513121815628551222480939471234145170223735805772786160086883829523045926478780178899219902707769038953219681986151437803149974110692608867429622675756052317277752035361393621076738937645560606059216589466759551900400555908950229530942312482355212212415444006470340565734797663972394949946584578873039623090375033993856210242369025138680414577995698122445747178034173126453220416397232134044449487302315417676893752103068737880344170093954409627955898678723209512426893557309704509595684401755519881921802064052905518934947592600734852282101088194644544222318891319294689622002301443770269923007803085261180754519288770502109684249362713592518760777884665836150238913493333122310533923213624319263728910670503399282265263556209029798642472759772565508615487543574826471814145127000602389016207773224499435308899;

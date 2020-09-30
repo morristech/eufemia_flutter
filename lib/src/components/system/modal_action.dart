@@ -2,13 +2,17 @@ import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
 
+/// {@category Components}
+/// {@subCategory System}
 /// Helper class for actions to show
 /// on a modal sheet
 class ModalAction {
   /// The label/title of the action
   final String label;
 
-  /// The callback function when the action is pressed
+  /// {@template eufemia.gestures.onPressed}
+  /// The callback function when the action is pressed.
+  /// {@endtemplate}
   final VoidCallback onPressed;
 
   /// If the action is a default action (iOS only)

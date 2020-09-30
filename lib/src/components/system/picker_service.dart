@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 const double _pickerSheetHeight = 216.0;
 
 // TODO (@arnemolland): Refactor to a more simplistic API
+/// {@category Components}
+/// {@subCategory System}
+/// A wrapper around helper methods for picker components.
 class PickerService {
   static void showPicker(
     BuildContext context, {

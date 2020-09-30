@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 // Exports some convenience extensions
 export 'package:snack/snack.dart';
 
+/// {@category Components}
+/// Wrapper around [SnackBar] helper methods.
 class Snacks {
+  /// Returns a [SnackBar] from the given parameters.
   static SnackBar bar({
     @required Widget title,
     Widget leading,

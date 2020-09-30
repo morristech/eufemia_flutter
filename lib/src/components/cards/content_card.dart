@@ -4,26 +4,51 @@ import 'package:eufemia/spacing.dart';
 import 'package:eufemia/typography.dart';
 import 'package:flutter/material.dart';
 
-/// A card from the Eufemia Design SystemR
+/// {@category Components}
+/// {@subCategory Cards}
+/// A card from the Eufemia Design System.
 class ContentCard extends StatelessWidget {
+  /// {@macro flutter.widgets.child}
   final Widget child;
+
+  /// The label to be shown in a separate box under the [child]
   final Widget label;
+
+  /// {@template eufemia.semantics.semanticLabel}
+  /// A descriptive label to attach to the semantics tree for
+  /// accessibility purposes.
+  /// {@endtemplate}
   final String semanticLabel;
+
+  /// If the [ContentCard] should render a backdrop shadow
   final bool shadow;
+
+  /// If the [ContentCard] should have borders around it
   final bool border;
+
+  /// If the [ContentCard] should have a separator between the [child] and the
+  /// [label]. Only used if both values are provided.
   final bool separator;
+
+  /// The background color for the child widget.
   final Color color;
+
+  /// The background color for the [label] widget.
   final Color labelColor;
+
+  /// The background widget to render behind the [child] widget.
   final Widget background;
+
+  /// A custom shadow to replace the default shadow. Is not displayed if [shadow]
+  /// is false.
   final List<BoxShadow> boxShadow;
+
+  /// The width of the [ContentCard], expands if unset
   final double width;
+
+  /// The height of the [ContentCard], expands if unset
   final double height;
 
-  /// A card from the Eufemia Design System
-  ///
-  /// * [child]: The main content of the card
-  /// * [label]: Optional label to appear below the content
-  /// * [semanticLabel]: Accessibility label
   const ContentCard({
     Key key,
     this.label,
@@ -104,6 +129,8 @@ class ContentCard extends StatelessWidget {
     );
   }
 
+  /// Creates a [ContentCard] with an accent background color derived from
+  /// either [context] or [palette]
   factory ContentCard.accent({
     BuildContext context,
     EufemiaPaletteData palette,

@@ -5,6 +5,7 @@ import 'space.dart';
 import 'sides.dart';
 
 class EufemiaPadding extends StatelessWidget {
+  /// {@macro eufemia.spacing.insets}
   final EufemiaInsets padding;
   final Widget child;
 

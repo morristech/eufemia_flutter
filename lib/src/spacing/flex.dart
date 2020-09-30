@@ -8,6 +8,8 @@ import 'space.dart';
 
 class EufemiaFlex extends StatelessWidget {
   final Axis direction;
+
+  /// {@macro eufemia.spacing.insets}
   final EufemiaInsets padding;
   final EufemiaSpace spaceBetween;
   final List<Widget> children;

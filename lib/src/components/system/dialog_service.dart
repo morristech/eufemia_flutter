@@ -5,7 +5,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // TODO (@arnemolland): Refactor to a more simplistic API
+/// {@category Components}
+/// {@subCategory System}
+/// A wrapper around helper methods for showing system dialogs.
 class DialogService {
+  /// Displays an alert dialog as an overlay.
   static void showAlertDialog(
     BuildContext context, {
     String title,

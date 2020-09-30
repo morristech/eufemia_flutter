@@ -5,14 +5,19 @@ import 'package:eufemia/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+/// {@category Components}
+/// {@subCategory Controls}
+/// Tab from the Eufemia design system.
 class EufemiaTab extends StatelessWidget {
-  /// The text to display for the tab
+  /// {@template eufemia.components.label}
+  /// The text to display in the component.
+  /// {@endtemplate}
   final String label;
 
   /// Explicit status of the tab. Can't be used if [index] is set.
   final bool active;
 
-  /// Callback for tap interaction
+  /// {@macro eufemia.gestures.onSelected}
   final Function() onSelected;
 
   /// Index of the tab that sets the [active] status from the context's [DefaultTabController]. Can't be used if

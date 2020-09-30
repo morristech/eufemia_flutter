@@ -4,20 +4,33 @@ import 'package:eufemia/typography.dart';
 import 'package:eufemia/spacing.dart';
 import 'package:flutter/material.dart';
 
+// Different message types
 enum _MessageType {
   info,
   warning,
   error,
 }
 
+/// {@category Components}
+/// A message box from the Eufemia design system.
 class MessageBox extends StatefulWidget {
+  /// The icon to display.
   final Widget icon;
+
+  /// The color of this [MessageBox].
   final Color color;
+
+  /// {@macro eufemia.components.label}
   final String label;
+
+  /// {@macro eufemia.gestures.onTap}
   final VoidCallback onTap;
+
+  // Private message type
   final _MessageType type;
 
-  const MessageBox({
+  // TODO (@arnemolland): Make public and allow for custom [MessageBox] widgets.
+  const MessageBox._({
     Key key,
     this.icon,
     this.color,
@@ -30,7 +43,7 @@ class MessageBox extends StatefulWidget {
   _MessageBoxState createState() => _MessageBoxState();
 
   factory MessageBox.info(String label, {VoidCallback onTap}) {
-    return MessageBox(
+    return MessageBox._(
       label: label,
       type: _MessageType.info,
       onTap: onTap,
@@ -38,7 +51,7 @@ class MessageBox extends StatefulWidget {
   }
 
   factory MessageBox.warning(String label, {VoidCallback onTap}) {
-    return MessageBox(
+    return MessageBox._(
       label: label,
       type: _MessageType.warning,
       onTap: onTap,
@@ -46,7 +59,7 @@ class MessageBox extends StatefulWidget {
   }
 
   factory MessageBox.error(String label, {VoidCallback onTap}) {
-    return MessageBox(
+    return MessageBox._(
       label: label,
       type: _MessageType.error,
       onTap: onTap,

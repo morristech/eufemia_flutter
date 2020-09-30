@@ -4,19 +4,48 @@ import 'package:eufemia/components.dart';
 import 'package:flutter/material.dart';
 
 // TODO (@arnemolland): Refactor to a more simplistic API
+/// {@category Components}
+/// {@subCategory List}
+/// A wrapper around [ListView] with Eufemia-specific customizations.
 class ScrollableList extends StatelessWidget {
+  /// A label to display above the list.
   final Widget title;
+
+  /// {@macro flutter.widgets.children}
   final List<Widget> children;
+
+  /// If the [ListView] should be shrink-wrapped and not expand.
   final bool shrinkWrap;
+
+  /// If the [children] should have borders between them.
   final bool showBorders;
+
+  /// If a bottom border should be added to the end of the list.
   final bool addBottomBorder;
+
+  /// If the list should become a grid on wider devices.
   final bool adaptive;
+
+  /// Which [ScrollPhysics] to use for the [ListView].
   final ScrollPhysics physics;
+
+  /// The optional [ScrollController] to control the [ListView] with.
   final ScrollController controller;
+
+  /// If adaptive is true, this controls the max amount of children on
+  /// the cross axis.
   final int crossAxisCount;
+
+  /// If adaptive is true, this controls the aspect ratio of the grid's children.
   final double gridChildAspectRatio;
+
+  /// [EufemiaSpace] to insert between each child.
   final EufemiaSpace spaceBetween;
+
+  /// {@macro eufemia.spacing.insets}
   final EufemiaInsets padding;
+
+  /// {@macro flutter.rendering.Axis}
   final Axis scrollDirection;
 
   const ScrollableList({

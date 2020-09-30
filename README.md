@@ -77,7 +77,7 @@ Wrap your app in an `Eufemia` widget, and provide the `EufemiaData` with the `pa
 ```dart
 Eufemia(
   data: EufemiaData(
-    palette: EufemiaPaletteData.standard(),
+    palette: EufemiaPaletteData.fallback(),
     spacing: EufemiaSpacingData.fallback(),
     button: EufemiaButtonThemeData.fallback(),
     darkPalette: EufemiaPaletteData.dark(),

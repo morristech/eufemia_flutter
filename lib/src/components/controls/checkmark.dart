@@ -2,8 +2,17 @@ import 'package:eufemia/components.dart';
 import 'package:eufemia/palette.dart';
 import 'package:flutter/widgets.dart';
 
+/// {@category Components}
+/// {@subCategory Controls}
+/// A checkmark from the Eufemia design system.
 class Checkmark extends StatelessWidget {
+  /// {@macro eufemia.components.controls.value}
   final bool value;
+
+  /// {@template eufemia.gestures.onChanged}
+  /// Callback function that is called when the [value] changes. Passes the
+  /// updated value as a parameter.
+  /// {@endtemplate}
   final Function(bool) onChanged;
 
   const Checkmark({

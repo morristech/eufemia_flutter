@@ -5,6 +5,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // TODO (@arnemolland): Refactor to a more simplistic API
+/// {@category Components}
+/// {@subCategory System}
+/// A wrapper around helper methods for showing native bottom sheets.
 class BottomSheetService {
   /// Shows a native modal bottom sheet in the given [BuildContext]
   static void showNativeBottomSheet(

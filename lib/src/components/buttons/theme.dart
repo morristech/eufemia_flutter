@@ -6,6 +6,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'theme.freezed.dart';
 
+/// {@category Components}
+/// {@subCategory Buttons}
+/// The ovverarching theme data each [EufemiaButton] derives its properties from.
 @freezed
 abstract class EufemiaButtonThemeData with _$EufemiaButtonThemeData {
   const factory EufemiaButtonThemeData({
@@ -76,7 +79,9 @@ abstract class EufemiaButtonThemeData with _$EufemiaButtonThemeData {
   }
 }
 
+/// A widget that provides its children with a [EufemoaButtonThemeData] instance.
 class EufemiaButtonTheme extends InheritedWidget {
+  /// The [EufemiaButtonThemeData] to use for the button theme
   final EufemiaButtonThemeData data;
 
   const EufemiaButtonTheme({

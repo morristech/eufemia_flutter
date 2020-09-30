@@ -1,0 +1,27 @@
+dartdoc:
+  categories: 
+    "Eufemia":
+      markdown: doc/eufemia.md
+      name: Eufemia
+    "Components":
+      markdown: doc/components.md
+      name: Components
+    "Typography":
+      markdown: doc/typography.md
+      name: "Typography"
+    "Palette":
+      markdown: doc/palette.md
+      name: "Palette"
+    "Spacing":
+      markdown: doc/spacing.md
+      name: "Spacing"
+  categoryOrder: [eufemia, components, typography, palette, spacing]
+  examplePathPrefix: 'example/'
+  showUndocumentedCategories: true
+  ignore:
+    - ambiguous-doc-reference
+    - unresolved-doc-reference
+  errors:
+    #- unresolved-doc-reference
+  warnings:
+    - tool-error

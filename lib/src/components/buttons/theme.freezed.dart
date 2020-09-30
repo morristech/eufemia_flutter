@@ -9,6 +9,7 @@ part of 'theme.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$EufemiaButtonThemeDataTearOff {
   const _$EufemiaButtonThemeDataTearOff();
 
@@ -31,9 +32,11 @@ class _$EufemiaButtonThemeDataTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $EufemiaButtonThemeData = _$EufemiaButtonThemeDataTearOff();
 
+/// @nodoc
 mixin _$EufemiaButtonThemeData {
   TextStyle get textStyle;
   double get cornerRadius;
@@ -45,6 +48,7 @@ mixin _$EufemiaButtonThemeData {
   $EufemiaButtonThemeDataCopyWith<EufemiaButtonThemeData> get copyWith;
 }
 
+/// @nodoc
 abstract class $EufemiaButtonThemeDataCopyWith<$Res> {
   factory $EufemiaButtonThemeDataCopyWith(EufemiaButtonThemeData value,
           $Res Function(EufemiaButtonThemeData) then) =
@@ -58,6 +62,7 @@ abstract class $EufemiaButtonThemeDataCopyWith<$Res> {
       double borderWidth});
 }
 
+/// @nodoc
 class _$EufemiaButtonThemeDataCopyWithImpl<$Res>
     implements $EufemiaButtonThemeDataCopyWith<$Res> {
   _$EufemiaButtonThemeDataCopyWithImpl(this._value, this._then);
@@ -92,6 +97,7 @@ class _$EufemiaButtonThemeDataCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$EufemiaButtonThemeDataCopyWith<$Res>
     implements $EufemiaButtonThemeDataCopyWith<$Res> {
   factory _$EufemiaButtonThemeDataCopyWith(_EufemiaButtonThemeData value,
@@ -107,6 +113,7 @@ abstract class _$EufemiaButtonThemeDataCopyWith<$Res>
       double borderWidth});
 }
 
+/// @nodoc
 class __$EufemiaButtonThemeDataCopyWithImpl<$Res>
     extends _$EufemiaButtonThemeDataCopyWithImpl<$Res>
     implements _$EufemiaButtonThemeDataCopyWith<$Res> {
@@ -143,6 +150,7 @@ class __$EufemiaButtonThemeDataCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_EufemiaButtonThemeData
     with DiagnosticableTreeMixin
     implements _EufemiaButtonThemeData {

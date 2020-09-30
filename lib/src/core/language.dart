@@ -1,6 +1,6 @@
 import 'package:recase/recase.dart';
 
-/// Different types of casing for a string
+/// Different casing types for a string
 enum CaseType {
   /// PascalCase
   pascal,
@@ -44,7 +44,7 @@ class Language {
   }
 
   /// Returns the currency symbol for the given currency
-  /// e.g. [NOK], [EUR] or [USD]
+  /// e.g. 'NOK', 'EUR' or 'USD'
   static String currencySymbol(String currency) {
     switch (currency) {
       case 'NOK':

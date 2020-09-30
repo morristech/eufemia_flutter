@@ -9,12 +9,16 @@ import 'theme.dart';
 
 part 'style.freezed.dart';
 
-const defaultEufemiaPrimaryDeltaFactor = .05;
-const defaultEufemiaSecondaryDeltaFactor = .075;
-const defaultEufemiaVividDeltaFactor = .16;
-const defaultEufemiaFabShadowDeltaFactor = .072;
-const defaultEufemiaFabDeltaFactor = .283;
+const _defaultEufemiaPrimaryDeltaFactor = .05;
+const _defaultEufemiaSecondaryDeltaFactor = .075;
+const _defaultEufemiaVividDeltaFactor = .16;
+const _defaultEufemiaFabShadowDeltaFactor = .072;
+const _defaultEufemiaFabDeltaFactor = .283;
 
+/// {@category Components}
+/// {@subCategory Buttons}
+/// A style class for [EufemiaButton] that wraps [EufemiaButtonState] instances
+/// for the decorative parameters of a button.
 @freezed
 abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
   static const defaultTransitionDuration = Duration(milliseconds: 80);
@@ -61,12 +65,12 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
         ),
         hover: decoration.copyWith(
           color: backgroundColor.darken(
-            defaultEufemiaPrimaryDeltaFactor * .5,
+            _defaultEufemiaPrimaryDeltaFactor * .5,
           ),
         ),
         active: decoration.copyWith(
           color: backgroundColor.darken(
-            defaultEufemiaPrimaryDeltaFactor,
+            _defaultEufemiaPrimaryDeltaFactor,
           ),
         ),
       ),
@@ -121,10 +125,10 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
       decoration: EufemiaButtonState(
         enabled: decoration.copyWith(color: backgroundColor),
         hover: decoration.copyWith(
-          color: backgroundColor.darken(defaultEufemiaVividDeltaFactor * .5),
+          color: backgroundColor.darken(_defaultEufemiaVividDeltaFactor * .5),
         ),
         active: decoration.copyWith(
-          color: backgroundColor.darken(defaultEufemiaVividDeltaFactor),
+          color: backgroundColor.darken(_defaultEufemiaVividDeltaFactor),
         ),
       ),
       textStyle: EufemiaButtonState(
@@ -189,18 +193,18 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
         ),
         hover: decoration.copyWith(
           color: palette?.bright ?? true
-              ? mix.darken(defaultEufemiaSecondaryDeltaFactor * .5)
-              : mix.lighten(defaultEufemiaPrimaryDeltaFactor * .5),
+              ? mix.darken(_defaultEufemiaSecondaryDeltaFactor * .5)
+              : mix.lighten(_defaultEufemiaPrimaryDeltaFactor * .5),
           border: Border.all(
-            color: borderColor.darken(defaultEufemiaSecondaryDeltaFactor * .5),
+            color: borderColor.darken(_defaultEufemiaSecondaryDeltaFactor * .5),
           ),
         ),
         active: decoration.copyWith(
           color: palette?.bright ?? true
-              ? mix.darken(defaultEufemiaSecondaryDeltaFactor)
-              : mix.lighten(defaultEufemiaSecondaryDeltaFactor),
+              ? mix.darken(_defaultEufemiaSecondaryDeltaFactor)
+              : mix.lighten(_defaultEufemiaSecondaryDeltaFactor),
           border: Border.all(
-            color: borderColor.darken(defaultEufemiaSecondaryDeltaFactor),
+            color: borderColor.darken(_defaultEufemiaSecondaryDeltaFactor),
           ),
         ),
       ),
@@ -308,7 +312,7 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
 
     final shadow = BoxShadow(
       color: backgroundColor
-          .lighten(defaultEufemiaFabShadowDeltaFactor)
+          .lighten(_defaultEufemiaFabShadowDeltaFactor)
           .withOpacity(.3),
       spreadRadius: 1.0,
       blurRadius: 16.0,
@@ -329,14 +333,14 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
         ),
         hover: decoration.copyWith(
           color: backgroundColor.darken(
-            defaultEufemiaFabDeltaFactor * .5,
+            _defaultEufemiaFabDeltaFactor * .5,
           ),
           shape: BoxShape.circle,
           boxShadow: [shadow],
         ),
         active: decoration.copyWith(
           color: backgroundColor.darken(
-            defaultEufemiaFabDeltaFactor,
+            _defaultEufemiaFabDeltaFactor,
           ),
           shape: BoxShape.circle,
           boxShadow: [shadow],
@@ -364,12 +368,20 @@ abstract class EufemiaButtonStyle with _$EufemiaButtonStyle {
   }
 }
 
+/// {@template eufemia.components.EufemiaButtonSize}
+/// The size of the [EufemiaButton], according to the Eufemia specifications
+/// {@endtemplate}
 enum EufemiaButtonSize {
   small,
   medium,
 }
 
+/// {@category Components}
+/// {@subCategory extensions}
+/// An extension that converts Eufemia-specific values to default
+/// Flutter-friendly values
 extension EufemiaButtonSizeExtensions on EufemiaButtonSize {
+  /// Converts [EufemiaButtonSize] to according[EdgeInsets] insets
   EdgeInsets toPadding({double vertical, double horizontal, double all}) {
     vertical ??= 14.5;
     horizontal ??= 24.0;
@@ -392,12 +404,14 @@ extension EufemiaButtonSizeExtensions on EufemiaButtonSize {
     );
   }
 
+  /// Converts [EufemiaButtonSize] to [BoxDecoration] for the [Container] widget
   BoxDecoration toDecoration([double baseRadius = 10.0]) {
     baseRadius ??= 10.0;
 
     return BoxDecoration(borderRadius: BorderRadius.circular(baseRadius));
   }
 
+  /// Converts [EufemiaButtonSize] to the correct [TextStyle] for the size
   TextStyle toTextStyle(TextStyle base) {
     base ??= TextStyle(fontSize: 16.0);
     switch (this) {
@@ -410,6 +424,7 @@ extension EufemiaButtonSizeExtensions on EufemiaButtonSize {
     }
   }
 
+  /// Converts [EufemiaButtonSize] to the correct [IconThemeData] for the size
   IconThemeData toIconTheme(IconThemeData base) {
     base ??= IconThemeData(size: 16.0);
     switch (this) {

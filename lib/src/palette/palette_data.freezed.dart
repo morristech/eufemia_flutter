@@ -12,6 +12,7 @@ EufemiaPaletteData _$EufemiaPaletteDataFromJson(Map<String, dynamic> json) {
   return _EufemiaPaletteData.fromJson(json);
 }
 
+/// @nodoc
 class _$EufemiaPaletteDataTearOff {
   const _$EufemiaPaletteDataTearOff();
 
@@ -110,11 +111,18 @@ class _$EufemiaPaletteDataTearOff {
       navbarTitle: navbarTitle,
     );
   }
+
+// ignore: unused_element
+  EufemiaPaletteData fromJson(Map<String, Object> json) {
+    return EufemiaPaletteData.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $EufemiaPaletteData = _$EufemiaPaletteDataTearOff();
 
+/// @nodoc
 mixin _$EufemiaPaletteData {
   Brightness get brightness;
   @ColorJsonConverter()
@@ -210,6 +218,7 @@ mixin _$EufemiaPaletteData {
   $EufemiaPaletteDataCopyWith<EufemiaPaletteData> get copyWith;
 }
 
+/// @nodoc
 abstract class $EufemiaPaletteDataCopyWith<$Res> {
   factory $EufemiaPaletteDataCopyWith(
           EufemiaPaletteData value, $Res Function(EufemiaPaletteData) then) =
@@ -262,6 +271,7 @@ abstract class $EufemiaPaletteDataCopyWith<$Res> {
       @ColorJsonConverter() Color navbarTitle});
 }
 
+/// @nodoc
 class _$EufemiaPaletteDataCopyWithImpl<$Res>
     implements $EufemiaPaletteDataCopyWith<$Res> {
   _$EufemiaPaletteDataCopyWithImpl(this._value, this._then);
@@ -385,6 +395,7 @@ class _$EufemiaPaletteDataCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$EufemiaPaletteDataCopyWith<$Res>
     implements $EufemiaPaletteDataCopyWith<$Res> {
   factory _$EufemiaPaletteDataCopyWith(
@@ -439,6 +450,7 @@ abstract class _$EufemiaPaletteDataCopyWith<$Res>
       @ColorJsonConverter() Color navbarTitle});
 }
 
+/// @nodoc
 class __$EufemiaPaletteDataCopyWithImpl<$Res>
     extends _$EufemiaPaletteDataCopyWithImpl<$Res>
     implements _$EufemiaPaletteDataCopyWith<$Res> {
@@ -565,6 +577,8 @@ class __$EufemiaPaletteDataCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_EufemiaPaletteData
     with DiagnosticableTreeMixin
     implements _EufemiaPaletteData {

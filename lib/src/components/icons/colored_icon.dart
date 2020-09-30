@@ -2,23 +2,25 @@ import 'package:eufemia/palette.dart';
 import 'package:flutter/widgets.dart';
 import 'package:eufemia/components.dart';
 
-/// A wrapper for custom SVG icons
+/// {@category Components}
+/// {@subCategory Icons}
+/// A widget wrapping its child with a colored box.
 class ColoredIcon extends StatelessWidget {
-  /// The icon to display
+  /// The icon to display.
   final Widget icon;
 
-  /// The optional background color of the icon
+  /// The optional background color of the icon.
   final Color backgroundColor;
 
-  /// The icon color
+  /// The icon color.
   final Color color;
 
-  /// Size of the icon, defaults to [32.0]
+  /// Size of the icon, defaults to [32.0].
   final double size;
 
+  /// The border radius of the surrounding box.
   final BorderRadiusGeometry borderRadius;
 
-  /// Constructs a [ColoredIcon] object
   const ColoredIcon({
     Key key,
     this.color,

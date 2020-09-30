@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'typography_data.dart';
 
@@ -9,9 +9,11 @@ part of 'typography_data.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$EufemiaTypographyDataTearOff {
   const _$EufemiaTypographyDataTearOff();
 
+// ignore: unused_element
   _EufemiaTypographyData call(
       {@required EufemiaTypographySizes sizes,
       @required EufemiaTypographyWeights weights,
@@ -28,9 +30,11 @@ class _$EufemiaTypographyDataTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $EufemiaTypographyData = _$EufemiaTypographyDataTearOff();
 
+/// @nodoc
 mixin _$EufemiaTypographyData {
   EufemiaTypographySizes get sizes;
   EufemiaTypographyWeights get weights;
@@ -41,6 +45,7 @@ mixin _$EufemiaTypographyData {
   $EufemiaTypographyDataCopyWith<EufemiaTypographyData> get copyWith;
 }
 
+/// @nodoc
 abstract class $EufemiaTypographyDataCopyWith<$Res> {
   factory $EufemiaTypographyDataCopyWith(EufemiaTypographyData value,
           $Res Function(EufemiaTypographyData) then) =
@@ -59,6 +64,7 @@ abstract class $EufemiaTypographyDataCopyWith<$Res> {
   $EufemiaTypographyHeightsCopyWith<$Res> get heights;
 }
 
+/// @nodoc
 class _$EufemiaTypographyDataCopyWithImpl<$Res>
     implements $EufemiaTypographyDataCopyWith<$Res> {
   _$EufemiaTypographyDataCopyWithImpl(this._value, this._then);
@@ -142,6 +148,7 @@ class _$EufemiaTypographyDataCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$EufemiaTypographyDataCopyWith<$Res>
     implements $EufemiaTypographyDataCopyWith<$Res> {
   factory _$EufemiaTypographyDataCopyWith(_EufemiaTypographyData value,
@@ -167,6 +174,7 @@ abstract class _$EufemiaTypographyDataCopyWith<$Res>
   $EufemiaTypographyHeightsCopyWith<$Res> get heights;
 }
 
+/// @nodoc
 class __$EufemiaTypographyDataCopyWithImpl<$Res>
     extends _$EufemiaTypographyDataCopyWithImpl<$Res>
     implements _$EufemiaTypographyDataCopyWith<$Res> {
@@ -202,6 +210,7 @@ class __$EufemiaTypographyDataCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_EufemiaTypographyData
     with DiagnosticableTreeMixin
     implements _EufemiaTypographyData {
@@ -300,9 +309,11 @@ abstract class _EufemiaTypographyData implements EufemiaTypographyData {
   _$EufemiaTypographyDataCopyWith<_EufemiaTypographyData> get copyWith;
 }
 
+/// @nodoc
 class _$EufemiaTypographySizesTearOff {
   const _$EufemiaTypographySizesTearOff();
 
+// ignore: unused_element
   _EufemiaTypographySizes call(
       {@required double captionSize,
       @required double footnoteSize,
@@ -327,9 +338,11 @@ class _$EufemiaTypographySizesTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $EufemiaTypographySizes = _$EufemiaTypographySizesTearOff();
 
+/// @nodoc
 mixin _$EufemiaTypographySizes {
   double get captionSize;
   double get footnoteSize;
@@ -344,6 +357,7 @@ mixin _$EufemiaTypographySizes {
   $EufemiaTypographySizesCopyWith<EufemiaTypographySizes> get copyWith;
 }
 
+/// @nodoc
 abstract class $EufemiaTypographySizesCopyWith<$Res> {
   factory $EufemiaTypographySizesCopyWith(EufemiaTypographySizes value,
           $Res Function(EufemiaTypographySizes) then) =
@@ -360,6 +374,7 @@ abstract class $EufemiaTypographySizesCopyWith<$Res> {
       double buttonSmallSize});
 }
 
+/// @nodoc
 class _$EufemiaTypographySizesCopyWithImpl<$Res>
     implements $EufemiaTypographySizesCopyWith<$Res> {
   _$EufemiaTypographySizesCopyWithImpl(this._value, this._then);
@@ -405,6 +420,7 @@ class _$EufemiaTypographySizesCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$EufemiaTypographySizesCopyWith<$Res>
     implements $EufemiaTypographySizesCopyWith<$Res> {
   factory _$EufemiaTypographySizesCopyWith(_EufemiaTypographySizes value,
@@ -423,6 +439,7 @@ abstract class _$EufemiaTypographySizesCopyWith<$Res>
       double buttonSmallSize});
 }
 
+/// @nodoc
 class __$EufemiaTypographySizesCopyWithImpl<$Res>
     extends _$EufemiaTypographySizesCopyWithImpl<$Res>
     implements _$EufemiaTypographySizesCopyWith<$Res> {
@@ -470,6 +487,7 @@ class __$EufemiaTypographySizesCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_EufemiaTypographySizes
     with DiagnosticableTreeMixin
     implements _EufemiaTypographySizes {
@@ -619,9 +637,11 @@ abstract class _EufemiaTypographySizes implements EufemiaTypographySizes {
   _$EufemiaTypographySizesCopyWith<_EufemiaTypographySizes> get copyWith;
 }
 
+/// @nodoc
 class _$EufemiaTypographyHeightsTearOff {
   const _$EufemiaTypographyHeightsTearOff();
 
+// ignore: unused_element
   _EufemiaTypographyHeights call(
       {@required double captionHeight,
       @required double footnoteHeight,
@@ -646,9 +666,11 @@ class _$EufemiaTypographyHeightsTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $EufemiaTypographyHeights = _$EufemiaTypographyHeightsTearOff();
 
+/// @nodoc
 mixin _$EufemiaTypographyHeights {
   double get captionHeight;
   double get footnoteHeight;
@@ -663,6 +685,7 @@ mixin _$EufemiaTypographyHeights {
   $EufemiaTypographyHeightsCopyWith<EufemiaTypographyHeights> get copyWith;
 }
 
+/// @nodoc
 abstract class $EufemiaTypographyHeightsCopyWith<$Res> {
   factory $EufemiaTypographyHeightsCopyWith(EufemiaTypographyHeights value,
           $Res Function(EufemiaTypographyHeights) then) =
@@ -679,6 +702,7 @@ abstract class $EufemiaTypographyHeightsCopyWith<$Res> {
       double buttonSmallHeight});
 }
 
+/// @nodoc
 class _$EufemiaTypographyHeightsCopyWithImpl<$Res>
     implements $EufemiaTypographyHeightsCopyWith<$Res> {
   _$EufemiaTypographyHeightsCopyWithImpl(this._value, this._then);
@@ -729,6 +753,7 @@ class _$EufemiaTypographyHeightsCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$EufemiaTypographyHeightsCopyWith<$Res>
     implements $EufemiaTypographyHeightsCopyWith<$Res> {
   factory _$EufemiaTypographyHeightsCopyWith(_EufemiaTypographyHeights value,
@@ -747,6 +772,7 @@ abstract class _$EufemiaTypographyHeightsCopyWith<$Res>
       double buttonSmallHeight});
 }
 
+/// @nodoc
 class __$EufemiaTypographyHeightsCopyWithImpl<$Res>
     extends _$EufemiaTypographyHeightsCopyWithImpl<$Res>
     implements _$EufemiaTypographyHeightsCopyWith<$Res> {
@@ -800,6 +826,7 @@ class __$EufemiaTypographyHeightsCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_EufemiaTypographyHeights
     with DiagnosticableTreeMixin
     implements _EufemiaTypographyHeights {
@@ -949,9 +976,11 @@ abstract class _EufemiaTypographyHeights implements EufemiaTypographyHeights {
   _$EufemiaTypographyHeightsCopyWith<_EufemiaTypographyHeights> get copyWith;
 }
 
+/// @nodoc
 class _$EufemiaTypographyFamiliesTearOff {
   const _$EufemiaTypographyFamiliesTearOff();
 
+// ignore: unused_element
   _EufemiaTypographyFamilies call(
       {@required String primary, @required String monospace}) {
     return _EufemiaTypographyFamilies(
@@ -961,9 +990,11 @@ class _$EufemiaTypographyFamiliesTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $EufemiaTypographyFamilies = _$EufemiaTypographyFamiliesTearOff();
 
+/// @nodoc
 mixin _$EufemiaTypographyFamilies {
   String get primary;
   String get monospace;
@@ -971,6 +1002,7 @@ mixin _$EufemiaTypographyFamilies {
   $EufemiaTypographyFamiliesCopyWith<EufemiaTypographyFamilies> get copyWith;
 }
 
+/// @nodoc
 abstract class $EufemiaTypographyFamiliesCopyWith<$Res> {
   factory $EufemiaTypographyFamiliesCopyWith(EufemiaTypographyFamilies value,
           $Res Function(EufemiaTypographyFamilies) then) =
@@ -978,6 +1010,7 @@ abstract class $EufemiaTypographyFamiliesCopyWith<$Res> {
   $Res call({String primary, String monospace});
 }
 
+/// @nodoc
 class _$EufemiaTypographyFamiliesCopyWithImpl<$Res>
     implements $EufemiaTypographyFamiliesCopyWith<$Res> {
   _$EufemiaTypographyFamiliesCopyWithImpl(this._value, this._then);
@@ -998,6 +1031,7 @@ class _$EufemiaTypographyFamiliesCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$EufemiaTypographyFamiliesCopyWith<$Res>
     implements $EufemiaTypographyFamiliesCopyWith<$Res> {
   factory _$EufemiaTypographyFamiliesCopyWith(_EufemiaTypographyFamilies value,
@@ -1007,6 +1041,7 @@ abstract class _$EufemiaTypographyFamiliesCopyWith<$Res>
   $Res call({String primary, String monospace});
 }
 
+/// @nodoc
 class __$EufemiaTypographyFamiliesCopyWithImpl<$Res>
     extends _$EufemiaTypographyFamiliesCopyWithImpl<$Res>
     implements _$EufemiaTypographyFamiliesCopyWith<$Res> {
@@ -1030,6 +1065,7 @@ class __$EufemiaTypographyFamiliesCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_EufemiaTypographyFamilies
     with DiagnosticableTreeMixin
     implements _EufemiaTypographyFamilies {
@@ -1095,9 +1131,11 @@ abstract class _EufemiaTypographyFamilies implements EufemiaTypographyFamilies {
   _$EufemiaTypographyFamiliesCopyWith<_EufemiaTypographyFamilies> get copyWith;
 }
 
+/// @nodoc
 class _$EufemiaTypographyWeightsTearOff {
   const _$EufemiaTypographyWeightsTearOff();
 
+// ignore: unused_element
   _EufemiaTypographyWeights call(
       {@required FontWeight normal,
       @required FontWeight emphasized,
@@ -1110,9 +1148,11 @@ class _$EufemiaTypographyWeightsTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $EufemiaTypographyWeights = _$EufemiaTypographyWeightsTearOff();
 
+/// @nodoc
 mixin _$EufemiaTypographyWeights {
   FontWeight get normal;
   FontWeight get emphasized;
@@ -1121,6 +1161,7 @@ mixin _$EufemiaTypographyWeights {
   $EufemiaTypographyWeightsCopyWith<EufemiaTypographyWeights> get copyWith;
 }
 
+/// @nodoc
 abstract class $EufemiaTypographyWeightsCopyWith<$Res> {
   factory $EufemiaTypographyWeightsCopyWith(EufemiaTypographyWeights value,
           $Res Function(EufemiaTypographyWeights) then) =
@@ -1128,6 +1169,7 @@ abstract class $EufemiaTypographyWeightsCopyWith<$Res> {
   $Res call({FontWeight normal, FontWeight emphasized, FontWeight demi});
 }
 
+/// @nodoc
 class _$EufemiaTypographyWeightsCopyWithImpl<$Res>
     implements $EufemiaTypographyWeightsCopyWith<$Res> {
   _$EufemiaTypographyWeightsCopyWithImpl(this._value, this._then);
@@ -1151,6 +1193,7 @@ class _$EufemiaTypographyWeightsCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$EufemiaTypographyWeightsCopyWith<$Res>
     implements $EufemiaTypographyWeightsCopyWith<$Res> {
   factory _$EufemiaTypographyWeightsCopyWith(_EufemiaTypographyWeights value,
@@ -1160,6 +1203,7 @@ abstract class _$EufemiaTypographyWeightsCopyWith<$Res>
   $Res call({FontWeight normal, FontWeight emphasized, FontWeight demi});
 }
 
+/// @nodoc
 class __$EufemiaTypographyWeightsCopyWithImpl<$Res>
     extends _$EufemiaTypographyWeightsCopyWithImpl<$Res>
     implements _$EufemiaTypographyWeightsCopyWith<$Res> {
@@ -1186,6 +1230,7 @@ class __$EufemiaTypographyWeightsCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_EufemiaTypographyWeights
     with DiagnosticableTreeMixin
     implements _EufemiaTypographyWeights {
@@ -1259,9 +1304,11 @@ abstract class _EufemiaTypographyWeights implements EufemiaTypographyWeights {
   _$EufemiaTypographyWeightsCopyWith<_EufemiaTypographyWeights> get copyWith;
 }
 
+/// @nodoc
 class _$EufemiaTypographyStylesTearOff {
   const _$EufemiaTypographyStylesTearOff();
 
+// ignore: unused_element
   _EufemiaTypographyStyles call(
       {@required EufemiaTextStyle caption,
       @required EufemiaTextStyle captionEmphasized,
@@ -1304,9 +1351,11 @@ class _$EufemiaTypographyStylesTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $EufemiaTypographyStyles = _$EufemiaTypographyStylesTearOff();
 
+/// @nodoc
 mixin _$EufemiaTypographyStyles {
   EufemiaTextStyle get caption;
   EufemiaTextStyle get captionEmphasized;
@@ -1330,6 +1379,7 @@ mixin _$EufemiaTypographyStyles {
   $EufemiaTypographyStylesCopyWith<EufemiaTypographyStyles> get copyWith;
 }
 
+/// @nodoc
 abstract class $EufemiaTypographyStylesCopyWith<$Res> {
   factory $EufemiaTypographyStylesCopyWith(EufemiaTypographyStyles value,
           $Res Function(EufemiaTypographyStyles) then) =
@@ -1374,6 +1424,7 @@ abstract class $EufemiaTypographyStylesCopyWith<$Res> {
   $EufemiaTextStyleCopyWith<$Res> get buttonSmallEmphasized;
 }
 
+/// @nodoc
 class _$EufemiaTypographyStylesCopyWithImpl<$Res>
     implements $EufemiaTypographyStylesCopyWith<$Res> {
   _$EufemiaTypographyStylesCopyWithImpl(this._value, this._then);
@@ -1635,6 +1686,7 @@ class _$EufemiaTypographyStylesCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$EufemiaTypographyStylesCopyWith<$Res>
     implements $EufemiaTypographyStylesCopyWith<$Res> {
   factory _$EufemiaTypographyStylesCopyWith(_EufemiaTypographyStyles value,
@@ -1699,6 +1751,7 @@ abstract class _$EufemiaTypographyStylesCopyWith<$Res>
   $EufemiaTextStyleCopyWith<$Res> get buttonSmallEmphasized;
 }
 
+/// @nodoc
 class __$EufemiaTypographyStylesCopyWithImpl<$Res>
     extends _$EufemiaTypographyStylesCopyWithImpl<$Res>
     implements _$EufemiaTypographyStylesCopyWith<$Res> {
@@ -1781,6 +1834,7 @@ class __$EufemiaTypographyStylesCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_EufemiaTypographyStyles
     with DiagnosticableTreeMixin
     implements _EufemiaTypographyStyles {

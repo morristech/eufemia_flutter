@@ -1,14 +1,21 @@
 import 'package:eufemia/palette.dart';
 import 'package:flutter/material.dart';
 
+/// {@category Components}
+/// {@subCategory Cards}
+/// A widget masking its child with a gradient. Can be used for overlay effects
+/// like fades, color gradients etc.
 class GradientWidget extends StatelessWidget {
+  /// {@macro flutter.widgets.child}
+  final Widget child;
+
+  /// A gradient to use as the mask
+  final Gradient gradient;
+
   GradientWidget({
     @required this.child,
     this.gradient,
   });
-
-  final Widget child;
-  final Gradient gradient;
 
   @override
   Widget build(BuildContext context) {

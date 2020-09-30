@@ -2,7 +2,10 @@ import 'package:eufemia/palette.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+/// {@category Components}
+/// A spinner from the Eufemia design system.
 class Spinner extends StatefulWidget {
+  /// The [Color] of the spinner.
   final Color color;
 
   const Spinner({Key key, this.color}) : super(key: key);

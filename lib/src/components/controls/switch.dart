@@ -2,16 +2,19 @@ import 'package:eufemia/palette.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-/// Switch from the Eufemia Design System
+/// {@category Components}
+/// {@subCategory Controls}
+/// Switch from the Eufemia design system.
 class EufemiaSwitch extends StatelessWidget {
+  /// {@macro eufemia.components.controls.value}
   final bool value;
+
+  /// {@macro eufemia.gestures.onChanged}
   final Function(bool) onChanged;
+
+  /// If true, the switch removes all extra padding
   final bool shrink;
 
-  /// Switch from the Eufemia Design System
-  ///
-  /// * [value]: The value of the switch
-  /// * [onChanged]: Callback for when the value is changed
   const EufemiaSwitch({
     Key key,
     this.value,

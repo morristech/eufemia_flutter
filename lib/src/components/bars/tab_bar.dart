@@ -5,17 +5,39 @@ import 'package:flutter/widgets.dart';
 
 const double _kTabHeight = 81.0;
 
+/// {@category Components}
+/// {@subCategory Bars}
+/// A tab bar from the Eufemia design system.
 class EufemiaTabBar extends StatefulWidget implements PreferredSizeWidget {
-  /// The list of [EufemiaTab] to display.
+  /// {@template eufemia.components.EufemiaTabBar.tabs}
+  /// A list of [EufemiaTab] to be layed out as children.
+  /// Note: the list object will be modified and will therefore not pass any
+  /// equality checks by refrence.
+  /// {@endtemplate}
   final List<EufemiaTab> tabs;
 
-  /// Optional [TabController], uses the context's [DefaultTabController] if not set.
+  /// {@template  flutter.widgets.TabController}
+  /// Coordinates tab selection between a [TabBar] and a [TabBarView].
+  ///
+  /// The index property is the index of the selected tab and the [animation]
+  /// represents the current scroll positions of the tab bar and the tab bar view.
+  /// The selected tab's index can be changed with [animateTo].
+  ///
+  /// A stateful widget that builds a [TabBar] or a [TabBarView] can create
+  /// a [TabController] and share it directly.
+  ///
+  /// When the [TabBar] and [TabBarView] don't have a convenient stateful
+  /// ancestor, a [TabController] can be shared by providing a
+  /// [DefaultTabController] inherited widget.
+  ///
+  /// {@animation 700 540 https://flutter.github.io/assets-for-api-docs/assets/material/tabs.mp4}
+  /// {@endtemplate}
   final TabController controller;
 
-  /// The padding around the [EufemiaTabBar].
+  /// {@macro eufemia.spacing.insets}
   final EufemiaInsets padding;
 
-  /// If the tab bar is scrollable or not. Defaults to [true].
+  /// If the tab bar is scrollable or not. Defaults to true.
   final bool isScrollable;
 
   EufemiaTabBar({
