@@ -1,4 +1,3 @@
-// Palette
 export 'src/palette/palette.dart';
 export 'src/palette/colors.dart';
 export 'src/palette/loaders.dart';

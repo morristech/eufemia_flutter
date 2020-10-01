@@ -4,6 +4,8 @@ import 'text_style.dart';
 import 'typography.dart';
 import 'typography_data.dart';
 
+/// {@category Typography}
+/// A predefined Eufemia text style.
 enum EufemiaTextPredefinedStyle {
   none,
   caption,
@@ -26,7 +28,14 @@ enum EufemiaTextPredefinedStyle {
   buttonSmallEmhpasized,
 }
 
+/// {@category Typography}
+/// An extension on [EufemiaTextPredefinedStyle] that converts internal Eufemia
+/// values to Flutter-friendly values.
 extension EufemiaTextPredefinedStyleExtension on EufemiaTextPredefinedStyle {
+  /// {@category Typography}
+  /// Returns the corresponding [EufemiaTextStyle] either by [typography] or
+  /// [context]'s nearest [EufemiaPaletteData] parent. Both parameters can not
+  /// be set.
   EufemiaTextStyle toStyle(
       {BuildContext context, EufemiaTypographyData typography}) {
     assert(context != null || typography != null);

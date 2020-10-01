@@ -27,8 +27,7 @@ class _$EufemiaTextStyleTearOff {
       @nullable EufemiaFontSize size,
       @nullable EufemiaFontWeight weight,
       @nullable EufemiaFontFamily family,
-      @nullable EufemiaLineHeight height,
-      @nullable Widget Function(BuildContext, Widget) builder}) {
+      @nullable EufemiaLineHeight height}) {
     return _EufemiaTextStyle(
       color: color,
       textAlign: textAlign,
@@ -43,7 +42,6 @@ class _$EufemiaTextStyleTearOff {
       weight: weight,
       family: family,
       height: height,
-      builder: builder,
     );
   }
 }
@@ -54,34 +52,57 @@ const $EufemiaTextStyle = _$EufemiaTextStyleTearOff();
 
 /// @nodoc
 mixin _$EufemiaTextStyle {
+  /// The text color.
   @nullable
   Color get color;
+
+  /// The text alignment.
   @nullable
   TextAlign get textAlign;
+
+  /// The text direction.
   @nullable
   TextDirection get textDirection;
+
+  /// The text decoration style.
   @nullable
   TextDecorationStyle get textDecorationStyle;
+
+  /// The thickness of the [textDecorationStyle]
   @nullable
   double get textDecorationThickness;
+
+  /// The color of the [textDecorationStyle]
   @nullable
   Color get textDecorationColor;
+
+  /// The predefined Eufemia text style, if any.
   @nullable
   EufemiaTextPredefinedStyle get predefinedStyle;
+
+  /// The text decoration, if any.
   @nullable
   TextDecoration get textDecoration;
+
+  /// The spacing between each letter of the text.
   @nullable
   double get letterSpacing;
+
+  /// The Eufemia-specific font size.
   @nullable
   EufemiaFontSize get size;
+
+  /// The Eufemia-specific font weight.
   @nullable
   EufemiaFontWeight get weight;
+
+  /// The Eufemia-specific font family.
   @nullable
   EufemiaFontFamily get family;
+
+  /// The eufemia-speicfic line height.
   @nullable
   EufemiaLineHeight get height;
-  @nullable
-  Widget Function(BuildContext, Widget) get builder;
 
   $EufemiaTextStyleCopyWith<EufemiaTextStyle> get copyWith;
 }
@@ -104,8 +125,7 @@ abstract class $EufemiaTextStyleCopyWith<$Res> {
       @nullable EufemiaFontSize size,
       @nullable EufemiaFontWeight weight,
       @nullable EufemiaFontFamily family,
-      @nullable EufemiaLineHeight height,
-      @nullable Widget Function(BuildContext, Widget) builder});
+      @nullable EufemiaLineHeight height});
 }
 
 /// @nodoc
@@ -132,7 +152,6 @@ class _$EufemiaTextStyleCopyWithImpl<$Res>
     Object weight = freezed,
     Object family = freezed,
     Object height = freezed,
-    Object builder = freezed,
   }) {
     return _then(_value.copyWith(
       color: color == freezed ? _value.color : color as Color,
@@ -163,9 +182,6 @@ class _$EufemiaTextStyleCopyWithImpl<$Res>
       weight: weight == freezed ? _value.weight : weight as EufemiaFontWeight,
       family: family == freezed ? _value.family : family as EufemiaFontFamily,
       height: height == freezed ? _value.height : height as EufemiaLineHeight,
-      builder: builder == freezed
-          ? _value.builder
-          : builder as Widget Function(BuildContext, Widget),
     ));
   }
 }
@@ -190,8 +206,7 @@ abstract class _$EufemiaTextStyleCopyWith<$Res>
       @nullable EufemiaFontSize size,
       @nullable EufemiaFontWeight weight,
       @nullable EufemiaFontFamily family,
-      @nullable EufemiaLineHeight height,
-      @nullable Widget Function(BuildContext, Widget) builder});
+      @nullable EufemiaLineHeight height});
 }
 
 /// @nodoc
@@ -220,7 +235,6 @@ class __$EufemiaTextStyleCopyWithImpl<$Res>
     Object weight = freezed,
     Object family = freezed,
     Object height = freezed,
-    Object builder = freezed,
   }) {
     return _then(_EufemiaTextStyle(
       color: color == freezed ? _value.color : color as Color,
@@ -251,9 +265,6 @@ class __$EufemiaTextStyleCopyWithImpl<$Res>
       weight: weight == freezed ? _value.weight : weight as EufemiaFontWeight,
       family: family == freezed ? _value.family : family as EufemiaFontFamily,
       height: height == freezed ? _value.height : height as EufemiaLineHeight,
-      builder: builder == freezed
-          ? _value.builder
-          : builder as Widget Function(BuildContext, Widget),
     ));
   }
 }
@@ -275,55 +286,77 @@ class _$_EufemiaTextStyle
       @nullable this.size,
       @nullable this.weight,
       @nullable this.family,
-      @nullable this.height,
-      @nullable this.builder});
+      @nullable this.height});
 
   @override
+
+  /// The text color.
   @nullable
   final Color color;
   @override
+
+  /// The text alignment.
   @nullable
   final TextAlign textAlign;
   @override
+
+  /// The text direction.
   @nullable
   final TextDirection textDirection;
   @override
+
+  /// The text decoration style.
   @nullable
   final TextDecorationStyle textDecorationStyle;
   @override
+
+  /// The thickness of the [textDecorationStyle]
   @nullable
   final double textDecorationThickness;
   @override
+
+  /// The color of the [textDecorationStyle]
   @nullable
   final Color textDecorationColor;
   @override
+
+  /// The predefined Eufemia text style, if any.
   @nullable
   final EufemiaTextPredefinedStyle predefinedStyle;
   @override
+
+  /// The text decoration, if any.
   @nullable
   final TextDecoration textDecoration;
   @override
+
+  /// The spacing between each letter of the text.
   @nullable
   final double letterSpacing;
   @override
+
+  /// The Eufemia-specific font size.
   @nullable
   final EufemiaFontSize size;
   @override
+
+  /// The Eufemia-specific font weight.
   @nullable
   final EufemiaFontWeight weight;
   @override
+
+  /// The Eufemia-specific font family.
   @nullable
   final EufemiaFontFamily family;
   @override
+
+  /// The eufemia-speicfic line height.
   @nullable
   final EufemiaLineHeight height;
-  @override
-  @nullable
-  final Widget Function(BuildContext, Widget) builder;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'EufemiaTextStyle(color: $color, textAlign: $textAlign, textDirection: $textDirection, textDecorationStyle: $textDecorationStyle, textDecorationThickness: $textDecorationThickness, textDecorationColor: $textDecorationColor, predefinedStyle: $predefinedStyle, textDecoration: $textDecoration, letterSpacing: $letterSpacing, size: $size, weight: $weight, family: $family, height: $height, builder: $builder)';
+    return 'EufemiaTextStyle(color: $color, textAlign: $textAlign, textDirection: $textDirection, textDecorationStyle: $textDecorationStyle, textDecorationThickness: $textDecorationThickness, textDecorationColor: $textDecorationColor, predefinedStyle: $predefinedStyle, textDecoration: $textDecoration, letterSpacing: $letterSpacing, size: $size, weight: $weight, family: $family, height: $height)';
   }
 
   @override
@@ -344,8 +377,7 @@ class _$_EufemiaTextStyle
       ..add(DiagnosticsProperty('size', size))
       ..add(DiagnosticsProperty('weight', weight))
       ..add(DiagnosticsProperty('family', family))
-      ..add(DiagnosticsProperty('height', height))
-      ..add(DiagnosticsProperty('builder', builder));
+      ..add(DiagnosticsProperty('height', height));
   }
 
   @override
@@ -386,9 +418,7 @@ class _$_EufemiaTextStyle
             (identical(other.family, family) ||
                 const DeepCollectionEquality().equals(other.family, family)) &&
             (identical(other.height, height) ||
-                const DeepCollectionEquality().equals(other.height, height)) &&
-            (identical(other.builder, builder) ||
-                const DeepCollectionEquality().equals(other.builder, builder)));
+                const DeepCollectionEquality().equals(other.height, height)));
   }
 
   @override
@@ -406,8 +436,7 @@ class _$_EufemiaTextStyle
       const DeepCollectionEquality().hash(size) ^
       const DeepCollectionEquality().hash(weight) ^
       const DeepCollectionEquality().hash(family) ^
-      const DeepCollectionEquality().hash(height) ^
-      const DeepCollectionEquality().hash(builder);
+      const DeepCollectionEquality().hash(height);
 
   @override
   _$EufemiaTextStyleCopyWith<_EufemiaTextStyle> get copyWith =>
@@ -416,64 +445,85 @@ class _$_EufemiaTextStyle
 
 abstract class _EufemiaTextStyle implements EufemiaTextStyle {
   const factory _EufemiaTextStyle(
-          {@nullable Color color,
-          @nullable TextAlign textAlign,
-          @nullable TextDirection textDirection,
-          @nullable TextDecorationStyle textDecorationStyle,
-          @nullable double textDecorationThickness,
-          @nullable Color textDecorationColor,
-          @nullable EufemiaTextPredefinedStyle predefinedStyle,
-          @nullable TextDecoration textDecoration,
-          @nullable double letterSpacing,
-          @nullable EufemiaFontSize size,
-          @nullable EufemiaFontWeight weight,
-          @nullable EufemiaFontFamily family,
-          @nullable EufemiaLineHeight height,
-          @nullable Widget Function(BuildContext, Widget) builder}) =
-      _$_EufemiaTextStyle;
+      {@nullable Color color,
+      @nullable TextAlign textAlign,
+      @nullable TextDirection textDirection,
+      @nullable TextDecorationStyle textDecorationStyle,
+      @nullable double textDecorationThickness,
+      @nullable Color textDecorationColor,
+      @nullable EufemiaTextPredefinedStyle predefinedStyle,
+      @nullable TextDecoration textDecoration,
+      @nullable double letterSpacing,
+      @nullable EufemiaFontSize size,
+      @nullable EufemiaFontWeight weight,
+      @nullable EufemiaFontFamily family,
+      @nullable EufemiaLineHeight height}) = _$_EufemiaTextStyle;
 
   @override
+
+  /// The text color.
   @nullable
   Color get color;
   @override
+
+  /// The text alignment.
   @nullable
   TextAlign get textAlign;
   @override
+
+  /// The text direction.
   @nullable
   TextDirection get textDirection;
   @override
+
+  /// The text decoration style.
   @nullable
   TextDecorationStyle get textDecorationStyle;
   @override
+
+  /// The thickness of the [textDecorationStyle]
   @nullable
   double get textDecorationThickness;
   @override
+
+  /// The color of the [textDecorationStyle]
   @nullable
   Color get textDecorationColor;
   @override
+
+  /// The predefined Eufemia text style, if any.
   @nullable
   EufemiaTextPredefinedStyle get predefinedStyle;
   @override
+
+  /// The text decoration, if any.
   @nullable
   TextDecoration get textDecoration;
   @override
+
+  /// The spacing between each letter of the text.
   @nullable
   double get letterSpacing;
   @override
+
+  /// The Eufemia-specific font size.
   @nullable
   EufemiaFontSize get size;
   @override
+
+  /// The Eufemia-specific font weight.
   @nullable
   EufemiaFontWeight get weight;
   @override
+
+  /// The Eufemia-specific font family.
   @nullable
   EufemiaFontFamily get family;
   @override
+
+  /// The eufemia-speicfic line height.
   @nullable
   EufemiaLineHeight get height;
-  @override
-  @nullable
-  Widget Function(BuildContext, Widget) get builder;
   @override
   _$EufemiaTextStyleCopyWith<_EufemiaTextStyle> get copyWith;
 }

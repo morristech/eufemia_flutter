@@ -3,6 +3,9 @@ import 'package:flutter/widgets.dart';
 import 'text_style.dart';
 import 'typography_data.dart';
 
+/// {@category Typography}
+/// Returns a default [EufemiaTypographyData] instance with Eufemia-specified
+/// default values.
 EufemiaTypographyData fallbackTypography({
   Color captionColor,
   Color captionEmphasizedColor,
@@ -24,11 +27,11 @@ EufemiaTypographyData fallbackTypography({
   Color buttonSmallEmhpasizedColor,
 }) {
   return EufemiaTypographyData(
-    sizes: eufemiaDefaultTypographySizes,
-    weights: eufemiaDefaultTypographyWeights,
-    families: eufemiaDefaultTypographyFamilies,
-    heights: eufemiaDefaultTypographyHeights,
-    styles: fallbackStyles(
+    sizes: _eufemiaDefaultTypographySizes,
+    weights: _eufemiaDefaultTypographyWeights,
+    families: _eufemiaDefaultTypographyFamilies,
+    heights: _eufemiaDefaultTypographyHeights,
+    styles: _fallbackStyles(
       captionColor: captionColor,
       captionEmphasizedColor: captionEmphasizedColor,
       footnoteColor: footnoteColor,
@@ -51,7 +54,7 @@ EufemiaTypographyData fallbackTypography({
   );
 }
 
-EufemiaTypographyStyles fallbackStyles({
+EufemiaTypographyStyles _fallbackStyles({
   Color captionColor,
   Color captionEmphasizedColor,
   Color footnoteColor,
@@ -127,12 +130,12 @@ EufemiaTypographyStyles fallbackStyles({
   );
 }
 
-const eufemiaDefaultTypographyFamilies = EufemiaTypographyFamilies(
+const _eufemiaDefaultTypographyFamilies = EufemiaTypographyFamilies(
   primary: 'DNB Sans',
   monospace: 'DNB Mono',
 );
 
-const eufemiaDefaultTypographySizes = EufemiaTypographySizes(
+const _eufemiaDefaultTypographySizes = EufemiaTypographySizes(
   captionSize: 11.0,
   footnoteSize: 13.0,
   subheadSize: 15.0,
@@ -144,7 +147,7 @@ const eufemiaDefaultTypographySizes = EufemiaTypographySizes(
   buttonSmallSize: 14.0,
 );
 
-const eufemiaDefaultTypographyHeights = EufemiaTypographyHeights(
+const _eufemiaDefaultTypographyHeights = EufemiaTypographyHeights(
   captionHeight: 1.33,
   footnoteHeight: 1.23,
   subheadHeight: 1.33,
@@ -156,7 +159,7 @@ const eufemiaDefaultTypographyHeights = EufemiaTypographyHeights(
   buttonSmallHeight: 1.21,
 );
 
-const eufemiaDefaultTypographyWeights = EufemiaTypographyWeights(
+const _eufemiaDefaultTypographyWeights = EufemiaTypographyWeights(
   normal: FontWeight.w400,
   demi: FontWeight.w500,
   emphasized: FontWeight.w600,

@@ -3,6 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'typography.dart';
 import 'typography_data.dart';
 
+/// {@category Typography}
+/// A font size from the Eufemia design system.
 enum EufemiaFontSize {
   caption,
   footnote,
@@ -15,6 +17,8 @@ enum EufemiaFontSize {
   buttonSmall,
 }
 
+/// {@category Typography}
+/// {@macro eufemia.extension}
 extension EufemiaFontSizeExtensions on EufemiaFontSize {
   double toPoints({BuildContext context, EufemiaTypographyData typography}) {
     assert(context != null || typography != null);

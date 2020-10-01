@@ -3,8 +3,14 @@ import 'package:flutter/widgets.dart';
 import 'text_style.dart';
 import 'typography.dart';
 
+/// {@category Typography}
+/// A [Text] wrapper that takes an [EufemiaTextStyle] instead of a Flutter
+/// [TextStyle].
 class EufemiaText extends StatelessWidget {
+  /// The style to use for the text.
   final EufemiaTextStyle style;
+
+  /// The text to display.
   final String data;
 
   const EufemiaText(this.data, {Key key, this.style})

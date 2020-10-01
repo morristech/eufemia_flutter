@@ -8,6 +8,9 @@ import 'typography_data_fallback.dart';
 
 part 'typography_data.freezed.dart';
 
+/// {@category Typography}
+/// A class containing the entire collection of styles, sizes, families, heights
+/// and weights from the Eufemia design system.
 @freezed
 abstract class EufemiaTypographyData with _$EufemiaTypographyData {
   const factory EufemiaTypographyData({
@@ -18,6 +21,8 @@ abstract class EufemiaTypographyData with _$EufemiaTypographyData {
     @required EufemiaTypographyHeights heights,
   }) = _EufemiaTypographyData;
 
+  /// Returns the default typography data from the Eufemia design system and
+  /// applies all the given colors. These default to [EufemiaColors.coal].
   factory EufemiaTypographyData.fallback({
     Color captionColor,
     Color captionEmphasizedColor,
@@ -74,6 +79,9 @@ abstract class EufemiaTypographyData with _$EufemiaTypographyData {
   }
 }
 
+/// {@category Typography}
+/// A data class containing the different typography sizes for the different
+/// styles.
 @freezed
 abstract class EufemiaTypographySizes with _$EufemiaTypographySizes {
   const factory EufemiaTypographySizes({
@@ -89,6 +97,9 @@ abstract class EufemiaTypographySizes with _$EufemiaTypographySizes {
   }) = _EufemiaTypographySizes;
 }
 
+/// {@category Typography}
+/// A data class containing the different typography height for the different
+/// styles.
 @freezed
 abstract class EufemiaTypographyHeights with _$EufemiaTypographyHeights {
   const factory EufemiaTypographyHeights({
@@ -104,6 +115,9 @@ abstract class EufemiaTypographyHeights with _$EufemiaTypographyHeights {
   }) = _EufemiaTypographyHeights;
 }
 
+/// {@category Typography}
+/// A data class containing the different typography families for the different
+/// styles.
 @freezed
 abstract class EufemiaTypographyFamilies with _$EufemiaTypographyFamilies {
   const factory EufemiaTypographyFamilies({
@@ -112,6 +126,9 @@ abstract class EufemiaTypographyFamilies with _$EufemiaTypographyFamilies {
   }) = _EufemiaTypographyFamilies;
 }
 
+/// {@category Typography}
+/// A data class containing the different typography weights for the different
+/// styles.
 @freezed
 abstract class EufemiaTypographyWeights with _$EufemiaTypographyWeights {
   const factory EufemiaTypographyWeights({
@@ -121,6 +138,8 @@ abstract class EufemiaTypographyWeights with _$EufemiaTypographyWeights {
   }) = _EufemiaTypographyWeights;
 }
 
+/// {@category Typography}
+/// A data class containing the different typography styles.
 @freezed
 abstract class EufemiaTypographyStyles with _$EufemiaTypographyStyles {
   const factory EufemiaTypographyStyles({

@@ -12,28 +12,53 @@ import 'family.dart';
 
 part 'text_style.freezed.dart';
 
-typedef EufemiaTextStyleWidgetBuilder = Widget Function(
-    BuildContext context, Widget child);
-
+/// {@category Typography}
+/// A text style from the Eufemia design system.
 @freezed
 abstract class EufemiaTextStyle with _$EufemiaTextStyle {
+  /// Default factory.
   const factory EufemiaTextStyle({
+    /// The text color.
     @nullable Color color,
+
+    /// The text alignment.
     @nullable TextAlign textAlign,
+
+    /// The text direction.
     @nullable TextDirection textDirection,
+
+    /// The text decoration style.
     @nullable TextDecorationStyle textDecorationStyle,
+
+    /// The thickness of the [textDecorationStyle]
     @nullable double textDecorationThickness,
+
+    /// The color of the [textDecorationStyle]
     @nullable Color textDecorationColor,
+
+    /// The predefined Eufemia text style, if any.
     @nullable EufemiaTextPredefinedStyle predefinedStyle,
+
+    /// The text decoration, if any.
     @nullable TextDecoration textDecoration,
+
+    /// The spacing between each letter of the text.
     @nullable double letterSpacing,
+
+    /// The Eufemia-specific font size.
     @nullable EufemiaFontSize size,
+
+    /// The Eufemia-specific font weight.
     @nullable EufemiaFontWeight weight,
+
+    /// The Eufemia-specific font family.
     @nullable EufemiaFontFamily family,
+
+    /// The eufemia-speicfic line height.
     @nullable EufemiaLineHeight height,
-    @nullable EufemiaTextStyleWidgetBuilder builder,
   }) = _EufemiaTextStyle;
 
+  /// Creates a default Eufemia caption style.
   factory EufemiaTextStyle.caption({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.caption,
@@ -48,6 +73,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia emphasized caption style.
   factory EufemiaTextStyle.captionEmphasized({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.caption,
@@ -62,6 +88,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia footnote style.
   factory EufemiaTextStyle.footnote({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.footnote,
@@ -76,6 +103,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia emphasized footnote style.
   factory EufemiaTextStyle.footnoteEmphasized({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.footnote,
@@ -90,6 +118,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia subhead style.
   factory EufemiaTextStyle.subhead({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.subhead,
@@ -104,6 +133,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia emphasized subhead style.
   factory EufemiaTextStyle.subheadEmphasized({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.subhead,
@@ -118,6 +148,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia body style.
   factory EufemiaTextStyle.body({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.body,
@@ -132,6 +163,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia emphasized body style.
   factory EufemiaTextStyle.bodyEmphasized({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.body,
@@ -146,6 +178,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia title tyle.
   factory EufemiaTextStyle.title({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.title,
@@ -160,6 +193,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia demi title style.
   factory EufemiaTextStyle.titleDemi({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.title,
@@ -174,6 +208,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia emphasized title style.
   factory EufemiaTextStyle.titleEmphasized({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.title,
@@ -188,6 +223,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia medium title style.
   factory EufemiaTextStyle.titleMedium({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.titleMedium,
@@ -202,6 +238,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia emphasized medium title style.
   factory EufemiaTextStyle.titleMediumEmphasized({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.titleMedium,
@@ -216,6 +253,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia large title style.
   factory EufemiaTextStyle.titleLarge({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.titleLarge,
@@ -230,6 +268,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia button style.
   factory EufemiaTextStyle.button({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.button,
@@ -244,6 +283,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia emphasized button style.
   factory EufemiaTextStyle.buttonEmphasized({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.button,
@@ -258,6 +298,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia small button style.
   factory EufemiaTextStyle.buttonSmall({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.buttonSmall,
@@ -272,6 +313,7 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
         weight: weight,
       );
 
+  /// Creates a default Eufemia emphasized small button style.
   factory EufemiaTextStyle.buttonSmallEmphasized({
     Color color,
     EufemiaFontSize size = EufemiaFontSize.button,
@@ -287,7 +329,11 @@ abstract class EufemiaTextStyle with _$EufemiaTextStyle {
       );
 }
 
+/// {@category Typography}
+/// {@macro eufemia.extension}
 extension EufemiaTextStyleExtensions on EufemiaTextStyle {
+  /// Returns the predefined style of this [EufemiaTextStyle] from either
+  /// [context] or [typopgraphy]. Both cannot be set.
   EufemiaTextStyle loadPredefined(BuildContext context,
       {EufemiaTypographyData typography}) {
     assert(context != null || typography != null);
@@ -300,6 +346,7 @@ extension EufemiaTextStyleExtensions on EufemiaTextStyle {
     return this;
   }
 
+  /// Returns a Flutter [TextStyle] from this [EufemiaTextStyle].
   TextStyle toTextStyle(BuildContext context,
       {EufemiaTypographyData typography}) {
     assert(context != null || typography != null);

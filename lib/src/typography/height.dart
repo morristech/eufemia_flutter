@@ -3,6 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'typography.dart';
 import 'typography_data.dart';
 
+/// {@category Typography}
+/// A specific type of line height for a certain style.
 enum EufemiaLineHeight {
   caption,
   footnote,
@@ -15,7 +17,11 @@ enum EufemiaLineHeight {
   buttonSmall,
 }
 
+/// {@category Typography}
+/// {@macro eufemia.extension}
 extension EufemiaLineHeightExtensions on EufemiaLineHeight {
+  /// {@category Typography}
+  /// Returns the [EufemiaLineHeight] as the line height in numeric points.
   double toPoints({BuildContext context, EufemiaTypographyData typography}) {
     assert(context != null || typography != null);
     typography ??= EufemiaTypography.of(context);

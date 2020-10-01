@@ -124,15 +124,26 @@ const $EufemiaPaletteData = _$EufemiaPaletteDataTearOff();
 
 /// @nodoc
 mixin _$EufemiaPaletteData {
+  /// The [Brightness] of the palette.
   Brightness get brightness;
+
+  /// The primary [Color] of the palette.
   @ColorJsonConverter()
   Color get primary;
+
+  /// The [Color] to be used on [primary], should be in contrast.
   @ColorJsonConverter()
   Color get onPrimary;
+
+  /// The secondary [Color] of the palette.
   @ColorJsonConverter()
   Color get secondary;
+
+  /// The [Color] to be used for information elements.
   @ColorJsonConverter()
   Color get info;
+
+  /// The [Color] to be used on [info], should be in contrast.
   @ColorJsonConverter()
   Color get onInfo;
   @ColorJsonConverter()
@@ -678,20 +689,32 @@ class _$_EufemiaPaletteData
       _$_$_EufemiaPaletteDataFromJson(json);
 
   @override
+
+  /// The [Brightness] of the palette.
   final Brightness brightness;
   @override
+
+  /// The primary [Color] of the palette.
   @ColorJsonConverter()
   final Color primary;
   @override
+
+  /// The [Color] to be used on [primary], should be in contrast.
   @ColorJsonConverter()
   final Color onPrimary;
   @override
+
+  /// The secondary [Color] of the palette.
   @ColorJsonConverter()
   final Color secondary;
   @override
+
+  /// The [Color] to be used for information elements.
   @ColorJsonConverter()
   final Color info;
   @override
+
+  /// The [Color] to be used on [info], should be in contrast.
   @ColorJsonConverter()
   final Color onInfo;
   @override
@@ -1075,20 +1098,32 @@ abstract class _EufemiaPaletteData implements EufemiaPaletteData {
       _$_EufemiaPaletteData.fromJson;
 
   @override
+
+  /// The [Brightness] of the palette.
   Brightness get brightness;
   @override
+
+  /// The primary [Color] of the palette.
   @ColorJsonConverter()
   Color get primary;
   @override
+
+  /// The [Color] to be used on [primary], should be in contrast.
   @ColorJsonConverter()
   Color get onPrimary;
   @override
+
+  /// The secondary [Color] of the palette.
   @ColorJsonConverter()
   Color get secondary;
   @override
+
+  /// The [Color] to be used for information elements.
   @ColorJsonConverter()
   Color get info;
   @override
+
+  /// The [Color] to be used on [info], should be in contrast.
   @ColorJsonConverter()
   Color get onInfo;
   @override

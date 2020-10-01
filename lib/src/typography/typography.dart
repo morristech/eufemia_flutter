@@ -3,8 +3,13 @@ import 'package:flutter/widgets.dart';
 import 'typography_data.dart';
 import 'text_style.dart';
 
+/// Widget providing its children with [EufemiaTypographyData] as well as
+/// methods for loading and updating the typography during runtime.
 class EufemiaTypography extends StatefulWidget {
+  /// The [EufemiaTypographyData] to be provided.
   final EufemiaTypographyData data;
+
+  /// {@macro flutter.widgets.child}
   final Widget child;
 
   const EufemiaTypography({
@@ -13,6 +18,7 @@ class EufemiaTypography extends StatefulWidget {
     @required this.data,
   }) : super(key: key);
 
+  /// Retrieves the nearest instance of [EufemiaTypographyData] in the tree.
   static EufemiaTypographyData of(BuildContext context) {
     final provider =
         context.dependOnInheritedWidgetOfExactType<EufemiaTypographyProvider>();
@@ -28,6 +34,7 @@ class EufemiaTypography extends StatefulWidget {
     return state;
   }
 
+  /// Updates the [data] with the given [data].
   static void update(BuildContext context, EufemiaTypographyData data) {
     _findState(context).update(data);
   }
@@ -79,6 +86,9 @@ class _EufemiaTypographyState extends State<EufemiaTypography> {
   }
 }
 
+/// {@category Typography}
+/// A provider wrapper around [EufemiaTypographyData] allowing its children
+/// to be notified and rebuilt when the typography changes.
 class EufemiaTypographyProvider extends InheritedWidget {
   final EufemiaTypographyData value;
 
